@@ -1,94 +1,73 @@
 import re
 
 def generate_html():
-    with open('index.html.original', 'r', encoding='utf-8') as f:
-        orig = f.read()
+    with open('index.html', 'r', encoding='utf-8') as f:
+        content = f.read()
 
-    # 1. Add questions_data.js to head
-    head_insertion = '<script src="questions_data.js"></script>\n<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>'
-    orig = orig.replace('<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>', head_insertion, 1)
+    # If index.html already has our previous updates, let's extract the header up to navigator card
+    # Let's see: we want to update the Question Navigator Card in content
+    nav_pattern = re.compile(
+        r'(<!-- 1\. Question Navigator Grid Card -->[\s\S]*?<div class="flex items-center justify-between pb-3 border-b border-\[#ded7ca\]">[\s\S]*?</div>)\s*(<!-- 20 Interactive Grid Badges -->\s*<div class="grid grid-cols-5 gap-3" id="nav-buttons-grid">[\s\S]*?</div>)',
+        re.MULTILINE
+    )
 
-    # 2. Add id to search input
-    orig = orig.replace('placeholder="Search stems..." type="text"', 'placeholder="Search stems & concepts..." type="text" id="stem-search-input"')
+    nav_replacement = '''<!-- 1. Question Navigator Grid Card -->
+<div class="p-7 rounded-3xl neu-extruded flex flex-col gap-4">
+<div class="flex items-center justify-between pb-3 border-b border-[#ded7ca]">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-xl neu-extruded-xs flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</div>
+<h3 class="font-display font-bold text-[15.5px] text-[#181d24]">Question Navigator</h3>
+</div>
+<span class="font-mono text-[11px] px-2.5 py-0.5 rounded-full neu-groove-sm text-primary font-bold" id="nav-total-count">20 Questions</span>
+</div>
 
-    # 3. Add id to breadcrumb
-    orig = orig.replace('<span class="text-[#544f45] font-semibold">All Chapters</span>', '<span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">Ch01_Cellular_Adaptations_and_Reversible_Injury</span>')
+<!-- 20-Question Module Selector & Pagination Toolbar -->
+<div class="flex items-center justify-between gap-2 p-1.5 rounded-2xl neu-groove-sm border border-white/40">
+  <div class="flex items-center gap-1.5 pl-2 flex-1 min-w-0">
+    <span class="text-[#756f64] font-bold text-[10.5px] uppercase font-mono tracking-wider shrink-0">Set:</span>
+    <div class="relative flex items-center flex-1 min-w-0">
+      <select id="module-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-2.5 py-1.5 pr-6 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm w-full truncate">
+        <!-- Dynamically injected: e.g. Questions 01 - 20, Questions 21 - 40... -->
+      </select>
+      <span class="material-symbols-outlined text-[15px] text-[#6d675b] absolute right-1.5 pointer-events-none">expand_more</span>
+    </div>
+  </div>
+  <div class="flex items-center gap-1 shrink-0">
+    <button id="nav-prev-set-btn" class="w-7 h-7 rounded-xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary transition-all disabled:opacity-30 disabled:pointer-events-none" title="Previous 20 Questions">
+      <span class="material-symbols-outlined text-[16px]">chevron_left</span>
+    </button>
+    <button id="nav-next-set-btn" class="w-7 h-7 rounded-xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary transition-all disabled:opacity-30 disabled:pointer-events-none" title="Next 20 Questions">
+      <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+    </button>
+  </div>
+</div>
 
-    # 4. Extract parts before questions-container and after questions-container
-    # In original:
-    # starts before: <div class="col-span-12 lg:col-span-8 space-y-9" id="questions-container">
-    # ends after: </footer>\n</div>\n<!-- Clinical Questions Database & Neumorphic Interactions -->\n<script>
-    
-    split_start_token = '<div class="col-span-12 lg:col-span-8 space-y-9" id="questions-container">'
-    split_end_token = '<!-- Clinical Questions Database & Neumorphic Interactions -->\n<script>'
+<!-- 20 Interactive Grid Badges (Locked at max 20 buttons) -->
+<div class="grid grid-cols-5 gap-2.5" id="nav-buttons-grid"></div>'''
 
-    idx_start = orig.find(split_start_token)
-    idx_end = orig.find(split_end_token)
+    if nav_pattern.search(content):
+        content = nav_pattern.sub(nav_replacement, content, count=1)
+    else:
+        # Fallback search
+        print("Warning: regex pattern did not match directly, checking fallback...")
+        target_str = '<h3 class="font-display font-bold text-[16px] text-[#181d24]">Question Navigator</h3>'
+        if target_str in content:
+            # find enclosing card
+            c_start = content.find('<!-- 1. Question Navigator Grid Card -->')
+            c_end = content.find('<div class="p-4 rounded-2xl neu-groove flex flex-col gap-2.5 text-[11.5px]">')
+            if c_start != -1 and c_end != -1:
+                content = content[:c_start] + nav_replacement + '\n' + content[c_end:]
 
-    if idx_start == -1 or idx_end == -1:
-        print("ERROR: Split tokens not found!")
+    # Now update the script section with the new 20-question module pagination logic
+    script_start_idx = content.lastIndexOf('<script>') if hasattr(content, 'lastIndexOf') else content.rfind('<script>')
+    script_end_idx = content.rfind('</script>')
+
+    if script_start_idx == -1 or script_end_idx == -1:
+        print("ERROR: Script tags not found!")
         return
 
-    part1 = orig[:idx_start]
-    part2 = orig[idx_end + len(split_end_token):]
-
-    # New Right Column HTML with Banner, Block filter tabs, and Questions container
-    right_column_html = '''<div class="col-span-12 lg:col-span-8 space-y-6">
-  <!-- Dynamic Chapter Banner & Block Filter Header -->
-  <div id="chapter-header-banner" class="p-6 rounded-3xl neu-extruded border border-white/70 flex flex-col gap-4 transition-all">
-    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#dfd9cc] pb-4">
-      <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-2xl neu-extruded-xs flex items-center justify-center text-primary shrink-0 border border-white/60">
-          <span class="material-symbols-outlined text-[24px]">menu_book</span>
-        </div>
-        <div>
-          <div class="flex items-center gap-2.5 flex-wrap">
-            <h2 class="font-display font-extrabold text-[17.5px] text-[#181d24] tracking-tight" id="banner-chapter-title">Ch01_Cellular_Adaptations_and_Reversible_Injury</h2>
-            <span id="banner-chapter-badge" class="px-3 py-0.5 rounded-full neu-groove-sm text-[11px] font-mono font-bold text-accentSuccess bg-[#dfeae3]">Active (150 Qs)</span>
-          </div>
-          <p class="text-[12px] text-[#6b665c] mt-0.5" id="banner-chapter-desc">USMLE Step 1 Pathology Review & Question Bank (MedGemma 27B)</p>
-        </div>
-      </div>
-      <!-- Block Filter Pills (All, Block 1, Block 2, Block 3) -->
-      <div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/50" id="block-tabs-container">
-        <!-- Injected by JS -->
-      </div>
-    </div>
-    
-    <!-- Chapter Mini Stats Bar -->
-    <div class="flex flex-wrap items-center justify-between gap-3 text-[11.5px] text-[#6b665c]">
-      <div class="flex items-center gap-4">
-        <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-accentSuccess"></span>Correct: <strong class="text-accentSuccess font-mono" id="banner-stat-correct">0</strong></span>
-        <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-accentDanger"></span>Incorrect: <strong class="text-accentDanger font-mono" id="banner-stat-incorrect">0</strong></span>
-        <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#9e988c]"></span>Unanswered: <strong class="text-[#181d24] font-mono" id="banner-stat-unanswered">0</strong></span>
-        <span class="flex items-center gap-1.5 text-amber-800"><span class="material-symbols-outlined text-[14px] fill-current">bookmark</span>Marked: <strong class="font-mono font-bold" id="banner-stat-flagged">0</strong></span>
-      </div>
-      <div class="flex items-center gap-2">
-        <button id="reset-chapter-answers-btn" class="text-[11px] font-semibold text-[#736e62] hover:text-accentDanger transition-colors px-2 py-1 rounded-lg hover:underline flex items-center gap-1" title="Clear answers for current chapter">
-          <span class="material-symbols-outlined text-[14px]">restart_alt</span>
-          <span>Reset Current Chapter</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Questions Container (Populated dynamically) -->
-  <div class="space-y-8" id="questions-container">
-    <!-- Question Cards injected by JS -->
-  </div>
-</div>
-</div>
-</main>
-<!-- Footer in Warm Neumorphic Style -->
-<footer class="mt-16 py-8 border-t border-[#dfd9cc] bg-[#eae6de] text-center text-[12.5px] text-[#787266]">
-<p class="font-medium">MedPulse Clinical Diagnostic Suite • High-Yield USMLE Step 1 Simulation • Tactile Warm-Bone Clay Neumorphic Architecture</p>
-</footer>
-</div>
-<!-- Clinical Questions Database & Neumorphic Interactions -->
-<script>
-'''
-
-    # New Comprehensive JavaScript Application
     new_script_js = '''
     (function() {
       // 1. Data Initialization from questions_data.js
@@ -140,6 +119,10 @@ def generate_html():
       let activeBlock = "all"; // "all", "Block 1", "Block 2", "Block 3"
       let flaggedOnlyMode = false;
       let searchQuery = "";
+      
+      // ★ Pagination / 20-Question Module Tracking
+      const PAGE_SIZE = 20;
+      let currentModuleIndex = 0; // 0-indexed: 0 = Q1-20, 1 = Q21-40, etc.
 
       // DOM Elements
       const navGrid = document.getElementById('nav-buttons-grid');
@@ -149,20 +132,22 @@ def generate_html():
       const breadcrumbEl = document.getElementById('active-chapter-breadcrumb');
       const blockTabsContainer = document.getElementById('block-tabs-container');
       const searchInput = document.getElementById('stem-search-input');
+      const moduleSelectDropdown = document.getElementById('module-select-dropdown');
+      const navPrevSetBtn = document.getElementById('nav-prev-set-btn');
+      const navNextSetBtn = document.getElementById('nav-next-set-btn');
+      const navTotalLabel = document.getElementById('nav-total-count');
 
       // 4. Initialize Dropdowns
       function initChapterDropdown() {
         if (!chapterSelectDropdown) return;
         chapterSelectDropdown.innerHTML = '';
 
-        // All active chapters option
         const optAll = document.createElement('option');
         optAll.value = "all";
         optAll.textContent = `All Active Chapters (${allQuestions.length} Qs)`;
         chapterSelectDropdown.appendChild(optAll);
 
-        // 14 Chapters
-        chaptersData.forEach((ch, idx) => {
+        chaptersData.forEach((ch) => {
           const opt = document.createElement('option');
           opt.value = ch.id;
           if (ch.status === 'active') {
@@ -187,6 +172,7 @@ def generate_html():
         activeBlock = "all";
         flaggedOnlyMode = false;
         searchQuery = "";
+        currentModuleIndex = 0; // Reset to first 20 questions
         if (searchInput) searchInput.value = "";
 
         if (chapterSelectDropdown) {
@@ -203,19 +189,15 @@ def generate_html():
       // 6. Filter Questions Helper
       function getFilteredQuestions() {
         return allQuestions.filter(q => {
-          // Chapter filter
           if (activeChapter !== 'all' && q.chapter !== activeChapter) {
             return false;
           }
-          // Block filter
           if (activeBlock !== 'all' && q.block !== activeBlock) {
             return false;
           }
-          // Flagged only filter
           if (flaggedOnlyMode && !q.flagged) {
             return false;
           }
-          // Search query filter
           if (searchQuery) {
             const qStr = (q.stem + ' ' + q.leadQuestion + ' ' + q.title + ' ' + (q.subtag || '')).toLowerCase();
             if (!qStr.includes(searchQuery.toLowerCase())) {
@@ -238,7 +220,6 @@ def generate_html():
         }
         blockTabsContainer.style.display = 'flex';
 
-        // Count blocks in current chapter
         const chapterQs = allQuestions.filter(q => q.chapter === activeChapter);
         const blocks = ['all', 'Block 1', 'Block 2', 'Block 3'];
 
@@ -260,6 +241,7 @@ def generate_html():
 
           btn.addEventListener('click', () => {
             activeBlock = blk;
+            currentModuleIndex = 0; // Reset to first 20 of this block
             updateUI();
           });
 
@@ -267,20 +249,58 @@ def generate_html():
         });
       }
 
-      // 8. Render Navigator Buttons
-      function renderNavigator(filteredQs) {
-        navGrid.innerHTML = '';
-
-        const navTotalLabel = document.querySelector('aside h3 + span') || document.getElementById('nav-total-count');
-        if (navTotalLabel) {
-          navTotalLabel.textContent = `${filteredQs.length} Questions`;
+      // 8. Render Module Dropdown & Pagination Controls
+      function updateModuleControls(totalQuestions) {
+        const totalModules = Math.ceil(totalQuestions / PAGE_SIZE) || 1;
+        if (currentModuleIndex >= totalModules) {
+          currentModuleIndex = Math.max(0, totalModules - 1);
         }
 
-        filteredQs.forEach((q, idx) => {
+        if (moduleSelectDropdown) {
+          moduleSelectDropdown.innerHTML = '';
+          for (let i = 0; i < totalModules; i++) {
+            const startQ = i * PAGE_SIZE + 1;
+            const endQ = Math.min((i + 1) * PAGE_SIZE, totalQuestions);
+            const count = endQ - startQ + 1;
+            
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.textContent = `Set ${i + 1}: Q${startQ < 10 ? '0' + startQ : startQ} - Q${endQ < 10 ? '0' + endQ : endQ} (${count}题)`;
+            if (i === currentModuleIndex) {
+              opt.selected = true;
+            }
+            moduleSelectDropdown.appendChild(opt);
+          }
+        }
+
+        if (navPrevSetBtn) {
+          navPrevSetBtn.disabled = (currentModuleIndex === 0);
+        }
+        if (navNextSetBtn) {
+          navNextSetBtn.disabled = (currentModuleIndex >= totalModules - 1);
+        }
+
+        if (navTotalLabel) {
+          if (totalQuestions === 0) {
+            navTotalLabel.textContent = "0 Questions";
+          } else {
+            const startQ = currentModuleIndex * PAGE_SIZE + 1;
+            const endQ = Math.min((currentModuleIndex + 1) * PAGE_SIZE, totalQuestions);
+            navTotalLabel.textContent = `${startQ}-${endQ} of ${totalQuestions}`;
+          }
+        }
+      }
+
+      // 9. Render Navigator Buttons (Strictly 20 Questions)
+      function renderNavigator(current20Qs) {
+        if (!navGrid) return;
+        navGrid.innerHTML = '';
+
+        current20Qs.forEach((q, idx) => {
           const btn = document.createElement('button');
           btn.type = 'button';
           btn.setAttribute('data-q', q.id);
-          btn.title = `#${q.qNum || idx+1}: ${q.title}`;
+          btn.title = `#${q.qNum || idx + 1}: ${q.title}`;
           
           let stateStyle = "neu-groove text-[#3e3931] border border-white/50";
           if (q.answered) {
@@ -293,7 +313,7 @@ def generate_html():
 
           const displayNum = q.qNum ? (q.qNum < 10 ? '0' + q.qNum : q.qNum) : (idx + 1 < 10 ? '0' + (idx + 1) : idx + 1);
 
-          btn.className = `relative h-11 rounded-2xl ${stateStyle} text-[12px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.04] active:scale-95 shadow-sm`;
+          btn.className = `relative h-11 rounded-2xl ${stateStyle} text-[12px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.05] active:scale-95 shadow-sm`;
           btn.innerHTML = `
             ${displayNum}
             ${q.flagged ? '<span class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-amber-400 border-2 border-white shadow-sm flex items-center justify-center text-[9px] text-amber-950 font-extrabold">★</span>' : ''}
@@ -312,14 +332,15 @@ def generate_html():
         });
       }
 
-      // 9. Render Question Cards in Main Container
-      function renderQuestions(filteredQs) {
+      // 10. Render Question Cards in Main Container (Current 20 Questions)
+      function renderQuestions(current20Qs, totalQuestions, totalModules) {
+        if (!questionsWrapper) return;
         questionsWrapper.innerHTML = '';
         const letters = ['A', 'B', 'C', 'D', 'E'];
 
         const currentChapterObj = chaptersData.find(c => c.id === activeChapter);
 
-        // If Placeholder Chapter Selected
+        // Placeholder Chapter View
         if (currentChapterObj && currentChapterObj.status === 'placeholder') {
           questionsWrapper.innerHTML = `
             <div class="p-10 rounded-3xl neu-extruded border border-white/80 flex flex-col items-center justify-center text-center gap-5 my-6">
@@ -344,7 +365,7 @@ def generate_html():
           return;
         }
 
-        if (filteredQs.length === 0) {
+        if (totalQuestions === 0) {
           questionsWrapper.innerHTML = `
             <div class="p-10 rounded-3xl neu-extruded text-center text-[#6b665c] flex flex-col items-center gap-3">
               <span class="material-symbols-outlined text-[36px] text-[#9c9689]">find_in_page</span>
@@ -355,12 +376,12 @@ def generate_html():
           return;
         }
 
-        filteredQs.forEach((q, idx) => {
+        // Render current 20 question cards
+        current20Qs.forEach((q, idx) => {
           const card = document.createElement('section');
           card.id = `question-card-${q.id}`;
           card.className = "question-card p-8 rounded-3xl neu-extruded border border-white/70 flex flex-col gap-6 scroll-mt-36 transition-all duration-300 mb-8";
 
-          // Options markup as sunken grooves
           let optionsHtml = '';
           q.options.forEach((optText, optIdx) => {
             const letter = letters[optIdx] || String.fromCharCode(65 + optIdx);
@@ -396,7 +417,6 @@ def generate_html():
             `;
           });
 
-          // Flag button visual state with soft tactile pill
           const flagBtnMarkup = q.flagged ? `
             <button class="flag-toggle-btn px-3.5 py-1.5 rounded-full neu-extruded-xs border border-amber-300 bg-[#f3ecd8] text-amber-800 flex items-center gap-1.5 transition-all shadow-sm active:neu-groove" data-q="${q.id}">
               <span class="material-symbols-outlined text-[17px] text-amber-600 fill-current">bookmark</span>
@@ -411,9 +431,7 @@ def generate_html():
 
           const qIndexLabel = q.qNum ? `Question ${q.qNum < 10 ? '0' + q.qNum : q.qNum}` : `Question ${idx + 1}`;
 
-          // Card Content
           card.innerHTML = `
-            <!-- Question Top Meta Header -->
             <div class="flex items-center justify-between pb-4 border-b border-[#dfd9cc] flex-wrap gap-2">
               <div class="flex flex-wrap items-center gap-2.5">
                 <span class="px-3 py-1 rounded-full neu-groove text-primary font-mono text-[11.5px] font-bold border border-white/60">
@@ -426,17 +444,13 @@ def generate_html():
                   ${q.difficulty || 'USMLE Step 1'}
                 </span>
               </div>
-
-              <!-- Flag / Bookmark Pill -->
               ${flagBtnMarkup}
             </div>
 
-            <!-- Clinical Vignette Stem -->
             <p class="text-[14.5px] text-[#242930] leading-relaxed font-normal">
               ${q.stem}
             </p>
 
-            <!-- Tactile Inset Lead Question Prompt -->
             <div class="p-4.5 rounded-2xl neu-groove flex items-center gap-3.5 border border-white/50 bg-[#e7e2d9]">
               <div class="w-9 h-9 rounded-xl neu-extruded-xs flex items-center justify-center text-primary shrink-0">
                 <span class="material-symbols-outlined text-[20px]">troubleshoot</span>
@@ -446,12 +460,10 @@ def generate_html():
               </span>
             </div>
 
-            <!-- Answer Options (Tactile Sunken Grooves) -->
             <div class="options-container flex flex-col gap-3.5" data-q="${q.id}">
               ${optionsHtml}
             </div>
 
-            <!-- Action Ribbon -->
             <div class="flex items-center justify-between pt-2">
               <button class="submit-btn px-6 py-2.5 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[13px] font-bold neu-btn border border-white/40 active:neu-groove transition-all ${q.answered ? 'opacity-45 pointer-events-none' : ''}" data-q="${q.id}">
                 ${q.answered ? 'Answer Submitted' : 'Submit Answer'}
@@ -459,7 +471,6 @@ def generate_html():
               ${!q.answered ? `<button class="clear-btn text-[11.5px] text-[#736e62] hover:text-primary transition-colors font-semibold" data-q="${q.id}">Clear Selection</button>` : ''}
             </div>
 
-            <!-- Detailed Explanation Box -->
             <div class="explanation-box ${q.answered ? 'flex' : 'hidden'} p-6 rounded-2xl neu-groove flex-col gap-4 border border-white/50 bg-[#e8e3da]">
               <div class="flex items-center gap-2 font-display text-[15px] font-bold ${q.userChoice === q.correct ? 'text-accentSuccess' : 'text-accentDanger'}">
                 <span class="material-symbols-outlined text-[24px]">
@@ -470,7 +481,6 @@ def generate_html():
                 </span>
               </div>
               
-              <!-- Pre-rendered Rich Explanation HTML -->
               <div class="explanation-content text-[13.5px] text-[#242930] leading-relaxed space-y-2">
                 ${q.explanation || `<p>${q.rawObjective || ''}</p>`}
               </div>
@@ -479,9 +489,56 @@ def generate_html():
 
           questionsWrapper.appendChild(card);
         });
+
+        // Add Next / Prev 20-Question Module Navigation Bar at Bottom
+        if (totalModules > 1) {
+          const paginationFooter = document.createElement('div');
+          paginationFooter.className = "p-6 rounded-3xl neu-extruded border border-white/80 flex flex-wrap items-center justify-between gap-4 mt-6 shadow-sm";
+          
+          const startQ = currentModuleIndex * PAGE_SIZE + 1;
+          const endQ = Math.min((currentModuleIndex + 1) * PAGE_SIZE, totalQuestions);
+
+          paginationFooter.innerHTML = `
+            <button id="bottom-prev-btn" class="px-5 py-2.5 rounded-2xl neu-btn text-[12px] font-bold text-[#3e3931] hover:text-primary transition-all flex items-center gap-2 disabled:opacity-30 disabled:pointer-events-none" ${currentModuleIndex === 0 ? 'disabled' : ''}>
+              <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+              <span>Previous 20 Questions (前20题)</span>
+            </button>
+            <div class="font-mono text-[12px] text-[#6b665c] font-semibold text-center">
+              Module <strong class="text-primary">${currentModuleIndex + 1}</strong> of <strong>${totalModules}</strong> (Questions ${startQ} - ${endQ} of ${totalQuestions})
+            </div>
+            <button id="bottom-next-btn" class="px-5 py-2.5 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white neu-btn text-[12px] font-bold transition-all flex items-center gap-2 disabled:opacity-30 disabled:pointer-events-none shadow-md" ${currentModuleIndex >= totalModules - 1 ? 'disabled' : ''}>
+              <span>Next 20 Questions (后20题)</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </button>
+          `;
+
+          const bPrev = paginationFooter.querySelector('#bottom-prev-btn');
+          const bNext = paginationFooter.querySelector('#bottom-next-btn');
+
+          if (bPrev) {
+            bPrev.addEventListener('click', () => {
+              if (currentModuleIndex > 0) {
+                currentModuleIndex--;
+                updateUI();
+                window.scrollTo({ top: 120, behavior: 'smooth' });
+              }
+            });
+          }
+          if (bNext) {
+            bNext.addEventListener('click', () => {
+              if (currentModuleIndex < totalModules - 1) {
+                currentModuleIndex++;
+                updateUI();
+                window.scrollTo({ top: 120, behavior: 'smooth' });
+              }
+            });
+          }
+
+          questionsWrapper.appendChild(paginationFooter);
+        }
       }
 
-      // 10. Update Metrics and Chapter Pills
+      // 11. Update Metrics and Chapter Pills
       function updateMetricsAndChapterPills() {
         let totalAnswered = 0;
         let totalCorrect = 0;
@@ -504,7 +561,6 @@ def generate_html():
           }
         });
 
-        // Current Chapter Stats
         const currentFiltered = getFilteredQuestions();
         let curCorrect = 0, curIncorrect = 0, curAnswered = 0, curFlagged = 0;
         currentFiltered.forEach(q => {
@@ -516,7 +572,6 @@ def generate_html():
           if (q.flagged) curFlagged++;
         });
 
-        // Update Inset Panel Stats
         const statCorrectEl = document.getElementById('stat-correct');
         const statIncorrectEl = document.getElementById('stat-incorrect');
         const statUnansweredEl = document.getElementById('stat-unanswered');
@@ -533,7 +588,6 @@ def generate_html():
         if (badgeTotalFlaggedEl) badgeTotalFlaggedEl.innerText = `${totalFlagged} Marked`;
         if (topAnsweredCountEl) topAnsweredCountEl.innerText = `${totalAnswered}/${allQuestions.length}`;
 
-        // Banner Stats
         const bCorrect = document.getElementById('banner-stat-correct');
         const bIncorrect = document.getElementById('banner-stat-incorrect');
         const bUnanswered = document.getElementById('banner-stat-unanswered');
@@ -543,7 +597,6 @@ def generate_html():
         if (bUnanswered) bUnanswered.innerText = (currentFiltered.length - curAnswered);
         if (bFlagged) bFlagged.innerText = curFlagged;
 
-        // Banner Header text
         const bTitle = document.getElementById('banner-chapter-title');
         const bBadge = document.getElementById('banner-chapter-badge');
         const bDesc = document.getElementById('banner-chapter-desc');
@@ -568,11 +621,10 @@ def generate_html():
           bDesc.textContent = curChapObj ? curChapObj.description : "USMLE Step 1 Pathology Review & Question Bank (MedGemma 27B)";
         }
 
-        // Render Left Sidebar Chapter Pills (All 14 Chapters!)
+        // Render Left Sidebar Chapter Pills
         if (chapterPillGroup) {
           chapterPillGroup.innerHTML = '';
 
-          // 1. "All Active Chapters" Master Pill
           const allBtn = document.createElement('button');
           allBtn.type = 'button';
           const isAllActive = activeChapter === 'all';
@@ -591,7 +643,6 @@ def generate_html():
           allBtn.addEventListener('click', () => selectChapter('all'));
           chapterPillGroup.appendChild(allBtn);
 
-          // 2. 14 Chapters
           chaptersData.forEach(chap => {
             const btn = document.createElement('button');
             btn.type = 'button';
@@ -620,16 +671,60 @@ def generate_html():
         }
       }
 
-      // 11. Full UI Refresh Orchestrator
+      // 12. Full UI Refresh Orchestrator (With 20-Question Module Pagination)
       function updateUI() {
         const filtered = getFilteredQuestions();
+        const totalQuestions = filtered.length;
+        const totalModules = Math.ceil(totalQuestions / PAGE_SIZE) || 1;
+
+        if (currentModuleIndex >= totalModules) {
+          currentModuleIndex = Math.max(0, totalModules - 1);
+        }
+
+        // Slice exactly 20 questions for the current module
+        const startIdx = currentModuleIndex * PAGE_SIZE;
+        const endIdx = Math.min(startIdx + PAGE_SIZE, totalQuestions);
+        const current20 = filtered.slice(startIdx, endIdx);
+
         renderBlockTabs();
-        renderNavigator(filtered);
-        renderQuestions(filtered);
+        updateModuleControls(totalQuestions);
+        renderNavigator(current20);
+        renderQuestions(current20, totalQuestions, totalModules);
         updateMetricsAndChapterPills();
       }
 
-      // 12. Global Click & Delegation Listener
+      // 13. Module Dropdown & Chevron Listeners
+      if (moduleSelectDropdown) {
+        moduleSelectDropdown.addEventListener('change', (e) => {
+          currentModuleIndex = parseInt(e.target.value, 10);
+          updateUI();
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        });
+      }
+
+      if (navPrevSetBtn) {
+        navPrevSetBtn.addEventListener('click', () => {
+          if (currentModuleIndex > 0) {
+            currentModuleIndex--;
+            updateUI();
+            window.scrollTo({ top: 120, behavior: 'smooth' });
+          }
+        });
+      }
+
+      if (navNextSetBtn) {
+        navNextSetBtn.addEventListener('click', () => {
+          const filtered = getFilteredQuestions();
+          const totalModules = Math.ceil(filtered.length / PAGE_SIZE) || 1;
+          if (currentModuleIndex < totalModules - 1) {
+            currentModuleIndex++;
+            updateUI();
+            window.scrollTo({ top: 120, behavior: 'smooth' });
+          }
+        });
+      }
+
+      // 14. Global Click & Delegation Listener
       document.addEventListener('click', (e) => {
         // A. Toggle Flag / Bookmark
         const flagBtn = e.target.closest('.flag-toggle-btn');
@@ -660,7 +755,6 @@ def generate_html():
               const lSpan = el.querySelector('span:first-child');
               lSpan.className = "w-8 h-8 rounded-full neu-extruded-xs text-[#3a352d] border border-white/60 flex items-center justify-center font-mono text-[12.5px] font-bold shrink-0";
             });
-            // highlight chosen
             optItem.className = "option-item p-4 rounded-2xl neu-groove border border-primary/50 bg-[#e1e9ef] flex items-center justify-between cursor-pointer transition-all";
             const lSpan = optItem.querySelector('span:first-child');
             lSpan.className = "w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-mono text-[12.5px] font-bold shadow-sm shrink-0";
@@ -707,11 +801,12 @@ def generate_html():
         }
       });
 
-      // 13. Top Toolbar Controls
+      // 15. Top Toolbar Controls
       const toggleFlaggedTopBtn = document.getElementById('toggle-flagged-only-btn');
       if (toggleFlaggedTopBtn) {
         toggleFlaggedTopBtn.addEventListener('click', () => {
           flaggedOnlyMode = !flaggedOnlyMode;
+          currentModuleIndex = 0;
           if (flaggedOnlyMode) {
             toggleFlaggedTopBtn.className = "flex items-center gap-2 px-4 py-1.5 rounded-full neu-groove text-[11.5px] font-bold text-amber-800 bg-[#e4ded4] border border-amber-300 transition-all";
           } else {
@@ -729,7 +824,6 @@ def generate_html():
         });
       }
 
-      // Reset Chapter Answers
       const resetChapterBtn = document.getElementById('reset-chapter-answers-btn');
       if (resetChapterBtn) {
         resetChapterBtn.addEventListener('click', () => {
@@ -746,15 +840,15 @@ def generate_html():
         });
       }
 
-      // Search Filter
       if (searchInput) {
         searchInput.addEventListener('input', (e) => {
           searchQuery = e.target.value.trim();
+          currentModuleIndex = 0;
           updateUI();
         });
       }
 
-      // 14. Interactive Examination Timer Implementation
+      // 16. Examination Timer
       let timerSeconds = 45 * 60;
       let timerRunning = false;
       let isStopwatch = false;
@@ -793,7 +887,7 @@ def generate_html():
                   timerRunning = false;
                   clearInterval(timerInterval);
                   timerPlayIcon.textContent = 'play_arrow';
-                  alert("Time expired for this USMLE examination block!");
+                  alert("Time expired for this examination module!");
                 }
               }
               updateTimerDisplay();
@@ -869,13 +963,13 @@ def generate_html():
         });
       }
 
-      // 15. Initial Boot
+      // 17. Initial Boot
       initChapterDropdown();
       updateUI();
     })();
 '''
 
-    final_html = part1 + right_column_html + new_script_js + '\n  </script>\n</body></html>'
+    final_html = content[:script_start_idx + 8] + new_script_js + '\n  ' + content[script_end_idx:]
 
     with open('index.html', 'w', encoding='utf-8') as f:
         f.write(final_html)
