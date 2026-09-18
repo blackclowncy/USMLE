@@ -6,7 +6,7 @@ An authentic, offline-first USMLE Step 1 examination and learning platform engin
 
 The question bank is organized under **USMLE Step 1 > Pathology**, featuring 14 comprehensive chapters:
 
-### Active Chapters (Ch01 - Ch07: 1,050 High-Yield Questions)
+### Active Chapters (Ch01 - Ch10: 1,500 High-Yield Questions)
 - **`Ch01_Cellular_Adaptations_and_Reversible_Injury/`**: 150 questions (Blocks 1-3)
 - **`Ch02_Cell_Death_Necrosis_and_Apoptosis/`**: 150 questions (Blocks 1-3)
 - **`Ch03_Cellular_Accumulations_and_Amyloidosis/`**: 150 questions (Blocks 1-3)
@@ -14,17 +14,15 @@ The question bank is organized under **USMLE Step 1 > Pathology**, featuring 14 
 - **`Ch05_Inflammatory_Mediators_and_Microbial_Killing/`**: 150 questions (Blocks 1-3)
 - **`Ch06_Chronic_and_Granulomatous_Inflammation/`**: 150 questions (Blocks 1-3)
 - **`Ch07_Tissue_Repair_and_Wound_Healing/`**: 150 questions (Blocks 1-3)
+- **`Ch08_Hemodynamic_Disorders_Thrombosis_and_Embolism/`**: 150 questions (Blocks 1-3)
+- **`Ch09_Infarction_and_Shock/`**: 150 questions (Blocks 1-3)
+- **`Ch10_Principles_of_Neoplasia_and_Carcinogenesis/`**: 150 questions (Blocks 1-3)
 
-### Placeholder Chapters (08 - 14: In Preparation / 待更新)
-- `08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA.md`
-- `09_Infarction_and_Shock_QA.md`
-- `10_Principles_of_Neoplasia_and_Carcinogenesis_QA.md`
+### Placeholder Chapters (11 - 14: In Preparation / 待更新)
 - `11_Cancer_Genetics_Oncogenes_and_TSGs_QA.md`
 - `12_Clinical_Oncology_Staging_and_Tumor_Markers_QA.md`
 - `13_Paraneoplastic_Syndromes_QA.md`
 - `14_Cellular_Aging_and_Systemic_Changes_QA.md`
-
-*(Note: Ch08 questions are pending final review and will be unlocked in a future release).*
 
 ---
 

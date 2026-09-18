@@ -69,9 +69,9 @@ def generate_html():
         { id: "Ch05_Inflammatory_Mediators_and_Microbial_Killing", name: "Ch05 Inflammatory Mediators and Microbial Killing", totalQuestions: 150, status: "active" },
         { id: "Ch06_Chronic_and_Granulomatous_Inflammation", name: "Ch06 Chronic and Granulomatous Inflammation", totalQuestions: 150, status: "active" },
         { id: "Ch07_Tissue_Repair_and_Wound_Healing", name: "Ch07 Tissue Repair and Wound Healing", totalQuestions: 150, status: "active" },
-        { id: "08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA", name: "08 Hemodynamic Disorders Thrombosis and Embolism QA", totalQuestions: 0, status: "placeholder" },
-        { id: "09_Infarction_and_Shock_QA", name: "09 Infarction and Shock QA", totalQuestions: 0, status: "placeholder" },
-        { id: "10_Principles_of_Neoplasia_and_Carcinogenesis_QA", name: "10 Principles of Neoplasia and Carcinogenesis QA", totalQuestions: 0, status: "placeholder" },
+        { id: "Ch08_Hemodynamic_Disorders_Thrombosis_and_Embolism", name: "Ch08 Hemodynamic Disorders Thrombosis and Embolism", totalQuestions: 150, status: "active" },
+        { id: "Ch09_Infarction_and_Shock", name: "Ch09 Infarction and Shock", totalQuestions: 150, status: "active" },
+        { id: "Ch10_Principles_of_Neoplasia_and_Carcinogenesis", name: "Ch10 Principles of Neoplasia and Carcinogenesis", totalQuestions: 150, status: "active" },
         { id: "11_Cancer_Genetics_Oncogenes_and_TSGs_QA", name: "11 Cancer Genetics Oncogenes and TSGs QA", totalQuestions: 0, status: "placeholder" },
         { id: "12_Clinical_Oncology_Staging_and_Tumor_Markers_QA", name: "12 Clinical Oncology Staging and Tumor Markers QA", totalQuestions: 0, status: "placeholder" },
         { id: "13_Paraneoplastic_Syndromes_QA", name: "13 Paraneoplastic Syndromes QA", totalQuestions: 0, status: "placeholder" },
@@ -376,7 +376,7 @@ def generate_html():
                 </span>
                 <h2 class="font-display font-extrabold text-[20px] text-[#181d24] mt-2">${displayTitle}</h2>
                 <p class="text-[13.5px] text-[#6b665c] leading-relaxed mt-1">
-                  该章节题目仍在整理校对中，先不载入试题，当前作为标准大纲占位。请在上方或侧边切换至已开放的 <strong>Ch01 至 Ch07 章节</strong> 开展全仿真 USMLE 刷题（共 1,050 道高难度病例试题）。
+                  该章节题目仍在整理校对中，先不载入试题，当前作为标准大纲占位。请在上方或侧边切换至已开放的 <strong>Ch01 至 Ch10 章节</strong> 开展全仿真 USMLE 刷题（共 1,500 道高难度病例试题）。
                 </p>
               </div>
               <button class="px-6 py-3 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[13px] font-bold neu-btn border border-white/40 flex items-center gap-2 shadow-md hover:scale-[1.02] active:scale-95 transition-all mt-2" onclick="selectChapter('Ch01_Cellular_Adaptations_and_Reversible_Injury')">

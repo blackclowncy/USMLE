@@ -3,18 +3,23 @@ import re
 import json
 import sys
 
-def convert_markdown_to_html(md_text):
+def convert_markdown_to_html(md_text, edu_fallback=None):
     if not md_text:
         return ""
     
     # Extract Educational Objective if present to render as a distinct callout card
-    edu_match = re.search(r'####\s*Educational Objective[^:]*:\s*(.*)', md_text, re.DOTALL | re.IGNORECASE)
+    edu_match = re.search(r'#{4,5}\s*(?:\d+\.\s*)?Educational Objective[^:]*:\s*(.*)', md_text, re.DOTALL | re.IGNORECASE)
     edu_html = ""
     body_text = md_text
     
+    edu_content = None
     if edu_match:
         edu_content = edu_match.group(1).strip()
         body_text = md_text[:edu_match.start()].strip()
+    elif edu_fallback:
+        edu_content = edu_fallback.strip()
+    
+    if edu_content:
         clean_edu = re.sub(r'\*\*(.*?)\*\*', r'<strong class="text-[#181d24] font-bold">\1</strong>', edu_content)
         clean_edu = re.sub(r'\*(.*?)\*', r'<em class="italic text-[#4a453c]">\1</em>', clean_edu)
         edu_html = f'''
@@ -31,7 +36,7 @@ def convert_markdown_to_html(md_text):
 
     # Format Distractor Analysis header
     body_text = re.sub(
-        r'####\s*Distractor Analysis[^:]*:', 
+        r'#{4,5}\s*(?:\d+\.\s*)?(?:Comprehensive\s+)?Distractor Analysis[^:]*:', 
         r'<div class="font-display font-bold text-[14.5px] text-primaryDark mt-4 mb-2 pb-1 border-b border-[#ded7ca] flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">rule</span><span>Distractor Analysis / 干扰项深度剖析</span></div>', 
         body_text, 
         flags=re.IGNORECASE
@@ -39,7 +44,7 @@ def convert_markdown_to_html(md_text):
     
     # Format Explanation header
     body_text = re.sub(
-        r'####\s*(?:High-Yield Pathophysiological Explanation|Explanation):',
+        r'#{4,5}\s*(?:High-Yield Pathophysiological Explanation|Detailed Explanations?|Explanation):',
         r'<div class="font-display font-bold text-[14.5px] text-primaryDark mt-2 mb-2 pb-1 border-b border-[#ded7ca] flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span>Pathophysiological Explanation / 机制详析</span></div>',
         body_text,
         flags=re.IGNORECASE
@@ -155,28 +160,28 @@ def build_database():
             "description": "Regeneration vs repair, granulation tissue, ECM deposition, collagen synthesis, and scar remodeling."
         },
         {
-            "id": "08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA",
-            "name": "08 Hemodynamic Disorders Thrombosis and Embolism QA",
-            "fileName": "08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA.md",
-            "totalQuestions": 0,
-            "status": "placeholder",
-            "description": "Thrombosis, Virchow triad, embolism, and hypercoagulable states (待更新 - 题目处理中)."
+            "id": "Ch08_Hemodynamic_Disorders_Thrombosis_and_Embolism",
+            "name": "Ch08 Hemodynamic Disorders Thrombosis and Embolism",
+            "dirName": "Ch08_Hemodynamic_Disorders_Thrombosis_and_Embolism",
+            "totalQuestions": 150,
+            "status": "active",
+            "description": "Thrombosis, Virchow triad, embolism, and hypercoagulable states."
         },
         {
-            "id": "09_Infarction_and_Shock_QA",
-            "name": "09 Infarction and Shock QA",
-            "fileName": "09_Infarction_and_Shock_QA.md",
-            "totalQuestions": 0,
-            "status": "placeholder",
-            "description": "Pathology of infarction, ischemic reperfusion injury, and stages of shock (待更新 - 占位章节)."
+            "id": "Ch09_Infarction_and_Shock",
+            "name": "Ch09 Infarction and Shock",
+            "dirName": "Ch09_Infarction_and_Shock",
+            "totalQuestions": 150,
+            "status": "active",
+            "description": "Pathology of infarction, ischemic reperfusion injury, and stages of shock."
         },
         {
-            "id": "10_Principles_of_Neoplasia_and_Carcinogenesis_QA",
-            "name": "10 Principles of Neoplasia and Carcinogenesis QA",
-            "fileName": "10_Principles_of_Neoplasia_and_Carcinogenesis_QA.md",
-            "totalQuestions": 0,
-            "status": "placeholder",
-            "description": "Benign vs malignant neoplasms, nomenclature, differentiation, and anaplasia (待更新 - 占位章节)."
+            "id": "Ch10_Principles_of_Neoplasia_and_Carcinogenesis",
+            "name": "Ch10 Principles of Neoplasia and Carcinogenesis",
+            "dirName": "Ch10_Principles_of_Neoplasia_and_Carcinogenesis",
+            "totalQuestions": 150,
+            "status": "active",
+            "description": "Benign vs malignant neoplasms, nomenclature, differentiation, anaplasia, invasion, metastasis, and carcinogenesis."
         },
         {
             "id": "11_Cancer_Genetics_Oncogenes_and_TSGs_QA",
@@ -215,7 +220,7 @@ def build_database():
     all_questions = []
     global_id = 1
 
-    # Parse Ch01 to Ch07
+    # Parse active chapters
     active_chapters = [c for c in chapters_metadata if c["status"] == "active"]
     
     for chap in active_chapters:
@@ -236,7 +241,7 @@ def build_database():
             
             for idx, qb in enumerate(q_raw_blocks):
                 title_m = re.search(r'### Question (\d+):\s*(.*)', qb)
-                ans_m = re.search(r'####\s*Correct Answer:\s*\(?([A-E])\)?', qb, re.IGNORECASE)
+                ans_m = re.search(r'####\s*Correct Answer:\s*(?:\n\s*)?(?:\*\*)?\(?([A-E])\)?', qb, re.IGNORECASE)
                 diff_m = re.search(r'-\s*\*\*Difficulty\*\*:\s*(.*)', qb)
                 core_m = re.search(r'-\s*\*\*Core Concept[^:]*\*\*:\s*(.*)', qb)
                 
@@ -255,11 +260,11 @@ def build_database():
                     options = [o[1].strip() for o in opts_alt]
 
                 # Explanation text
-                exp_m = re.search(r'####\s*(?:High-Yield Pathophysiological Explanation|Explanation):\s*(.*)', qb, re.DOTALL)
+                exp_m = re.search(r'####\s*(?:High-Yield Pathophysiological Explanation|Detailed Explanations?|Explanation):\s*(.*)', qb, re.DOTALL)
                 exp_text = exp_m.group(1).strip() if exp_m else ''
                 
                 # Educational objective
-                edu_m = re.search(r'####\s*Educational Objective[^:]*:\s*(.*)', qb, re.DOTALL)
+                edu_m = re.search(r'#{4,5}\s*(?:\d+\.\s*)?Educational Objective[^:]*:\s*(.*)', qb, re.DOTALL)
                 edu_text = edu_m.group(1).strip() if edu_m else ''
                 if not edu_text and core_m:
                     edu_text = core_m.group(1).strip()
@@ -274,7 +279,7 @@ def build_database():
                     stem = vig_text
                 
                 # Render formatted explanation HTML
-                exp_html = convert_markdown_to_html(exp_text)
+                exp_html = convert_markdown_to_html(exp_text, edu_fallback=edu_text)
 
                 all_questions.append({
                     'id': global_id,
