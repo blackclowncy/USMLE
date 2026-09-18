@@ -119,6 +119,27 @@
       border-radius: 9999px;
       border: 2px solid #eae6de;
     }
+
+    /* Left Sidebar Independent Tactile Scrolling */
+    #left-sidebar {
+      scrollbar-width: thin;
+      scrollbar-color: #cfc8ba transparent;
+      scroll-behavior: smooth;
+    }
+    #left-sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+    #left-sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #left-sidebar::-webkit-scrollbar-thumb {
+      background: #cfc8ba;
+      border-radius: 9999px;
+      border: 1px solid #eae6de;
+    }
+    #left-sidebar::-webkit-scrollbar-thumb:hover {
+      background: #b5ad9e;
+    }
   </style>
 <style>
   /* Lead-in question sunken container refinement */
@@ -173,8 +194,8 @@
 <!-- Main Workspace -->
 <main class="max-w-[1600px] mx-auto px-6 py-8 w-full flex-1">
 <div class="grid grid-cols-12 gap-8 items-start">
-<!-- LEFT COLUMN: Sticky Neumorphic Question Navigator & Flagged Filters (Col-4) -->
-<aside class="col-span-12 lg:col-span-4 sticky top-40 space-y-6">
+<!-- LEFT COLUMN: Sticky & Scrollable Question Navigator & Flagged Filters (Col-4) -->
+<aside id="left-sidebar" class="col-span-12 lg:col-span-4 lg:sticky lg:top-[135px] lg:max-h-[calc(100vh-145px)] lg:overflow-y-auto lg:overflow-x-hidden space-y-6 pr-2.5 pb-8">
 <!-- 1. Question Navigator Grid Card -->
 <div class="p-7 rounded-3xl neu-extruded flex flex-col gap-4">
 <div class="flex items-center justify-between pb-3 border-b border-[#ded7ca]">
