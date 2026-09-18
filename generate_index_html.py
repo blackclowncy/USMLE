@@ -4,13 +4,6 @@ def generate_html():
     with open('index.html', 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # If index.html already has our previous updates, let's extract the header up to navigator card
-    # Let's see: we want to update the Question Navigator Card in content
-    nav_pattern = re.compile(
-        r'(<!-- 1\. Question Navigator Grid Card -->[\s\S]*?<div class="flex items-center justify-between pb-3 border-b border-\[#ded7ca\]">[\s\S]*?</div>)\s*(<!-- 20 Interactive Grid Badges -->\s*<div class="grid grid-cols-5 gap-3" id="nav-buttons-grid">[\s\S]*?</div>)',
-        re.MULTILINE
-    )
-
     nav_replacement = '''<!-- 1. Question Navigator Grid Card -->
 <div class="p-7 rounded-3xl neu-extruded flex flex-col gap-4">
 <div class="flex items-center justify-between pb-3 border-b border-[#ded7ca]">
@@ -26,10 +19,10 @@ def generate_html():
 <!-- 20-Question Module Selector & Pagination Toolbar -->
 <div class="flex items-center justify-between gap-2 p-1.5 rounded-2xl neu-groove-sm border border-white/40">
   <div class="flex items-center gap-1.5 pl-2 flex-1 min-w-0">
-    <span class="text-[#756f64] font-bold text-[10.5px] uppercase font-mono tracking-wider shrink-0">Set:</span>
+    <span class="text-[#756f64] font-bold text-[10.5px] uppercase font-mono tracking-wider shrink-0">Range:</span>
     <div class="relative flex items-center flex-1 min-w-0">
       <select id="module-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-2.5 py-1.5 pr-6 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm w-full truncate">
-        <!-- Dynamically injected: e.g. Questions 01 - 20, Questions 21 - 40... -->
+        <!-- Dynamically injected: e.g. Q01 - Q20, Q21 - Q40... -->
       </select>
       <span class="material-symbols-outlined text-[15px] text-[#6d675b] absolute right-1.5 pointer-events-none">expand_more</span>
     </div>
@@ -47,21 +40,13 @@ def generate_html():
 <!-- 20 Interactive Grid Badges (Locked at max 20 buttons) -->
 <div class="grid grid-cols-5 gap-2.5" id="nav-buttons-grid"></div>'''
 
-    if nav_pattern.search(content):
-        content = nav_pattern.sub(nav_replacement, content, count=1)
-    else:
-        # Fallback search
-        print("Warning: regex pattern did not match directly, checking fallback...")
-        target_str = '<h3 class="font-display font-bold text-[16px] text-[#181d24]">Question Navigator</h3>'
-        if target_str in content:
-            # find enclosing card
-            c_start = content.find('<!-- 1. Question Navigator Grid Card -->')
-            c_end = content.find('<div class="p-4 rounded-2xl neu-groove flex flex-col gap-2.5 text-[11.5px]">')
-            if c_start != -1 and c_end != -1:
-                content = content[:c_start] + nav_replacement + '\n' + content[c_end:]
+    c_start = content.find('<!-- 1. Question Navigator Grid Card -->')
+    c_end = content.find('<!-- Neumorphic Metric Inset Panel -->')
+    if c_start != -1 and c_end != -1:
+        content = content[:c_start] + nav_replacement + '\n' + content[c_end:]
 
     # Now update the script section with the new 20-question module pagination logic
-    script_start_idx = content.lastIndexOf('<script>') if hasattr(content, 'lastIndexOf') else content.rfind('<script>')
+    script_start_idx = content.rfind('<script>')
     script_end_idx = content.rfind('</script>')
 
     if script_start_idx == -1 or script_end_idx == -1:
@@ -261,11 +246,12 @@ def generate_html():
           for (let i = 0; i < totalModules; i++) {
             const startQ = i * PAGE_SIZE + 1;
             const endQ = Math.min((i + 1) * PAGE_SIZE, totalQuestions);
-            const count = endQ - startQ + 1;
             
             const opt = document.createElement('option');
             opt.value = i;
-            opt.textContent = `Set ${i + 1}: Q${startQ < 10 ? '0' + startQ : startQ} - Q${endQ < 10 ? '0' + endQ : endQ} (${count}题)`;
+            const startStr = startQ < 10 ? '0' + startQ : startQ;
+            const endStr = endQ < 10 ? '0' + endQ : endQ;
+            opt.textContent = `Q${startStr} - Q${endStr}`;
             if (i === currentModuleIndex) {
               opt.selected = true;
             }
@@ -358,7 +344,7 @@ def generate_html():
               </div>
               <button class="px-6 py-3 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[13px] font-bold neu-btn border border-white/40 flex items-center gap-2 shadow-md hover:scale-[1.02] active:scale-95 transition-all mt-2" onclick="selectChapter('Ch01_Cellular_Adaptations_and_Reversible_Injury')">
                 <span class="material-symbols-outlined text-[19px]">play_circle</span>
-                <span>立即进入 Ch01: Cellular Adaptations & Reversible Injury (150题)</span>
+                <span>立即进入 Ch01: Cellular Adaptations & Reversible Injury (150 Qs)</span>
               </button>
             </div>
           `;
@@ -501,13 +487,13 @@ def generate_html():
           paginationFooter.innerHTML = `
             <button id="bottom-prev-btn" class="px-5 py-2.5 rounded-2xl neu-btn text-[12px] font-bold text-[#3e3931] hover:text-primary transition-all flex items-center gap-2 disabled:opacity-30 disabled:pointer-events-none" ${currentModuleIndex === 0 ? 'disabled' : ''}>
               <span class="material-symbols-outlined text-[18px]">arrow_back</span>
-              <span>Previous 20 Questions (前20题)</span>
+              <span>Previous 20 Questions</span>
             </button>
             <div class="font-mono text-[12px] text-[#6b665c] font-semibold text-center">
-              Module <strong class="text-primary">${currentModuleIndex + 1}</strong> of <strong>${totalModules}</strong> (Questions ${startQ} - ${endQ} of ${totalQuestions})
+              Questions <strong class="text-primary">${startQ} - ${endQ}</strong> of <strong>${totalQuestions}</strong>
             </div>
             <button id="bottom-next-btn" class="px-5 py-2.5 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white neu-btn text-[12px] font-bold transition-all flex items-center gap-2 disabled:opacity-30 disabled:pointer-events-none shadow-md" ${currentModuleIndex >= totalModules - 1 ? 'disabled' : ''}>
-              <span>Next 20 Questions (后20题)</span>
+              <span>Next 20 Questions</span>
               <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
             </button>
           `;
