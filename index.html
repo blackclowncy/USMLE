@@ -120,24 +120,26 @@
       border: 2px solid #eae6de;
     }
 
-    /* Left Sidebar Independent Tactile Scrolling */
-    #left-sidebar {
+    /* Dual-Pane Independent Tactile Scrolling Isolation */
+    #left-sidebar, #right-scroll-container {
       scrollbar-width: thin;
       scrollbar-color: #cfc8ba transparent;
       scroll-behavior: smooth;
+      overscroll-behavior: contain;
+      overscroll-behavior-y: contain;
     }
-    #left-sidebar::-webkit-scrollbar {
+    #left-sidebar::-webkit-scrollbar, #right-scroll-container::-webkit-scrollbar {
       width: 6px;
     }
-    #left-sidebar::-webkit-scrollbar-track {
+    #left-sidebar::-webkit-scrollbar-track, #right-scroll-container::-webkit-scrollbar-track {
       background: transparent;
     }
-    #left-sidebar::-webkit-scrollbar-thumb {
+    #left-sidebar::-webkit-scrollbar-thumb, #right-scroll-container::-webkit-scrollbar-thumb {
       background: #cfc8ba;
       border-radius: 9999px;
       border: 1px solid #eae6de;
     }
-    #left-sidebar::-webkit-scrollbar-thumb:hover {
+    #left-sidebar::-webkit-scrollbar-thumb:hover, #right-scroll-container::-webkit-scrollbar-thumb:hover {
       background: #b5ad9e;
     }
   </style>
@@ -159,11 +161,11 @@
     letter-spacing: -0.01em !important;
   }
 </style></head>
-<body class="min-h-screen bg-[#eae6de] text-[#242930] antialiased selection:bg-[#1d638c] selection:text-white">
+<body class="min-h-screen lg:h-screen lg:overflow-hidden bg-[#eae6de] text-[#242930] antialiased selection:bg-[#1d638c] selection:text-white flex flex-col">
 <!-- Main Frame Container -->
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col min-h-screen lg:h-screen lg:overflow-hidden">
 <!-- Tactile Header in Warm Neumorphic Tone -->
-<header class="sticky top-0 z-40 bg-[#eae6de]/95 backdrop-blur-md border-b border-[#dfd9cc] shadow-[0_6px_20px_rgba(188,180,168,0.35)]">
+<header class="flex-none z-40 bg-[#eae6de]/95 backdrop-blur-md border-b border-[#dfd9cc] shadow-[0_6px_20px_rgba(188,180,168,0.35)]">
 <div class="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between gap-4">
 <!-- Brand & Clinical Context -->
 <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-2xl neu-extruded flex items-center justify-center text-primary border border-white/80"><span class="material-symbols-outlined text-[26px]">medical_services</span></div><div class=""><span class="font-display font-extrabold text-[22px] text-[#181d24] tracking-tight">MedPulse</span></div></div>
@@ -192,10 +194,10 @@
 <div class="bg-[#e4dfd6]/90 border-t border-white/60 px-6 py-2.5"><div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-4 text-[12px]"><div class="flex flex-wrap items-center gap-3.5"><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40"><button type="button" class="px-3 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary neu-pill-active">USMLE Step 1</button><button type="button" class="px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors">USMLE Step 2 CK</button><button type="button" class="px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors">USMLE Step 3</button></div><div class="flex items-center gap-1.5 pl-1"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Discipline:</span><div class="relative flex items-center"><select id="discipline-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="Pathology" selected="">Pathology</option><option value="Physiology">Physiology</option><option value="Pharmacology">Pharmacology</option><option value="Anatomy &amp; Embryology">Anatomy &amp; Embryology</option><option value="Microbiology &amp; Immunology">Microbiology &amp; Immunology</option><option value="Biochemistry &amp; Genetics">Biochemistry &amp; Genetics</option><option value="Behavioral Science &amp; Psychiatry">Behavioral Science &amp; Psychiatry</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="flex items-center gap-1.5"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Chapter / System:</span><div class="relative flex items-center"><select id="chapter-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="All Chapters (20)" selected="">All Chapters (20)</option><option value="Cellular Injury &amp; Adaptation">Cellular Injury &amp; Adaptation</option><option value="Hemodynamic Disorders &amp; Shock">Hemodynamic Disorders &amp; Shock</option><option value="Inflammation &amp; Repair">Inflammation &amp; Repair</option><option value="Cardiovascular Pathology">Cardiovascular Pathology</option><option value="Pulmonary Pathology">Pulmonary Pathology</option><option value="Renal Pathology">Renal Pathology</option><option value="Neoplasia">Neoplasia</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-xl neu-groove-sm text-[11px] font-medium text-[#656054] border border-white/40"><span class="text-[#8a8477] font-semibold uppercase text-[10px] font-mono">Active:</span><span class="font-bold text-primary">Step 1</span><span class="text-[#9c9689]">&gt;</span><span class="font-bold text-[#181d24]">Pathology</span><span class="text-[#9c9689]">&gt;</span><span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">Ch01_Cellular_Adaptations_and_Reversible_Injury</span></div></div><div class="flex items-center gap-3 shrink-0"><button class="flex items-center gap-2 px-4 py-1.5 rounded-full neu-btn text-[11.5px] font-bold text-amber-700 hover:text-amber-800 transition-all border border-white/60" id="toggle-flagged-only-btn"><span class="material-symbols-outlined text-[16px] fill-current">bookmark</span><span class="">Only Marked (<span id="top-flag-count" class="">4</span>)</span></button><div class="font-mono text-[11.5px] text-[#6b665c] font-medium px-3 py-1 rounded-xl neu-groove-sm">Answered: <strong class="text-primary font-bold" id="top-answered-count">2/20</strong></div></div></div></div>
 </header>
 <!-- Main Workspace -->
-<main class="max-w-[1600px] mx-auto px-6 py-8 w-full flex-1">
-<div class="grid grid-cols-12 gap-8 items-start">
-<!-- LEFT COLUMN: Sticky & Scrollable Question Navigator & Flagged Filters (Col-4) -->
-<aside id="left-sidebar" class="col-span-12 lg:col-span-4 lg:sticky lg:top-[135px] lg:max-h-[calc(100vh-145px)] lg:overflow-y-auto lg:overflow-x-hidden space-y-6 pr-2.5 pb-8">
+<main class="max-w-[1600px] mx-auto px-6 py-4 w-full flex-1 min-h-0 lg:overflow-hidden flex flex-col">
+<div class="grid grid-cols-12 gap-8 items-start h-full flex-1 min-h-0">
+<!-- LEFT COLUMN: Independent Scrollable Question Navigator & Flagged Filters (Col-4) -->
+<aside id="left-sidebar" class="col-span-12 lg:col-span-4 h-full lg:overflow-y-auto lg:overflow-x-hidden space-y-6 pr-2.5 pb-8 overscroll-contain">
 <!-- 1. Question Navigator Grid Card -->
 <div class="p-7 rounded-3xl neu-extruded flex flex-col gap-4">
 <div class="flex items-center justify-between pb-3 border-b border-[#ded7ca]">
@@ -284,8 +286,8 @@
 <button class="text-[12px] text-primary hover:text-primaryDark hover:underline font-bold text-center mt-2 py-1" id="reset-flag-filter-btn">Show All Pathology Questions (20)</button>
 </div>
 </aside>
-<!-- RIGHT COLUMN: 20 Multiple Choice Questions (Col-8) -->
-<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- RIGHT COLUMN: Independent Scrollable Multiple Choice Questions (Col-8) -->
+<div id="right-scroll-container" class="col-span-12 lg:col-span-8 h-full lg:overflow-y-auto lg:overflow-x-hidden space-y-6 pr-2.5 pb-8 overscroll-contain">
   <!-- Dynamic Chapter Banner & Block Filter Header -->
   <div id="chapter-header-banner" class="p-6 rounded-3xl neu-extruded border border-white/70 flex flex-col gap-4 transition-all">
     <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#dfd9cc] pb-4">
@@ -328,13 +330,14 @@
   <div class="space-y-8" id="questions-container">
     <!-- Question Cards injected by JS -->
   </div>
+
+  <!-- Footer in Warm Neumorphic Style -->
+  <footer class="mt-12 py-6 border-t border-[#dfd9cc] text-center text-[12px] text-[#787266] shrink-0">
+    <p class="font-medium">MedPulse Clinical Diagnostic Suite • High-Yield USMLE Step 1 Simulation • Tactile Warm-Bone Clay Neumorphic Architecture</p>
+  </footer>
 </div>
 </div>
 </main>
-<!-- Footer in Warm Neumorphic Style -->
-<footer class="mt-16 py-8 border-t border-[#dfd9cc] bg-[#eae6de] text-center text-[12.5px] text-[#787266]">
-<p class="font-medium">MedPulse Clinical Diagnostic Suite • High-Yield USMLE Step 1 Simulation • Tactile Warm-Bone Clay Neumorphic Architecture</p>
-</footer>
 </div>
 <!-- Clinical Questions Database & Neumorphic Interactions -->
 <script>
@@ -453,6 +456,7 @@
         }
 
         updateUI();
+        scrollQuestionsToTop();
       };
 
       // 6. Filter Questions Helper
@@ -512,6 +516,7 @@
             activeBlock = blk;
             currentModuleIndex = 0; // Reset to first 20 of this block
             updateUI();
+            scrollQuestionsToTop();
           });
 
           blockTabsContainer.appendChild(btn);
@@ -561,6 +566,32 @@
         }
       }
 
+      // Helper: Isolated Smooth Scrolling for Right Questions Panel
+      function scrollQuestionsToTop() {
+        const rc = document.getElementById('right-scroll-container');
+        if (rc && window.innerWidth >= 1024) {
+          rc.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        }
+      }
+
+      function scrollToQuestion(qId) {
+        const el = document.getElementById(`question-card-${qId}`);
+        const rc = document.getElementById('right-scroll-container');
+        if (!el) return;
+        if (rc && window.innerWidth >= 1024) {
+          const rcRect = rc.getBoundingClientRect();
+          const elRect = el.getBoundingClientRect();
+          const targetTop = rc.scrollTop + (elRect.top - rcRect.top) - 16;
+          rc.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+        } else {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        el.classList.add('ring-2', 'ring-primary');
+        setTimeout(() => el.classList.remove('ring-2', 'ring-primary'), 1400);
+      }
+
       // 9. Render Navigator Buttons (Strictly 20 Questions)
       function renderNavigator(current20Qs) {
         if (!navGrid) return;
@@ -590,12 +621,7 @@
           `;
 
           btn.addEventListener('click', () => {
-            const el = document.getElementById(`question-card-${q.id}`);
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              el.classList.add('ring-2', 'ring-primary');
-              setTimeout(() => el.classList.remove('ring-2', 'ring-primary'), 1400);
-            }
+            scrollToQuestion(q.id);
           });
 
           navGrid.appendChild(btn);
@@ -790,7 +816,7 @@
               if (currentModuleIndex > 0) {
                 currentModuleIndex--;
                 updateUI();
-                window.scrollTo({ top: 120, behavior: 'smooth' });
+                scrollQuestionsToTop();
               }
             });
           }
@@ -799,7 +825,7 @@
               if (currentModuleIndex < totalModules - 1) {
                 currentModuleIndex++;
                 updateUI();
-                window.scrollTo({ top: 120, behavior: 'smooth' });
+                scrollQuestionsToTop();
               }
             });
           }
@@ -968,7 +994,7 @@
         moduleSelectDropdown.addEventListener('change', (e) => {
           currentModuleIndex = parseInt(e.target.value, 10);
           updateUI();
-          window.scrollTo({ top: 120, behavior: 'smooth' });
+          scrollQuestionsToTop();
         });
       }
 
@@ -977,7 +1003,7 @@
           if (currentModuleIndex > 0) {
             currentModuleIndex--;
             updateUI();
-            window.scrollTo({ top: 120, behavior: 'smooth' });
+            scrollQuestionsToTop();
           }
         });
       }
@@ -989,7 +1015,7 @@
           if (currentModuleIndex < totalModules - 1) {
             currentModuleIndex++;
             updateUI();
-            window.scrollTo({ top: 120, behavior: 'smooth' });
+            scrollQuestionsToTop();
           }
         });
       }

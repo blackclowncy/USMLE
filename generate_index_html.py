@@ -169,6 +169,7 @@ def generate_html():
         }
 
         updateUI();
+        scrollQuestionsToTop();
       };
 
       // 6. Filter Questions Helper
@@ -228,6 +229,7 @@ def generate_html():
             activeBlock = blk;
             currentModuleIndex = 0; // Reset to first 20 of this block
             updateUI();
+            scrollQuestionsToTop();
           });
 
           blockTabsContainer.appendChild(btn);
@@ -277,6 +279,32 @@ def generate_html():
         }
       }
 
+      // Helper: Isolated Smooth Scrolling for Right Questions Panel
+      function scrollQuestionsToTop() {
+        const rc = document.getElementById('right-scroll-container');
+        if (rc && window.innerWidth >= 1024) {
+          rc.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        }
+      }
+
+      function scrollToQuestion(qId) {
+        const el = document.getElementById(`question-card-${qId}`);
+        const rc = document.getElementById('right-scroll-container');
+        if (!el) return;
+        if (rc && window.innerWidth >= 1024) {
+          const rcRect = rc.getBoundingClientRect();
+          const elRect = el.getBoundingClientRect();
+          const targetTop = rc.scrollTop + (elRect.top - rcRect.top) - 16;
+          rc.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+        } else {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        el.classList.add('ring-2', 'ring-primary');
+        setTimeout(() => el.classList.remove('ring-2', 'ring-primary'), 1400);
+      }
+
       // 9. Render Navigator Buttons (Strictly 20 Questions)
       function renderNavigator(current20Qs) {
         if (!navGrid) return;
@@ -306,12 +334,7 @@ def generate_html():
           `;
 
           btn.addEventListener('click', () => {
-            const el = document.getElementById(`question-card-${q.id}`);
-            if (el) {
-              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              el.classList.add('ring-2', 'ring-primary');
-              setTimeout(() => el.classList.remove('ring-2', 'ring-primary'), 1400);
-            }
+            scrollToQuestion(q.id);
           });
 
           navGrid.appendChild(btn);
@@ -506,7 +529,7 @@ def generate_html():
               if (currentModuleIndex > 0) {
                 currentModuleIndex--;
                 updateUI();
-                window.scrollTo({ top: 120, behavior: 'smooth' });
+                scrollQuestionsToTop();
               }
             });
           }
@@ -515,7 +538,7 @@ def generate_html():
               if (currentModuleIndex < totalModules - 1) {
                 currentModuleIndex++;
                 updateUI();
-                window.scrollTo({ top: 120, behavior: 'smooth' });
+                scrollQuestionsToTop();
               }
             });
           }
@@ -684,7 +707,7 @@ def generate_html():
         moduleSelectDropdown.addEventListener('change', (e) => {
           currentModuleIndex = parseInt(e.target.value, 10);
           updateUI();
-          window.scrollTo({ top: 120, behavior: 'smooth' });
+          scrollQuestionsToTop();
         });
       }
 
@@ -693,7 +716,7 @@ def generate_html():
           if (currentModuleIndex > 0) {
             currentModuleIndex--;
             updateUI();
-            window.scrollTo({ top: 120, behavior: 'smooth' });
+            scrollQuestionsToTop();
           }
         });
       }
@@ -705,7 +728,7 @@ def generate_html():
           if (currentModuleIndex < totalModules - 1) {
             currentModuleIndex++;
             updateUI();
-            window.scrollTo({ top: 120, behavior: 'smooth' });
+            scrollQuestionsToTop();
           }
         });
       }
