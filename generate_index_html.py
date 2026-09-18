@@ -55,23 +55,33 @@ def generate_html():
 
     new_script_js = '''
     (function() {
+      function formatChapterTitle(str) {
+        if (!str) return '';
+        return str.replace(/_/g, ' ');
+      }
+
       // 1. Data Initialization from questions_data.js
-      const chaptersData = window.USMLE_PATHOLOGY_CHAPTERS || [
-        { id: "Ch01_Cellular_Adaptations_and_Reversible_Injury", name: "Ch01_Cellular_Adaptations_and_Reversible_Injury", totalQuestions: 150, status: "active" },
-        { id: "Ch02_Cell_Death_Necrosis_and_Apoptosis", name: "Ch02_Cell_Death_Necrosis_and_Apoptosis", totalQuestions: 150, status: "active" },
-        { id: "Ch03_Cellular_Accumulations_and_Amyloidosis", name: "Ch03_Cellular_Accumulations_and_Amyloidosis", totalQuestions: 150, status: "active" },
-        { id: "Ch04_Acute_Inflammation_and_Leukocyte_Dynamics", name: "Ch04_Acute_Inflammation_and_Leukocyte_Dynamics", totalQuestions: 150, status: "active" },
-        { id: "Ch05_Inflammatory_Mediators_and_Microbial_Killing", name: "Ch05_Inflammatory_Mediators_and_Microbial_Killing", totalQuestions: 150, status: "active" },
-        { id: "Ch06_Chronic_and_Granulomatous_Inflammation", name: "Ch06_Chronic_and_Granulomatous_Inflammation", totalQuestions: 150, status: "active" },
-        { id: "Ch07_Tissue_Repair_and_Wound_Healing", name: "Ch07_Tissue_Repair_and_Wound_Healing", totalQuestions: 150, status: "active" },
-        { id: "08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA", name: "08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA", totalQuestions: 0, status: "placeholder" },
-        { id: "09_Infarction_and_Shock_QA", name: "09_Infarction_and_Shock_QA", totalQuestions: 0, status: "placeholder" },
-        { id: "10_Principles_of_Neoplasia_and_Carcinogenesis_QA", name: "10_Principles_of_Neoplasia_and_Carcinogenesis_QA", totalQuestions: 0, status: "placeholder" },
-        { id: "11_Cancer_Genetics_Oncogenes_and_TSGs_QA", name: "11_Cancer_Genetics_Oncogenes_and_TSGs_QA", totalQuestions: 0, status: "placeholder" },
-        { id: "12_Clinical_Oncology_Staging_and_Tumor_Markers_QA", name: "12_Clinical_Oncology_Staging_and_Tumor_Markers_QA", totalQuestions: 0, status: "placeholder" },
-        { id: "13_Paraneoplastic_Syndromes_QA", name: "13_Paraneoplastic_Syndromes_QA", totalQuestions: 0, status: "placeholder" },
-        { id: "14_Cellular_Aging_and_Systemic_Changes_QA", name: "14_Cellular_Aging_and_Systemic_Changes_QA", totalQuestions: 0, status: "placeholder" }
+      const rawChapters = window.USMLE_PATHOLOGY_CHAPTERS || [
+        { id: "Ch01_Cellular_Adaptations_and_Reversible_Injury", name: "Ch01 Cellular Adaptations and Reversible Injury", totalQuestions: 150, status: "active" },
+        { id: "Ch02_Cell_Death_Necrosis_and_Apoptosis", name: "Ch02 Cell Death Necrosis and Apoptosis", totalQuestions: 150, status: "active" },
+        { id: "Ch03_Cellular_Accumulations_and_Amyloidosis", name: "Ch03 Cellular Accumulations and Amyloidosis", totalQuestions: 150, status: "active" },
+        { id: "Ch04_Acute_Inflammation_and_Leukocyte_Dynamics", name: "Ch04 Acute Inflammation and Leukocyte Dynamics", totalQuestions: 150, status: "active" },
+        { id: "Ch05_Inflammatory_Mediators_and_Microbial_Killing", name: "Ch05 Inflammatory Mediators and Microbial Killing", totalQuestions: 150, status: "active" },
+        { id: "Ch06_Chronic_and_Granulomatous_Inflammation", name: "Ch06 Chronic and Granulomatous Inflammation", totalQuestions: 150, status: "active" },
+        { id: "Ch07_Tissue_Repair_and_Wound_Healing", name: "Ch07 Tissue Repair and Wound Healing", totalQuestions: 150, status: "active" },
+        { id: "08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA", name: "08 Hemodynamic Disorders Thrombosis and Embolism QA", totalQuestions: 0, status: "placeholder" },
+        { id: "09_Infarction_and_Shock_QA", name: "09 Infarction and Shock QA", totalQuestions: 0, status: "placeholder" },
+        { id: "10_Principles_of_Neoplasia_and_Carcinogenesis_QA", name: "10 Principles of Neoplasia and Carcinogenesis QA", totalQuestions: 0, status: "placeholder" },
+        { id: "11_Cancer_Genetics_Oncogenes_and_TSGs_QA", name: "11 Cancer Genetics Oncogenes and TSGs QA", totalQuestions: 0, status: "placeholder" },
+        { id: "12_Clinical_Oncology_Staging_and_Tumor_Markers_QA", name: "12 Clinical Oncology Staging and Tumor Markers QA", totalQuestions: 0, status: "placeholder" },
+        { id: "13_Paraneoplastic_Syndromes_QA", name: "13 Paraneoplastic Syndromes QA", totalQuestions: 0, status: "placeholder" },
+        { id: "14_Cellular_Aging_and_Systemic_Changes_QA", name: "14 Cellular Aging and Systemic Changes QA", totalQuestions: 0, status: "placeholder" }
       ];
+
+      const chaptersData = rawChapters.map(ch => ({
+        ...ch,
+        name: formatChapterTitle(ch.name || ch.id)
+      }));
 
       const allQuestions = window.USMLE_QUESTIONS || [];
 
@@ -135,10 +145,11 @@ def generate_html():
         chaptersData.forEach((ch) => {
           const opt = document.createElement('option');
           opt.value = ch.id;
+          const displayTitle = formatChapterTitle(ch.name || ch.id);
           if (ch.status === 'active') {
-            opt.textContent = `${ch.id} (${ch.totalQuestions} Qs)`;
+            opt.textContent = `${displayTitle} (${ch.totalQuestions} Qs)`;
           } else {
-            opt.textContent = `${ch.id} [待更新 / 占位]`;
+            opt.textContent = `${displayTitle} [待更新 / 占位]`;
           }
           if (ch.id === activeChapter) {
             opt.selected = true;
@@ -165,7 +176,9 @@ def generate_html():
         }
 
         if (breadcrumbEl) {
-          breadcrumbEl.textContent = chapId === 'all' ? 'All Active Chapters' : chapId;
+          const curObj = chaptersData.find(c => c.id === chapId);
+          const rawTitle = curObj ? (curObj.name || curObj.id) : chapId;
+          breadcrumbEl.textContent = chapId === 'all' ? 'All Active Chapters' : formatChapterTitle(rawTitle);
         }
 
         updateUI();
@@ -351,6 +364,7 @@ def generate_html():
 
         // Placeholder Chapter View
         if (currentChapterObj && currentChapterObj.status === 'placeholder') {
+          const displayTitle = formatChapterTitle(currentChapterObj.name || currentChapterObj.id);
           questionsWrapper.innerHTML = `
             <div class="p-10 rounded-3xl neu-extruded border border-white/80 flex flex-col items-center justify-center text-center gap-5 my-6">
               <div class="w-16 h-16 rounded-2xl neu-groove flex items-center justify-center text-amber-700">
@@ -360,14 +374,14 @@ def generate_html():
                 <span class="px-3.5 py-1 rounded-full neu-groove-sm text-[11.5px] font-mono font-bold text-amber-800 bg-[#f3ecd8]">
                   Chapter Status: 待更新 / In Preparation (占位章节)
                 </span>
-                <h2 class="font-display font-extrabold text-[20px] text-[#181d24] mt-2">${currentChapterObj.id}</h2>
+                <h2 class="font-display font-extrabold text-[20px] text-[#181d24] mt-2">${displayTitle}</h2>
                 <p class="text-[13.5px] text-[#6b665c] leading-relaxed mt-1">
-                  该章节题目仍在整理校对中，先不载入试题，当前作为标准大纲占位。请在上方或左侧切换至已开放的 <strong>Ch01 至 Ch07 章节</strong> 开展全仿真 USMLE 刷题（共 1,050 道高难度病例试题）。
+                  该章节题目仍在整理校对中，先不载入试题，当前作为标准大纲占位。请在上方或侧边切换至已开放的 <strong>Ch01 至 Ch07 章节</strong> 开展全仿真 USMLE 刷题（共 1,050 道高难度病例试题）。
                 </p>
               </div>
               <button class="px-6 py-3 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[13px] font-bold neu-btn border border-white/40 flex items-center gap-2 shadow-md hover:scale-[1.02] active:scale-95 transition-all mt-2" onclick="selectChapter('Ch01_Cellular_Adaptations_and_Reversible_Injury')">
                 <span class="material-symbols-outlined text-[19px]">play_circle</span>
-                <span>立即进入 Ch01: Cellular Adaptations & Reversible Injury (150 Qs)</span>
+                <span>立即进入 Ch01 Cellular Adaptations and Reversible Injury (150 Qs)</span>
               </button>
             </div>
           `;
@@ -447,7 +461,7 @@ def generate_html():
                   ${qIndexLabel} ${q.block ? `(${q.block})` : ''}
                 </span>
                 <span class="px-2.5 py-0.5 rounded-full neu-extruded-xs text-[10.5px] font-semibold text-[#3e3931] border border-white/80">
-                  ${q.chapter}
+                  ${formatChapterTitle(q.chapterName || q.chapter)}
                 </span>
                 <span class="px-2 py-0.5 rounded-full neu-groove-sm text-[10px] font-bold font-mono text-amber-900 bg-[#ede4d5]">
                   ${q.difficulty || 'USMLE Step 1'}
@@ -612,7 +626,8 @@ def generate_html():
         const curChapObj = chaptersData.find(c => c.id === activeChapter);
 
         if (bTitle) {
-          bTitle.textContent = activeChapter === 'all' ? 'All Active Pathology Chapters' : (curChapObj ? curChapObj.id : activeChapter);
+          const rawTitle = curChapObj ? (curChapObj.name || curChapObj.id) : activeChapter;
+          bTitle.textContent = activeChapter === 'all' ? 'All Active Pathology Chapters' : formatChapterTitle(rawTitle);
         }
         if (bBadge) {
           if (activeChapter === 'all') {
@@ -665,13 +680,15 @@ def generate_html():
               statusBadge = `<span class="text-[9.5px] px-1.5 py-0.5 rounded-md neu-groove-sm text-amber-800 bg-[#ede5d8] font-mono">待更新</span>`;
             }
 
+            const pillTitle = formatChapterTitle(chap.name || chap.id);
+
             btn.className = `w-full flex items-center justify-between px-3 py-2 rounded-2xl text-[11px] transition-all text-left ${
               isChapActive 
                 ? 'neu-groove text-primary bg-[#dfd9ce] border border-primary/40 font-bold' 
                 : 'neu-groove-sm text-[#4c473d] border-white/40 hover:text-[#181d24]'
             }`;
             btn.innerHTML = `
-              <span class="truncate pr-2 font-mono text-[11px]">${chap.id}</span>
+              <span class="truncate pr-2 font-mono text-[11px]">${pillTitle}</span>
               ${statusBadge}
             `;
             btn.addEventListener('click', () => selectChapter(chap.id));
@@ -977,6 +994,16 @@ def generate_html():
       updateUI();
     })();
 '''
+
+    # Replace initial static title underscores in breadcrumb and banner
+    content = content.replace(
+        '<span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">Ch01_Cellular_Adaptations_and_Reversible_Injury</span>',
+        '<span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">Ch01 Cellular Adaptations and Reversible Injury</span>'
+    )
+    content = content.replace(
+        '<h2 class="font-display font-extrabold text-[16.5px] text-[#181d24] tracking-tight" id="banner-chapter-title">Ch01_Cellular_Adaptations_and_Reversible_Injury</h2>',
+        '<h2 class="font-display font-extrabold text-[16.5px] text-[#181d24] tracking-tight" id="banner-chapter-title">Ch01 Cellular Adaptations and Reversible Injury</h2>'
+    )
 
     final_html = content[:script_start_idx + 8] + new_script_js + '\n  ' + content[script_end_idx:]
 

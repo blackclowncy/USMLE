@@ -100,7 +100,7 @@ def build_database():
     chapters_metadata = [
         {
             "id": "Ch01_Cellular_Adaptations_and_Reversible_Injury",
-            "name": "Ch01_Cellular_Adaptations_and_Reversible_Injury",
+            "name": "Ch01 Cellular Adaptations and Reversible Injury",
             "dirName": "Ch01_Cellular_Adaptations_and_Reversible_Injury",
             "totalQuestions": 150,
             "status": "active",
@@ -108,7 +108,7 @@ def build_database():
         },
         {
             "id": "Ch02_Cell_Death_Necrosis_and_Apoptosis",
-            "name": "Ch02_Cell_Death_Necrosis_and_Apoptosis",
+            "name": "Ch02 Cell Death Necrosis and Apoptosis",
             "dirName": "Ch02_Cell_Death_Necrosis_and_Apoptosis",
             "totalQuestions": 150,
             "status": "active",
@@ -116,7 +116,7 @@ def build_database():
         },
         {
             "id": "Ch03_Cellular_Accumulations_and_Amyloidosis",
-            "name": "Ch03_Cellular_Accumulations_and_Amyloidosis",
+            "name": "Ch03 Cellular Accumulations and Amyloidosis",
             "dirName": "Ch03_Cellular_Accumulations_and_Amyloidosis",
             "totalQuestions": 150,
             "status": "active",
@@ -124,7 +124,7 @@ def build_database():
         },
         {
             "id": "Ch04_Acute_Inflammation_and_Leukocyte_Dynamics",
-            "name": "Ch04_Acute_Inflammation_and_Leukocyte_Dynamics",
+            "name": "Ch04 Acute Inflammation and Leukocyte Dynamics",
             "dirName": "Ch04_Acute_Inflammation_and_Leukocyte_Dynamics",
             "totalQuestions": 150,
             "status": "active",
@@ -132,7 +132,7 @@ def build_database():
         },
         {
             "id": "Ch05_Inflammatory_Mediators_and_Microbial_Killing",
-            "name": "Ch05_Inflammatory_Mediators_and_Microbial_Killing",
+            "name": "Ch05 Inflammatory Mediators and Microbial Killing",
             "dirName": "Ch05_Inflammatory_Mediators_and_Microbial_Killing",
             "totalQuestions": 150,
             "status": "active",
@@ -140,7 +140,7 @@ def build_database():
         },
         {
             "id": "Ch06_Chronic_and_Granulomatous_Inflammation",
-            "name": "Ch06_Chronic_and_Granulomatous_Inflammation",
+            "name": "Ch06 Chronic and Granulomatous Inflammation",
             "dirName": "Ch06_Chronic_and_Granulomatous_Inflammation",
             "totalQuestions": 150,
             "status": "active",
@@ -148,7 +148,7 @@ def build_database():
         },
         {
             "id": "Ch07_Tissue_Repair_and_Wound_Healing",
-            "name": "Ch07_Tissue_Repair_and_Wound_Healing",
+            "name": "Ch07 Tissue Repair and Wound Healing",
             "dirName": "Ch07_Tissue_Repair_and_Wound_Healing",
             "totalQuestions": 150,
             "status": "active",
@@ -156,7 +156,7 @@ def build_database():
         },
         {
             "id": "08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA",
-            "name": "08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA",
+            "name": "08 Hemodynamic Disorders Thrombosis and Embolism QA",
             "fileName": "08_Hemodynamic_Disorders_Thrombosis_and_Embolism_QA.md",
             "totalQuestions": 0,
             "status": "placeholder",
@@ -164,7 +164,7 @@ def build_database():
         },
         {
             "id": "09_Infarction_and_Shock_QA",
-            "name": "09_Infarction_and_Shock_QA",
+            "name": "09 Infarction and Shock QA",
             "fileName": "09_Infarction_and_Shock_QA.md",
             "totalQuestions": 0,
             "status": "placeholder",
@@ -172,7 +172,7 @@ def build_database():
         },
         {
             "id": "10_Principles_of_Neoplasia_and_Carcinogenesis_QA",
-            "name": "10_Principles_of_Neoplasia_and_Carcinogenesis_QA",
+            "name": "10 Principles of Neoplasia and Carcinogenesis QA",
             "fileName": "10_Principles_of_Neoplasia_and_Carcinogenesis_QA.md",
             "totalQuestions": 0,
             "status": "placeholder",
@@ -180,7 +180,7 @@ def build_database():
         },
         {
             "id": "11_Cancer_Genetics_Oncogenes_and_TSGs_QA",
-            "name": "11_Cancer_Genetics_Oncogenes_and_TSGs_QA",
+            "name": "11 Cancer Genetics Oncogenes and TSGs QA",
             "fileName": "11_Cancer_Genetics_Oncogenes_and_TSGs_QA.md",
             "totalQuestions": 0,
             "status": "placeholder",
@@ -188,7 +188,7 @@ def build_database():
         },
         {
             "id": "12_Clinical_Oncology_Staging_and_Tumor_Markers_QA",
-            "name": "12_Clinical_Oncology_Staging_and_Tumor_Markers_QA",
+            "name": "12 Clinical Oncology Staging and Tumor Markers QA",
             "fileName": "12_Clinical_Oncology_Staging_and_Tumor_Markers_QA.md",
             "totalQuestions": 0,
             "status": "placeholder",
@@ -196,7 +196,7 @@ def build_database():
         },
         {
             "id": "13_Paraneoplastic_Syndromes_QA",
-            "name": "13_Paraneoplastic_Syndromes_QA",
+            "name": "13 Paraneoplastic Syndromes QA",
             "fileName": "13_Paraneoplastic_Syndromes_QA.md",
             "totalQuestions": 0,
             "status": "placeholder",
@@ -204,7 +204,7 @@ def build_database():
         },
         {
             "id": "14_Cellular_Aging_and_Systemic_Changes_QA",
-            "name": "14_Cellular_Aging_and_Systemic_Changes_QA",
+            "name": "14 Cellular Aging and Systemic Changes QA",
             "fileName": "14_Cellular_Aging_and_Systemic_Changes_QA.md",
             "totalQuestions": 0,
             "status": "placeholder",
