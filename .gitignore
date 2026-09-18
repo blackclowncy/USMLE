@@ -1,0 +1,12 @@
+# Raw local staging directories with unfinished questions
+Pahtology   QA/
+
+# Temporary and backup files
+*.bak
+*.tmp
+*.log
+__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db

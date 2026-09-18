@@ -1,308 +1,39 @@
-<!DOCTYPE html><html lang="en" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>MedPulse USMLE Q-Bank - Tactile Neumorphic Suite</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script src="questions_data.js"></script>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            warmBg: "#ece8df",
-            warmCard: "#ebe7df",
-            warmDark: "#c8c0b2",
-            warmLight: "#ffffff",
-            primary: "#1d638c",
-            primaryDark: "#154c6d",
-            primaryLight: "#e2edf5",
-            accentSuccess: "#2d7a5b",
-            accentDanger: "#c24141",
-            accentWarn: "#b87208"
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
-          }
-        }
-      }
-    };
-  </script>
-<style>
-    :root {
-      --neu-bg: #eae6de;
-      --neu-light: rgba(255, 255, 255, 0.92);
-      --neu-dark: rgba(188, 180, 168, 0.6);
-      --neu-dark-deep: rgba(175, 166, 153, 0.7);
-    }
-    body {
-      background-color: #eae6de;
-      color: #242930;
-      font-family: 'Inter', sans-serif;
-    }
+import re
+
+def generate_html():
+    with open('index.html.original', 'r', encoding='utf-8') as f:
+        orig = f.read()
+
+    # 1. Add questions_data.js to head
+    head_insertion = '<script src="questions_data.js"></script>\n<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>'
+    orig = orig.replace('<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>', head_insertion, 1)
+
+    # 2. Add id to search input
+    orig = orig.replace('placeholder="Search stems..." type="text"', 'placeholder="Search stems & concepts..." type="text" id="stem-search-input"')
+
+    # 3. Add id to breadcrumb
+    orig = orig.replace('<span class="text-[#544f45] font-semibold">All Chapters</span>', '<span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">Ch01_Cellular_Adaptations_and_Reversible_Injury</span>')
+
+    # 4. Extract parts before questions-container and after questions-container
+    # In original:
+    # starts before: <div class="col-span-12 lg:col-span-8 space-y-9" id="questions-container">
+    # ends after: </footer>\n</div>\n<!-- Clinical Questions Database & Neumorphic Interactions -->\n<script>
     
-    /* Exquisite Warm-Beige Neumorphic Tactile Surfaces */
-    .neu-extruded {
-      background: #eae6de;
-      box-shadow: -9px -9px 20px var(--neu-light), 9px 9px 22px var(--neu-dark);
-      border: 1px solid rgba(255, 255, 255, 0.65);
-    }
-    .neu-extruded-sm {
-      background: #eae6de;
-      box-shadow: -5px -5px 12px var(--neu-light), 5px 5px 14px var(--neu-dark);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-    }
-    .neu-extruded-xs {
-      background: #eae6de;
-      box-shadow: -3px -3px 8px var(--neu-light), 3px 3px 8px var(--neu-dark);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-    }
-    
-    /* Sunken Grooves & Inset Tactile Depressions */
-    .neu-groove {
-      background: #e6e2da;
-      box-shadow: inset 4px 4px 9px rgba(184, 175, 163, 0.62), inset -4px -4px 9px rgba(255, 255, 255, 0.95);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-    }
-    .neu-groove-sm {
-      background: #e6e2da;
-      box-shadow: inset 2.5px 2.5px 6px rgba(184, 175, 163, 0.55), inset -2.5px -2.5px 6px rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    .neu-groove-deep {
-      background: #e2ddd4;
-      box-shadow: inset 5px 5px 12px rgba(175, 166, 153, 0.7), inset -5px -5px 12px rgba(255, 255, 255, 0.95);
-    }
+    split_start_token = '<div class="col-span-12 lg:col-span-8 space-y-9" id="questions-container">'
+    split_end_token = '<!-- Clinical Questions Database & Neumorphic Interactions -->\n<script>'
 
-    /* Tactile Interactive Buttons */
-    .neu-btn {
-      background: #eae6de;
-      box-shadow: -5px -5px 12px var(--neu-light), 5px 5px 14px var(--neu-dark);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .neu-btn:hover {
-      box-shadow: -3px -3px 7px var(--neu-light), 3px 3px 8px var(--neu-dark);
-      transform: translateY(-0.5px);
-    }
-    .neu-btn:active, .neu-btn.is-active {
-      box-shadow: inset 3px 3px 7px rgba(184, 175, 163, 0.65), inset -3px -3px 7px rgba(255, 255, 255, 0.95);
-      transform: translateY(0.5px);
-    }
+    idx_start = orig.find(split_start_token)
+    idx_end = orig.find(split_end_token)
 
-    /* Highlight Pills */
-    .neu-pill-active {
-      background: #e5e0d7;
-      box-shadow: inset 3px 3px 6px rgba(184, 175, 163, 0.65), inset -3px -3px 6px rgba(255, 255, 255, 0.95);
-      color: #1d638c !important;
-      font-weight: 700;
-    }
+    if idx_start == -1 or idx_end == -1:
+        print("ERROR: Split tokens not found!")
+        return
 
-    /* Tactile Scrollbar */
-    ::-webkit-scrollbar {
-      width: 7px;
-      height: 7px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #eae6de;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #cfc8ba;
-      border-radius: 9999px;
-      border: 2px solid #eae6de;
-    }
-  </style>
-<style>
-  /* Lead-in question sunken container refinement */
-  .neu-groove.lead-question-box, 
-  .question-card > .neu-groove:not(.explanation-box) {
-    padding: 1.35rem 1.75rem !important;
-    margin-top: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
-    min-height: 4.5rem !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 1.25rem !important;
-    border-radius: 1.25rem !important;
-  }
-  .question-card > .neu-groove:not(.explanation-box) > span {
-    line-height: 1.6 !important;
-    letter-spacing: -0.01em !important;
-  }
-</style></head>
-<body class="min-h-screen bg-[#eae6de] text-[#242930] antialiased selection:bg-[#1d638c] selection:text-white">
-<!-- Main Frame Container -->
-<div class="flex flex-col min-h-screen">
-<!-- Tactile Header in Warm Neumorphic Tone -->
-<header class="sticky top-0 z-40 bg-[#eae6de]/95 backdrop-blur-md border-b border-[#dfd9cc] shadow-[0_6px_20px_rgba(188,180,168,0.35)]">
-<div class="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between gap-4">
-<!-- Brand & Clinical Context -->
-<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-2xl neu-extruded flex items-center justify-center text-primary border border-white/80"><span class="material-symbols-outlined text-[26px]">medical_services</span></div><div class=""><span class="font-display font-extrabold text-[22px] text-[#181d24] tracking-tight">MedPulse</span></div></div>
-<!-- Center Inset Search & Timer & Mode Selectors -->
-<div class="flex items-center gap-5"><div class="hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-2xl neu-groove-sm w-48 border border-white/40"><span class="material-symbols-outlined text-[#7f7a70] text-[17px]">search</span><input class="bg-transparent border-0 p-0 text-[12px] text-[#242930] placeholder-[#8e887c] focus:ring-0 w-full font-medium outline-none" placeholder="Search stems & concepts..." type="text" id="stem-search-input"></div><div class="flex items-center gap-2 p-1.5 rounded-2xl neu-extruded-sm border border-white/70 relative" id="interactive-timer-box"><div class="flex items-center gap-2 px-3 py-1 rounded-xl neu-groove-sm"><span class="material-symbols-outlined text-primary text-[18px]" id="timer-mode-icon">timer</span><span class="font-mono text-[14px] font-bold text-[#181d24] tracking-wider min-w-[65px] text-center" id="exam-timer">45:00</span><span class="text-[9px] uppercase font-bold text-[#8a8477]" id="timer-mode-label">Count</span></div><button class="w-8 h-8 rounded-xl neu-btn flex items-center justify-center text-primary hover:text-primaryDark transition-all" id="timer-start-pause-btn" title="Start / Pause Timer"><span class="material-symbols-outlined text-[17px]" id="timer-play-icon">play_arrow</span></button><button class="w-8 h-8 rounded-xl neu-btn flex items-center justify-center text-[#6d675b] hover:text-[#181d24] transition-all" id="timer-reset-btn" title="Reset Timer"><span class="material-symbols-outlined text-[16px]">restart_alt</span></button><div class="relative"><button class="w-8 h-8 rounded-xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary transition-all" id="timer-settings-toggle-btn" title="Timer Presets &amp; Modes"><span class="material-symbols-outlined text-[17px]">tune</span></button><div class="hidden absolute right-0 top-10 mt-1 w-60 p-3.5 rounded-2xl neu-extruded bg-[#eae6de] border border-white/80 shadow-lg z-50 flex flex-col gap-2.5 text-[11.5px]" id="timer-dropdown"><div class="font-bold text-[#181d24] pb-1 border-b border-[#ded7ca] flex justify-between items-center"><span class="">Timer Settings</span><button class="text-[10px] text-primary font-semibold hover:underline" id="timer-mode-toggle">Switch to Stopwatch</button></div><div class="text-[10.5px] font-semibold text-[#6d675b]">Quick Countdown Presets:</div><div class="grid grid-cols-4 gap-1.5"><button class="timer-preset-btn py-1 px-1.5 rounded-lg neu-btn text-center font-mono font-bold text-[11px] text-[#3a352d] hover:text-primary" data-mins="15">15m</button><button class="timer-preset-btn py-1 px-1.5 rounded-lg neu-btn text-center font-mono font-bold text-[11px] text-[#3a352d] hover:text-primary" data-mins="30">30m</button><button class="timer-preset-btn py-1 px-1.5 rounded-lg neu-btn text-center font-mono font-bold text-[11px] text-primary neu-pill-active" data-mins="45">45m</button><button class="timer-preset-btn py-1 px-1.5 rounded-lg neu-btn text-center font-mono font-bold text-[11px] text-[#3a352d] hover:text-primary" data-mins="60">60m</button></div><div class="flex items-center gap-1.5 pt-1"><input class="w-16 px-2 py-1 rounded-lg neu-groove-sm text-[11px] font-mono text-center outline-none border border-white/50" id="timer-custom-input" min="1" placeholder="Min" type="number" value="45"><button class="flex-1 py-1 px-2 rounded-lg neu-btn text-[11px] font-bold text-primary hover:text-primaryDark" id="timer-set-custom-btn">Set Custom</button></div></div></div></div><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1"><button class="px-3.5 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary">Tutor Mode</button><button class="px-3.5 py-1.5 rounded-xl text-[11px] font-semibold text-[#6b665c] hover:text-[#181d24] transition-colors">Timed Exam</button></div></div>
-<!-- Top Right Utilities & Candidate Profile -->
-<div class="flex items-center gap-3.5">
-<!-- Tactile Lab Values Button -->
-<button class="flex items-center gap-2 px-3.5 py-2 rounded-2xl neu-btn text-[12px] font-bold text-[#444038] hover:text-primary" title="Clinical Reference Values">
-<span class="material-symbols-outlined text-[18px] text-primary">science</span>
-<span class="">Normal Labs</span>
-</button>
-<!-- Calculator Utility -->
-<button class="w-10 h-10 rounded-2xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary" title="Clinical Calculator">
-<span class="material-symbols-outlined text-[19px]">calculate</span>
-</button>
-<!-- Notes Utility -->
-<button class="w-10 h-10 rounded-2xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary" title="Scratchpad &amp; Notes">
-<span class="material-symbols-outlined text-[19px]">edit_note</span>
-</button>
-<!-- Candidate Pill Profile -->
+    part1 = orig[:idx_start]
+    part2 = orig[idx_end + len(split_end_token):]
 
-</div>
-</div>
-<!-- Live Ribbon with Discipline Filter Pills & Quick Toggles -->
-<div class="bg-[#e4dfd6]/90 border-t border-white/60 px-6 py-2.5"><div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-4 text-[12px]"><div class="flex flex-wrap items-center gap-3.5"><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40"><button type="button" class="px-3 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary neu-pill-active">USMLE Step 1</button><button type="button" class="px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors">USMLE Step 2 CK</button><button type="button" class="px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors">USMLE Step 3</button></div><div class="flex items-center gap-1.5 pl-1"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Discipline:</span><div class="relative flex items-center"><select id="discipline-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="Pathology" selected="">Pathology</option><option value="Physiology">Physiology</option><option value="Pharmacology">Pharmacology</option><option value="Anatomy &amp; Embryology">Anatomy &amp; Embryology</option><option value="Microbiology &amp; Immunology">Microbiology &amp; Immunology</option><option value="Biochemistry &amp; Genetics">Biochemistry &amp; Genetics</option><option value="Behavioral Science &amp; Psychiatry">Behavioral Science &amp; Psychiatry</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="flex items-center gap-1.5"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Chapter / System:</span><div class="relative flex items-center"><select id="chapter-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="All Chapters (20)" selected="">All Chapters (20)</option><option value="Cellular Injury &amp; Adaptation">Cellular Injury &amp; Adaptation</option><option value="Hemodynamic Disorders &amp; Shock">Hemodynamic Disorders &amp; Shock</option><option value="Inflammation &amp; Repair">Inflammation &amp; Repair</option><option value="Cardiovascular Pathology">Cardiovascular Pathology</option><option value="Pulmonary Pathology">Pulmonary Pathology</option><option value="Renal Pathology">Renal Pathology</option><option value="Neoplasia">Neoplasia</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-xl neu-groove-sm text-[11px] font-medium text-[#656054] border border-white/40"><span class="text-[#8a8477] font-semibold uppercase text-[10px] font-mono">Active:</span><span class="font-bold text-primary">Step 1</span><span class="text-[#9c9689]">&gt;</span><span class="font-bold text-[#181d24]">Pathology</span><span class="text-[#9c9689]">&gt;</span><span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">Ch01_Cellular_Adaptations_and_Reversible_Injury</span></div></div><div class="flex items-center gap-3 shrink-0"><button class="flex items-center gap-2 px-4 py-1.5 rounded-full neu-btn text-[11.5px] font-bold text-amber-700 hover:text-amber-800 transition-all border border-white/60" id="toggle-flagged-only-btn"><span class="material-symbols-outlined text-[16px] fill-current">bookmark</span><span class="">Only Marked (<span id="top-flag-count" class="">4</span>)</span></button><div class="font-mono text-[11.5px] text-[#6b665c] font-medium px-3 py-1 rounded-xl neu-groove-sm">Answered: <strong class="text-primary font-bold" id="top-answered-count">2/20</strong></div></div></div></div>
-</header>
-<!-- Main Workspace -->
-<main class="max-w-[1600px] mx-auto px-6 py-8 w-full flex-1">
-<div class="grid grid-cols-12 gap-8 items-start">
-<!-- LEFT COLUMN: Sticky Neumorphic Question Navigator & Flagged Filters (Col-4) -->
-<aside class="col-span-12 lg:col-span-4 sticky top-40 space-y-6">
-<!-- 1. Question Navigator Grid Card -->
-<div class="p-7 rounded-3xl neu-extruded flex flex-col gap-5">
-<div class="flex items-center justify-between pb-3 border-b border-[#ded7ca]">
-<div class="flex items-center gap-2.5">
-<div class="w-8 h-8 rounded-xl neu-extruded-xs flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[20px]">grid_view</span>
-</div>
-<h3 class="font-display font-bold text-[16px] text-[#181d24]">Question Navigator</h3>
-</div>
-<span class="font-mono text-[11px] px-3 py-1 rounded-full neu-groove-sm text-[#625d53] font-bold">20 Questions</span>
-</div>
-<!-- 20 Interactive Grid Badges -->
-<div class="grid grid-cols-5 gap-3" id="nav-buttons-grid"><button type="button" data-q="1" class="relative h-11 rounded-2xl bg-[#2d7a5b] text-white neu-extruded-xs border border-white/40 font-bold shadow-sm text-[12.5px] font-mono flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            01
-            <span class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-amber-400 border-2 border-white shadow-sm flex items-center justify-center text-[9px] text-amber-950 font-extrabold">★</span>
-          </button><button type="button" data-q="2" class="relative h-11 rounded-2xl bg-[#c24141] text-white neu-extruded-xs border border-white/40 font-bold shadow-sm text-[12.5px] font-mono flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            02
-            
-          </button><button type="button" data-q="3" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            03
-            
-          </button><button type="button" data-q="4" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            04
-            <span class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-amber-400 border-2 border-white shadow-sm flex items-center justify-center text-[9px] text-amber-950 font-extrabold">★</span>
-          </button><button type="button" data-q="5" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            05
-            <span class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-amber-400 border-2 border-white shadow-sm flex items-center justify-center text-[9px] text-amber-950 font-extrabold">★</span>
-          </button><button type="button" data-q="6" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            06
-            
-          </button><button type="button" data-q="7" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            07
-            
-          </button><button type="button" data-q="8" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            08
-            
-          </button><button type="button" data-q="9" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            09
-            
-          </button><button type="button" data-q="10" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            10
-            
-          </button><button type="button" data-q="11" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            11
-            
-          </button><button type="button" data-q="12" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            12
-            <span class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-amber-400 border-2 border-white shadow-sm flex items-center justify-center text-[9px] text-amber-950 font-extrabold">★</span>
-          </button><button type="button" data-q="13" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            13
-            
-          </button><button type="button" data-q="14" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            14
-            
-          </button><button type="button" data-q="15" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            15
-            
-          </button><button type="button" data-q="16" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            16
-            
-          </button><button type="button" data-q="17" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            17
-            
-          </button><button type="button" data-q="18" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            18
-            
-          </button><button type="button" data-q="19" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            19
-            
-          </button><button type="button" data-q="20" class="relative h-11 rounded-2xl neu-groove text-[#3e3931] border border-white/50 text-[12.5px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.03] active:scale-95">
-            20
-            
-          </button></div>
-<!-- Neumorphic Metric Inset Panel -->
-<div class="p-4 rounded-2xl neu-groove flex flex-col gap-2.5 text-[11.5px]">
-<div class="flex items-center justify-between">
-<span class="flex items-center gap-2 text-[#4c473e] font-medium">
-<span class="w-2.5 h-2.5 rounded-full bg-accentSuccess inline-block shadow-sm"></span> Correct
-                </span>
-<span class="font-mono font-bold text-accentSuccess text-[12.5px]" id="stat-correct">1</span>
-</div>
-<div class="flex items-center justify-between">
-<span class="flex items-center gap-2 text-[#4c473e] font-medium">
-<span class="w-2.5 h-2.5 rounded-full bg-accentDanger inline-block shadow-sm"></span> Incorrect
-                </span>
-<span class="font-mono font-bold text-accentDanger text-[12.5px]" id="stat-incorrect">1</span>
-</div>
-<div class="flex items-center justify-between">
-<span class="flex items-center gap-2 text-[#4c473e] font-medium">
-<span class="w-2.5 h-2.5 rounded-full bg-[#9e988c] inline-block"></span> Unanswered
-                </span>
-<span class="font-mono font-bold text-[#181d24] text-[12.5px]" id="stat-unanswered">18</span>
-</div>
-<div class="flex items-center justify-between pt-2 border-t border-[#ded8cb]">
-<span class="flex items-center gap-1.5 text-amber-700 font-bold">
-<span class="material-symbols-outlined text-[16px] fill-current">bookmark</span> Marked / Flagged
-                </span>
-<span class="font-mono font-bold text-amber-700 text-[12.5px]" id="stat-flagged">4</span>
-</div>
-</div>
-<!-- End Block Button: Tactile Gradient Primary CTA -->
-<button class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[13.5px] font-bold neu-btn border border-white/40 flex items-center justify-center gap-2.5 shadow-md">
-<span class="material-symbols-outlined text-[19px]">verified</span>
-<span class="">Complete &amp; Submit Block</span>
-</button>
-</div>
-<!-- 2. Chapter / Subject Flagged Review Hub -->
-<div class="p-7 rounded-3xl neu-extruded flex flex-col gap-4">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2.5">
-<div class="w-9 h-9 rounded-xl neu-extruded-xs flex items-center justify-center text-amber-700">
-<span class="material-symbols-outlined text-[19px] fill-current">bookmark</span>
-</div>
-<div>
-<h3 class="font-display font-bold text-[15px] text-[#181d24]">Flagged by Chapter</h3>
-<p class="text-[11px] text-[#6b665c]">Review marked concepts for <span id="active-discipline-label" class="text-primary font-bold">Pathology</span></p>
-</div>
-</div>
-<span class="font-mono font-bold text-[11px] px-3 py-1 rounded-full neu-groove-sm text-amber-800" id="badge-total-flagged">4 Marked</span>
-</div>
-<!-- Chapter-specific Filter Buttons -->
-<div class="flex flex-col gap-2.5 mt-1" id="chapter-flag-pill-group"><button type="button" class="w-full flex items-center justify-between px-4 py-2 rounded-2xl text-[12px] transition-all neu-groove-sm text-[#544f45] border-white/40 hover:text-[#181d24]"><span class="">Cellular Injury &amp; Adaptation</span><span class="font-mono text-[11px] font-bold text-amber-800">2 marked</span></button><button type="button" class="w-full flex items-center justify-between px-4 py-2 rounded-2xl text-[12px] transition-all neu-groove-sm text-[#544f45] border-white/40 hover:text-[#181d24]"><span class="">Hemodynamic Disorders</span><span class="font-mono text-[11px] font-bold text-amber-800">1 marked</span></button><button type="button" class="w-full flex items-center justify-between px-4 py-2 rounded-2xl text-[12px] transition-all neu-groove-sm text-[#544f45] border-white/40 hover:text-[#181d24]"><span class="">Inflammation &amp; Repair</span><span class="font-mono text-[11px] text-[#9c9689]">0 marked</span></button><button type="button" class="w-full flex items-center justify-between px-4 py-2 rounded-2xl text-[12px] transition-all neu-groove-sm text-[#544f45] border-white/40 hover:text-[#181d24]"><span class="">Neoplasia</span><span class="font-mono text-[11px] font-bold text-amber-800">1 marked</span></button><button type="button" class="w-full flex items-center justify-between px-4 py-2 rounded-2xl text-[12px] transition-all neu-groove-sm text-[#544f45] border-white/40 hover:text-[#181d24]"><span class="">Cardiovascular Pathology</span><span class="font-mono text-[11px] font-bold text-amber-800">2 marked</span></button><button type="button" class="w-full flex items-center justify-between px-4 py-2 rounded-2xl text-[12px] transition-all neu-groove-sm text-[#544f45] border-white/40 hover:text-[#181d24]"><span class="">Pulmonary Pathology</span><span class="font-mono text-[11px] font-bold text-amber-800">1 marked</span></button></div>
-<!-- Clear / Show All CTA -->
-<button class="text-[12px] text-primary hover:text-primaryDark hover:underline font-bold text-center mt-2 py-1" id="reset-flag-filter-btn">Show All Pathology Questions (20)</button>
-</div>
-</aside>
-<!-- RIGHT COLUMN: 20 Multiple Choice Questions (Col-8) -->
-<div class="col-span-12 lg:col-span-8 space-y-6">
+    # New Right Column HTML with Banner, Block filter tabs, and Questions container
+    right_column_html = '''<div class="col-span-12 lg:col-span-8 space-y-6">
   <!-- Dynamic Chapter Banner & Block Filter Header -->
   <div id="chapter-header-banner" class="p-6 rounded-3xl neu-extruded border border-white/70 flex flex-col gap-4 transition-all">
     <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#dfd9cc] pb-4">
@@ -355,7 +86,10 @@
 </div>
 <!-- Clinical Questions Database & Neumorphic Interactions -->
 <script>
+'''
 
+    # New Comprehensive JavaScript Application
+    new_script_js = '''
     (function() {
       // 1. Data Initialization from questions_data.js
       const chaptersData = window.USMLE_PATHOLOGY_CHAPTERS || [
@@ -1139,6 +873,14 @@
       initChapterDropdown();
       updateUI();
     })();
+'''
 
-  </script>
-</body></html>
+    final_html = part1 + right_column_html + new_script_js + '\n  </script>\n</body></html>'
+
+    with open('index.html', 'w', encoding='utf-8') as f:
+        f.write(final_html)
+
+    print(f"Successfully generated index.html ({len(final_html)} chars)")
+
+if __name__ == '__main__':
+    generate_html()
