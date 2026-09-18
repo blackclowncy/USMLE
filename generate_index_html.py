@@ -389,7 +389,7 @@ def generate_html():
         current20Qs.forEach((q, idx) => {
           const card = document.createElement('section');
           card.id = `question-card-${q.id}`;
-          card.className = "question-card p-8 rounded-3xl neu-extruded border border-white/70 flex flex-col gap-6 scroll-mt-36 transition-all duration-300 mb-8";
+          card.className = "question-card p-6 rounded-3xl neu-extruded border border-white/70 flex flex-col gap-4 scroll-mt-6 transition-all duration-300 mb-5";
 
           let optionsHtml = '';
           q.options.forEach((optText, optIdx) => {
@@ -402,11 +402,11 @@ def generate_html():
               if (letter === q.correct) {
                 optStyle = "neu-groove bg-[#dfeae3] border border-emerald-500/50 text-[#1f5c42] font-semibold";
                 letterStyle = "bg-[#2d7a5b] text-white shadow-sm";
-                statusIcon = `<span class="material-symbols-outlined text-[#2d7a5b] text-[22px]">check_circle</span>`;
+                statusIcon = `<span class="material-symbols-outlined text-[#2d7a5b] text-[20px]">check_circle</span>`;
               } else if (letter === q.userChoice && q.userChoice !== q.correct) {
                 optStyle = "neu-groove bg-[#f4e2e2] border border-rose-400/50 text-[#9b2a2a] line-through";
                 letterStyle = "bg-[#c24141] text-white shadow-sm";
-                statusIcon = `<span class="material-symbols-outlined text-[#c24141] text-[22px]">cancel</span>`;
+                statusIcon = `<span class="material-symbols-outlined text-[#c24141] text-[20px]">cancel</span>`;
               } else {
                 optStyle = "neu-groove opacity-50 border border-white/20 cursor-not-allowed";
               }
@@ -416,10 +416,10 @@ def generate_html():
             }
 
             optionsHtml += `
-              <div class="option-item p-4 rounded-2xl ${optStyle} flex items-center justify-between transition-all" data-q="${q.id}" data-opt="${letter}">
-                <div class="flex items-center gap-3.5 flex-1 pr-2">
-                  <span class="w-8 h-8 rounded-full ${letterStyle} flex items-center justify-center font-mono text-[12.5px] font-bold shrink-0">${letter}</span>
-                  <span class="text-[14px] text-[#242930] font-medium leading-relaxed">${optText}</span>
+              <div class="option-item px-4 py-2.5 rounded-2xl ${optStyle} flex items-center justify-between transition-all" data-q="${q.id}" data-opt="${letter}">
+                <div class="flex items-center gap-3 flex-1 pr-2">
+                  <span class="w-8 h-8 rounded-full ${letterStyle} flex items-center justify-center font-mono text-[12px] font-bold shrink-0">${letter}</span>
+                  <span class="text-[13.5px] text-[#242930] font-medium leading-relaxed">${optText}</span>
                 </div>
                 ${statusIcon}
               </div>
@@ -427,13 +427,13 @@ def generate_html():
           });
 
           const flagBtnMarkup = q.flagged ? `
-            <button class="flag-toggle-btn px-3.5 py-1.5 rounded-full neu-extruded-xs border border-amber-300 bg-[#f3ecd8] text-amber-800 flex items-center gap-1.5 transition-all shadow-sm active:neu-groove" data-q="${q.id}">
-              <span class="material-symbols-outlined text-[17px] text-amber-600 fill-current">bookmark</span>
+            <button class="flag-toggle-btn px-3 py-1.5 rounded-full neu-extruded-xs border border-amber-300 bg-[#f3ecd8] text-amber-800 flex items-center gap-1.5 transition-all shadow-sm active:neu-groove" data-q="${q.id}">
+              <span class="material-symbols-outlined text-[16px] text-amber-600 fill-current">bookmark</span>
               <span class="font-mono text-[11px] font-bold">Flagged</span>
             </button>
           ` : `
-            <button class="flag-toggle-btn px-3.5 py-1.5 rounded-full neu-btn border border-white/80 text-[#6d685c] hover:text-amber-700 flex items-center gap-1.5 transition-all active:neu-groove" data-q="${q.id}">
-              <span class="material-symbols-outlined text-[17px]">bookmark_border</span>
+            <button class="flag-toggle-btn px-3 py-1.5 rounded-full neu-btn border border-white/80 text-[#6d685c] hover:text-amber-700 flex items-center gap-1.5 transition-all active:neu-groove" data-q="${q.id}">
+              <span class="material-symbols-outlined text-[16px]">bookmark_border</span>
               <span class="font-mono text-[11px] font-semibold">Flag</span>
             </button>
           `;
@@ -441,48 +441,48 @@ def generate_html():
           const qIndexLabel = q.qNum ? `Question ${q.qNum < 10 ? '0' + q.qNum : q.qNum}` : `Question ${idx + 1}`;
 
           card.innerHTML = `
-            <div class="flex items-center justify-between pb-4 border-b border-[#dfd9cc] flex-wrap gap-2">
-              <div class="flex flex-wrap items-center gap-2.5">
-                <span class="px-3 py-1 rounded-full neu-groove text-primary font-mono text-[11.5px] font-bold border border-white/60">
+            <div class="flex items-center justify-between pb-3 border-b border-[#dfd9cc] flex-wrap gap-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full neu-groove text-primary font-mono text-[11px] font-bold border border-white/60">
                   ${qIndexLabel} ${q.block ? `(${q.block})` : ''}
                 </span>
-                <span class="px-3 py-1 rounded-full neu-extruded-xs text-[11px] font-semibold text-[#3e3931] border border-white/80">
+                <span class="px-2.5 py-0.5 rounded-full neu-extruded-xs text-[10.5px] font-semibold text-[#3e3931] border border-white/80">
                   ${q.chapter}
                 </span>
-                <span class="px-2.5 py-0.5 rounded-full neu-groove-sm text-[10.5px] font-bold font-mono text-amber-900 bg-[#ede4d5]">
+                <span class="px-2 py-0.5 rounded-full neu-groove-sm text-[10px] font-bold font-mono text-amber-900 bg-[#ede4d5]">
                   ${q.difficulty || 'USMLE Step 1'}
                 </span>
               </div>
               ${flagBtnMarkup}
             </div>
 
-            <p class="text-[14.5px] text-[#242930] leading-relaxed font-normal">
+            <p class="text-[14px] text-[#242930] leading-relaxed font-normal">
               ${q.stem}
             </p>
 
-            <div class="p-4.5 rounded-2xl neu-groove flex items-center gap-3.5 border border-white/50 bg-[#e7e2d9]">
-              <div class="w-9 h-9 rounded-xl neu-extruded-xs flex items-center justify-center text-primary shrink-0">
-                <span class="material-symbols-outlined text-[20px]">troubleshoot</span>
+            <div class="p-3.5 rounded-2xl neu-groove flex items-center gap-3 border border-white/50 bg-[#e7e2d9]">
+              <div class="w-8 h-8 rounded-xl neu-extruded-xs flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-[18px]">troubleshoot</span>
               </div>
-              <span class="font-display font-bold text-[14.5px] text-[#181d24] leading-snug">
+              <span class="font-display font-bold text-[14px] text-[#181d24] leading-snug">
                 ${q.leadQuestion}
               </span>
             </div>
 
-            <div class="options-container flex flex-col gap-3.5" data-q="${q.id}">
+            <div class="options-container flex flex-col gap-2.5" data-q="${q.id}">
               ${optionsHtml}
             </div>
 
-            <div class="flex items-center justify-between pt-2">
-              <button class="submit-btn px-6 py-2.5 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[13px] font-bold neu-btn border border-white/40 active:neu-groove transition-all ${q.answered ? 'opacity-45 pointer-events-none' : ''}" data-q="${q.id}">
+            <div class="flex items-center justify-between pt-1">
+              <button class="submit-btn px-5 py-2 rounded-xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[12.5px] font-bold neu-btn border border-white/40 active:neu-groove transition-all ${q.answered ? 'opacity-45 pointer-events-none' : ''}" data-q="${q.id}">
                 ${q.answered ? 'Answer Submitted' : 'Submit Answer'}
               </button>
-              ${!q.answered ? `<button class="clear-btn text-[11.5px] text-[#736e62] hover:text-primary transition-colors font-semibold" data-q="${q.id}">Clear Selection</button>` : ''}
+              ${!q.answered ? `<button class="clear-btn text-[11px] text-[#736e62] hover:text-primary transition-colors font-semibold" data-q="${q.id}">Clear Selection</button>` : ''}
             </div>
 
-            <div class="explanation-box ${q.answered ? 'flex' : 'hidden'} p-6 rounded-2xl neu-groove flex-col gap-4 border border-white/50 bg-[#e8e3da]">
-              <div class="flex items-center gap-2 font-display text-[15px] font-bold ${q.userChoice === q.correct ? 'text-accentSuccess' : 'text-accentDanger'}">
-                <span class="material-symbols-outlined text-[24px]">
+            <div class="explanation-box ${q.answered ? 'flex' : 'hidden'} p-4.5 rounded-2xl neu-groove flex-col gap-3 border border-white/50 bg-[#e8e3da]">
+              <div class="flex items-center gap-2 font-display text-[14px] font-bold ${q.userChoice === q.correct ? 'text-accentSuccess' : 'text-accentDanger'}">
+                <span class="material-symbols-outlined text-[20px]">
                   ${q.userChoice === q.correct ? 'check_circle' : 'cancel'}
                 </span>
                 <span>
@@ -490,7 +490,7 @@ def generate_html():
                 </span>
               </div>
               
-              <div class="explanation-content text-[13.5px] text-[#242930] leading-relaxed space-y-2">
+              <div class="explanation-content text-[13px] text-[#242930] leading-relaxed space-y-2">
                 ${q.explanation || `<p>${q.rawObjective || ''}</p>`}
               </div>
             </div>
@@ -502,7 +502,7 @@ def generate_html():
         // Add Next / Prev 20-Question Module Navigation Bar at Bottom
         if (totalModules > 1) {
           const paginationFooter = document.createElement('div');
-          paginationFooter.className = "p-6 rounded-3xl neu-extruded border border-white/80 flex flex-wrap items-center justify-between gap-4 mt-6 shadow-sm";
+          paginationFooter.className = "p-4.5 rounded-2xl neu-extruded border border-white/80 flex flex-wrap items-center justify-between gap-3 my-4 shadow-sm";
           
           const startQ = currentModuleIndex * PAGE_SIZE + 1;
           const endQ = Math.min((currentModuleIndex + 1) * PAGE_SIZE, totalQuestions);
@@ -760,13 +760,13 @@ def generate_html():
             q.tempChoice = chosenOpt;
             const container = optItem.closest('.options-container');
             container.querySelectorAll('.option-item').forEach(el => {
-              el.className = "option-item p-4 rounded-2xl neu-groove-sm hover:border-white/80 cursor-pointer flex items-center justify-between transition-all";
+              el.className = "option-item px-4 py-2.5 rounded-2xl neu-groove-sm hover:border-white/80 cursor-pointer flex items-center justify-between transition-all";
               const lSpan = el.querySelector('span:first-child');
-              lSpan.className = "w-8 h-8 rounded-full neu-extruded-xs text-[#3a352d] border border-white/60 flex items-center justify-center font-mono text-[12.5px] font-bold shrink-0";
+              lSpan.className = "w-8 h-8 rounded-full neu-extruded-xs text-[#3a352d] border border-white/60 flex items-center justify-center font-mono text-[12px] font-bold shrink-0";
             });
-            optItem.className = "option-item p-4 rounded-2xl neu-groove border border-primary/50 bg-[#e1e9ef] flex items-center justify-between cursor-pointer transition-all";
+            optItem.className = "option-item px-4 py-2.5 rounded-2xl neu-groove border border-primary/50 bg-[#e1e9ef] flex items-center justify-between cursor-pointer transition-all";
             const lSpan = optItem.querySelector('span:first-child');
-            lSpan.className = "w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-mono text-[12.5px] font-bold shadow-sm shrink-0";
+            lSpan.className = "w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-mono text-[12px] font-bold shadow-sm shrink-0";
           }
           return;
         }
@@ -781,9 +781,9 @@ def generate_html():
             const card = document.getElementById(`question-card-${qId}`);
             if (card) {
               card.querySelectorAll('.option-item').forEach(el => {
-                el.className = "option-item p-4 rounded-2xl neu-groove-sm hover:border-white/80 cursor-pointer flex items-center justify-between transition-all";
+                el.className = "option-item px-4 py-2.5 rounded-2xl neu-groove-sm hover:border-white/80 cursor-pointer flex items-center justify-between transition-all";
                 const lSpan = el.querySelector('span:first-child');
-                lSpan.className = "w-8 h-8 rounded-full neu-extruded-xs text-[#3a352d] border border-white/60 flex items-center justify-center font-mono text-[12.5px] font-bold shrink-0";
+                lSpan.className = "w-8 h-8 rounded-full neu-extruded-xs text-[#3a352d] border border-white/60 flex items-center justify-center font-mono text-[12px] font-bold shrink-0";
               });
             }
           }
