@@ -69,6 +69,137 @@ def assign_category(title, aliases, desc, normal_vals):
     # Default to Blood Chemistry
     return "Blood Chemistry & Metabolism"
 
+COMPOUND_PAIRS = {
+    ('rh', 'negative'): 'Rh-negative',
+    ('rh', 'positive'): 'Rh-positive',
+    ('stuart', 'prower'): 'Stuart-Prower',
+    ('zollinger', 'ellison'): 'Zollinger-Ellison',
+    ('corticotropin', 'releasing'): 'corticotropin-releasing',
+    ('thyrotropin', 'releasing'): 'thyrotropin-releasing',
+    ('gonadotropin', 'releasing'): 'gonadotropin-releasing',
+    ('water', 'based'): 'water-based',
+    ('enzyme', 'linked'): 'enzyme-linked',
+    ('false', 'positive'): 'false-positive',
+    ('false', 'negative'): 'false-negative',
+    ('acid', 'base'): 'acid-base',
+    ('acid', 'fast'): 'acid-fast',
+    ('follow', 'up'): 'follow-up',
+    ('first', 'line'): 'first-line',
+    ('second', 'line'): 'second-line',
+    ('short', 'term'): 'short-term',
+    ('long', 'term'): 'long-term',
+    ('dose', 'dependent'): 'dose-dependent',
+    ('cell', 'mediated'): 'cell-mediated',
+    ('antigen', 'antibody'): 'antigen-antibody',
+    ('carrier', 'mediated'): 'carrier-mediated',
+    ('weight', 'bearing'): 'weight-bearing',
+    ('life', 'threatening'): 'life-threatening',
+    ('dye', 'induced'): 'dye-induced',
+    ('contrast', 'induced'): 'contrast-induced',
+}
+
+def repl_hyphen(m):
+    w1, w2 = m.group(1), m.group(2)
+    key_lower = (w1.lower(), w2.lower())
+    if key_lower in COMPOUND_PAIRS:
+        return COMPOUND_PAIRS[key_lower]
+    if w1[0].isupper() and w2[0].isupper():
+        return f'{w1}-{w2}'
+    return f'{w1}{w2}'
+
+def clean_prose(raw_text):
+    if not raw_text:
+        return ''
+    text = raw_text.strip()
+    text = re.sub(r'<a id=[^>]+></a>', '', text)
+    text = re.sub(r'(?:^|\n)>\s*\[!(?:WARNING|NOTE|CAUTION|IMPORTANT|TIP)\]\s*', '\n', text)
+    text = re.sub(r'\[!(?:WARNING|NOTE|CAUTION|IMPORTANT|TIP)\]\s*', '', text)
+    text = re.sub(r'(^|\n)>\s*', r'\1', text)
+    text = re.sub(r'\n---\s*$', '', text.strip())
+    text = re.sub(r'<a id=[^>]+></a>', '', text)
+    text = re.sub(r'([a-zA-Z]{2,})-\n\s*([a-zA-Z]{2,})', repl_hyphen, text)
+    
+    paragraphs = re.split(r'\n\s*\n', text)
+    clean_paragraphs = []
+    for p in paragraphs:
+        p = p.strip()
+        if not p or p == '---':
+            continue
+        lines = p.split('\n')
+        clean_lines = []
+        cur_item = ''
+        for line in lines:
+            line_str = line.strip()
+            if not line_str or line_str == '---' or '<a id=' in line_str:
+                continue
+            is_bullet = bool(re.match(r'^(?:[•\-\*]|\d+[\.\)])\s+', line_str))
+            if is_bullet:
+                content_after_bullet = re.sub(r'^(?:[•\-\*]|\d+[\.\)])\s+', '', line_str).strip()
+                if cur_item and content_after_bullet and content_after_bullet[0].islower() and not content_after_bullet.startswith(('ph', 'egfr', 'ctn', 'pco2', 'po2', 's/p', 'beta', 't(')):
+                    if cur_item.endswith('/') or cur_item.endswith('-'):
+                        cur_item += content_after_bullet
+                    else:
+                        cur_item += ' ' + content_after_bullet
+                else:
+                    if cur_item:
+                        clean_lines.append(cur_item)
+                    cur_item = line_str
+            else:
+                if cur_item:
+                    if cur_item.endswith('/') or cur_item.endswith('-'):
+                        cur_item += line_str
+                    else:
+                        cur_item += ' ' + line_str
+                else:
+                    cur_item = line_str
+        if cur_item:
+            clean_lines.append(cur_item)
+        clean_paragraphs.append('\n'.join(clean_lines))
+        
+    res = '\n\n'.join(clean_paragraphs).strip()
+    res = re.sub(r'<a id=[^>]+></a>', '', res)
+    res = re.sub(r'\n---\s*$', '', res.strip())
+    return res.strip()
+
+def parse_bullet_list(raw_text):
+    if not raw_text:
+        return []
+    text = raw_text.strip()
+    text = re.sub(r'<a id=[^>]+></a>', '', text)
+    text = re.sub(r'\n---\s*$', '', text.strip())
+    text = re.sub(r'(^|\n)>\s*', r'\1', text)
+    text = re.sub(r'([a-zA-Z]{2,})-\n\s*([a-zA-Z]{2,})', repl_hyphen, text)
+    
+    items = []
+    cur_item = ''
+    for line in text.split('\n'):
+        l = line.strip()
+        if not l or l == '---' or '<a id=' in l:
+            continue
+        m_bullet = re.match(r'^(?:[•\-\*]|\d+[\.\)])\s+(.*)$', l)
+        if m_bullet:
+            content = m_bullet.group(1).strip()
+            if cur_item and content and content[0].islower() and not content.startswith(('ph', 'egfr', 'ctn', 'pco2', 'po2', 's/p', 'beta', 't(')):
+                if cur_item.endswith('/') or cur_item.endswith('-'):
+                    cur_item += content
+                else:
+                    cur_item += ' ' + content
+            else:
+                if cur_item:
+                    items.append(cur_item)
+                cur_item = content
+        else:
+            if cur_item:
+                if cur_item.endswith('/') or cur_item.endswith('-'):
+                    cur_item += l
+                else:
+                    cur_item += ' ' + l
+            else:
+                cur_item = l
+    if cur_item:
+        items.append(cur_item)
+    return [it.strip() for it in items if it.strip() and it.strip() != '---']
+
 def parse_lab_tests(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -92,6 +223,10 @@ def parse_lab_tests(filepath):
     for i in range(1, num_tests + 1):
         test_id = int(chunks[2*i - 1])
         body = chunks[2*i]
+        # Clean anchors and trailing dividers from body chunk immediately
+        body = re.sub(r'<a id=[^>]+></a>', '', body)
+        body = re.sub(r'\n---\s*$', '', body.strip())
+
         lines = body.split('\n')
         title = lines[0].strip()
 
@@ -110,13 +245,13 @@ def parse_lab_tests(filepath):
             m = re.search(regex, body)
             return m.group(1).strip() if m else ""
 
-        desc = get_sec(section_headers[2][1])
-        evidence = get_sec(section_headers[3][1])
-        normal = get_sec(section_headers[4][1])
+        desc = clean_prose(get_sec(section_headers[2][1]))
+        evidence = clean_prose(get_sec(section_headers[3][1]))
+        normal = clean_prose(get_sec(section_headers[4][1]))
         abnormal_raw = get_sec(section_headers[5][1])
-        factors = get_sec(section_headers[6][1])
-        alerts = get_sec(section_headers[7][1])
-        contra = get_sec(section_headers[8][1])
+        factors = clean_prose(get_sec(section_headers[6][1]))
+        alerts = clean_prose(get_sec(section_headers[7][1]))
+        contra = clean_prose(get_sec(section_headers[8][1]))
 
         # Parse increased / decreased / abnormal findings inside abnormal_raw
         increased = []
@@ -125,21 +260,15 @@ def parse_lab_tests(filepath):
 
         m_inc = re.search(r'#####\s+🔺\s+升高\s*/\s*阳性\s*\(Increased / Positive\)\s*\n([\s\S]*?)(?=\n#####|\Z)', abnormal_raw)
         if m_inc:
-            for item in m_inc.group(1).split('\n'):
-                item = item.strip().lstrip('-').lstrip('•').strip()
-                if item: increased.append(item)
+            increased = parse_bullet_list(m_inc.group(1))
 
         m_dec = re.search(r'#####\s+🔻\s+降低\s*/\s*阴性\s*\(Decreased / Negative\)\s*\n([\s\S]*?)(?=\n#####|\Z)', abnormal_raw)
         if m_dec:
-            for item in m_dec.group(1).split('\n'):
-                item = item.strip().lstrip('-').lstrip('•').strip()
-                if item: decreased.append(item)
+            decreased = parse_bullet_list(m_dec.group(1))
 
         m_ab = re.search(r'#####\s+🔍\s+异常发现与相关疾病\s*\(Abnormal Findings & Associated Conditions\)\s*\n([\s\S]*?)(?=\n#####|\Z)', abnormal_raw)
         if m_ab:
-            for item in m_ab.group(1).split('\n'):
-                item = item.strip().lstrip('-').lstrip('•').strip()
-                if item: abnormal_findings.append(item)
+            abnormal_findings = parse_bullet_list(m_ab.group(1))
 
         cat = assign_category(title, aliases, desc, normal)
 
