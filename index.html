@@ -2487,6 +2487,48 @@
         }).join('');
       }
 
+      function formatDiseaseToHtml(text) {
+        if (!text) return '';
+        const lines = text.trim().split('\n');
+        const out = [];
+        for (let line of lines) {
+          let trimmed = line.trim();
+          if (!trimmed || trimmed === '---') continue;
+
+          const indentMatch = line.match(/^(\s+)/);
+          const indent = indentMatch ? indentMatch[1].length : 0;
+
+          let prefix = '';
+          if (/^[•\-\*]\s+/.test(trimmed)) {
+            trimmed = trimmed.replace(/^[•\-\*]\s+/, '');
+            if (indent >= 4) {
+              prefix = '&nbsp;&nbsp;&nbsp;&nbsp;▫ ';
+            } else if (indent >= 2) {
+              prefix = '&nbsp;&nbsp;▪ ';
+            } else {
+              prefix = '• ';
+            }
+          } else if (/^\d+[\.\)]\s+/.test(trimmed)) {
+            const numMatch = trimmed.match(/^(\d+[\.\)])\s+(.*)$/);
+            if (numMatch) {
+              let num = numMatch[1];
+              trimmed = numMatch[2];
+              let spaces = indent >= 4 ? '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' : (indent >= 2 ? '&nbsp;&nbsp;&nbsp;&nbsp;' : '&nbsp;&nbsp;');
+              prefix = `${spaces}<span class="font-mono text-primary font-bold">${num}</span> `;
+            }
+          } else if (indent > 0) {
+            prefix = indent >= 4 ? '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' : '&nbsp;&nbsp;&nbsp;&nbsp;';
+          }
+
+          let formatted = escapeHtml(trimmed)
+            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#181d24] font-semibold">$1</strong>')
+            .replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 rounded bg-white/70 font-mono text-[11px] text-primary font-bold">$1</code>');
+
+          out.push(`${prefix}${formatted}`);
+        }
+        return out.join('<br>');
+      }
+
       function renderLabsModal() {
         renderLabsFilters();
         renderLabsAzRibbon();
@@ -3253,14 +3295,8 @@
           const card = document.createElement('div');
           card.className = "p-5 rounded-3xl neu-extruded border border-white/80 shadow-sm flex flex-col gap-3 transition-all";
 
-          // Format content markdown into html
-          let contentHtml = escapeHtml(d.content)
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.2 rounded bg-white/60 font-mono text-[11px] text-primary font-bold">$1</code>')
-            .replace(/\n- /g, '<br>• ')
-            .replace(/\n  - /g, '<br>&nbsp;&nbsp;▪ ')
-            .replace(/\n    \d+\. /g, '<br>&nbsp;&nbsp;&nbsp;&nbsp; ')
-            .replace(/\n/g, '<br>');
+          // Format content markdown into clean hierarchical html
+          let contentHtml = formatDiseaseToHtml(d.content);
 
           // Related tests tags
           let relatedTagsHtml = '';

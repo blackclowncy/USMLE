@@ -315,6 +315,9 @@ def parse_disease_criteria(filepath):
         for d_idx in range(1, num_diseases + 1):
             d_code = d_chunks[2*d_idx - 1].strip()
             d_body = d_chunks[2*d_idx]
+            # Clean anchors and trailing dividers
+            d_body = re.sub(r'<a id=[^>]+></a>', '', d_body)
+            d_body = re.sub(r'\n---\s*$', '', d_body.strip())
             lines = d_body.split('\n')
             d_full_title = lines[0].strip()
 
@@ -329,8 +332,20 @@ def parse_disease_criteria(filepath):
             if m_rel:
                 related_tests = m_rel.group(1).strip()
 
-            # Clean up the body lines
-            body_content = "\n".join(lines[1:]).strip()
+            # Clean up the body lines: exclude redundant guideline and manual references lines
+            content_lines = []
+            for line in lines[1:]:
+                l_str = line.strip()
+                if l_str.startswith('- **Authoritative Diagnostic Criteria & Guideline Source**:'):
+                    continue
+                if l_str.startswith('- **Manual Test References**:'):
+                    continue
+                if l_str == '---':
+                    continue
+                content_lines.append(line)
+
+            body_content = "\n".join(content_lines).strip()
+            body_content = re.sub(r'\n---\s*$', '', body_content).strip()
 
             diseases.append({
                 "code": d_code,

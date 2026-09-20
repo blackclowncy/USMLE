@@ -80,11 +80,29 @@ def verify():
             print(f"Title Mismatch at index {idx}: MD has '{md_title}', JS has '{d_obj['title']}'")
             disease_errors += 1
         if not d_obj['content']:
-            print(f"Warning: Empty content for Disease {md_code}: {md_title}")
+            print(f"Error: Empty content for Disease {md_code}: {md_title}")
+            disease_errors += 1
+        if d_obj['content'].endswith('---') or d_obj['content'].strip().endswith('---'):
+            print(f"Error: Disease {md_code} ends with trailing '---'")
+            disease_errors += 1
+        if 'Authoritative Diagnostic Criteria' in d_obj['content']:
+            print(f"Error: Disease {md_code} content contains duplicate guideline header")
+            disease_errors += 1
+        if 'Manual Test References' in d_obj['content']:
+            print(f"Error: Disease {md_code} content contains duplicate manual references")
+            disease_errors += 1
+        if '<a id=' in d_obj['content']:
+            print(f"Error: Disease {md_code} content contains raw anchor tags")
+            disease_errors += 1
+        if not d_obj.get('guideline'):
+            print(f"Error: Disease {md_code} is missing guideline badge text")
+            disease_errors += 1
+        if not d_obj.get('relatedTests'):
+            print(f"Error: Disease {md_code} is missing relatedTests references")
             disease_errors += 1
 
     if disease_errors == 0:
-        print(" -> ALL 68 Disease Diagnostic Criteria verified 100% complete and matched across 11 systems!")
+        print(" -> ALL 68 Disease Diagnostic Criteria verified 100% complete, free of trailing '---', clean metadata separation, and matched across 11 systems!")
 
     print("\nSUMMARY: 0 omissions found. 100% integrity check PASSED!")
 
