@@ -26,6 +26,9 @@ def verify_and_sync():
         ("Highlighter Bubble", "id=\"highlighter-bubble\""),
         ("Dark Mode Toggle", "id=\"btn-theme-toggle\""),
         ("Option Strikethrough", "data-action=\"toggle-strike\""),
+        ("Normal Labs Modal", "id=\"labs-modal\""),
+        ("Normal Labs Button", "id=\"btn-open-labs\""),
+        ("Labs Database Link", "labs_data.js?v=1.0"),
         ("Questions Database Link", "questions_data.js?v=2100_v2")
     ]
 
