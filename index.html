@@ -1,4 +1,14 @@
 <!DOCTYPE html><html lang="en" style=""><head>
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('usmle_theme');
+      if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    } catch(e) {}
+  })();
+</script>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>MedPulse USMLE Q-Bank - Tactile Neumorphic Suite</title>
@@ -160,7 +170,165 @@
     line-height: 1.5 !important;
     letter-spacing: -0.01em !important;
   }
-</style></head>
+
+    /* Warm Dark Neumorphic Theme Styles */
+    html.dark {
+      --neu-bg: #1c2026;
+      --neu-light: rgba(46, 54, 66, 0.5);
+      --neu-dark: rgba(12, 15, 20, 0.75);
+      --neu-dark-deep: rgba(8, 10, 14, 0.9);
+    }
+    html.dark body {
+      background-color: #171b21 !important;
+      color: #e2e8f0 !important;
+    }
+    html.dark .neu-extruded {
+      background: #20252d !important;
+      box-shadow: -7px -7px 18px var(--neu-light), 7px 7px 18px var(--neu-dark) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      color: #e2e8f0 !important;
+    }
+    html.dark .neu-extruded-sm {
+      background: #20252d !important;
+      box-shadow: -4px -4px 10px var(--neu-light), 4px 4px 12px var(--neu-dark) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      color: #e2e8f0 !important;
+    }
+    html.dark .neu-extruded-xs {
+      background: #232932 !important;
+      box-shadow: -3px -3px 7px var(--neu-light), 3px 3px 7px var(--neu-dark) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark .neu-groove {
+      background: #191c22 !important;
+      box-shadow: inset 4px 4px 9px rgba(10, 13, 17, 0.8), inset -4px -4px 9px rgba(46, 54, 66, 0.35) !important;
+      border-color: rgba(255, 255, 255, 0.06) !important;
+      color: #e2e8f0 !important;
+    }
+    html.dark .neu-groove-sm {
+      background: #191c22 !important;
+      box-shadow: inset 2.5px 2.5px 6px rgba(10, 13, 17, 0.75), inset -2.5px -2.5px 6px rgba(46, 54, 66, 0.3) !important;
+      border-color: rgba(255, 255, 255, 0.06) !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark .neu-groove-deep {
+      background: #14171d !important;
+      box-shadow: inset 5px 5px 12px rgba(10, 13, 17, 0.9), inset -5px -5px 12px rgba(46, 54, 66, 0.35) !important;
+    }
+    html.dark .neu-btn {
+      background: #222730 !important;
+      box-shadow: -4px -4px 10px var(--neu-light), 4px 4px 12px var(--neu-dark) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      color: #cbd5e1 !important;
+    }
+    html.dark .neu-btn:hover {
+      box-shadow: -2px -2px 6px var(--neu-light), 2px 2px 7px var(--neu-dark) !important;
+      color: #38bdf8 !important;
+    }
+    html.dark .neu-btn:active, html.dark .neu-btn.is-active {
+      box-shadow: inset 3px 3px 7px rgba(10, 13, 17, 0.85), inset -3px -3px 7px rgba(46, 54, 66, 0.35) !important;
+    }
+    html.dark .neu-pill-active {
+      background: #162432 !important;
+      box-shadow: inset 3px 3px 6px rgba(10, 13, 17, 0.8), inset -3px -3px 6px rgba(46, 54, 66, 0.3) !important;
+      color: #38bdf8 !important;
+    }
+    html.dark header {
+      background-color: rgba(23, 27, 33, 0.96) !important;
+      border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45) !important;
+    }
+    html.dark header .bg-\[\#e4dfd6\]\/90 {
+      background-color: rgba(26, 31, 38, 0.96) !important;
+      border-top-color: rgba(255, 255, 255, 0.06) !important;
+    }
+    html.dark select {
+      background-color: #20252d !important;
+      color: #e2e8f0 !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    html.dark footer {
+      border-top-color: rgba(255, 255, 255, 0.08) !important;
+      color: #94a3b8 !important;
+    }
+    html.dark .text-\[\#242930\], html.dark .text-\[\#181d24\], html.dark .text-\[\#3a352d\], html.dark .text-\[\#3e3931\] {
+      color: #e2e8f0 !important;
+    }
+    html.dark .text-\[\#6d675b\], html.dark .text-\[\#6b665c\], html.dark .text-\[\#7f7a70\], html.dark .text-\[\#8e887c\], html.dark .text-\[\#656054\], html.dark .text-\[\#756f64\], html.dark .text-\[\#544f45\] {
+      color: #94a3b8 !important;
+    }
+    html.dark .border-\[\#dfd9cc\], html.dark .border-\[\#ded7ca\], html.dark .border-\[\#e2ddd4\] {
+      border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+    html.dark .bg-\[\#eae6de\], html.dark .bg-\[\#e6e2da\], html.dark .bg-\[\#e7e2d9\], html.dark .bg-\[\#e8e3da\] {
+      background-color: #1a1e24 !important;
+    }
+    html.dark .bg-\[\#ede4d5\], html.dark .bg-\[\#f3ecd8\], html.dark .bg-\[\#ede5d8\] {
+      background-color: #2b2518 !important;
+      color: #f6ad55 !important;
+    }
+    html.dark .bg-\[\#dfeae3\] {
+      background-color: #172c23 !important;
+      color: #68d391 !important;
+    }
+    html.dark .bg-\[\#f4e2e2\] {
+      background-color: #3b1c1c !important;
+      color: #fc8181 !important;
+    }
+    html.dark .bg-\[\#e1e9ef\] {
+      background-color: #1a2a38 !important;
+      color: #63b3ed !important;
+    }
+    html.dark #timer-dropdown {
+      background-color: #20252d !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Highlighting & Strikethrough Styles */
+    mark.usmle-hl-yellow {
+      background-color: #fef08a !important;
+      color: #1e293b !important;
+      padding: 0.1rem 0.25rem !important;
+      border-radius: 0.25rem !important;
+    }
+    html.dark mark.usmle-hl-yellow {
+      background-color: #854d0e !important;
+      color: #fef9c3 !important;
+    }
+    mark.usmle-hl-cyan {
+      background-color: #a5f3fc !important;
+      color: #0f172a !important;
+      padding: 0.1rem 0.25rem !important;
+      border-radius: 0.25rem !important;
+    }
+    html.dark mark.usmle-hl-cyan {
+      background-color: #164e63 !important;
+      color: #cffafe !important;
+    }
+    .option-eliminated {
+      opacity: 0.42 !important;
+      filter: grayscale(0.85);
+    }
+    .option-eliminated .option-text {
+      text-decoration: line-through !important;
+      text-decoration-color: #c24141 !important;
+      text-decoration-thickness: 2px !important;
+    }
+    .strike-toggle-btn {
+      opacity: 0.25;
+      transition: all 0.2s ease;
+    }
+    .option-item:hover .strike-toggle-btn, .option-eliminated .strike-toggle-btn {
+      opacity: 1;
+    }
+    #highlighter-bubble {
+      position: absolute;
+      display: none;
+      z-index: 1000;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+  </style></head>
 <body class="min-h-screen lg:h-screen lg:overflow-hidden bg-[#eae6de] text-[#242930] antialiased selection:bg-[#1d638c] selection:text-white flex flex-col">
 <!-- Main Frame Container -->
 <div class="flex flex-col min-h-screen lg:h-screen lg:overflow-hidden">
@@ -172,26 +340,29 @@
 <!-- Center Inset Search & Timer & Mode Selectors -->
 <div class="flex items-center gap-5"><div class="hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-2xl neu-groove-sm w-48 border border-white/40"><span class="material-symbols-outlined text-[#7f7a70] text-[17px]">search</span><input class="bg-transparent border-0 p-0 text-[12px] text-[#242930] placeholder-[#8e887c] focus:ring-0 w-full font-medium outline-none" placeholder="Search stems & concepts..." type="text" id="stem-search-input"></div><div class="flex items-center gap-2 p-1.5 rounded-2xl neu-extruded-sm border border-white/70 relative" id="interactive-timer-box"><div class="flex items-center gap-2 px-3 py-1 rounded-xl neu-groove-sm"><span class="material-symbols-outlined text-primary text-[18px]" id="timer-mode-icon">timer</span><span class="font-mono text-[14px] font-bold text-[#181d24] tracking-wider min-w-[65px] text-center" id="exam-timer">45:00</span><span class="text-[9px] uppercase font-bold text-[#8a8477]" id="timer-mode-label">Count</span></div><button class="w-8 h-8 rounded-xl neu-btn flex items-center justify-center text-primary hover:text-primaryDark transition-all" id="timer-start-pause-btn" title="Start / Pause Timer"><span class="material-symbols-outlined text-[17px]" id="timer-play-icon">play_arrow</span></button><button class="w-8 h-8 rounded-xl neu-btn flex items-center justify-center text-[#6d675b] hover:text-[#181d24] transition-all" id="timer-reset-btn" title="Reset Timer"><span class="material-symbols-outlined text-[16px]">restart_alt</span></button><div class="relative"><button class="w-8 h-8 rounded-xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary transition-all" id="timer-settings-toggle-btn" title="Timer Presets &amp; Modes"><span class="material-symbols-outlined text-[17px]">tune</span></button><div class="hidden absolute right-0 top-10 mt-1 w-60 p-3.5 rounded-2xl neu-extruded bg-[#eae6de] border border-white/80 shadow-lg z-50 flex flex-col gap-2.5 text-[11.5px]" id="timer-dropdown"><div class="font-bold text-[#181d24] pb-1 border-b border-[#ded7ca] flex justify-between items-center"><span class="">Timer Settings</span><button class="text-[10px] text-primary font-semibold hover:underline" id="timer-mode-toggle">Switch to Stopwatch</button></div><div class="text-[10.5px] font-semibold text-[#6d675b]">Quick Countdown Presets:</div><div class="grid grid-cols-4 gap-1.5"><button class="timer-preset-btn py-1 px-1.5 rounded-lg neu-btn text-center font-mono font-bold text-[11px] text-[#3a352d] hover:text-primary" data-mins="15">15m</button><button class="timer-preset-btn py-1 px-1.5 rounded-lg neu-btn text-center font-mono font-bold text-[11px] text-[#3a352d] hover:text-primary" data-mins="30">30m</button><button class="timer-preset-btn py-1 px-1.5 rounded-lg neu-btn text-center font-mono font-bold text-[11px] text-primary neu-pill-active" data-mins="45">45m</button><button class="timer-preset-btn py-1 px-1.5 rounded-lg neu-btn text-center font-mono font-bold text-[11px] text-[#3a352d] hover:text-primary" data-mins="60">60m</button></div><div class="flex items-center gap-1.5 pt-1"><input class="w-16 px-2 py-1 rounded-lg neu-groove-sm text-[11px] font-mono text-center outline-none border border-white/50" id="timer-custom-input" min="1" placeholder="Min" type="number" value="45"><button class="flex-1 py-1 px-2 rounded-lg neu-btn text-[11px] font-bold text-primary hover:text-primaryDark" id="timer-set-custom-btn">Set Custom</button></div></div></div></div><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1"><button class="px-3.5 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary">Tutor Mode</button><button class="px-3.5 py-1.5 rounded-xl text-[11px] font-semibold text-[#6b665c] hover:text-[#181d24] transition-colors">Timed Exam</button></div></div>
 <!-- Top Right Utilities & Candidate Profile -->
-<div class="flex items-center gap-3.5">
+<div class="flex items-center gap-2.5 sm:gap-3.5">
+<!-- Mastery Overview Button -->
+<button id="btn-open-mastery" class="flex items-center gap-1.5 px-3 py-2 rounded-2xl neu-btn text-[12px] font-bold text-[#444038] hover:text-primary transition-all" title="Multi-Step Mastery Overview">
+<span class="material-symbols-outlined text-[18px] text-primary">insights</span>
+<span class="hidden sm:inline">Mastery Overview</span>
+</button>
 <!-- Tactile Lab Values Button -->
-<button class="flex items-center gap-2 px-3.5 py-2 rounded-2xl neu-btn text-[12px] font-bold text-[#444038] hover:text-primary" title="Clinical Reference Values">
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-2xl neu-btn text-[12px] font-bold text-[#444038] hover:text-primary transition-all" title="Clinical Reference Values">
 <span class="material-symbols-outlined text-[18px] text-primary">science</span>
-<span class="">Normal Labs</span>
+<span class="hidden md:inline">Normal Labs</span>
 </button>
 <!-- Calculator Utility -->
-<button class="w-10 h-10 rounded-2xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary" title="Clinical Calculator">
+<button id="btn-open-calculator" class="w-10 h-10 rounded-2xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary transition-all" title="USMLE Standard Calculator (Alt+C)">
 <span class="material-symbols-outlined text-[19px]">calculate</span>
 </button>
-<!-- Notes Utility -->
-<button class="w-10 h-10 rounded-2xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary" title="Scratchpad &amp; Notes">
-<span class="material-symbols-outlined text-[19px]">edit_note</span>
+<!-- Dark / Warm Eye-Care Mode Toggle -->
+<button id="btn-theme-toggle" class="w-10 h-10 rounded-2xl neu-btn flex items-center justify-center text-[#555047] hover:text-primary transition-all" title="Toggle Dark / Warm Mode">
+<span class="material-symbols-outlined text-[19px]" id="theme-toggle-icon">dark_mode</span>
 </button>
-<!-- Candidate Pill Profile -->
-
 </div>
 </div>
 <!-- Live Ribbon with Discipline Filter Pills & Quick Toggles -->
-<div class="bg-[#e4dfd6]/90 border-t border-white/60 px-6 py-2.5"><div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-4 text-[12px]"><div class="flex flex-wrap items-center gap-3.5"><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40"><button type="button" class="px-3 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary neu-pill-active">USMLE Step 1</button><button type="button" class="px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors">USMLE Step 2 CK</button><button type="button" class="px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors">USMLE Step 3</button></div><div class="flex items-center gap-1.5 pl-1"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Discipline:</span><div class="relative flex items-center"><select id="discipline-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="Pathology" selected="">Pathology</option><option value="Physiology">Physiology</option><option value="Pharmacology">Pharmacology</option><option value="Anatomy &amp; Embryology">Anatomy &amp; Embryology</option><option value="Microbiology &amp; Immunology">Microbiology &amp; Immunology</option><option value="Biochemistry &amp; Genetics">Biochemistry &amp; Genetics</option><option value="Behavioral Science &amp; Psychiatry">Behavioral Science &amp; Psychiatry</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="flex items-center gap-1.5"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Chapter / System:</span><div class="relative flex items-center"><select id="chapter-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="All Chapters (20)" selected="">All Chapters (20)</option><option value="Cellular Injury &amp; Adaptation">Cellular Injury &amp; Adaptation</option><option value="Hemodynamic Disorders &amp; Shock">Hemodynamic Disorders &amp; Shock</option><option value="Inflammation &amp; Repair">Inflammation &amp; Repair</option><option value="Cardiovascular Pathology">Cardiovascular Pathology</option><option value="Pulmonary Pathology">Pulmonary Pathology</option><option value="Renal Pathology">Renal Pathology</option><option value="Neoplasia">Neoplasia</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-xl neu-groove-sm text-[11px] font-medium text-[#656054] border border-white/40"><span class="text-[#8a8477] font-semibold uppercase text-[10px] font-mono">Active:</span><span class="font-bold text-primary">Step 1</span><span class="text-[#9c9689]">&gt;</span><span class="font-bold text-[#181d24]">Pathology</span><span class="text-[#9c9689]">&gt;</span><span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">Ch01 Cellular Adaptations and Reversible Injury</span></div></div><div class="flex items-center gap-3 shrink-0"><button class="flex items-center gap-2 px-4 py-1.5 rounded-full neu-btn text-[11.5px] font-bold text-amber-700 hover:text-amber-800 transition-all border border-white/60" id="toggle-flagged-only-btn"><span class="material-symbols-outlined text-[16px] fill-current">bookmark</span><span class="">Only Marked (<span id="top-flag-count" class="">4</span>)</span></button><div class="font-mono text-[11.5px] text-[#6b665c] font-medium px-3 py-1 rounded-xl neu-groove-sm">Answered: <strong class="text-primary font-bold" id="top-answered-count">2/20</strong></div></div></div></div>
+<div class="bg-[#e4dfd6]/90 border-t border-white/60 px-6 py-2.5"><div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-4 text-[12px]"><div class="flex flex-wrap items-center gap-3.5"><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40"><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary neu-pill-active" data-step="1">USMLE Step 1</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="2">USMLE Step 2 CK</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="3">USMLE Step 3</button></div><div class="flex items-center gap-1.5 pl-1"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Discipline:</span><div class="relative flex items-center"><select id="discipline-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="Pathology" selected="">Pathology</option><option value="Physiology">Physiology</option><option value="Pharmacology">Pharmacology</option><option value="Anatomy &amp; Embryology">Anatomy &amp; Embryology</option><option value="Microbiology &amp; Immunology">Microbiology &amp; Immunology</option><option value="Biochemistry &amp; Genetics">Biochemistry &amp; Genetics</option><option value="Behavioral Science &amp; Psychiatry">Behavioral Science &amp; Psychiatry</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="flex items-center gap-1.5"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Chapter / System:</span><div class="relative flex items-center"><select id="chapter-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="All Chapters (20)" selected="">All Chapters (20)</option><option value="Cellular Injury &amp; Adaptation">Cellular Injury &amp; Adaptation</option><option value="Hemodynamic Disorders &amp; Shock">Hemodynamic Disorders &amp; Shock</option><option value="Inflammation &amp; Repair">Inflammation &amp; Repair</option><option value="Cardiovascular Pathology">Cardiovascular Pathology</option><option value="Pulmonary Pathology">Pulmonary Pathology</option><option value="Renal Pathology">Renal Pathology</option><option value="Neoplasia">Neoplasia</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-xl neu-groove-sm text-[11px] font-medium text-[#656054] border border-white/40"><span class="text-[#8a8477] font-semibold uppercase text-[10px] font-mono">Active:</span><span class="font-bold text-primary">Step 1</span><span class="text-[#9c9689]">&gt;</span><span class="font-bold text-[#181d24]">Pathology</span><span class="text-[#9c9689]">&gt;</span><span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">Ch01 Cellular Adaptations and Reversible Injury</span></div></div><div class="flex items-center gap-3 shrink-0"><button class="flex items-center gap-2 px-4 py-1.5 rounded-full neu-btn text-[11.5px] font-bold text-amber-700 hover:text-amber-800 transition-all border border-white/60" id="toggle-flagged-only-btn"><span class="material-symbols-outlined text-[16px] fill-current">bookmark</span><span class="">Only Marked (<span id="top-flag-count" class="">4</span>)</span></button><div class="font-mono text-[11.5px] text-[#6b665c] font-medium px-3 py-1 rounded-xl neu-groove-sm">Answered: <strong class="text-primary font-bold" id="top-answered-count">2/20</strong></div></div></div></div>
 </header>
 <!-- Main Workspace -->
 <main class="max-w-[1600px] mx-auto px-6 py-4 w-full flex-1 min-h-0 lg:overflow-hidden flex flex-col">
@@ -340,6 +511,155 @@
 </main>
 </div>
 <!-- Clinical Questions Database & Neumorphic Interactions -->
+
+<!-- Text Highlighter Floating Toolbar Bubble -->
+<div id="highlighter-bubble" class="rounded-2xl neu-extruded p-1.5 flex items-center gap-1.5 border border-white/50 bg-[#eae6de]">
+  <button type="button" id="btn-hl-yellow" class="w-7 h-7 rounded-xl bg-yellow-300 hover:bg-yellow-400 border border-yellow-500 shadow-sm flex items-center justify-center text-amber-900" title="Yellow Highlight">
+    <span class="material-symbols-outlined text-[15px]">brush</span>
+  </button>
+  <button type="button" id="btn-hl-cyan" class="w-7 h-7 rounded-xl bg-cyan-200 hover:bg-cyan-300 border border-cyan-400 shadow-sm flex items-center justify-center text-cyan-900" title="Cyan Highlight">
+    <span class="material-symbols-outlined text-[15px]">format_paint</span>
+  </button>
+  <button type="button" id="btn-hl-clear" class="w-7 h-7 rounded-xl neu-btn text-rose-600 hover:text-rose-700 flex items-center justify-center text-[11px] font-bold" title="Clear Highlight">
+    <span class="material-symbols-outlined text-[15px]">ink_eraser</span>
+  </button>
+</div>
+
+<!-- USMLE Standard Simple Calculator Floating Window -->
+<div id="calculator-modal" class="hidden fixed z-50 bottom-5 right-5 w-80 rounded-3xl neu-extruded border border-white/80 shadow-[0_12px_36px_rgba(0,0,0,0.3)] flex flex-col overflow-hidden select-none">
+  <!-- Calculator Drag/Title Bar -->
+  <div class="px-4 py-3 bg-[#e2ddd4] border-b border-white/60 flex items-center justify-between cursor-move" id="calc-header">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-[18px]">calculate</span>
+      <span class="font-display font-bold text-[13px] text-[#181d24]">USMLE Calculator</span>
+      <span id="calc-mem-indicator" class="hidden font-mono text-[9px] px-1.5 py-0.5 rounded bg-primary text-white font-bold">M</span>
+    </div>
+    <div class="flex items-center gap-1">
+      <button type="button" id="btn-close-calculator" class="w-6 h-6 rounded-lg neu-btn flex items-center justify-center text-[#6d675b] hover:text-accentDanger text-[12px]" title="Close (Esc)">
+        <span class="material-symbols-outlined text-[14px]">close</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Calculator Screen -->
+  <div class="p-3.5 flex flex-col gap-3">
+    <div class="p-3 rounded-2xl neu-groove flex flex-col items-end justify-center min-h-[64px] border border-white/50 bg-[#e5e0d7]">
+      <div id="calc-history" class="text-[11px] font-mono text-[#787266] truncate max-w-full min-h-[16px]"></div>
+      <div id="calc-display" class="font-mono text-[22px] font-extrabold text-[#181d24] tracking-tight truncate max-w-full">0</div>
+    </div>
+
+    <!-- Keypad Grid -->
+    <div class="grid grid-cols-4 gap-2 text-[13px] font-mono font-bold">
+      <!-- Row 1: Memory & Clear -->
+      <button type="button" class="calc-key calc-key-fn py-2 rounded-xl neu-btn text-amber-800 text-[11.5px]" data-val="MC">MC</button>
+      <button type="button" class="calc-key calc-key-fn py-2 rounded-xl neu-btn text-amber-800 text-[11.5px]" data-val="MR">MR</button>
+      <button type="button" class="calc-key calc-key-fn py-2 rounded-xl neu-btn text-amber-800 text-[11.5px]" data-val="M+">M+</button>
+      <button type="button" class="calc-key calc-key-fn py-2 rounded-xl neu-btn text-accentDanger text-[12px]" data-val="C">C</button>
+
+      <!-- Row 2: Special & Divide -->
+      <button type="button" class="calc-key calc-key-fn py-2 rounded-xl neu-btn text-[#4a453d]" data-val="sqrt">√</button>
+      <button type="button" class="calc-key calc-key-fn py-2 rounded-xl neu-btn text-[#4a453d]" data-val="neg">±</button>
+      <button type="button" class="calc-key calc-key-fn py-2 rounded-xl neu-btn text-[#4a453d]" data-val="%">%</button>
+      <button type="button" class="calc-key calc-key-op py-2 rounded-xl neu-btn text-primary text-[15px]" data-val="/">÷</button>
+
+      <!-- Row 3: 7 8 9 Multiply -->
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="7">7</button>
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="8">8</button>
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="9">9</button>
+      <button type="button" class="calc-key calc-key-op py-2 rounded-xl neu-btn text-primary text-[15px]" data-val="*">×</button>
+
+      <!-- Row 4: 4 5 6 Subtract -->
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="4">4</button>
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="5">5</button>
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="6">6</button>
+      <button type="button" class="calc-key calc-key-op py-2 rounded-xl neu-btn text-primary text-[16px]" data-val="-">-</button>
+
+      <!-- Row 5: 1 2 3 Add -->
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="1">1</button>
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="2">2</button>
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="3">3</button>
+      <button type="button" class="calc-key calc-key-op py-2 rounded-xl neu-btn text-primary text-[15px]" data-val="+">+</button>
+
+      <!-- Row 6: 0 . Backspace Equals -->
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val="0">0</button>
+      <button type="button" class="calc-key calc-key-num py-2 rounded-xl neu-extruded-xs text-[#181d24]" data-val=".">.</button>
+      <button type="button" class="calc-key calc-key-fn py-2 rounded-xl neu-btn text-[#6d675b]" data-val="BS">⌫</button>
+      <button type="button" class="calc-key calc-key-eq py-2 rounded-xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white shadow-md font-bold text-[16px]" data-val="=">=</button>
+    </div>
+  </div>
+</div>
+
+<!-- Multi-Step Mastery Overview Modal -->
+<div id="mastery-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 lg:p-6 overflow-y-auto">
+  <div class="relative w-full max-w-4xl max-h-[92vh] rounded-3xl neu-extruded border border-white/80 shadow-2xl flex flex-col overflow-hidden bg-[#eae6de]">
+    <!-- Modal Header -->
+    <div class="px-6 py-4 border-b border-[#ded7ca] flex items-center justify-between bg-[#e4ded4]/80 shrink-0">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl neu-extruded-xs flex items-center justify-center text-primary border border-white/80">
+          <span class="material-symbols-outlined text-[22px]">insights</span>
+        </div>
+        <div>
+          <h2 class="font-display font-extrabold text-[17px] text-[#181d24] leading-tight">Mastery Overview (全科掌握度小仪表盘)</h2>
+          <p class="text-[11.5px] text-[#6b665c]">Hierarchical USMLE Question Bank Progress &amp; Accuracy Tracking</p>
+        </div>
+      </div>
+      <button type="button" id="btn-close-mastery" class="w-9 h-9 rounded-2xl neu-btn flex items-center justify-center text-[#555047] hover:text-accentDanger transition-all" title="Close Modal (Esc)">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+
+    <!-- Modal Body: Step -> Discipline -> Chapter -->
+    <div class="p-6 overflow-y-auto space-y-6 flex-1">
+      <!-- 1. Step Selector (Level 1) -->
+      <div>
+        <div class="text-[11px] font-mono uppercase tracking-wider font-bold text-[#756f64] mb-2 flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-primary">looks_one</span>
+          <span>1. Select USMLE Step</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="mastery-step-tabs">
+          <button type="button" class="mastery-step-tab p-3.5 rounded-2xl neu-pill-active border border-primary/40 flex flex-col gap-1 text-left transition-all" data-step="1">
+            <div class="flex items-center justify-between">
+              <span class="font-display font-bold text-[13.5px] text-[#181d24]">USMLE Step 1</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">2,100 Qs Active</span>
+            </div>
+            <span class="text-[11px] text-[#6b665c]">Foundational Biomedical Sciences &amp; Pathology</span>
+          </button>
+          <button type="button" class="mastery-step-tab p-3.5 rounded-2xl neu-btn border border-white/60 flex flex-col gap-1 text-left opacity-75 hover:opacity-100 transition-all" data-step="2">
+            <div class="flex items-center justify-between">
+              <span class="font-display font-bold text-[13.5px] text-[#181d24]">USMLE Step 2 CK</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-100 text-amber-800">Pipeline</span>
+            </div>
+            <span class="text-[11px] text-[#6b665c]">Clinical Knowledge &amp; Disease Management</span>
+          </button>
+          <button type="button" class="mastery-step-tab p-3.5 rounded-2xl neu-btn border border-white/60 flex flex-col gap-1 text-left opacity-75 hover:opacity-100 transition-all" data-step="3">
+            <div class="flex items-center justify-between">
+              <span class="font-display font-bold text-[13.5px] text-[#181d24]">USMLE Step 3</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-100 text-amber-800">Pipeline</span>
+            </div>
+            <span class="text-[11px] text-[#6b665c]">Independent Practice &amp; Decision Making</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. Discipline Selector (Level 2) -->
+      <div id="mastery-discipline-container">
+        <div class="text-[11px] font-mono uppercase tracking-wider font-bold text-[#756f64] mb-2 flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-primary">category</span>
+          <span>2. Select Discipline / Subject</span>
+        </div>
+        <div class="flex flex-wrap gap-2" id="mastery-discipline-pills">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- 3. Chapter Breakdown & Metrics (Level 3) -->
+      <div id="mastery-content-area" class="space-y-4">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
     (function() {
       function formatChapterTitle(str) {
@@ -375,12 +695,20 @@
       // 2. Persistent State Management via localStorage
       const STORAGE_KEY_ANSWERS = "usmle_qa_answers_v1";
       const STORAGE_KEY_FLAGS = "usmle_qa_flags_v1";
+      const STORAGE_KEY_STRIKES = "usmle_qa_strikes_v1";
+      const STORAGE_KEY_HIGHLIGHTS = "usmle_qa_highlights_v1";
+      const STORAGE_KEY_THEME = "usmle_theme";
 
       let savedAnswers = {};
       let savedFlags = {};
+      let savedStrikes = {};
+      let savedHighlights = {};
+
       try {
         savedAnswers = JSON.parse(localStorage.getItem(STORAGE_KEY_ANSWERS)) || {};
         savedFlags = JSON.parse(localStorage.getItem(STORAGE_KEY_FLAGS)) || {};
+        savedStrikes = JSON.parse(localStorage.getItem(STORAGE_KEY_STRIKES)) || {};
+        savedHighlights = JSON.parse(localStorage.getItem(STORAGE_KEY_HIGHLIGHTS)) || {};
       } catch(e) {
         console.warn("Storage access restricted, using memory state", e);
       }
@@ -402,7 +730,7 @@
       let flaggedOnlyMode = false;
       let searchQuery = "";
       
-      // ★ Pagination / 20-Question Module Tracking
+      // Pagination / 20-Question Module Tracking
       const PAGE_SIZE = 20;
       let currentModuleIndex = 0; // 0-indexed: 0 = Q1-20, 1 = Q21-40, etc.
 
@@ -449,111 +777,104 @@
         });
       }
 
-      // 5. Select Chapter Handler
-      window.selectChapter = function(chapId) {
-        activeChapter = chapId;
-        activeBlock = "all";
-        flaggedOnlyMode = false;
-        searchQuery = "";
-        currentModuleIndex = 0; // Reset to first 20 questions
-        if (searchInput) searchInput.value = "";
+      // 5. Filter Questions Logic
+      function getFilteredQuestions() {
+        return allQuestions.filter(q => {
+          const matchChapter = activeChapter === "all" || q.chapter === activeChapter;
+          const matchBlock = activeBlock === "all" || q.block === activeBlock;
+          const matchFlag = !flaggedOnlyMode || q.flagged;
+          const matchSearch = !searchQuery || 
+            (q.stem && q.stem.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (q.leadQuestion && q.leadQuestion.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (q.explanation && q.explanation.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (q.options && q.options.some(opt => opt.toLowerCase().includes(searchQuery.toLowerCase())));
+
+          return matchChapter && matchBlock && matchFlag && matchSearch;
+        });
+      }
+
+      // 6. Chapter Selection
+      window.selectChapter = function(chapterId) {
+        activeChapter = chapterId;
+        currentModuleIndex = 0; // Reset to first 20-question module on chapter change
 
         if (chapterSelectDropdown) {
-          chapterSelectDropdown.value = chapId;
+          chapterSelectDropdown.value = chapterId;
         }
 
         if (breadcrumbEl) {
-          const curObj = chaptersData.find(c => c.id === chapId);
-          const rawTitle = curObj ? (curObj.name || curObj.id) : chapId;
-          breadcrumbEl.textContent = chapId === 'all' ? 'All Active Chapters' : formatChapterTitle(rawTitle);
+          if (chapterId === 'all') {
+            breadcrumbEl.textContent = 'All Active Chapters (2,100 Qs)';
+          } else {
+            const ch = chaptersData.find(c => c.id === chapterId);
+            breadcrumbEl.textContent = ch ? formatChapterTitle(ch.name || ch.id) : formatChapterTitle(chapterId);
+          }
         }
 
         updateUI();
         scrollQuestionsToTop();
       };
 
-      // 6. Filter Questions Helper
-      function getFilteredQuestions() {
-        return allQuestions.filter(q => {
-          if (activeChapter !== 'all' && q.chapter !== activeChapter) {
-            return false;
-          }
-          if (activeBlock !== 'all' && q.block !== activeBlock) {
-            return false;
-          }
-          if (flaggedOnlyMode && !q.flagged) {
-            return false;
-          }
-          if (searchQuery) {
-            const qStr = (q.stem + ' ' + q.leadQuestion + ' ' + q.title + ' ' + (q.subtag || '')).toLowerCase();
-            if (!qStr.includes(searchQuery.toLowerCase())) {
-              return false;
-            }
-          }
-          return true;
-        });
+      // 7. Scroll helper
+      function scrollQuestionsToTop() {
+        const rightContainer = document.getElementById('right-scroll-container');
+        if (rightContainer) {
+          rightContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
 
-      // 7. Render Block Selector Tabs
+      // 8. Render Block Tabs
       function renderBlockTabs() {
         if (!blockTabsContainer) return;
+        const currentFilteredByChapter = allQuestions.filter(q => activeChapter === 'all' || q.chapter === activeChapter);
+        
+        const b1Count = currentFilteredByChapter.filter(q => q.block === "Block 1").length;
+        const b2Count = currentFilteredByChapter.filter(q => q.block === "Block 2").length;
+        const b3Count = currentFilteredByChapter.filter(q => q.block === "Block 3").length;
+        const totalCount = currentFilteredByChapter.length;
+
+        const blocks = [
+          { id: "all", label: "All Blocks", count: totalCount },
+          { id: "Block 1", label: "Block 1 (Q01-50)", count: b1Count },
+          { id: "Block 2", label: "Block 2 (Q51-100)", count: b2Count },
+          { id: "Block 3", label: "Block 3 (Q101-150)", count: b3Count }
+        ];
+
         blockTabsContainer.innerHTML = '';
-
-        const currentChapterObj = chaptersData.find(c => c.id === activeChapter);
-        if (!currentChapterObj || currentChapterObj.status !== 'active') {
-          blockTabsContainer.style.display = 'none';
-          return;
-        }
-        blockTabsContainer.style.display = 'flex';
-
-        const chapterQs = allQuestions.filter(q => q.chapter === activeChapter);
-        const blocks = ['all', 'Block 1', 'Block 2', 'Block 3'];
-
-        blocks.forEach(blk => {
+        blocks.forEach(b => {
+          const isActive = activeBlock === b.id;
           const btn = document.createElement('button');
           btn.type = 'button';
-          const isBlkActive = activeBlock === blk;
-          
-          let count = chapterQs.length;
-          let label = "All (1-150)";
-          if (blk === 'Block 1') { count = chapterQs.filter(q => q.block === 'Block 1').length; label = "Block 1 (1-50)"; }
-          if (blk === 'Block 2') { count = chapterQs.filter(q => q.block === 'Block 2').length; label = "Block 2 (51-100)"; }
-          if (blk === 'Block 3') { count = chapterQs.filter(q => q.block === 'Block 3').length; label = "Block 3 (101-150)"; }
-
-          btn.className = `px-3 py-1.5 rounded-xl text-[11px] font-bold transition-all ${
-            isBlkActive ? 'neu-extruded-xs text-primary neu-pill-active' : 'text-[#656054] hover:text-[#181d24]'
+          btn.className = `px-3.5 py-1.5 rounded-xl text-[11px] font-bold transition-all ${
+            isActive 
+              ? 'neu-pill-active border border-primary/40' 
+              : 'text-[#6b665c] hover:text-[#181d24] neu-btn border-white/60'
           }`;
-          btn.textContent = label;
-
+          btn.innerHTML = `${b.label} <span class="text-[10px] opacity-75 font-mono">(${b.count})</span>`;
           btn.addEventListener('click', () => {
-            activeBlock = blk;
-            currentModuleIndex = 0; // Reset to first 20 of this block
+            activeBlock = b.id;
+            currentModuleIndex = 0;
             updateUI();
             scrollQuestionsToTop();
           });
-
           blockTabsContainer.appendChild(btn);
         });
       }
 
-      // 8. Render Module Dropdown & Pagination Controls
+      // 9. Update 20-Question Module Controls
       function updateModuleControls(totalQuestions) {
         const totalModules = Math.ceil(totalQuestions / PAGE_SIZE) || 1;
-        if (currentModuleIndex >= totalModules) {
-          currentModuleIndex = Math.max(0, totalModules - 1);
-        }
-
+        
         if (moduleSelectDropdown) {
           moduleSelectDropdown.innerHTML = '';
           for (let i = 0; i < totalModules; i++) {
-            const startQ = i * PAGE_SIZE + 1;
-            const endQ = Math.min((i + 1) * PAGE_SIZE, totalQuestions);
-            
+            const start = i * PAGE_SIZE + 1;
+            const end = Math.min((i + 1) * PAGE_SIZE, totalQuestions);
             const opt = document.createElement('option');
             opt.value = i;
-            const startStr = startQ < 10 ? '0' + startQ : startQ;
-            const endStr = endQ < 10 ? '0' + endQ : endQ;
-            opt.textContent = `Q${startStr} - Q${endStr}`;
+            opt.textContent = `Set ${i + 1}: Q${start} - Q${end} (${end - start + 1} Qs)`;
             if (i === currentModuleIndex) {
               opt.selected = true;
             }
@@ -561,95 +882,91 @@
           }
         }
 
-        if (navPrevSetBtn) {
-          navPrevSetBtn.disabled = (currentModuleIndex === 0);
-        }
-        if (navNextSetBtn) {
-          navNextSetBtn.disabled = (currentModuleIndex >= totalModules - 1);
-        }
-
-        if (navTotalLabel) {
-          if (totalQuestions === 0) {
-            navTotalLabel.textContent = "0 Questions";
-          } else {
-            const startQ = currentModuleIndex * PAGE_SIZE + 1;
-            const endQ = Math.min((currentModuleIndex + 1) * PAGE_SIZE, totalQuestions);
-            navTotalLabel.textContent = `${startQ}-${endQ} of ${totalQuestions}`;
-          }
-        }
+        if (navPrevSetBtn) navPrevSetBtn.disabled = (currentModuleIndex === 0);
+        if (navNextSetBtn) navNextSetBtn.disabled = (currentModuleIndex >= totalModules - 1);
+        if (navTotalLabel) navTotalLabel.textContent = `${totalQuestions} Questions`;
       }
 
-      // Helper: Isolated Smooth Scrolling for Right Questions Panel
-      function scrollQuestionsToTop() {
-        const rc = document.getElementById('right-scroll-container');
-        if (rc && window.innerWidth >= 1024) {
-          rc.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          window.scrollTo({ top: 120, behavior: 'smooth' });
-        }
-      }
-
-      function scrollToQuestion(qId) {
-        const el = document.getElementById(`question-card-${qId}`);
-        const rc = document.getElementById('right-scroll-container');
-        if (!el) return;
-        if (rc && window.innerWidth >= 1024) {
-          const rcRect = rc.getBoundingClientRect();
-          const elRect = el.getBoundingClientRect();
-          const targetTop = rc.scrollTop + (elRect.top - rcRect.top) - 16;
-          rc.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
-        } else {
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        el.classList.add('ring-2', 'ring-primary');
-        setTimeout(() => el.classList.remove('ring-2', 'ring-primary'), 1400);
-      }
-
-      // 9. Render Navigator Buttons (Strictly 20 Questions)
+      // 10. Render 20-Button Navigator Grid
       function renderNavigator(current20Qs) {
         if (!navGrid) return;
         navGrid.innerHTML = '';
 
         current20Qs.forEach((q, idx) => {
+          const globalNumber = q.qNum || (currentModuleIndex * PAGE_SIZE + idx + 1);
           const btn = document.createElement('button');
           btn.type = 'button';
-          btn.setAttribute('data-q', q.id);
-          btn.title = `#${q.qNum || idx + 1}: ${q.title}`;
-          
-          let stateStyle = "neu-groove text-[#3e3931] border border-white/50";
+
+          let btnClass = "w-full aspect-square rounded-2xl flex flex-col items-center justify-center font-mono text-[12px] font-bold transition-all relative border ";
+
           if (q.answered) {
             if (q.userChoice === q.correct) {
-              stateStyle = "bg-[#2d7a5b] text-white neu-extruded-xs border border-white/40 font-bold shadow-sm";
+              btnClass += "neu-groove text-accentSuccess border-emerald-500/40 bg-[#dfeae3]";
             } else {
-              stateStyle = "bg-[#c24141] text-white neu-extruded-xs border border-white/40 font-bold shadow-sm";
+              btnClass += "neu-groove text-accentDanger border-rose-400/40 bg-[#f4e2e2]";
             }
+          } else {
+            btnClass += "neu-btn text-[#4a453d] border-white/80 hover:text-primary";
           }
 
-          const displayNum = q.qNum ? (q.qNum < 10 ? '0' + q.qNum : q.qNum) : (idx + 1 < 10 ? '0' + (idx + 1) : idx + 1);
+          const flagIndicator = q.flagged ? `
+            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-amber-500 text-white flex items-center justify-center text-[8px] shadow-sm">
+              ★
+            </span>
+          ` : '';
 
-          btn.className = `relative h-11 rounded-2xl ${stateStyle} text-[12px] font-mono font-bold flex items-center justify-center transition-all hover:scale-[1.05] active:scale-95 shadow-sm`;
+          const displayNum = globalNumber < 10 ? '0' + globalNumber : globalNumber;
+
+          btn.className = btnClass;
           btn.innerHTML = `
-            ${displayNum}
-            ${q.flagged ? '<span class="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-amber-400 border-2 border-white shadow-sm flex items-center justify-center text-[9px] text-amber-950 font-extrabold">★</span>' : ''}
+            ${flagIndicator}
+            <span>${displayNum}</span>
+            <span class="text-[8.5px] opacity-70 font-sans -mt-0.5">${q.block ? q.block.replace('Block ', 'B') : 'Q'}</span>
           `;
 
           btn.addEventListener('click', () => {
-            scrollToQuestion(q.id);
+            const targetEl = document.getElementById(`question-card-${q.id}`);
+            if (targetEl) {
+              targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
           });
 
           navGrid.appendChild(btn);
         });
       }
 
-      // 10. Render Question Cards in Main Container (Current 20 Questions)
+      // 11. Strikethrough Toggle Engine
+      function toggleStrike(qId, letter) {
+        if (!savedStrikes[qId]) savedStrikes[qId] = {};
+        savedStrikes[qId][letter] = !savedStrikes[qId][letter];
+        try {
+          localStorage.setItem(STORAGE_KEY_STRIKES, JSON.stringify(savedStrikes));
+        } catch(e){}
+
+        const card = document.getElementById(`question-card-${qId}`);
+        if (card) {
+          const optItem = card.querySelector(`.option-item[data-opt="${letter}"]`);
+          if (optItem) {
+            const isStruck = savedStrikes[qId][letter];
+            optItem.classList.toggle('option-eliminated', !!isStruck);
+            const strikeBtn = optItem.querySelector('.strike-toggle-btn');
+            if (strikeBtn) {
+              strikeBtn.classList.toggle('text-accentDanger', !!isStruck);
+              strikeBtn.classList.toggle('neu-groove', !!isStruck);
+              strikeBtn.title = isStruck ? 'Restore Option' : 'Eliminate Option (Right-click)';
+            }
+          }
+        }
+      }
+
+      // 12. Render Questions
       function renderQuestions(current20Qs, totalQuestions, totalModules) {
         if (!questionsWrapper) return;
         questionsWrapper.innerHTML = '';
-        const letters = ['A', 'B', 'C', 'D', 'E'];
 
+        const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
         const currentChapterObj = chaptersData.find(c => c.id === activeChapter);
 
-        // Placeholder Chapter View
         if (currentChapterObj && currentChapterObj.status === 'placeholder') {
           const displayTitle = formatChapterTitle(currentChapterObj.name || currentChapterObj.id);
           questionsWrapper.innerHTML = `
@@ -699,6 +1016,9 @@
             let letterStyle = "neu-extruded-xs text-[#3a352d] border border-white/60";
             let statusIcon = "";
 
+            const isStruck = savedStrikes[q.id] && savedStrikes[q.id][letter];
+            const strikeClass = isStruck ? "option-eliminated" : "";
+
             if (q.answered) {
               if (letter === q.correct) {
                 optStyle = "neu-groove bg-[#dfeae3] border border-emerald-500/50 text-[#1f5c42] font-semibold";
@@ -717,12 +1037,19 @@
             }
 
             optionsHtml += `
-              <div class="option-item px-4 py-2.5 rounded-2xl ${optStyle} flex items-center justify-between transition-all" data-q="${q.id}" data-opt="${letter}">
+              <div class="option-item px-4 py-2.5 rounded-2xl ${optStyle} ${strikeClass} flex items-center justify-between transition-all group" data-q="${q.id}" data-opt="${letter}">
                 <div class="flex items-center gap-3 flex-1 pr-2">
                   <span class="w-8 h-8 rounded-full ${letterStyle} flex items-center justify-center font-mono text-[12px] font-bold shrink-0">${letter}</span>
-                  <span class="text-[13.5px] text-[#242930] font-medium leading-relaxed">${optText}</span>
+                  <span class="option-text text-[13.5px] text-[#242930] font-medium leading-relaxed">${optText}</span>
                 </div>
-                ${statusIcon}
+                <div class="flex items-center gap-2">
+                  ${!q.answered ? `
+                    <button type="button" class="strike-toggle-btn w-6 h-6 rounded-lg neu-btn flex items-center justify-center text-[#756f64] hover:text-accentDanger transition-all ${isStruck ? 'text-accentDanger neu-groove' : ''}" title="${isStruck ? 'Restore Option' : 'Eliminate Option (Right-click)'}" data-action="toggle-strike" data-q="${q.id}" data-opt="${letter}">
+                      <span class="material-symbols-outlined text-[13px] pointer-events-none">strikethrough_s</span>
+                    </button>
+                  ` : ''}
+                  ${statusIcon}
+                </div>
               </div>
             `;
           });
@@ -740,6 +1067,7 @@
           `;
 
           const qIndexLabel = q.qNum ? `Question ${q.qNum < 10 ? '0' + q.qNum : q.qNum}` : `Question ${idx + 1}`;
+          const currentStemContent = savedHighlights[q.id] || q.stem;
 
           card.innerHTML = `
             <div class="flex items-center justify-between pb-3 border-b border-[#dfd9cc] flex-wrap gap-2">
@@ -757,9 +1085,9 @@
               ${flagBtnMarkup}
             </div>
 
-            <p class="text-[14px] text-[#242930] leading-relaxed font-normal">
-              ${q.stem}
-            </p>
+            <div class="question-stem text-[14px] text-[#242930] leading-relaxed font-normal select-text" data-q="${q.id}">
+              ${currentStemContent}
+            </div>
 
             <div class="p-3.5 rounded-2xl neu-groove flex items-center gap-3 border border-white/50 bg-[#e7e2d9]">
               <div class="w-8 h-8 rounded-xl neu-extruded-xs flex items-center justify-center text-primary shrink-0">
@@ -791,7 +1119,7 @@
                 </span>
               </div>
               
-              <div class="explanation-content text-[13px] text-[#242930] leading-relaxed space-y-2">
+              <div class="explanation-content text-[13px] text-[#242930] leading-relaxed space-y-2 select-text">
                 ${q.explanation || `<p>${q.rawObjective || ''}</p>`}
               </div>
             </div>
@@ -848,7 +1176,7 @@
         }
       }
 
-      // 11. Update Metrics and Chapter Pills
+      // 13. Update Metrics and Chapter Pills
       function updateMetricsAndChapterPills() {
         let totalAnswered = 0;
         let totalCorrect = 0;
@@ -984,7 +1312,7 @@
         }
       }
 
-      // 12. Full UI Refresh Orchestrator (With 20-Question Module Pagination)
+      // 14. Full UI Refresh Orchestrator
       function updateUI() {
         const filtered = getFilteredQuestions();
         const totalQuestions = filtered.length;
@@ -1006,7 +1334,7 @@
         updateMetricsAndChapterPills();
       }
 
-      // 13. Module Dropdown & Chevron Listeners
+      // 15. Module Dropdown & Chevron Listeners
       if (moduleSelectDropdown) {
         moduleSelectDropdown.addEventListener('change', (e) => {
           currentModuleIndex = parseInt(e.target.value, 10);
@@ -1037,7 +1365,7 @@
         });
       }
 
-      // 14. Global Click & Delegation Listener
+      // 16. Global Click & Delegation Listener (Answers, Flags, Strikes)
       document.addEventListener('click', (e) => {
         // A. Toggle Flag / Bookmark
         const flagBtn = e.target.closest('.flag-toggle-btn');
@@ -1054,28 +1382,42 @@
           return;
         }
 
-        // B. Select Option
+        // B. Strikethrough Button Click
+        const strikeBtn = e.target.closest('[data-action="toggle-strike"]');
+        if (strikeBtn) {
+          e.stopPropagation();
+          const qId = parseInt(strikeBtn.getAttribute('data-q'), 10);
+          const opt = strikeBtn.getAttribute('data-opt');
+          toggleStrike(qId, opt);
+          return;
+        }
+
+        // C. Select Option
         const optItem = e.target.closest('.option-item');
         if (optItem) {
           const qId = parseInt(optItem.getAttribute('data-q'), 10);
           const chosenOpt = optItem.getAttribute('data-opt');
           const q = allQuestions.find(item => item.id === qId);
           if (q && !q.answered) {
+            // If option was struck, unstuck it on selection
+            if (savedStrikes[qId] && savedStrikes[qId][chosenOpt]) {
+              toggleStrike(qId, chosenOpt);
+            }
             q.tempChoice = chosenOpt;
             const container = optItem.closest('.options-container');
             container.querySelectorAll('.option-item').forEach(el => {
-              el.className = "option-item px-4 py-2.5 rounded-2xl neu-groove-sm hover:border-white/80 cursor-pointer flex items-center justify-between transition-all";
+              el.className = "option-item px-4 py-2.5 rounded-2xl neu-groove-sm hover:border-white/80 cursor-pointer flex items-center justify-between transition-all group";
               const lSpan = el.querySelector('span:first-child');
               lSpan.className = "w-8 h-8 rounded-full neu-extruded-xs text-[#3a352d] border border-white/60 flex items-center justify-center font-mono text-[12px] font-bold shrink-0";
             });
-            optItem.className = "option-item px-4 py-2.5 rounded-2xl neu-groove border border-primary/50 bg-[#e1e9ef] flex items-center justify-between cursor-pointer transition-all";
+            optItem.className = "option-item px-4 py-2.5 rounded-2xl neu-groove border border-primary/50 bg-[#e1e9ef] flex items-center justify-between cursor-pointer transition-all group";
             const lSpan = optItem.querySelector('span:first-child');
             lSpan.className = "w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-mono text-[12px] font-bold shadow-sm shrink-0";
           }
           return;
         }
 
-        // C. Clear Option Selection
+        // D. Clear Option Selection
         const clearBtn = e.target.closest('.clear-btn');
         if (clearBtn) {
           const qId = parseInt(clearBtn.getAttribute('data-q'), 10);
@@ -1085,7 +1427,7 @@
             const card = document.getElementById(`question-card-${qId}`);
             if (card) {
               card.querySelectorAll('.option-item').forEach(el => {
-                el.className = "option-item px-4 py-2.5 rounded-2xl neu-groove-sm hover:border-white/80 cursor-pointer flex items-center justify-between transition-all";
+                el.className = "option-item px-4 py-2.5 rounded-2xl neu-groove-sm hover:border-white/80 cursor-pointer flex items-center justify-between transition-all group";
                 const lSpan = el.querySelector('span:first-child');
                 lSpan.className = "w-8 h-8 rounded-full neu-extruded-xs text-[#3a352d] border border-white/60 flex items-center justify-center font-mono text-[12px] font-bold shrink-0";
               });
@@ -1094,7 +1436,7 @@
           return;
         }
 
-        // D. Submit Answer
+        // E. Submit Answer
         const submitBtn = e.target.closest('.submit-btn');
         if (submitBtn) {
           const qId = parseInt(submitBtn.getAttribute('data-q'), 10);
@@ -1114,7 +1456,600 @@
         }
       });
 
-      // 15. Top Toolbar Controls
+      // 17. Right-Click to Strike/Eliminate Option (USMLE standard behavior)
+      document.addEventListener('contextmenu', (e) => {
+        const optItem = e.target.closest('.option-item');
+        if (optItem) {
+          e.preventDefault();
+          const qId = parseInt(optItem.getAttribute('data-q'), 10);
+          const opt = optItem.getAttribute('data-opt');
+          const q = allQuestions.find(item => item.id === qId);
+          if (q && !q.answered) {
+            toggleStrike(qId, opt);
+          }
+        }
+      });
+
+      // 18. Text Highlighting Engine
+      const hlBubble = document.getElementById('highlighter-bubble');
+      let currentSelectionRange = null;
+      let activeHighlightTargetQId = null;
+
+      function checkTextSelection() {
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed || sel.toString().trim().length === 0) {
+          if (hlBubble) hlBubble.style.display = 'none';
+          currentSelectionRange = null;
+          activeHighlightTargetQId = null;
+          return;
+        }
+
+        const range = sel.getRangeAt(0);
+        const container = range.commonAncestorContainer;
+        const stemEl = container.nodeType === 1 ? container.closest('.question-stem') : container.parentElement.closest('.question-stem');
+        
+        if (stemEl) {
+          currentSelectionRange = range.cloneRange();
+          activeHighlightTargetQId = parseInt(stemEl.getAttribute('data-q'), 10);
+          const rect = range.getBoundingClientRect();
+          
+          if (hlBubble) {
+            hlBubble.style.display = 'flex';
+            const topPos = window.scrollY + rect.top - 46;
+            const leftPos = window.scrollX + rect.left + (rect.width / 2) - 55;
+            hlBubble.style.top = `${Math.max(10, topPos)}px`;
+            hlBubble.style.left = `${Math.max(10, leftPos)}px`;
+          }
+        } else {
+          if (hlBubble) hlBubble.style.display = 'none';
+        }
+      }
+
+      document.addEventListener('mouseup', () => {
+        setTimeout(checkTextSelection, 10);
+      });
+
+      function applyHighlight(colorClass) {
+        if (!currentSelectionRange || !activeHighlightTargetQId) return;
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(currentSelectionRange);
+
+        const card = document.getElementById(`question-card-${activeHighlightTargetQId}`);
+        const stemEl = card ? card.querySelector('.question-stem') : null;
+        if (!stemEl) return;
+
+        if (colorClass === 'clear') {
+          // Unwrap mark tags in selection
+          const marks = stemEl.querySelectorAll('mark.usmle-hl-yellow, mark.usmle-hl-cyan');
+          marks.forEach(m => {
+            if (sel.containsNode(m, true)) {
+              const parent = m.parentNode;
+              while (m.firstChild) parent.insertBefore(m.firstChild, m);
+              parent.removeChild(m);
+            }
+          });
+        } else {
+          const mark = document.createElement('mark');
+          mark.className = colorClass;
+          try {
+            currentSelectionRange.surroundContents(mark);
+          } catch(err) {
+            // Complex cross-element fallback
+            const span = document.createElement('span');
+            span.className = colorClass;
+            span.appendChild(currentSelectionRange.extractContents());
+            currentSelectionRange.insertNode(span);
+          }
+        }
+
+        savedHighlights[activeHighlightTargetQId] = stemEl.innerHTML;
+        try {
+          localStorage.setItem(STORAGE_KEY_HIGHLIGHTS, JSON.stringify(savedHighlights));
+        } catch(e){}
+
+        if (hlBubble) hlBubble.style.display = 'none';
+        sel.removeAllRanges();
+      }
+
+      const btnHlYellow = document.getElementById('btn-hl-yellow');
+      const btnHlCyan = document.getElementById('btn-hl-cyan');
+      const btnHlClear = document.getElementById('btn-hl-clear');
+
+      if (btnHlYellow) btnHlYellow.addEventListener('mousedown', (e) => { e.preventDefault(); applyHighlight('usmle-hl-yellow'); });
+      if (btnHlCyan) btnHlCyan.addEventListener('mousedown', (e) => { e.preventDefault(); applyHighlight('usmle-hl-cyan'); });
+      if (btnHlClear) btnHlClear.addEventListener('mousedown', (e) => { e.preventDefault(); applyHighlight('clear'); });
+
+      // 19. USMLE Standard Simple Calculator Engine
+      const calcModal = document.getElementById('calculator-modal');
+      const calcDisplay = document.getElementById('calc-display');
+      const calcHistory = document.getElementById('calc-history');
+      const calcMemBadge = document.getElementById('calc-mem-indicator');
+      const btnOpenCalc = document.getElementById('btn-open-calculator');
+      const btnCloseCalc = document.getElementById('btn-close-calculator');
+
+      let calcVal = "0";
+      let calcPrevVal = null;
+      let calcCurrentOp = null;
+      let calcMemory = 0;
+      let calcWaitingSecondOperand = false;
+
+      function updateCalcScreen() {
+        if (calcDisplay) calcDisplay.textContent = calcVal;
+        if (calcHistory) {
+          if (calcPrevVal !== null && calcCurrentOp) {
+            const opSymbol = calcCurrentOp === '*' ? '×' : (calcCurrentOp === '/' ? '÷' : calcCurrentOp);
+            calcHistory.textContent = `${calcPrevVal} ${opSymbol}`;
+          } else {
+            calcHistory.textContent = "";
+          }
+        }
+        if (calcMemBadge) {
+          calcMemBadge.classList.toggle('hidden', calcMemory === 0);
+        }
+      }
+
+      function inputDigit(digit) {
+        if (calcWaitingSecondOperand) {
+          calcVal = digit;
+          calcWaitingSecondOperand = false;
+        } else {
+          calcVal = calcVal === "0" ? digit : calcVal + digit;
+        }
+        if (calcVal.length > 12) calcVal = calcVal.substring(0, 12);
+        updateCalcScreen();
+      }
+
+      function inputDecimal() {
+        if (calcWaitingSecondOperand) {
+          calcVal = "0.";
+          calcWaitingSecondOperand = false;
+          updateCalcScreen();
+          return;
+        }
+        if (!calcVal.includes('.')) {
+          calcVal += '.';
+          updateCalcScreen();
+        }
+      }
+
+      function executeCalcOp(first, second, op) {
+        const a = parseFloat(first);
+        const b = parseFloat(second);
+        if (isNaN(a) || isNaN(b)) return second;
+        switch (op) {
+          case '+': return (a + b).toString();
+          case '-': return (a - b).toString();
+          case '*': return (a * b).toString();
+          case '/': return b === 0 ? "Error" : (a / b).toString();
+          default: return second;
+        }
+      }
+
+      function handleCalcOperator(nextOp) {
+        const inputValue = parseFloat(calcVal);
+        if (calcCurrentOp && calcWaitingSecondOperand) {
+          calcCurrentOp = nextOp;
+          updateCalcScreen();
+          return;
+        }
+
+        if (calcPrevVal === null) {
+          calcPrevVal = calcVal;
+        } else if (calcCurrentOp) {
+          const result = executeCalcOp(calcPrevVal, calcVal, calcCurrentOp);
+          calcVal = String(Number(parseFloat(result).toFixed(8)));
+          calcPrevVal = calcVal;
+        }
+
+        calcWaitingSecondOperand = true;
+        calcCurrentOp = nextOp;
+        updateCalcScreen();
+      }
+
+      function handleCalcEquals() {
+        if (calcCurrentOp === null || calcPrevVal === null) return;
+        const result = executeCalcOp(calcPrevVal, calcVal, calcCurrentOp);
+        if (result === "Error") {
+          calcVal = "Error";
+        } else {
+          calcVal = String(Number(parseFloat(result).toFixed(8)));
+        }
+        calcPrevVal = null;
+        calcCurrentOp = null;
+        calcWaitingSecondOperand = false;
+        updateCalcScreen();
+      }
+
+      function handleCalcSpecial(type) {
+        let v = parseFloat(calcVal);
+        if (isNaN(v)) return;
+        if (type === 'sqrt') {
+          calcVal = v < 0 ? "Error" : String(Number(Math.sqrt(v).toFixed(8)));
+        } else if (type === 'neg') {
+          calcVal = String(-v);
+        } else if (type === '%') {
+          calcVal = String(v / 100);
+        } else if (type === 'C') {
+          calcVal = "0";
+          calcPrevVal = null;
+          calcCurrentOp = null;
+          calcWaitingSecondOperand = false;
+        } else if (type === 'BS') {
+          calcVal = calcVal.length > 1 ? calcVal.slice(0, -1) : "0";
+        } else if (type === 'MC') {
+          calcMemory = 0;
+        } else if (type === 'MR') {
+          calcVal = String(calcMemory);
+          calcWaitingSecondOperand = false;
+        } else if (type === 'M+') {
+          calcMemory += v;
+        }
+        updateCalcScreen();
+      }
+
+      function toggleCalculator(show) {
+        if (!calcModal) return;
+        const isHidden = calcModal.classList.contains('hidden');
+        const shouldShow = show !== undefined ? show : isHidden;
+        calcModal.classList.toggle('hidden', !shouldShow);
+        if (shouldShow) {
+          updateCalcScreen();
+        }
+      }
+
+      if (btnOpenCalc) btnOpenCalc.addEventListener('click', () => toggleCalculator());
+      if (btnCloseCalc) btnCloseCalc.addEventListener('click', () => toggleCalculator(false));
+
+      document.querySelectorAll('.calc-key').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const val = btn.getAttribute('data-val');
+          if (!val) return;
+          if (val >= '0' && val <= '9') {
+            inputDigit(val);
+          } else if (val === '.') {
+            inputDecimal();
+          } else if (['+', '-', '*', '/'].includes(val)) {
+            handleCalcOperator(val);
+          } else if (val === '=') {
+            handleCalcEquals();
+          } else {
+            handleCalcSpecial(val);
+          }
+        });
+      });
+
+      // Keyboard support for calculator
+      window.addEventListener('keydown', (e) => {
+        // Alt + C toggles calculator
+        if (e.altKey && (e.key === 'c' || e.key === 'C')) {
+          e.preventDefault();
+          toggleCalculator();
+          return;
+        }
+
+        if (calcModal && !calcModal.classList.contains('hidden')) {
+          if (e.key >= '0' && e.key <= '9') {
+            inputDigit(e.key);
+          } else if (e.key === '.') {
+            inputDecimal();
+          } else if (['+', '-', '*', '/'].includes(e.key)) {
+            handleCalcOperator(e.key);
+          } else if (e.key === 'Enter' || e.key === '=') {
+            e.preventDefault();
+            handleCalcEquals();
+          } else if (e.key === 'Backspace') {
+            handleCalcSpecial('BS');
+          } else if (e.key === 'Escape') {
+            toggleCalculator(false);
+          } else if (e.key.toLowerCase() === 'c') {
+            handleCalcSpecial('C');
+          }
+        }
+      });
+
+      // 20. Dark / Warm Eye-Care Mode Toggle
+      const themeToggleBtn = document.getElementById('btn-theme-toggle');
+      const themeToggleIcon = document.getElementById('theme-toggle-icon');
+
+      function updateThemeIcon() {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (themeToggleIcon) {
+          themeToggleIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
+        }
+      }
+
+      if (themeToggleBtn) {
+        updateThemeIcon();
+        themeToggleBtn.addEventListener('click', () => {
+          const isDark = document.documentElement.classList.toggle('dark');
+          updateThemeIcon();
+          try {
+            localStorage.setItem(STORAGE_KEY_THEME, isDark ? 'dark' : 'light');
+          } catch(e){}
+        });
+      }
+
+      // 21. Multi-Step Mastery Overview Dashboard Engine
+      const masteryModal = document.getElementById('mastery-modal');
+      const btnOpenMastery = document.getElementById('btn-open-mastery');
+      const btnCloseMastery = document.getElementById('btn-close-mastery');
+      const masteryStepTabs = document.getElementById('mastery-step-tabs');
+      const masteryDisciplinePills = document.getElementById('mastery-discipline-pills');
+      const masteryContentArea = document.getElementById('mastery-content-area');
+
+      let currentMasteryStep = 1; // 1, 2, 3
+      let currentMasteryDiscipline = "Pathology";
+
+      const DISCIPLINES_STEP1 = [
+        { id: "Pathology", name: "Pathology", count: 2100, active: true },
+        { id: "Physiology", name: "Physiology", count: 0, active: false },
+        { id: "Pharmacology", name: "Pharmacology", count: 0, active: false },
+        { id: "Anatomy", name: "Anatomy & Embryology", count: 0, active: false },
+        { id: "Microbiology", name: "Microbiology & Immunology", count: 0, active: false },
+        { id: "Biochemistry", name: "Biochemistry & Genetics", count: 0, active: false },
+        { id: "Behavioral", name: "Behavioral Science & Psychiatry", count: 0, active: false }
+      ];
+
+      const DISCIPLINES_STEP2 = [
+        { id: "InternalMedicine", name: "Internal Medicine", count: 0, active: false },
+        { id: "Surgery", name: "Surgery", count: 0, active: false },
+        { id: "Pediatrics", name: "Pediatrics", count: 0, active: false },
+        { id: "OBGYN", name: "Obstetrics & Gynecology", count: 0, active: false },
+        { id: "Psychiatry", name: "Psychiatry & Behavioral Health", count: 0, active: false },
+        { id: "Preventive", name: "Preventive Medicine & Biostats", count: 0, active: false }
+      ];
+
+      const DISCIPLINES_STEP3 = [
+        { id: "Foundations", name: "Foundations of Independent Practice", count: 0, active: false },
+        { id: "AdvancedMedicine", name: "Advanced Clinical Medicine", count: 0, active: false },
+        { id: "CCS", name: "Computer-based Case Simulations (CCS)", count: 0, active: false }
+      ];
+
+      function renderMasteryDashboard() {
+        if (!masteryContentArea) return;
+
+        // A. Render Step Tabs
+        if (masteryStepTabs) {
+          masteryStepTabs.querySelectorAll('.mastery-step-tab').forEach(tab => {
+            const step = parseInt(tab.getAttribute('data-step'), 10);
+            if (step === currentMasteryStep) {
+              tab.className = "mastery-step-tab p-3.5 rounded-2xl neu-pill-active border border-primary/40 flex flex-col gap-1 text-left transition-all";
+            } else {
+              tab.className = "mastery-step-tab p-3.5 rounded-2xl neu-btn border border-white/60 flex flex-col gap-1 text-left opacity-75 hover:opacity-100 transition-all";
+            }
+          });
+        }
+
+        // B. Render Discipline Pills
+        if (masteryDisciplinePills) {
+          masteryDisciplinePills.innerHTML = '';
+          const discList = currentMasteryStep === 1 ? DISCIPLINES_STEP1 : (currentMasteryStep === 2 ? DISCIPLINES_STEP2 : DISCIPLINES_STEP3);
+
+          discList.forEach(d => {
+            const isDiscActive = d.id === currentMasteryDiscipline;
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = `px-3.5 py-2 rounded-xl text-[11.5px] font-bold transition-all flex items-center gap-1.5 ${
+              isDiscActive 
+                ? 'neu-pill-active border border-primary/50 text-primary' 
+                : 'neu-btn text-[#4a453d] border-white/70 hover:text-primary'
+            }`;
+            const badge = d.active 
+              ? `<span class="px-1.5 py-0.2 rounded-full text-[9.5px] bg-emerald-100 text-emerald-800 font-mono font-bold">Active (${d.count} Qs)</span>`
+              : `<span class="px-1.5 py-0.2 rounded-full text-[9.5px] bg-[#e2ddd4] text-[#736e62] font-mono">待开放</span>`;
+            
+            btn.innerHTML = `<span>${d.name}</span> ${badge}`;
+            btn.addEventListener('click', () => {
+              currentMasteryDiscipline = d.id;
+              renderMasteryDashboard();
+            });
+            masteryDisciplinePills.appendChild(btn);
+          });
+        }
+
+        // C. Render Level 3 Content
+        if (currentMasteryStep === 1 && currentMasteryDiscipline === "Pathology") {
+          // Compute Pathology Metrics across all 14 chapters
+          let totalAns = 0;
+          let totalCor = 0;
+          let totalFlag = 0;
+          
+          const chapterStats = chaptersData.map(ch => {
+            const chQs = allQuestions.filter(q => q.chapter === ch.id);
+            const ansCount = chQs.filter(q => q.answered).length;
+            const corCount = chQs.filter(q => q.answered && q.userChoice === q.correct).length;
+            const flagCount = chQs.filter(q => q.flagged).length;
+            const acc = ansCount > 0 ? Math.round((corCount / ansCount) * 100) : 0;
+            const pct = Math.round((ansCount / 150) * 100);
+
+            totalAns += ansCount;
+            totalCor += corCount;
+            totalFlag += flagCount;
+
+            return {
+              id: ch.id,
+              name: ch.name || ch.id,
+              total: 150,
+              ansCount,
+              corCount,
+              flagCount,
+              acc,
+              pct
+            };
+          });
+
+          const overallAcc = totalAns > 0 ? Math.round((totalCor / totalAns) * 100) : 0;
+          const overallPct = Math.round((totalAns / 2100) * 100);
+
+          let masteryTier = "Novice (入门初学)";
+          if (overallPct > 80 && overallAcc >= 75) masteryTier = "High-Yield Mastery (高分冲刺)";
+          else if (overallPct > 40 && overallAcc >= 65) masteryTier = "Proficient (系统巩固)";
+          else if (overallPct > 10) masteryTier = "Developing (循序渐进)";
+
+          let chaptersCardsHtml = '';
+          chapterStats.forEach((cs, i) => {
+            chaptersCardsHtml += `
+              <div class="p-4 rounded-2xl neu-groove-sm border border-white/60 flex flex-col justify-between gap-3 hover:border-primary/40 transition-all">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-lg neu-extruded-xs flex items-center justify-center font-mono font-bold text-[11px] text-primary shrink-0">${i + 1 < 10 ? '0' + (i+1) : (i+1)}</span>
+                    <h4 class="font-display font-bold text-[12.5px] text-[#181d24] leading-snug">${cs.name}</h4>
+                  </div>
+                  <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded-full ${cs.acc >= 70 ? 'bg-emerald-100 text-emerald-800' : (cs.ansCount === 0 ? 'bg-gray-100 text-gray-600' : 'bg-rose-100 text-rose-800')} shrink-0">
+                    ${cs.ansCount > 0 ? cs.acc + '% Acc' : 'Unstarted'}
+                  </span>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex justify-between text-[10.5px] font-mono text-[#6d675b]">
+                    <span>Completed: ${cs.ansCount} / 150 Qs</span>
+                    <span>${cs.pct}%</span>
+                  </div>
+                  <div class="w-full h-2 rounded-full neu-groove-deep overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-[#22719f] to-[#2d7a5b] rounded-full transition-all duration-500" style="width: ${cs.pct}%"></div>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-1 border-t border-white/40 text-[11px]">
+                  <span class="text-amber-800 font-mono font-semibold flex items-center gap-1">
+                    ★ ${cs.flagCount} Marked
+                  </span>
+                  <button type="button" class="btn-jump-chapter px-3 py-1 rounded-xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[11px] font-bold neu-btn shadow-sm hover:scale-[1.02] active:scale-95 transition-all" data-ch="${cs.id}">
+                    Study Chapter
+                  </button>
+                </div>
+              </div>
+            `;
+          });
+
+          masteryContentArea.innerHTML = `
+            <!-- Top Pathology Overview Summary -->
+            <div class="p-5 rounded-3xl neu-groove border border-white/70 flex flex-wrap items-center justify-between gap-4 bg-[#e7e2d9]">
+              <div class="space-y-1 max-w-sm">
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-0.5 rounded-full neu-extruded-xs font-mono font-bold text-[10px] text-primary">USMLE Step 1</span>
+                  <h3 class="font-display font-extrabold text-[16px] text-[#181d24]">Pathology Full Mastery Overview</h3>
+                </div>
+                <p class="text-[12px] text-[#6b665c]">Current Mastery Status: <strong class="text-primary font-bold">${masteryTier}</strong></p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3">
+                <div class="p-2.5 px-4 rounded-2xl neu-extruded-xs flex flex-col items-center">
+                  <span class="text-[10px] font-mono uppercase text-[#756f64] font-semibold">Total Answered</span>
+                  <span class="text-[16px] font-mono font-extrabold text-primary">${totalAns} / 2100</span>
+                </div>
+                <div class="p-2.5 px-4 rounded-2xl neu-extruded-xs flex flex-col items-center">
+                  <span class="text-[10px] font-mono uppercase text-[#756f64] font-semibold">Avg Accuracy</span>
+                  <span class="text-[16px] font-mono font-extrabold ${overallAcc >= 70 ? 'text-accentSuccess' : 'text-amber-700'}">${overallAcc}%</span>
+                </div>
+                <div class="p-2.5 px-4 rounded-2xl neu-extruded-xs flex flex-col items-center">
+                  <span class="text-[10px] font-mono uppercase text-[#756f64] font-semibold">Marked Items</span>
+                  <span class="text-[16px] font-mono font-extrabold text-amber-800">${totalFlag} ★</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 14 Chapters Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+              ${chaptersCardsHtml}
+            </div>
+          `;
+
+          // Bind Study Chapter Buttons
+          masteryContentArea.querySelectorAll('.btn-jump-chapter').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const chId = btn.getAttribute('data-ch');
+              if (chId) {
+                selectChapter(chId);
+                toggleMasteryModal(false);
+              }
+            });
+          });
+
+        } else {
+          // Friendly placeholder for other disciplines & steps
+          const stepName = currentMasteryStep === 1 ? "USMLE Step 1" : (currentMasteryStep === 2 ? "USMLE Step 2 CK" : "USMLE Step 3");
+          masteryContentArea.innerHTML = `
+            <div class="p-8 rounded-3xl neu-groove border border-white/60 flex flex-col items-center justify-center text-center gap-4 my-4 bg-[#e8e3da]">
+              <div class="w-14 h-14 rounded-2xl neu-extruded flex items-center justify-center text-amber-700">
+                <span class="material-symbols-outlined text-[30px]">lock_clock</span>
+              </div>
+              <div class="max-w-md space-y-1.5">
+                <span class="px-3 py-0.5 rounded-full neu-groove-sm text-[11px] font-mono font-bold text-amber-800 bg-[#f3ecd8]">
+                  Curriculum Pipeline: ${stepName} • ${currentMasteryDiscipline}
+                </span>
+                <h3 class="font-display font-extrabold text-[16px] text-[#181d24]">Questions In Editorial Preparation</h3>
+                <p class="text-[12.5px] text-[#6b665c] leading-relaxed">
+                  当前科目正在按照 USMLE 官方高频考纲进行逐题校验。您可随时进入已开放的 <strong>Step 1 Pathology</strong> 开始 14 个完整章节、2,100 道真实仿真试题的强化训练。
+                </p>
+              </div>
+              <button type="button" id="btn-mastery-goto-pathology" class="px-5 py-2.5 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[12px] font-bold neu-btn shadow-md hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2">
+                <span class="material-symbols-outlined text-[17px]">arrow_back</span>
+                <span>返回练习 Step 1 Pathology (2,100 Qs)</span>
+              </button>
+            </div>
+          `;
+
+          const btnGoPathology = document.getElementById('btn-mastery-goto-pathology');
+          if (btnGoPathology) {
+            btnGoPathology.addEventListener('click', () => {
+              currentMasteryStep = 1;
+              currentMasteryDiscipline = "Pathology";
+              renderMasteryDashboard();
+            });
+          }
+        }
+      }
+
+      function toggleMasteryModal(show) {
+        if (!masteryModal) return;
+        const isHidden = masteryModal.classList.contains('hidden');
+        const shouldShow = show !== undefined ? show : isHidden;
+        masteryModal.classList.toggle('hidden', !shouldShow);
+        if (shouldShow) {
+          renderMasteryDashboard();
+        }
+      }
+
+      if (btnOpenMastery) btnOpenMastery.addEventListener('click', () => toggleMasteryModal(true));
+      if (btnCloseMastery) btnCloseMastery.addEventListener('click', () => toggleMasteryModal(false));
+
+      // Close modal on escape
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (masteryModal && !masteryModal.classList.contains('hidden')) {
+            toggleMasteryModal(false);
+          }
+        }
+      });
+
+      // Step Tabs inside Mastery Modal
+      if (masteryStepTabs) {
+        masteryStepTabs.querySelectorAll('.mastery-step-tab').forEach(tab => {
+          tab.addEventListener('click', () => {
+            currentMasteryStep = parseInt(tab.getAttribute('data-step'), 10);
+            if (currentMasteryStep === 1) currentMasteryDiscipline = "Pathology";
+            else if (currentMasteryStep === 2) currentMasteryDiscipline = "InternalMedicine";
+            else currentMasteryDiscipline = "Foundations";
+            renderMasteryDashboard();
+          });
+        });
+      }
+
+      // Step Buttons in Live Ribbon
+      document.querySelectorAll('.step-ribbon-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const step = parseInt(btn.getAttribute('data-step'), 10);
+          currentMasteryStep = step;
+          if (currentMasteryStep === 1) currentMasteryDiscipline = "Pathology";
+          else if (currentMasteryStep === 2) currentMasteryDiscipline = "InternalMedicine";
+          else currentMasteryDiscipline = "Foundations";
+          toggleMasteryModal(true);
+        });
+      });
+
+      // 22. Top Toolbar Controls (Flags, Search, Reset)
       const toggleFlaggedTopBtn = document.getElementById('toggle-flagged-only-btn');
       if (toggleFlaggedTopBtn) {
         toggleFlaggedTopBtn.addEventListener('click', () => {
@@ -1161,7 +2096,7 @@
         });
       }
 
-      // 16. Examination Timer
+      // 23. Examination Timer
       let timerSeconds = 45 * 60;
       let timerRunning = false;
       let isStopwatch = false;
@@ -1276,7 +2211,7 @@
         });
       }
 
-      // 17. Initial Boot
+      // 24. Initial Boot
       initChapterDropdown();
       updateUI();
     })();
