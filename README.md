@@ -6,7 +6,7 @@ An authentic, offline-first USMLE Step 1 examination and learning platform engin
 
 The question bank is organized under **USMLE Step 1 > Pathology**, featuring 14 comprehensive chapters:
 
-### Active Chapters (Ch01 - Ch10: 1,500 High-Yield Questions)
+### Complete Question Bank (Ch01 - Ch14: 2,100 High-Yield Questions)
 - **`Ch01_Cellular_Adaptations_and_Reversible_Injury/`**: 150 questions (Blocks 1-3)
 - **`Ch02_Cell_Death_Necrosis_and_Apoptosis/`**: 150 questions (Blocks 1-3)
 - **`Ch03_Cellular_Accumulations_and_Amyloidosis/`**: 150 questions (Blocks 1-3)
@@ -17,12 +17,10 @@ The question bank is organized under **USMLE Step 1 > Pathology**, featuring 14 
 - **`Ch08_Hemodynamic_Disorders_Thrombosis_and_Embolism/`**: 150 questions (Blocks 1-3)
 - **`Ch09_Infarction_and_Shock/`**: 150 questions (Blocks 1-3)
 - **`Ch10_Principles_of_Neoplasia_and_Carcinogenesis/`**: 150 questions (Blocks 1-3)
-
-### Placeholder Chapters (11 - 14: In Preparation / 待更新)
-- `11_Cancer_Genetics_Oncogenes_and_TSGs_QA.md`
-- `12_Clinical_Oncology_Staging_and_Tumor_Markers_QA.md`
-- `13_Paraneoplastic_Syndromes_QA.md`
-- `14_Cellular_Aging_and_Systemic_Changes_QA.md`
+- **`Ch11_Cancer_Genetics_Oncogenes_and_TSGs/`**: 150 questions (Blocks 1-3)
+- **`Ch12_Clinical_Oncology_Staging_and_Tumor_Markers/`**: 150 questions (Blocks 1-3)
+- **`Ch13_Paraneoplastic_Syndromes/`**: 150 questions (Blocks 1-3)
+- **`Ch14_Cellular_Aging_and_Systemic_Changes/`**: 150 questions (Blocks 1-3)
 
 ---
 

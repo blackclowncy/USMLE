@@ -184,36 +184,36 @@ def build_database():
             "description": "Benign vs malignant neoplasms, nomenclature, differentiation, anaplasia, invasion, metastasis, and carcinogenesis."
         },
         {
-            "id": "11_Cancer_Genetics_Oncogenes_and_TSGs_QA",
-            "name": "11 Cancer Genetics Oncogenes and TSGs QA",
-            "fileName": "11_Cancer_Genetics_Oncogenes_and_TSGs_QA.md",
-            "totalQuestions": 0,
-            "status": "placeholder",
-            "description": "Proto-oncogenes, tumor suppressor genes (p53, Rb), DNA repair defects, and epigenetic changes (待更新 - 占位章节)."
+            "id": "Ch11_Cancer_Genetics_Oncogenes_and_TSGs",
+            "name": "Ch11 Cancer Genetics Oncogenes and TSGs",
+            "dirName": "Ch11_Cancer_Genetics_Oncogenes_and_TSGs",
+            "totalQuestions": 150,
+            "status": "active",
+            "description": "Proto-oncogenes, tumor suppressor genes (p53, Rb), Knudson two-hit hypothesis, and familial cancer syndromes."
         },
         {
-            "id": "12_Clinical_Oncology_Staging_and_Tumor_Markers_QA",
-            "name": "12 Clinical Oncology Staging and Tumor Markers QA",
-            "fileName": "12_Clinical_Oncology_Staging_and_Tumor_Markers_QA.md",
-            "totalQuestions": 0,
-            "status": "placeholder",
-            "description": "TNM staging, histological grading, serum tumor markers, and diagnostic laboratory methods (待更新 - 占位章节)."
+            "id": "Ch12_Clinical_Oncology_Staging_and_Tumor_Markers",
+            "name": "Ch12 Clinical Oncology Staging and Tumor Markers",
+            "dirName": "Ch12_Clinical_Oncology_Staging_and_Tumor_Markers",
+            "totalQuestions": 150,
+            "status": "active",
+            "description": "TNM staging, histological grading, serum tumor markers, invasion-metastasis cascade, and immunohistochemistry."
         },
         {
-            "id": "13_Paraneoplastic_Syndromes_QA",
-            "name": "13 Paraneoplastic Syndromes QA",
-            "fileName": "13_Paraneoplastic_Syndromes_QA.md",
-            "totalQuestions": 0,
-            "status": "placeholder",
-            "description": "Endocrinopathies, neuromyopathies, dermatologic, and hematologic paraneoplastic syndromes (待更新 - 占位章节)."
+            "id": "Ch13_Paraneoplastic_Syndromes",
+            "name": "Ch13 Paraneoplastic Syndromes",
+            "dirName": "Ch13_Paraneoplastic_Syndromes",
+            "totalQuestions": 150,
+            "status": "active",
+            "description": "Endocrinopathies, neuromyopathies, dermatologic, and hematologic paraneoplastic syndromes."
         },
         {
-            "id": "14_Cellular_Aging_and_Systemic_Changes_QA",
-            "name": "14 Cellular Aging and Systemic Changes QA",
-            "fileName": "14_Cellular_Aging_and_Systemic_Changes_QA.md",
-            "totalQuestions": 0,
-            "status": "placeholder",
-            "description": "Telomere shortening, cellular senescence, DNA damage accumulation, and metabolic decline (待更新 - 占位章节)."
+            "id": "Ch14_Cellular_Aging_and_Systemic_Changes",
+            "name": "Ch14 Cellular Aging and Systemic Changes",
+            "dirName": "Ch14_Cellular_Aging_and_Systemic_Changes",
+            "totalQuestions": 150,
+            "status": "active",
+            "description": "Telomere biology, cellular senescence, DNA damage accumulation, progeroid syndromes, and systemic physiological decline."
         }
     ]
 
