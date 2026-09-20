@@ -62,7 +62,7 @@ def integrate():
       <!-- Dual Main Tabs -->
       <div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40">
         <button type="button" id="tab-btn-lab-tests" class="px-4 py-1.5 rounded-xl neu-extruded-xs text-[11.5px] font-bold text-primary neu-pill-active flex items-center gap-1.5 transition-all">
-          <span class="material-symbols-outlined text-[16px]">biotechnology</span>
+          <span class="material-symbols-outlined text-[16px]">science</span>
           <span>Laboratory Tests (359)</span>
         </button>
         <button type="button" id="tab-btn-disease-criteria" class="px-4 py-1.5 rounded-xl text-[11.5px] font-semibold text-[#656054] hover:text-[#181d24] flex items-center gap-1.5 transition-all">

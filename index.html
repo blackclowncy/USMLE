@@ -647,7 +647,7 @@
       <!-- Dual Main Tabs -->
       <div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40">
         <button type="button" id="tab-btn-lab-tests" class="px-4 py-1.5 rounded-xl neu-extruded-xs text-[11.5px] font-bold text-primary neu-pill-active flex items-center gap-1.5 transition-all">
-          <span class="material-symbols-outlined text-[16px]">biotechnology</span>
+          <span class="material-symbols-outlined text-[16px]">science</span>
           <span>Laboratory Tests (359)</span>
         </button>
         <button type="button" id="tab-btn-disease-criteria" class="px-4 py-1.5 rounded-xl text-[11.5px] font-semibold text-[#656054] hover:text-[#181d24] flex items-center gap-1.5 transition-all">
@@ -2325,24 +2325,63 @@
 
       let currentLabsTab = 'tests'; // 'tests' or 'diseases'
       let labsSearchQuery = '';
-      let activeLabCategory = 'all';
-      let activeDiseaseSystem = 0; // 0 for all, 1-11 for specific system
+      let activeLabCategory = 'directory'; // 'directory' | 'all' | category name
+      let activeDiseaseSystem = 'directory'; // 'directory' | 0 (all) | 1-11
       let expandedTestCards = {}; // testId -> boolean
 
       const allLabTests = window.USMLE_LAB_TESTS || [];
       const allDiseaseSystems = window.USMLE_DISEASE_CRITERIA || [];
 
-      // Category list for tests
+      // Category list for tests with icons and high-yield topic previews
       const LAB_CATEGORIES = [
-        { id: 'all', label: 'All Tests' },
-        { id: 'Blood Chemistry & Metabolism', label: 'Blood Chemistry' },
-        { id: 'Hematology & Coagulation', label: 'Hematology & Coagulation' },
-        { id: 'Endocrine & Hormones', label: 'Endocrine & Hormones' },
-        { id: 'Immunology & Serology', label: 'Immunology & Serology' },
-        { id: 'Urinalysis & Renal Clearance', label: 'Urinalysis' },
-        { id: 'Body Fluids & CSF', label: 'Body Fluids & CSF' },
-        { id: 'Microbiology & Cultures', label: 'Microbiology' },
-        { id: 'Imaging & Procedures', label: 'Imaging & Procedures' }
+        { 
+          id: 'Blood Chemistry & Metabolism', 
+          label: 'Blood Chemistry', 
+          icon: 'science',
+          preview: 'Electrolytes (Na, K, Cl, CO2), BUN, Creatinine, Liver Panel (ALT/AST/ALP), Bilirubin, Glucose, Calcium, Uric Acid'
+        },
+        { 
+          id: 'Hematology & Coagulation', 
+          label: 'Hematology & Coagulation', 
+          icon: 'bloodtype',
+          preview: 'Complete Blood Count (CBC), Hemoglobin, Hematocrit, Platelets, PT/INR, PTT, D-Dimer, Fibrinogen, Reticulocytes'
+        },
+        { 
+          id: 'Endocrine & Hormones', 
+          label: 'Endocrine & Hormones', 
+          icon: 'monitor_heart',
+          preview: 'TSH, Free T4/T3, Cortisol, ACTH, Aldosterone, Renin, Parathyroid Hormone (PTH), Insulin, Prolactin, Catecholamines'
+        },
+        { 
+          id: 'Immunology & Serology', 
+          label: 'Immunology & Serology', 
+          icon: 'vaccines',
+          preview: 'Antinuclear Antibodies (ANA), Anti-dsDNA, Rheumatoid Factor, Complement C3/C4, Immunoglobulins, Viral Panels'
+        },
+        { 
+          id: 'Urinalysis & Renal Clearance', 
+          label: 'Urinalysis & Clearance', 
+          icon: 'fact_check',
+          preview: 'Urinalysis Dipstick, Microscopic Sediment, Creatinine Clearance, Microalbuminuria, Bence Jones Protein, 24-hr Protein'
+        },
+        { 
+          id: 'Body Fluids & CSF', 
+          label: 'Body Fluids & CSF', 
+          icon: 'water_drop',
+          preview: 'Lumbar Puncture & CSF Matrix, Synovial Fluid Crystals, Pleural & Peritoneal Fluid Analysis, Amniotic Fluid'
+        },
+        { 
+          id: 'Microbiology & Cultures', 
+          label: 'Microbiology & Cultures', 
+          icon: 'coronavirus',
+          preview: 'Blood Cultures, Gram Stain, Acid-Fast Bacilli (AFB), Fungal Smear & Culture, Antimicrobial Susceptibility Testing'
+        },
+        { 
+          id: 'Imaging & Procedures', 
+          label: 'Imaging & Procedures', 
+          icon: 'medical_services',
+          preview: 'Ultrasound, Echocardiography, CT Scans, MRI, Endoscopy, Colonoscopy, Biopsies, Bone Densitometry (DEXA)'
+        }
       ];
 
       function toggleLabsModal(show) {
@@ -2351,6 +2390,10 @@
         const shouldShow = show !== undefined ? show : isHidden;
         labsModal.classList.toggle('hidden', !shouldShow);
         if (shouldShow) {
+          if (!labsSearchQuery) {
+            activeLabCategory = 'directory';
+            activeDiseaseSystem = 'directory';
+          }
           renderLabsModal();
           setTimeout(() => { if (labsSearchInput) labsSearchInput.focus(); }, 100);
         }
@@ -2376,6 +2419,9 @@
             if (labsSearchInput) {
               labsSearchInput.placeholder = "Search 359 tests by name, alias (e.g. ALT, Troponin, KUB), reference range...";
             }
+            if (!labsSearchQuery) {
+              activeLabCategory = 'directory';
+            }
             renderLabsModal();
           }
         });
@@ -2389,6 +2435,9 @@
             tabBtnLabTests.className = "px-4 py-1.5 rounded-xl text-[11.5px] font-semibold text-[#656054] hover:text-[#181d24] flex items-center gap-1.5 transition-all";
             if (labsSearchInput) {
               labsSearchInput.placeholder = "Search 68 diseases, diagnostic guidelines (e.g. AMI, DVT, Wells, ADA, ISTH, CKD)...";
+            }
+            if (!labsSearchQuery) {
+              activeDiseaseSystem = 'directory';
             }
             renderLabsModal();
           }
@@ -2434,7 +2483,30 @@
         labsFiltersBar.innerHTML = '';
 
         if (currentLabsTab === 'tests') {
+          // Directory Button
+          const dirBtn = document.createElement('button');
+          dirBtn.type = 'button';
+          dirBtn.className = `px-3 py-1 rounded-xl whitespace-nowrap font-semibold flex items-center gap-1.5 transition-all ${
+            activeLabCategory === 'directory'
+              ? 'neu-pill-active text-primary font-bold'
+              : 'neu-btn text-[#555047] hover:text-primary'
+          }`;
+          dirBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[15px]">folder_open</span>
+            <span>Directory</span>
+          `;
+          dirBtn.addEventListener('click', () => {
+            activeLabCategory = 'directory';
+            renderLabsFilters();
+            renderLabsAzRibbon();
+            renderLabsContent();
+            labsContentScroll.scrollTop = 0;
+          });
+          labsFiltersBar.appendChild(dirBtn);
+
+          // Individual Categories
           LAB_CATEGORIES.forEach(cat => {
+            const count = allLabTests.filter(t => t.category === cat.id).length;
             const isCatActive = activeLabCategory === cat.id;
             const btn = document.createElement('button');
             btn.type = 'button';
@@ -2443,30 +2515,54 @@
                 ? 'neu-pill-active text-primary font-bold' 
                 : 'neu-btn text-[#555047] hover:text-primary'
             }`;
-            btn.textContent = cat.label;
+            btn.textContent = `${cat.label} (${count})`;
             btn.addEventListener('click', () => {
               activeLabCategory = cat.id;
               renderLabsFilters();
+              renderLabsAzRibbon();
               renderLabsContent();
+              labsContentScroll.scrollTop = 0;
             });
             labsFiltersBar.appendChild(btn);
           });
-        } else {
-          // Systems filters for diseases
+
+          // All Tests
           const allBtn = document.createElement('button');
           allBtn.type = 'button';
           allBtn.className = `px-3 py-1 rounded-xl whitespace-nowrap font-semibold transition-all ${
-            activeDiseaseSystem === 0 
-              ? 'neu-pill-active text-primary font-bold' 
+            activeLabCategory === 'all'
+              ? 'neu-pill-active text-primary font-bold'
               : 'neu-btn text-[#555047] hover:text-primary'
           }`;
-          allBtn.textContent = 'All Systems (68)';
+          allBtn.textContent = `All Tests (${allLabTests.length})`;
           allBtn.addEventListener('click', () => {
-            activeDiseaseSystem = 0;
+            activeLabCategory = 'all';
             renderLabsFilters();
+            renderLabsAzRibbon();
             renderLabsContent();
+            labsContentScroll.scrollTop = 0;
           });
           labsFiltersBar.appendChild(allBtn);
+        } else {
+          // Disease Systems Filters
+          const dirBtn = document.createElement('button');
+          dirBtn.type = 'button';
+          dirBtn.className = `px-3 py-1 rounded-xl whitespace-nowrap font-semibold flex items-center gap-1.5 transition-all ${
+            activeDiseaseSystem === 'directory'
+              ? 'neu-pill-active text-primary font-bold'
+              : 'neu-btn text-[#555047] hover:text-primary'
+          }`;
+          dirBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[15px]">account_tree</span>
+            <span>Directory</span>
+          `;
+          dirBtn.addEventListener('click', () => {
+            activeDiseaseSystem = 'directory';
+            renderLabsFilters();
+            renderLabsContent();
+            labsContentScroll.scrollTop = 0;
+          });
+          labsFiltersBar.appendChild(dirBtn);
 
           allDiseaseSystems.forEach(sys => {
             const isSysActive = activeDiseaseSystem === sys.systemId;
@@ -2477,20 +2573,37 @@
                 ? 'neu-pill-active text-primary font-bold' 
                 : 'neu-btn text-[#555047] hover:text-primary'
             }`;
-            btn.textContent = `${sys.systemId}. ${sys.systemEn} (${sys.diseases.length})`;
+            btn.textContent = `${sys.systemId}. ${sys.systemEn || sys.systemTitle} (${sys.diseases.length})`;
             btn.addEventListener('click', () => {
               activeDiseaseSystem = sys.systemId;
               renderLabsFilters();
               renderLabsContent();
+              labsContentScroll.scrollTop = 0;
             });
             labsFiltersBar.appendChild(btn);
           });
+
+          const allBtn = document.createElement('button');
+          allBtn.type = 'button';
+          allBtn.className = `px-3 py-1 rounded-xl whitespace-nowrap font-semibold transition-all ${
+            activeDiseaseSystem === 0 
+              ? 'neu-pill-active text-primary font-bold' 
+              : 'neu-btn text-[#555047] hover:text-primary'
+          }`;
+          allBtn.textContent = 'All Criteria (68)';
+          allBtn.addEventListener('click', () => {
+            activeDiseaseSystem = 0;
+            renderLabsFilters();
+            renderLabsContent();
+            labsContentScroll.scrollTop = 0;
+          });
+          labsFiltersBar.appendChild(allBtn);
         }
       }
 
       function renderLabsAzRibbon() {
         if (!labsAzRibbon) return;
-        if (currentLabsTab !== 'tests') {
+        if (currentLabsTab !== 'tests' || activeLabCategory === 'directory') {
           labsAzRibbon.classList.add('hidden');
           return;
         }
@@ -2504,14 +2617,14 @@
           btn.className = "w-6 h-6 rounded-lg neu-btn flex items-center justify-center hover:text-primary hover:font-extrabold transition-all shrink-0";
           btn.textContent = letter;
           btn.addEventListener('click', () => {
-            activeLabCategory = 'all';
+            if (activeLabCategory === 'directory') activeLabCategory = 'all';
             labsSearchQuery = '';
             if (labsSearchInput) labsSearchInput.value = '';
             if (labsSearchClear) labsSearchClear.classList.add('hidden');
             renderLabsFilters();
+            renderLabsAzRibbon();
             renderLabsContent();
 
-            // Scroll to the first test starting with this letter
             setTimeout(() => {
               const target = document.querySelector(`.lab-test-card[data-letter="${letter}"]`);
               if (target) {
@@ -2528,16 +2641,177 @@
         labsContentScroll.innerHTML = '';
 
         if (currentLabsTab === 'tests') {
-          renderTestList();
+          if (!labsSearchQuery && activeLabCategory === 'directory') {
+            renderCategoryDirectory();
+          } else {
+            renderTestList();
+          }
         } else {
-          renderDiseaseList();
+          if (!labsSearchQuery && activeDiseaseSystem === 'directory') {
+            renderSystemDirectory();
+          } else {
+            renderDiseaseList();
+          }
+        }
+      }
+
+      function renderCategoryDirectory() {
+        if (labsCountBadge) {
+          labsCountBadge.textContent = `${allLabTests.length} Tests · 8 Categories`;
+        }
+
+        const dirHeader = document.createElement('div');
+        dirHeader.className = "mb-4 px-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2";
+        dirHeader.innerHTML = `
+          <div>
+            <h3 class="font-display font-bold text-[16px] text-[#181d24] flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">folder_open</span>
+              <span>Laboratory Tests Category Directory</span>
+            </h3>
+            <p class="text-[12px] text-[#6b665c] mt-0.5">Select a category below to browse reference ranges and clinical interpretations, or search directly.</p>
+          </div>
+          <button type="button" id="btn-view-all-tests-flat" class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl neu-btn text-[11.5px] font-bold text-primary hover:text-primaryDark flex items-center gap-1.5 transition-all">
+            <span class="material-symbols-outlined text-[16px]">list</span>
+            <span>View All 359 Tests</span>
+          </button>
+        `;
+        labsContentScroll.appendChild(dirHeader);
+
+        const grid = document.createElement('div');
+        grid.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5";
+
+        LAB_CATEGORIES.forEach(cat => {
+          const count = allLabTests.filter(t => t.category === cat.id).length;
+          const card = document.createElement('div');
+          card.className = "p-4 sm:p-5 rounded-3xl neu-extruded border border-white/80 shadow-sm flex flex-col justify-between gap-3.5 cursor-pointer hover:scale-[1.015] hover:shadow-md transition-all group";
+          card.innerHTML = `
+            <div class="flex items-start justify-between gap-2">
+              <div class="w-10 h-10 rounded-2xl neu-groove-sm bg-[#e8e3da] flex items-center justify-center text-primary group-hover:text-primaryDark group-hover:scale-110 transition-all">
+                <span class="material-symbols-outlined text-[22px]">${cat.icon}</span>
+              </div>
+              <span class="font-mono text-[11px] font-bold px-2.5 py-1 rounded-full neu-groove-sm text-primary">
+                ${count} Tests
+              </span>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-[14.5px] text-[#181d24] group-hover:text-primary transition-all leading-snug">
+                ${cat.label}
+              </h4>
+              <p class="text-[11.5px] text-[#6b665c] mt-1.5 leading-relaxed line-clamp-3">
+                ${cat.preview}
+              </p>
+            </div>
+            <div class="pt-2.5 border-t border-white/60 flex items-center justify-between text-[11.5px] font-bold text-primary">
+              <span>Browse ${count} Tests</span>
+              <span class="material-symbols-outlined text-[17px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          `;
+
+          card.addEventListener('click', () => {
+            activeLabCategory = cat.id;
+            renderLabsFilters();
+            renderLabsAzRibbon();
+            renderLabsContent();
+            labsContentScroll.scrollTop = 0;
+          });
+
+          grid.appendChild(card);
+        });
+
+        labsContentScroll.appendChild(grid);
+
+        const viewAllBtn = document.getElementById('btn-view-all-tests-flat');
+        if (viewAllBtn) {
+          viewAllBtn.addEventListener('click', () => {
+            activeLabCategory = 'all';
+            renderLabsFilters();
+            renderLabsAzRibbon();
+            renderLabsContent();
+            labsContentScroll.scrollTop = 0;
+          });
+        }
+      }
+
+      function renderSystemDirectory() {
+        if (labsCountBadge) {
+          labsCountBadge.textContent = '68 Criteria · 11 Systems';
+        }
+
+        const dirHeader = document.createElement('div');
+        dirHeader.className = "mb-4 px-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2";
+        dirHeader.innerHTML = `
+          <div>
+            <h3 class="font-display font-bold text-[16px] text-[#181d24] flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">account_tree</span>
+              <span>Disease Diagnostic Criteria &amp; Guidelines Directory</span>
+            </h3>
+            <p class="text-[12px] text-[#6b665c] mt-0.5">Select an organ system below to view authoritative guidelines and diagnostic criteria, or search directly.</p>
+          </div>
+          <button type="button" id="btn-view-all-diseases-flat" class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl neu-btn text-[11.5px] font-bold text-primary hover:text-primaryDark flex items-center gap-1.5 transition-all">
+            <span class="material-symbols-outlined text-[16px]">list</span>
+            <span>View All 68 Criteria</span>
+          </button>
+        `;
+        labsContentScroll.appendChild(dirHeader);
+
+        const grid = document.createElement('div');
+        grid.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5";
+
+        allDiseaseSystems.forEach(sys => {
+          const diseaseTitles = sys.diseases.map(d => d.title.split('(')[0].trim()).slice(0, 4).join(', ') + (sys.diseases.length > 4 ? '...' : '');
+
+          const card = document.createElement('div');
+          card.className = "p-4 sm:p-5 rounded-3xl neu-extruded border border-white/80 shadow-sm flex flex-col justify-between gap-3.5 cursor-pointer hover:scale-[1.015] hover:shadow-md transition-all group";
+          card.innerHTML = `
+            <div class="flex items-start justify-between gap-2">
+              <div class="w-10 h-10 rounded-2xl neu-groove-sm bg-[#e8e3da] flex items-center justify-center text-primary font-mono font-bold text-[14px] group-hover:scale-110 group-hover:text-primaryDark transition-all">
+                ${sys.systemId}
+              </div>
+              <span class="font-mono text-[11px] font-bold px-2.5 py-1 rounded-full neu-groove-sm text-primary">
+                ${sys.diseases.length} Criteria
+              </span>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-[14.5px] text-[#181d24] group-hover:text-primary transition-all leading-snug">
+                ${sys.systemEn || sys.systemTitle}
+              </h4>
+              <p class="text-[11.5px] text-[#6b665c] mt-1.5 leading-relaxed line-clamp-3">
+                ${diseaseTitles}
+              </p>
+            </div>
+            <div class="pt-2.5 border-t border-white/60 flex items-center justify-between text-[11.5px] font-bold text-primary">
+              <span>Browse ${sys.diseases.length} Criteria</span>
+              <span class="material-symbols-outlined text-[17px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          `;
+
+          card.addEventListener('click', () => {
+            activeDiseaseSystem = sys.systemId;
+            renderLabsFilters();
+            renderLabsContent();
+            labsContentScroll.scrollTop = 0;
+          });
+
+          grid.appendChild(card);
+        });
+
+        labsContentScroll.appendChild(grid);
+
+        const viewAllBtn = document.getElementById('btn-view-all-diseases-flat');
+        if (viewAllBtn) {
+          viewAllBtn.addEventListener('click', () => {
+            activeDiseaseSystem = 0;
+            renderLabsFilters();
+            renderLabsContent();
+            labsContentScroll.scrollTop = 0;
+          });
         }
       }
 
       function renderTestList() {
         // Filter tests
         const filtered = allLabTests.filter(t => {
-          const matchCat = (activeLabCategory === 'all' || t.category === activeLabCategory);
+          const matchCat = (activeLabCategory === 'all' || activeLabCategory === 'directory' || t.category === activeLabCategory);
           if (!matchCat) return false;
           if (!labsSearchQuery) return true;
 
@@ -2561,20 +2835,83 @@
             <div class="p-10 rounded-3xl neu-groove text-center flex flex-col items-center gap-3">
               <span class="material-symbols-outlined text-[36px] text-[#9c9689]">science</span>
               <p class="font-medium text-[13.5px] text-[#6b665c]">No laboratory tests match "${escapeHtml(labsSearchQuery)}".</p>
-              <button type="button" id="btn-labs-reset-search" class="text-primary font-bold hover:underline text-[12px]">Reset Search &amp; Show All</button>
+              <button type="button" id="btn-labs-reset-search" class="text-primary font-bold hover:underline text-[12px]">Reset Search &amp; Show Directory</button>
             </div>
           `;
           const rBtn = document.getElementById('btn-labs-reset-search');
           if (rBtn) {
             rBtn.addEventListener('click', () => {
               labsSearchQuery = '';
-              activeLabCategory = 'all';
+              activeLabCategory = 'directory';
               if (labsSearchInput) labsSearchInput.value = '';
               if (labsSearchClear) labsSearchClear.classList.add('hidden');
               renderLabsModal();
             });
           }
           return;
+        }
+
+        // Add Category Header & Back Button if inside a specific category or searching
+        if (!labsSearchQuery && activeLabCategory !== 'all') {
+          const headerBox = document.createElement('div');
+          headerBox.className = "p-3 sm:p-3.5 rounded-2xl neu-groove-sm bg-[#e2ddd4]/80 border border-white/60 flex flex-wrap items-center justify-between gap-2.5 mb-2";
+          
+          const catObj = LAB_CATEGORIES.find(c => c.id === activeLabCategory);
+          const catTitle = catObj ? catObj.label : activeLabCategory;
+
+          headerBox.innerHTML = `
+            <div class="flex items-center gap-2">
+              <button type="button" class="btn-back-to-cat-dir px-3 py-1 rounded-xl neu-btn text-[11.5px] font-bold text-primary hover:text-primaryDark flex items-center gap-1 transition-all">
+                <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                <span>Category Directory</span>
+              </button>
+              <span class="text-[#8e887c] text-[12px]">•</span>
+              <span class="font-display font-bold text-[13.5px] text-[#181d24]">${catTitle}</span>
+            </div>
+            <span class="font-mono text-[10.5px] px-2.5 py-0.5 rounded-full neu-extruded-xs font-bold text-primary">
+              ${filtered.length} Tests
+            </span>
+          `;
+          labsContentScroll.appendChild(headerBox);
+
+          const backBtn = headerBox.querySelector('.btn-back-to-cat-dir');
+          if (backBtn) {
+            backBtn.addEventListener('click', () => {
+              activeLabCategory = 'directory';
+              renderLabsFilters();
+              renderLabsAzRibbon();
+              renderLabsContent();
+              labsContentScroll.scrollTop = 0;
+            });
+          }
+        } else if (!labsSearchQuery && activeLabCategory === 'all') {
+          const headerBox = document.createElement('div');
+          headerBox.className = "p-3 sm:p-3.5 rounded-2xl neu-groove-sm bg-[#e2ddd4]/80 border border-white/60 flex flex-wrap items-center justify-between gap-2.5 mb-2";
+          headerBox.innerHTML = `
+            <div class="flex items-center gap-2">
+              <button type="button" class="btn-back-to-cat-dir px-3 py-1 rounded-xl neu-btn text-[11.5px] font-bold text-primary hover:text-primaryDark flex items-center gap-1 transition-all">
+                <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                <span>Category Directory</span>
+              </button>
+              <span class="text-[#8e887c] text-[12px]">•</span>
+              <span class="font-display font-bold text-[13.5px] text-[#181d24]">All Laboratory Tests (Flat View)</span>
+            </div>
+            <span class="font-mono text-[10.5px] px-2.5 py-0.5 rounded-full neu-extruded-xs font-bold text-primary">
+              ${filtered.length} Tests
+            </span>
+          `;
+          labsContentScroll.appendChild(headerBox);
+
+          const backBtn = headerBox.querySelector('.btn-back-to-cat-dir');
+          if (backBtn) {
+            backBtn.addEventListener('click', () => {
+              activeLabCategory = 'directory';
+              renderLabsFilters();
+              renderLabsAzRibbon();
+              renderLabsContent();
+              labsContentScroll.scrollTop = 0;
+            });
+          }
         }
 
         filtered.forEach(t => {
@@ -2764,10 +3101,10 @@
         let matchedDiseases = [];
 
         allDiseaseSystems.forEach(sys => {
-          if (activeDiseaseSystem === 0 || activeDiseaseSystem === sys.systemId) {
+          if (activeDiseaseSystem === 0 || activeDiseaseSystem === 'directory' || activeDiseaseSystem === sys.systemId) {
             sys.diseases.forEach(d => {
               if (!labsSearchQuery) {
-                matchedDiseases.append ? matchedDiseases.append({ sys, d }) : matchedDiseases.push({ sys, d });
+                matchedDiseases.push({ sys, d });
                 return;
               }
               const inTitle = d.title.toLowerCase().includes(labsSearchQuery);
@@ -2790,20 +3127,79 @@
             <div class="p-10 rounded-3xl neu-groove text-center flex flex-col items-center gap-3">
               <span class="material-symbols-outlined text-[36px] text-[#9c9689]">local_hospital</span>
               <p class="font-medium text-[13.5px] text-[#6b665c]">No disease diagnostic criteria match "${escapeHtml(labsSearchQuery)}".</p>
-              <button type="button" id="btn-disease-reset-search" class="text-primary font-bold hover:underline text-[12px]">Reset Search &amp; Show All</button>
+              <button type="button" id="btn-disease-reset-search" class="text-primary font-bold hover:underline text-[12px]">Reset Search &amp; Show Directory</button>
             </div>
           `;
           const rBtn = document.getElementById('btn-disease-reset-search');
           if (rBtn) {
             rBtn.addEventListener('click', () => {
               labsSearchQuery = '';
-              activeDiseaseSystem = 0;
+              activeDiseaseSystem = 'directory';
               if (labsSearchInput) labsSearchInput.value = '';
               if (labsSearchClear) labsSearchClear.classList.add('hidden');
               renderLabsModal();
             });
           }
           return;
+        }
+
+        // Add Systems Header & Back Button
+        if (!labsSearchQuery && activeDiseaseSystem !== 0) {
+          const sysObj = allDiseaseSystems.find(s => s.systemId === activeDiseaseSystem);
+          const sysName = sysObj ? (sysObj.systemEn || sysObj.systemTitle) : `System ${activeDiseaseSystem}`;
+          const headerBox = document.createElement('div');
+          headerBox.className = "p-3 sm:p-3.5 rounded-2xl neu-groove-sm bg-[#e2ddd4]/80 border border-white/60 flex flex-wrap items-center justify-between gap-2.5 mb-2";
+          headerBox.innerHTML = `
+            <div class="flex items-center gap-2">
+              <button type="button" class="btn-back-to-systems-dir px-3 py-1 rounded-xl neu-btn text-[11.5px] font-bold text-primary hover:text-primaryDark flex items-center gap-1 transition-all">
+                <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                <span>Systems Directory</span>
+              </button>
+              <span class="text-[#8e887c] text-[12px]">•</span>
+              <span class="font-display font-bold text-[13.5px] text-[#181d24]">${sysName}</span>
+            </div>
+            <span class="font-mono text-[10.5px] px-2.5 py-0.5 rounded-full neu-extruded-xs font-bold text-primary">
+              ${matchedDiseases.length} Criteria
+            </span>
+          `;
+          labsContentScroll.appendChild(headerBox);
+
+          const backBtn = headerBox.querySelector('.btn-back-to-systems-dir');
+          if (backBtn) {
+            backBtn.addEventListener('click', () => {
+              activeDiseaseSystem = 'directory';
+              renderLabsFilters();
+              renderLabsContent();
+              labsContentScroll.scrollTop = 0;
+            });
+          }
+        } else if (!labsSearchQuery && activeDiseaseSystem === 0) {
+          const headerBox = document.createElement('div');
+          headerBox.className = "p-3 sm:p-3.5 rounded-2xl neu-groove-sm bg-[#e2ddd4]/80 border border-white/60 flex flex-wrap items-center justify-between gap-2.5 mb-2";
+          headerBox.innerHTML = `
+            <div class="flex items-center gap-2">
+              <button type="button" class="btn-back-to-systems-dir px-3 py-1 rounded-xl neu-btn text-[11.5px] font-bold text-primary hover:text-primaryDark flex items-center gap-1 transition-all">
+                <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                <span>Systems Directory</span>
+              </button>
+              <span class="text-[#8e887c] text-[12px]">•</span>
+              <span class="font-display font-bold text-[13.5px] text-[#181d24]">All Disease Diagnostic Criteria (Flat View)</span>
+            </div>
+            <span class="font-mono text-[10.5px] px-2.5 py-0.5 rounded-full neu-extruded-xs font-bold text-primary">
+              ${matchedDiseases.length} Criteria
+            </span>
+          `;
+          labsContentScroll.appendChild(headerBox);
+
+          const backBtn = headerBox.querySelector('.btn-back-to-systems-dir');
+          if (backBtn) {
+            backBtn.addEventListener('click', () => {
+              activeDiseaseSystem = 'directory';
+              renderLabsFilters();
+              renderLabsContent();
+              labsContentScroll.scrollTop = 0;
+            });
+          }
         }
 
         let currentSystemId = null;
