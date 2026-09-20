@@ -599,7 +599,7 @@
           <span class="material-symbols-outlined text-[22px]">insights</span>
         </div>
         <div>
-          <h2 class="font-display font-extrabold text-[17px] text-[#181d24] leading-tight">Mastery Overview (全科掌握度小仪表盘)</h2>
+          <h2 class="font-display font-extrabold text-[17px] text-[#181d24] leading-tight">Mastery Overview</h2>
           <p class="text-[11.5px] text-[#6b665c]">Hierarchical USMLE Question Bank Progress &amp; Accuracy Tracking</p>
         </div>
       </div>
@@ -764,7 +764,7 @@
           if (ch.status === 'active') {
             opt.textContent = `${displayTitle} (${ch.totalQuestions} Qs)`;
           } else {
-            opt.textContent = `${displayTitle} [待更新 / 占位]`;
+            opt.textContent = `${displayTitle} [Coming Soon]`;
           }
           if (ch.id === activeChapter) {
             opt.selected = true;
@@ -976,16 +976,16 @@
               </div>
               <div class="max-w-xl space-y-2">
                 <span class="px-3.5 py-1 rounded-full neu-groove-sm text-[11.5px] font-mono font-bold text-amber-800 bg-[#f3ecd8]">
-                  Chapter Status: 待更新 / In Preparation (占位章节)
+                  Chapter Status: In Preparation / Coming Soon
                 </span>
                 <h2 class="font-display font-extrabold text-[20px] text-[#181d24] mt-2">${displayTitle}</h2>
                 <p class="text-[13.5px] text-[#6b665c] leading-relaxed mt-1">
-                  该章节题目仍在整理校对中，先不载入试题，当前作为标准大纲占位。请在上方或侧边切换至已开放的 <strong>Ch01 至 Ch14 章节</strong> 开展全仿真 USMLE 刷题（共 2,100 道高难度病例试题）。
+                  This chapter is currently in editorial preparation and will be released in an upcoming update. Please select any of the active chapters from <strong>Ch01 to Ch14</strong> to practice the full set of 2,100 high-yield clinical case questions.
                 </p>
               </div>
               <button class="px-6 py-3 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[13px] font-bold neu-btn border border-white/40 flex items-center gap-2 shadow-md hover:scale-[1.02] active:scale-95 transition-all mt-2" onclick="selectChapter('Ch01_Cellular_Adaptations_and_Reversible_Injury')">
                 <span class="material-symbols-outlined text-[19px]">play_circle</span>
-                <span>立即进入 Ch01 Cellular Adaptations and Reversible Injury (150 Qs)</span>
+                <span>Start Ch01 Cellular Adaptations and Reversible Injury (150 Qs)</span>
               </button>
             </div>
           `;
@@ -1253,7 +1253,7 @@
             bBadge.textContent = `Active (${curChapObj.totalQuestions} Qs)`;
           } else {
             bBadge.className = "px-3 py-0.5 rounded-full neu-groove-sm text-[11px] font-mono font-bold text-amber-800 bg-[#f3ecd8]";
-            bBadge.textContent = "待更新 / 占位章节 (0 Qs)";
+            bBadge.textContent = "In Preparation (0 Qs)";
           }
         }
         if (bDesc) {
@@ -1292,7 +1292,7 @@
             if (chap.status === 'active') {
               statusBadge = flagCount > 0 ? `<span class="font-mono text-[10.5px] font-bold text-amber-800">${flagCount} ★</span>` : `<span class="font-mono text-[10.5px] text-[#8c867a]">150</span>`;
             } else {
-              statusBadge = `<span class="text-[9.5px] px-1.5 py-0.5 rounded-md neu-groove-sm text-amber-800 bg-[#ede5d8] font-mono">待更新</span>`;
+              statusBadge = `<span class="text-[9.5px] px-1.5 py-0.5 rounded-md neu-groove-sm text-amber-800 bg-[#ede5d8] font-mono">Planned</span>`;
             }
 
             const pillTitle = formatChapterTitle(chap.name || chap.id);
@@ -1837,7 +1837,7 @@
             }`;
             const badge = d.active 
               ? `<span class="px-1.5 py-0.2 rounded-full text-[9.5px] bg-emerald-100 text-emerald-800 font-mono font-bold">Active (${d.count} Qs)</span>`
-              : `<span class="px-1.5 py-0.2 rounded-full text-[9.5px] bg-[#e2ddd4] text-[#736e62] font-mono">待开放</span>`;
+              : `<span class="px-1.5 py-0.2 rounded-full text-[9.5px] bg-[#e2ddd4] text-[#736e62] font-mono">Planned</span>`;
             
             btn.innerHTML = `<span>${d.name}</span> ${badge}`;
             btn.addEventListener('click', () => {
@@ -1882,10 +1882,10 @@
           const overallAcc = totalAns > 0 ? Math.round((totalCor / totalAns) * 100) : 0;
           const overallPct = Math.round((totalAns / 2100) * 100);
 
-          let masteryTier = "Novice (入门初学)";
-          if (overallPct > 80 && overallAcc >= 75) masteryTier = "High-Yield Mastery (高分冲刺)";
-          else if (overallPct > 40 && overallAcc >= 65) masteryTier = "Proficient (系统巩固)";
-          else if (overallPct > 10) masteryTier = "Developing (循序渐进)";
+          let masteryTier = "Novice";
+          if (overallPct > 80 && overallAcc >= 75) masteryTier = "High-Yield Mastery";
+          else if (overallPct > 40 && overallAcc >= 65) masteryTier = "Proficient";
+          else if (overallPct > 10) masteryTier = "Developing";
 
           let chaptersCardsHtml = '';
           chapterStats.forEach((cs, i) => {
@@ -1981,12 +1981,12 @@
                 </span>
                 <h3 class="font-display font-extrabold text-[16px] text-[#181d24]">Questions In Editorial Preparation</h3>
                 <p class="text-[12.5px] text-[#6b665c] leading-relaxed">
-                  当前科目正在按照 USMLE 官方高频考纲进行逐题校验。您可随时进入已开放的 <strong>Step 1 Pathology</strong> 开始 14 个完整章节、2,100 道真实仿真试题的强化训练。
+                  This discipline is currently undergoing clinical peer-review according to the official USMLE content outline. You can switch to <strong>Step 1 Pathology</strong> anytime to practice all 14 comprehensive chapters and 2,100 simulation questions.
                 </p>
               </div>
               <button type="button" id="btn-mastery-goto-pathology" class="px-5 py-2.5 rounded-2xl bg-gradient-to-b from-[#22719f] to-[#175275] text-white font-display text-[12px] font-bold neu-btn shadow-md hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2">
                 <span class="material-symbols-outlined text-[17px]">arrow_back</span>
-                <span>返回练习 Step 1 Pathology (2,100 Qs)</span>
+                <span>Practice Step 1 Pathology (2,100 Qs)</span>
               </button>
             </div>
           `;
