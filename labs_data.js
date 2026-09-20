@@ -2800,7 +2800,7 @@ window.USMLE_LAB_TESTS = [
     "category": "Hematology & Coagulation",
     "description": "The complete blood count (CBC) with differential is one of the most commonly per-\nformed tests in health care. This is due to the vast amount of data obtained through\nthe various components of this test. The test actually consists of several tests,\nwhich are discussed individually in this text.\n\nIf appropriate, the tests may be ordered individually. For example, a patient\nundergoing a total joint replacement has a complete blood count with differential\ndrawn preoperatively. Postoperatively, the surgeon may choose to order a repeat\ntesting of only the hemoglobin and hematocrit to determine the extent of blood loss\nwhich may have occurred during surgery.\n\nPlease refer to the following pages for these test descriptions:\n• Blood smear, page 100\n• Hematocrit, page 306\n• Hemoglobin, page 308\n• Platelet count, page 439\n• Red blood cell count, page 488\n• Red blood cell indices (includes mean corpuscular volume [MCV], mean cor-\npuscular hemoglobin [MCH], and mean corpuscular hemoglobin concentra-\ntion [MCHC]), page 491\n• White blood cell count and differential, page 612",
     "evidence": "",
-    "normalValues": "- 无可见异常 / 阴性 (Negative for disease / pathology; Normal anatomical appearance)",
+    "normalValues": "- Negative for disease / pathology; Normal anatomical appearance",
     "increased": [],
     "decreased": [],
     "abnormalFindings": [],
@@ -3457,7 +3457,7 @@ window.USMLE_LAB_TESTS = [
     "category": "Hematology & Coagulation",
     "description": "Disseminated intravascular coagulation (DIC) is a paradoxical, often fatal, condition\nin which both clotting and bleeding occur at abnormally high levels. DIC can be trig-\ngered by a variety of conditions, including amniotic fluid embolism, extensive surgery,\nhemolytic transfusion reactions, massive tissue trauma, metastatic malignancies, pre-\nmature separation of the placenta in pregnancy, retained dead fetus, septicemia,\nsevere burns, and shock. When the process is triggered, widespread clotting occurs\nin small vessels of the body, causing clotting factors and platelets to be used up.\nAs a result, the patient develops a bleeding disorder due to lack of needed clotting\nfactors. Patients with DIC may exhibit bleeding ranging from minimal bleeding from\nvenipuncture sites or mucous membranes to profuse hemorrhage from all orifices.\nPatients may develop organ dysfunction, such as renal failure and pulmonary and\nmultifocal central nervous system (CNS) infarctions due to microvascular occlusion\nand anoxic injury in the affected organs.\n\nSeveral tests are used in the diagnosis of DIC. Each of these tests is described\nin detail elsewhere in this text. The expected results of these tests in the patient\nwith DIC are:\n• Antithrombin III: Decreased\n• Bleeding time: Prolonged\n• Coagulation factors: Decreased\n• D-dimer: Increased\n• Fibrin degradation products: Increased\n• Fibrinogen: Decreased\n• Fibrinopeptide A: Increased\n• Partial thromboplastin time: Prolonged\n• Platelet count: Decreased\n• Prothrombin time: Prolonged\n• Thrombin time: Increased",
     "evidence": "",
-    "normalValues": "- 无可见异常 / 阴性 (Negative for disease / pathology; Normal anatomical appearance)",
+    "normalValues": "- Negative for disease / pathology; Normal anatomical appearance",
     "increased": [],
     "decreased": [],
     "abnormalFindings": [
@@ -9666,701 +9666,622 @@ window.USMLE_LAB_TESTS = [
 window.USMLE_DISEASE_CRITERIA = [
   {
     "systemId": 1,
-    "systemTitle": "一、心血管系统疾病 (Cardiovascular Disorders)",
+    "systemTitle": "Cardiovascular Disorders",
     "systemEn": "Cardiovascular Disorders",
-    "systemZh": "心血管系统疾病",
     "diseases": [
       {
         "code": "1.1",
-        "title": "急性冠脉综合征与急性心肌梗死 (Acute Coronary Syndrome & Acute Myocardial Infarction)",
+        "title": "Acute Coronary Syndrome & Acute Myocardial Infarction",
         "titleEn": "Acute Coronary Syndrome & Acute Myocardial Infarction",
-        "titleZh": "急性冠脉综合征与急性心肌梗死",
-        "guideline": "ACC/AHA (American College of Cardiology / American Heart Association) 指南、欧洲心脏病学会 (ESC) 心肌梗死通用定义。",
-        "relatedTests": "`Troponin` (P.587), `Creatine Kinase` (P.201), `Creatine Kinase-MB` (P.203), `Myoglobin` (P.418)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACC/AHA (American College of Cardiology / American Heart Association) 指南、欧洲心脏病学会 (ESC) 心肌梗死通用定义。\n- **诊断标准与判定规则**:\n  - 急性心肌梗死（AMI）的诊断需满足**心肌坏死生物标志物升高（首选心肌肌钙蛋白 cTnI / cTnT，超过正常参考上限第99百分位数）**，并伴随至少一项以下缺血证据：\n    1. 缺血性临床症状（如胸骨后压榨性剧痛、放射至左肩颈或下颌）；\n    2. 新发心电图缺血改变（新发 ST-T 动态改变或新发左束支传导阻滞 LBBB）；\n    3. 心电图出现病理性 Q 波形成；\n    4. 影像学证实新发局部室壁运动异常或存活心肌丧失；\n    5. 冠脉造影证实冠状动脉内血栓形成。\n- **核心实验室与标志物时间动力学**:\n  - **Cardiac Troponin I (cTnI) / Troponin T (cTnT)**:\n    - 升高时间: 症状发作后 3–6 小时；\n    - 峰值时间: 14–24 小时；\n    - 持续时间: cTnI 持续 7–10 天，cTnT 持续 10–14 天。\n    - **临床意义**: 敏感度与特异度最高的心肌坏死金标准标志物。\n  - **CK-MB (Creatine Kinase-MB Isoenzyme)**:\n    - 升高时间: 3–6 小时；峰值: 12–24 小时；恢复: 48–72 小时。\n    - **CK-MB 相对指数 (Relative Index)**: CK-MB (ng/mL) / Total CK (U/L) × 100。若比值 > 2.5%–3.0%，提示心肌损伤而非骨骼肌损伤；用于**评估心肌梗死早期再梗死 (Reinfarction)**。\n  - **肌红蛋白 (Myoglobin)**:\n    - 升高时间: 1–2 小时（最早升高）；阴性预测价值高；但特异性差（骨骼肌损伤亦升高）。\n- **原书对应项目**: `Troponin` (P.587), `Creatine Kinase` (P.201), `Creatine Kinase-MB` (P.203), `Myoglobin` (P.418)。\n\n---"
+        "guideline": "ACC/AHA (American College of Cardiology / American Heart Association) Guidelines, ESC Universal Definition of Myocardial Infarction.",
+        "relatedTests": "`Troponin` (P.587), `Creatine Kinase` (P.201), `Creatine Kinase-MB` (P.203), `Myoglobin` (P.418).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACC/AHA (American College of Cardiology / American Heart Association) Guidelines, ESC Universal Definition of Myocardial Infarction.\n- **Diagnostic Criteria & Decision Rules**:\n  - Acute Myocardial Infarction (AMI) requires detection of a rise and/or fall of cardiac biomarkers (preferably Cardiac Troponin cTnI or cTnT above the 99th percentile upper reference limit) with at least one evidence of myocardial ischemia:\n    1. Ischemic clinical symptoms (crushing substernal chest pressure radiating to left shoulder, arm, or jaw);\n    2. New ischemic ECG changes (new ST-segment deviation or new Left Bundle Branch Block [LBBB]);\n    3. Development of pathological Q waves on ECG;\n    4. Imaging evidence of new loss of viable myocardium or new regional wall motion abnormality;\n    5. Identification of an intracoronary thrombus by angiography.\n- **Core Laboratory Biomarkers & Kinetics**:\n  - **Cardiac Troponin I (cTnI) / Troponin T (cTnT)**:\n    - Onset: 3–6 hours post-infarction;\n    - Peak: 14–24 hours;\n    - Duration: cTnI remains elevated for 7–10 days; cTnT remains elevated for 10–14 days.\n    - **Clinical Significance**: Gold standard biomarker with the highest sensitivity and cardiac specificity.\n  - **CK-MB (Creatine Kinase-MB Isoenzyme)**:\n    - Onset: 3–6 hours; Peak: 12–24 hours; Normalization: 48–72 hours.\n    - **CK-MB Relative Index**: CK-MB (ng/mL) / Total CK (U/L) × 100. Ratio > 2.5%–3.0% indicates myocardial necrosis; gold standard for diagnosing **early reinfarction**.\n  - **Myoglobin**:\n    - Onset: 1–2 hours (earliest marker); high negative predictive value; lacks cardiac specificity.\n- **Manual Test References**: `Troponin` (P.587), `Creatine Kinase` (P.201), `Creatine Kinase-MB` (P.203), `Myoglobin` (P.418).\n\n---"
       },
       {
         "code": "1.2",
-        "title": "充血性心力衰竭与失代偿性心衰 (Congestive Heart Failure & Decompensated HF)",
+        "title": "Congestive Heart Failure & Decompensated HF",
         "titleEn": "Congestive Heart Failure & Decompensated HF",
-        "titleZh": "充血性心力衰竭与失代偿性心衰",
-        "guideline": "HFSA (Heart Failure Society of America, 2006)、ACC/AHA 心力衰竭评估指南。",
-        "relatedTests": "`B-Type Natriuretic Peptide` (P.420), `Echocardiography` (P.232)。",
-        "content": "- **权威诊断标准 / 指南来源**: HFSA (Heart Failure Society of America, 2006)、ACC/AHA 心力衰竭评估指南。\n- **诊断标准与判定规则**:\n  - 急性失代偿性心力衰竭的诊断基于临床症状（劳力性呼吸困难、端坐呼吸、阵发性夜间呼吸困难、颈静脉充盈、双下肢水肿）联合血清利钠肽（BNP / NT-proBNP）定量测定。\n- **核心实验室判定阈值**:\n  - **B型利钠肽 (BNP)**:\n    - **< 100 pg/mL**: 心力衰竭阴性预测值极高（> 90%），基本排除心衰导致的气促；\n    - **100–400 pg/mL**: 处于灰区（需结合基础肾功能、年龄、房颤、肺栓塞综合判定）；\n    - **> 400 pg/mL**: 强烈支持急性心力衰竭诊断。\n  - **NT-proBNP (N-末端B型利钠肽原，年龄分层排除与确诊标准)**:\n    - 排除阈值: < 300 pg/mL（所有年龄段均可排除急性心衰）；\n    - 确诊阈值:\n      - 年龄 < 50岁: > 450 pg/mL；\n      - 年龄 50–75岁: > 900 pg/mL；\n      - 年龄 > 75岁: > 1800 pg/mL；\n    - 肾功能不全 (eGFR < 60 mL/min): 阈值调整为 > 1200 pg/mL。\n- **超声心动图标准 (Echocardiography)**:\n  - 射血分数 (LVEF):\n    - HFrEF (射血分数降低心衰): LVEF < 40%；\n    - HFpEF (射血分数保留心衰): LVEF ≥ 50%，伴舒张功能不全及左室充盈压升高。\n- **原书对应项目**: `B-Type Natriuretic Peptide` (P.420), `Echocardiography` (P.232)。\n\n---"
+        "guideline": "HFSA (Heart Failure Society of America, 2006), ACC/AHA Heart Failure Guidelines.",
+        "relatedTests": "`B-Type Natriuretic Peptide` (P.420), `Echocardiography` (P.232).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: HFSA (Heart Failure Society of America, 2006), ACC/AHA Heart Failure Guidelines.\n- **Diagnostic Criteria & Decision Rules**:\n  - Acute decompensated heart failure is diagnosed based on clinical symptoms (dyspnea on exertion, orthopnea, paroxysmal nocturnal dyspnea, elevated jugular venous pressure, bilateral lower extremity edema) combined with quantitative natriuretic peptide measurement (BNP or NT-proBNP).\n- **Core Laboratory Diagnostic Cutoffs**:\n  - **B-Type Natriuretic Peptide (BNP)**:\n    - **< 100 pg/mL**: Heart failure excluded (negative predictive value > 90%);\n    - **100–400 pg/mL**: Gray zone (requires correlation with renal function, age, atrial fibrillation);\n    - **> 400 pg/mL**: Strong evidence supporting acute heart failure.\n  - **NT-proBNP (Age-Stratified Cutoffs)**:\n    - Rule-out threshold: < 300 pg/mL (all ages);\n    - Rule-in thresholds:\n      - Age < 50 years: > 450 pg/mL;\n      - Age 50–75 years: > 900 pg/mL;\n      - Age > 75 years: > 1800 pg/mL;\n    - Renal insufficiency (eGFR < 60 mL/min): Cutoff adjusted to > 1200 pg/mL.\n- **Echocardiography Classification**:\n  - HFrEF (Reduced Ejection Fraction): LVEF < 40%;\n  - HFpEF (Preserved Ejection Fraction): LVEF ≥ 50% with evidence of diastolic dysfunction and elevated filling pressures.\n- **Manual Test References**: `B-Type Natriuretic Peptide` (P.420), `Echocardiography` (P.232).\n\n---"
       },
       {
         "code": "1.3",
-        "title": "腹主动脉瘤 (Abdominal Aortic Aneurysm, AAA)",
-        "titleEn": "Abdominal Aortic Aneurysm, AAA",
-        "titleZh": "腹主动脉瘤",
-        "guideline": "USPSTF (U.S. Preventive Services Task Force) 筛查推荐指南。",
-        "relatedTests": "`Abdominal Aorta Sonogram` (P.18)。",
-        "content": "- **权威诊断标准 / 指南来源**: USPSTF (U.S. Preventive Services Task Force) 筛查推荐指南。\n- **筛查与诊断标准**:\n  - **USPSTF 筛查推荐**: 强烈建议对**65至75岁、有吸烟史（曾经吸烟≥100支）的男性**进行一次性腹部超声超声波（Ultrasound）筛查。\n  - 对于65至75岁无吸烟史的男性，建议临床结合个体情况决定；反对对女性进行常规筛查。\n- **核心超声诊断阈值**:\n  - **正常腹主动脉管径**: 正常成年人管径通常 < 2.0–2.5 cm。\n  - **动脉瘤定义**: 腹主动脉局限性扩张，内径 **≥ 3.0 cm**（或超过临近正常主动脉管径的 50%）。\n  - **临床干预与破裂风险临界值**:\n    - 直径 3.0–3.9 cm: 每年超声随访；\n    - 直径 4.0–5.4 cm: 每 6 个月超声随访；\n    - **直径 ≥ 5.5 cm（男性）或 ≥ 5.0 cm（女性）**，或扩张速度 **> 0.5 cm / 6个月**：达到急诊/择期血管外科手术修复（EVAR 或开腹手术）指征。\n- **原书对应项目**: `Abdominal Aorta Sonogram` (P.18)。\n\n---"
+        "title": "Abdominal Aortic Aneurysm (AAA)",
+        "titleEn": "Abdominal Aortic Aneurysm (AAA)",
+        "guideline": "USPSTF (U.S. Preventive Services Task Force) Screening Guidelines.",
+        "relatedTests": "`Abdominal Aorta Sonogram` (P.18).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: USPSTF (U.S. Preventive Services Task Force) Screening Guidelines.\n- **Screening & Diagnostic Criteria**:\n  - **USPSTF Screening Recommendation**: One-time abdominal ultrasound screening is strongly recommended for **men aged 65 to 75 who have ever smoked (≥100 cigarettes)**.\n  - In men aged 65–75 who have never smoked, selective screening is based on individual risk; routine screening in women is not recommended.\n- **Core Ultrasonographic Diagnostic Cutoffs**:\n  - **Normal Aortic Caliber**: Normal adult abdominal aorta is < 2.0–2.5 cm.\n  - **Aneurysm Definition**: Focal dilatation with aortic diameter **≥ 3.0 cm** (or > 50% increase over adjacent normal caliber).\n  - **Clinical Intervention & Rupture Risk Thresholds**:\n    - Diameter 3.0–3.9 cm: Annual ultrasound surveillance;\n    - Diameter 4.0–5.4 cm: Ultrasound surveillance every 6 months;\n    - **Diameter ≥ 5.5 cm in men or ≥ 5.0 cm in women**, or expansion rate **> 0.5 cm per 6 months**: Surgical repair indication (EVAR or open surgical graft).\n- **Manual Test References**: `Abdominal Aorta Sonogram` (P.18).\n\n---"
       },
       {
         "code": "1.4",
-        "title": "深静脉血栓形成 (Deep Vein Thrombosis, DVT)",
-        "titleEn": "Deep Vein Thrombosis, DVT",
-        "titleZh": "深静脉血栓形成",
-        "guideline": "Wells DVT 临床概率评分、美国胸科医师学会 (ACCP) 指南。",
-        "relatedTests": "`D-Dimer Test` (P.228), `Venous Doppler Ultrasound` (P.228)。",
-        "content": "- **权威诊断标准 / 指南来源**: Wells DVT 临床概率评分、美国胸科医师学会 (ACCP) 指南。\n- **分步诊断流程 (Stepwise Diagnostic Algorithm)**:\n  1. **临床概率评估 (Wells Score for DVT)**:\n     - 评分指标包括：活动性恶性肿瘤 (+1)、瘫痪或近期石膏固定 (+1)、卧床>3天或12周内大手术 (+1)、沿深静脉走行局限性压痛 (+1)、全下肢肿胀 (+1)、患侧小腿周径大于健侧>3 cm (+1)、凹陷性水肿患肢更甚 (+1)、侧支浅静脉扩张 (+1)、既往DVT史 (+1)、替代诊断概率大于或等于DVT (-2)。\n     - **低度临床概率 (Low Probability / Score ≤ 0)**;\n     - **中度临床概率 (Moderate Probability / Score 1–2)**;\n     - **高度临床概率 (High Probability / Score ≥ 3)**。\n  2. **D-二聚体 (D-Dimer)**:\n     - 截断值: < 500 ng/mL FEU (纤维蛋白原等价单位)。\n     - **临床规则**: 在低度或中度临床概率患者中，D-二聚体阴性可安全排除 DVT，无需行超声检查；在高度临床概率患者中，不能仅凭 D-二聚体排除，必须直接进行加压超声。\n  3. **加压静脉超声 (Compression Ultrasonography, CUS)**:\n     - **金标准诊断标准**: 探头压迫下**静脉内腔不能完全被压闭合 (Lack of compressibility)**，伴管腔内低回声血栓及血流多普勒信号充盈缺损。\n- **原书对应项目**: `D-Dimer Test` (P.228), `Venous Doppler Ultrasound` (P.228)。\n\n---"
+        "title": "Deep Vein Thrombosis (DVT)",
+        "titleEn": "Deep Vein Thrombosis (DVT)",
+        "guideline": "Wells DVT Clinical Probability Score, ACCP Guidelines.",
+        "relatedTests": "`D-Dimer Test` (P.228), `Venous Doppler Ultrasound` (P.228).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Wells DVT Clinical Probability Score, ACCP Guidelines.\n- **Stepwise Diagnostic Algorithm**:\n  1. **Clinical Pretest Probability (Wells Score for DVT)**:\n     - Predictors (+1 each): Active cancer, paralysis/plaster immobilization, bedridden >3 days or major surgery within 12 weeks, localized tenderness along deep venous system, entire leg swollen, calf circumference >3 cm greater than asymptomatic side, pitting edema greater in symptomatic leg, collateral superficial veins, previous documented DVT; Alternative diagnosis at least as likely as DVT (-2 points).\n     - **Low Probability**: Score ≤ 0;\n     - **Moderate Probability**: Score 1–2;\n     - **High Probability**: Score ≥ 3.\n  2. **D-Dimer Testing**:\n     - Cutoff: < 500 ng/mL FEU.\n     - **Clinical Rule**: In low or moderate probability patients, a negative high-sensitivity D-dimer safely rules out DVT without imaging; in high-probability patients, ultrasound is mandatory regardless of D-dimer.\n  3. **Compression Ultrasonography (CUS)**:\n     - **Gold Standard Diagnostic Sign**: **Lack of compressibility** of the deep venous lumen under transducer pressure, with intraluminal echoes and Doppler flow filling defects.\n- **Manual Test References**: `D-Dimer Test` (P.228), `Venous Doppler Ultrasound` (P.228).\n\n---"
       },
       {
         "code": "1.5",
-        "title": "肺动脉栓塞 (Pulmonary Embolism, PE)",
-        "titleEn": "Pulmonary Embolism, PE",
-        "titleZh": "肺动脉栓塞",
-        "guideline": "ACEP (American College of Emergency Physicians) 急诊临床实践指南、Wells PE 评分。",
-        "relatedTests": "`D-Dimer Test` (P.228), `CTPA` (P.388), `Lung Ventilation and Perfusion Scan` (P.388)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACEP (American College of Emergency Physicians) 急诊临床实践指南、Wells PE 评分。\n- **诊断标准与决策路径**:\n  - **Wells PE 评分分类**:\n    - 心率 > 100 次/分 (+1.5)、近期手术或卧床 (+1.5)、既往 DVT/PE 史 (+1.5)、咯血 (+1)、恶性肿瘤 (+1)、DVT 临床体征 (+3)、其他诊断可能性小于 PE (+3)。\n    - 低概率 (0–1分)、中概率 (2–6分)、高概率 (≥7分)。\n  - **D-二聚体检测**:\n    - ACEP 推荐：在低临床概率患者中，高敏感度 D-二聚体阴性可排除 PE。\n  - **CT 肺动脉造影 (CT Pulmonary Angiography, CTPA)**:\n    - 现代诊断 PE 的临床金标准。诊断标准为肺动脉内充盈缺损（骑跨型血栓、完全或部分闭塞管腔）。\n  - **通气/灌注核素扫描 (V/Q Scan)**:\n    - 诊断标准: 高度可能性判定（≥ 2个大节段通气与灌注不匹配 Mismatched defects）。\n- **原书对应项目**: `D-Dimer Test` (P.228), `CTPA` (P.388), `Lung Ventilation and Perfusion Scan` (P.388)。\n\n---"
+        "title": "Pulmonary Embolism (PE)",
+        "titleEn": "Pulmonary Embolism (PE)",
+        "guideline": "ACEP (American College of Emergency Physicians) Clinical Practice Guidelines, Wells PE Criteria.",
+        "relatedTests": "`D-Dimer Test` (P.228), `CTPA` (P.388), `Lung Ventilation and Perfusion Scan` (P.388).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACEP (American College of Emergency Physicians) Clinical Practice Guidelines, Wells PE Criteria.\n- **Diagnostic Criteria & Decision Pathway**:\n  - **Wells PE Score Stratification**:\n    - HR > 100 bpm (+1.5), surgery/immobilization within 4 weeks (+1.5), previous DVT/PE (+1.5), hemoptysis (+1), active malignancy (+1), clinical signs of DVT (+3), PE most likely diagnosis (+3).\n    - Low probability: 0–1; Moderate probability: 2–6; High probability: ≥ 7.\n  - **D-Dimer Testing**: High-sensitivity D-dimer (< 500 ng/mL) rules out PE in low/intermediate probability groups.\n  - **CT Pulmonary Angiography (CTPA)**: Definitive gold standard imaging. Diagnostic finding: intraluminal filling defect (saddle embolus, total or partial vascular occlusion).\n  - **Ventilation/Perfusion (V/Q) Scan**: Indicated in severe renal insufficiency or contrast allergy. High probability criteria: ≥ 2 large segmental mismatched perfusion defects with normal ventilation.\n- **Manual Test References**: `D-Dimer Test` (P.228), `CTPA` (P.388), `Lung Ventilation and Perfusion Scan` (P.388).\n\n---"
       },
       {
         "code": "1.6",
-        "title": "外周动脉疾病 (Peripheral Arterial Disease, PAD / Lower Extremity Perfusion)",
-        "titleEn": "Peripheral Arterial Disease, PAD / Lower Extremity Perfusion",
-        "titleZh": "外周动脉疾病",
-        "guideline": "ACC/AHA 外周动脉疾病诊疗指南。",
-        "relatedTests": "`Ankle-Brachial Index` (P.57)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACC/AHA 外周动脉疾病诊疗指南。\n- **踝肱指数 (Ankle-Brachial Index, ABI) 诊断分级标准**:\n  - **测定方法**: 踝部动脉收缩压（胫后动脉或足背动脉最高值）除以双上肢肱动脉收缩压最高值。\n  - **分级诊断截断值**:\n    - **1.00 – 1.40**: 正常外周动脉灌注；\n    - **0.91 – 0.99**: 处于临界边缘状态 (Borderline)；\n    - **0.71 – 0.90**: 轻度外周动脉狭窄与灌注不良 (Mild PAD)；\n    - **0.41 – 0.70**: 中度外周动脉疾病 (Moderate PAD，常伴典型间歇性跛行)；\n    - **≤ 0.40**: 重度缺血 (Severe PAD / Critical Limb Ischemia，常伴静息痛、组织坏死与溃疡)；\n    - **> 1.40**: 血管中层钙化致血管无法被袖带压瘪 (Incompressible vessels，常见于严重糖尿病或终末期肾病，需进一步测量大趾肱指数 TBI)。\n- **原书对应项目**: `Ankle-Brachial Index` (P.57)。\n\n---"
+        "title": "Peripheral Arterial Disease (PAD)",
+        "titleEn": "Peripheral Arterial Disease (PAD)",
+        "guideline": "ACC/AHA Practice Guidelines for the Management of Patients with Peripheral Arterial Disease.",
+        "relatedTests": "`Ankle-Brachial Index` (P.57).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACC/AHA Practice Guidelines for the Management of Patients with Peripheral Arterial Disease.\n- **Ankle-Brachial Index (ABI) Diagnostic Classification**:\n  - **Measurement**: Ratio of highest systolic blood pressure in the dorsalis pedis or posterior tibial artery divided by the highest brachial artery systolic pressure.\n  - **Diagnostic Tiers**:\n    - **1.00 – 1.40**: Normal lower extremity perfusion;\n    - **0.91 – 0.99**: Borderline perfusion;\n    - **0.71 – 0.90**: Mild peripheral arterial disease;\n    - **0.41 – 0.70**: Moderate PAD (typical intermittent claudication);\n    - **≤ 0.40**: Severe PAD / Critical limb ischemia (rest pain, nonhealing ulcers, tissue gangrene);\n    - **> 1.40**: Incompressible, severely calcified arteries (Mönckeberg sclerosis; common in long-standing diabetes or ESRD; requires Toe-Brachial Index [TBI]).\n- **Manual Test References**: `Ankle-Brachial Index` (P.57).\n\n---"
       },
       {
         "code": "1.7",
-        "title": "感染性心内膜炎 (Infective Endocarditis, IE)",
-        "titleEn": "Infective Endocarditis, IE",
-        "titleZh": "感染性心内膜炎",
-        "guideline": "修正 Duke 诊断标准 (Modified Duke Criteria)。",
-        "relatedTests": "`Blood Culture` (P.114), `Echocardiography` (P.232), `Transesophageal Echocardiography` (P.577)。",
-        "content": "- **权威诊断标准 / 指南来源**: 修正 Duke 诊断标准 (Modified Duke Criteria)。\n- **诊断标准**: 满足 2项主要标准，或 1项主要标准 + 3项次要标准，或 5项次要标准者可确诊：\n  - **主要标准 (Major Criteria)**:\n    1. **血培养阳性**: 两次独立血培养分离出典型致病菌（草绿色链球菌、牛链球菌、HACEK 菌群、金黄色葡萄球菌、无原发病灶的肠球菌）；或持续血培养阳性（间隔12小时以上的血培养均为阳性）；或单次贝纳特柯克斯体（Q热）血培养阳性或相I IgG抗体滴度 > 1:800。\n    2. **心内膜受累证据 (超声心动图阳性)**: 赘生物 (Vegetation)、瓣周脓肿 (Abscess)、新发人工瓣膜部分裂开、新发瓣膜反流。\n  - **次要标准 (Minor Criteria)**:\n    1. 基础心脏疾病或静脉药瘾史；\n    2. 发热: 体温 ≥ 38.0°C；\n    3. 血管现象: 动脉栓塞、感染性肺梗死、真菌性动脉瘤、颅内出血、结膜出血、Janeway 无痛性出血红斑；\n    4. 免疫现象: 肾小球肾炎、Osler 痛性皮下结节、Roth 视网膜出血斑、类风湿因子 (RF) 阳性；\n    5. 微生物学证据: 血培养阳性但不符合主要标准。\n- **原书对应项目**: `Blood Culture` (P.114), `Echocardiography` (P.232), `Transesophageal Echocardiography` (P.577)。\n\n---"
+        "title": "Infective Endocarditis (IE)",
+        "titleEn": "Infective Endocarditis (IE)",
+        "guideline": "Modified Duke Diagnostic Criteria.",
+        "relatedTests": "`Blood Culture and Sensitivity` (P.114), `Echocardiography` (P.232).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Modified Duke Diagnostic Criteria.\n- **Definitive Diagnosis Requirement**: 2 Major Criteria, OR 1 Major + 3 Minor Criteria, OR 5 Minor Criteria.\n- **Major Criteria**:\n  1. **Positive Blood Cultures**: Typical microorganisms (Viridans streptococci, S. bovis, HACEK, S. aureus, enterococci) from 2 separate blood cultures, or persistently positive cultures draw >12 hours apart.\n  2. **Evidence of Endocardial Involvement**: Echocardiogram demonstrating oscillating intracardiac mass/vegetation on valve or supporting structures, abscess, new partial dehiscence of prosthetic valve, or new valvular regurgitation.\n- **Minor Criteria**:\n  1. Predisposition (heart condition or IV drug use);\n  2. Fever ≥ 38.0°C (100.4°F);\n  3. Vascular phenomena (arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, Janeway lesions);\n  4. Immunologic phenomena (glomerulonephritis, Osler nodes, Roth spots, Rheumatoid Factor);\n  5. Microbiologic evidence (positive blood culture not meeting major criterion).\n- **Manual Test References**: `Blood Culture and Sensitivity` (P.114), `Echocardiography` (P.232).\n\n---"
       },
       {
         "code": "1.8",
-        "title": "血脂异常与心血管风险分层 (Dyslipidemia & Cardiovascular Risk / NCEP ATP III)",
-        "titleEn": "Dyslipidemia & Cardiovascular Risk / NCEP ATP III",
-        "titleZh": "血脂异常与心血管风险分层",
-        "guideline": "美国国家胆固醇教育计划成人治疗组第三次报告 (NCEP ATP III)。",
-        "relatedTests": "`Lipid Profile` (P.381), `Triglycerides` (P.581), `Cholesterol` (P.184)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国国家胆固醇教育计划成人治疗组第三次报告 (NCEP ATP III)。\n- **血脂异常界定标准 (Fasting Lipid Profile)**:\n  - **低密度脂蛋白胆固醇 (LDL-C)**:\n    - 理想水平: < 100 mg/dL (< 2.59 mmol/L)；\n    - 近似理想: 100–129 mg/dL；\n    - 临界升高: 130–159 mg/dL；\n    - 升高: 160–189 mg/dL；\n    - 极度升高: ≥ 190 mg/dL (≥ 4.90 mmol/L)。\n  - **高密度脂蛋白胆固醇 (HDL-C)**:\n    - 减低（危险因素）: < 40 mg/dL (< 1.04 mmol/L，男性)；< 50 mg/dL (< 1.30 mmol/L，女性)；\n    - 高水平（保护因素）: ≥ 60 mg/dL (≥ 1.55 mmol/L)。\n  - **甘油三酯 (Triglycerides)**:\n    - 正常: < 150 mg/dL (< 1.70 mmol/L)；\n    - 临界升高: 150–199 mg/dL；\n    - 升高: 200–499 mg/dL；\n    - 极高（急性胰腺炎高危风险）: ≥ 500 mg/dL (≥ 5.65 mmol/L)。\n  - **总胆固醇 (Total Cholesterol)**:\n    - 理想: < 200 mg/dL；临界: 200–239 mg/dL；高: ≥ 240 mg/dL。\n- **原书对应项目**: `Lipid Profile` (P.381), `Triglycerides` (P.581), `Cholesterol` (P.184)。\n\n---"
+        "title": "Dyslipidemia & Cardiovascular Risk (NCEP ATP III)",
+        "titleEn": "Dyslipidemia & Cardiovascular Risk (NCEP ATP III)",
+        "guideline": "National Cholesterol Education Program (NCEP) Adult Treatment Panel III (ATP III).",
+        "relatedTests": "`Cholesterol` (P.189), `Triglycerides` (P.582), `Lipoprotein Electrophoresis` (P.383).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: National Cholesterol Education Program (NCEP) Adult Treatment Panel III (ATP III).\n- **Fasting Lipid Profile Classification (mg/dL)**:\n  - **LDL Cholesterol (Primary Target)**:\n    - < 100: Optimal;\n    - 100–129: Near optimal;\n    - 130–159: Borderline high;\n    - 160–189: High;\n    - ≥ 190: Very high (requires intensive statin therapy).\n  - **Total Cholesterol**:\n    - < 200: Desirable;\n    - 200–239: Borderline high;\n    - ≥ 240: High.\n  - **HDL Cholesterol**:\n    - < 40 in men, < 50 in women: Major independent cardiovascular risk factor;\n    - ≥ 60: Protective (\"negative risk factor\").\n  - **Serum Triglycerides**:\n    - < 150: Normal;\n    - 150–199: Borderline high;\n    - 200–499: High;\n    - ≥ 500: Very high (immediate risk of acute pancreatitis).\n- **Manual Test References**: `Cholesterol` (P.189), `Triglycerides` (P.582), `Lipoprotein Electrophoresis` (P.383).\n\n---"
       },
       {
         "code": "1.9",
-        "title": "代谢综合征 (Metabolic Syndrome / ATP III Criteria)",
-        "titleEn": "Metabolic Syndrome / ATP III Criteria",
-        "titleZh": "代谢综合征",
-        "guideline": "NCEP ATP III 及 AHA/NHLBI 诊断标准。",
-        "relatedTests": "`Lipid Profile` (P.381), `Glucose, Blood` (P.301)。",
-        "content": "- **权威诊断标准 / 指南来源**: NCEP ATP III 及 AHA/NHLBI 诊断标准。\n- **诊断标准**: 满足以下 5 项指标中至少 **3 项** 即可诊断为代谢综合征：\n  1. **腹部肥胖（腰围超标）**: 男性 > 102 cm (40英寸)，女性 > 88 cm (35英寸)；\n  2. **高甘油三酯血症**: 甘油三酯 ≥ 150 mg/dL (1.7 mmol/L)，或已接受药物治疗；\n  3. **高密度脂蛋白降低**: 男性 HDL-C < 40 mg/dL (1.0 mmol/L)，女性 < 50 mg/dL (1.3 mmol/L)，或已接受药物治疗；\n  4. **血压升高**: 收缩压 ≥ 130 mmHg 和/或 舒张压 ≥ 85 mmHg，或已确诊高血压并接受治疗；\n  5. **空腹血糖受损**: 空腹血糖 ≥ 100 mg/dL (5.6 mmol/L)，或已确诊2型糖尿病并接受药物治疗。\n- **原书对应项目**: `Lipid Profile` (P.381), `Glucose, Blood` (P.301)。\n\n---"
+        "title": "Metabolic Syndrome (ATP III Criteria)",
+        "titleEn": "Metabolic Syndrome (ATP III Criteria)",
+        "guideline": "NCEP ATP III Clinical Criteria.",
+        "relatedTests": "`Glucose, Blood` (P.280), `Triglycerides` (P.582), `Cholesterol` (P.189).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: NCEP ATP III Clinical Criteria.\n- **Diagnostic Requirement**: Presence of **≥ 3 of the following 5 criteria**:\n  1. **Abdominal Obesity**: Waist circumference > 102 cm (> 40 in) in men, > 88 cm (> 35 in) in women;\n  2. **Hypertriglyceridemia**: Triglycerides ≥ 150 mg/dL (1.7 mmol/L), or on drug treatment;\n  3. **Low HDL Cholesterol**: HDL-C < 40 mg/dL (1.0 mmol/L) in men, < 50 mg/dL (1.3 mmol/L) in women;\n  4. **Elevated Blood Pressure**: Systolic BP ≥ 130 mmHg and/or Diastolic BP ≥ 85 mmHg, or on antihypertensive therapy;\n  5. **Impaired Fasting Glucose**: Fasting plasma glucose ≥ 100 mg/dL (5.6 mmol/L), or on drug therapy for hyperglycemia.\n- **Manual Test References**: `Glucose, Blood` (P.280), `Triglycerides` (P.582), `Cholesterol` (P.189).\n\n---"
       }
     ]
   },
   {
     "systemId": 2,
-    "systemTitle": "二、内分泌与代谢系统疾病 (Endocrine & Metabolic Disorders)",
+    "systemTitle": "Endocrine & Metabolic Disorders",
     "systemEn": "Endocrine & Metabolic Disorders",
-    "systemZh": "内分泌与代谢系统疾病",
     "diseases": [
       {
         "code": "2.1",
-        "title": "糖尿病 (Diabetes Mellitus, DM / ADA Criteria)",
-        "titleEn": "Diabetes Mellitus, DM / ADA Criteria",
-        "titleZh": "糖尿病",
-        "guideline": "美国糖尿病协会 (ADA, American Diabetes Association) 诊断指南。",
-        "relatedTests": "`Glucose, Blood` (P.301), `Glucose Tolerance Test` (P.305), `Glycated Hemoglobin` (P.309)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国糖尿病协会 (ADA, American Diabetes Association) 诊断指南。\n- **确诊标准 (需在无明确高血糖危象情况下，非同一天重复检验确认)**:\n  1. **空腹血浆血糖 (Fasting Plasma Glucose, FPG)**: **≥ 126 mg/dL (7.0 mmol/L)**（空腹定义为至少8小时内无热量摄入）；\n  2. **口服葡萄糖耐量试验 (75g OGTT 2小时血糖)**: **≥ 200 mg/dL (11.1 mmol/L)**；\n  3. **糖化血红蛋白 (Glycated Hemoglobin, HbA1c)**: **≥ 6.5% (48 mmol/mol)**（需采用NGSP标准化方法）；\n  4. **高血糖危象或典型高血糖症状 + 随机血糖 (Random Blood Glucose)**: 存在三多一少症状（多饮、多尿、多食、体重不明原因减轻），随机血浆血糖 **≥ 200 mg/dL (11.1 mmol/L)**（单次即可确诊，无需复测）。\n- **原书对应项目**: `Glucose, Blood` (P.301), `Glucose Tolerance Test` (P.305), `Glycated Hemoglobin` (P.309)。\n\n---"
+        "title": "Diabetes Mellitus (ADA Criteria)",
+        "titleEn": "Diabetes Mellitus (ADA Criteria)",
+        "guideline": "American Diabetes Association (ADA) Standards of Medical Care in Diabetes.",
+        "relatedTests": "`Glucose, Blood` (P.280), `Glucose Tolerance Test` (P.283), `Glycohemoglobin` (P.286).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: American Diabetes Association (ADA) Standards of Medical Care in Diabetes.\n- **Diagnostic Criteria** (Requires repeat testing on a separate day unless classic hyperglycemia crisis is present):\n  1. **Fasting Plasma Glucose (FPG)**: ≥ 126 mg/dL (7.0 mmol/L) after fasting for ≥ 8 hours;\n  2. **2-Hour Oral Glucose Tolerance Test (OGTT)**: ≥ 200 mg/dL (11.1 mmol/L) following a 75-g anhydrous glucose load;\n  3. **Glycated Hemoglobin (HbA1c)**: ≥ 6.5% (48 mmol/mol) standardized to NGSP assay;\n  4. **Random Plasma Glucose**: ≥ 200 mg/dL (11.1 mmol/L) in a patient with classic symptoms of hyperglycemia (polyuria, polydipsia, unexplained weight loss) or hyperglycemic crisis.\n- **Manual Test References**: `Glucose, Blood` (P.280), `Glucose Tolerance Test` (P.283), `Glycohemoglobin` (P.286).\n\n---"
       },
       {
         "code": "2.2",
-        "title": "糖尿病前期与糖耐量受损 (Prediabetes: IFG & IGT)",
+        "title": "Prediabetes: IFG & IGT",
         "titleEn": "Prediabetes: IFG & IGT",
-        "titleZh": "糖尿病前期与糖耐量受损",
-        "guideline": "ADA 标准。",
-        "relatedTests": "`Glucose, Blood` (P.301), `Glucose Tolerance Test` (P.305)。",
-        "content": "- **权威诊断标准 / 指南来源**: ADA 标准。\n- **分类与判定阈值**:\n  - **空腹血糖受损 (Impaired Fasting Glucose, IFG)**:\n    - FPG: **100 – 125 mg/dL (5.6 – 6.9 mmol/L)**。\n  - **糖耐量受损 (Impaired Glucose Tolerance, IGT)**:\n    - 75g OGTT 2小时血糖: **140 – 199 mg/dL (7.8 – 11.0 mmol/L)**。\n  - **A1C 风险区间**:\n    - HbA1c: **5.7% – 6.4%**。\n- **原书对应项目**: `Glucose, Blood` (P.301), `Glucose Tolerance Test` (P.305)。\n\n---"
+        "guideline": "ADA Clinical Practice Recommendations.",
+        "relatedTests": "`Glucose, Blood` (P.280), `Glycohemoglobin` (P.286).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ADA Clinical Practice Recommendations.\n- **Classification & Cutoffs**:\n  - **Impaired Fasting Glucose (IFG)**: Fasting Plasma Glucose 100–125 mg/dL (5.6–6.9 mmol/L);\n  - **Impaired Glucose Tolerance (IGT)**: 2-hour plasma glucose in 75-g OGTT 140–199 mg/dL (7.8–11.0 mmol/L);\n  - **HbA1c Prediabetes Range**: 5.7% – 6.4% (39–47 mmol/mol). High risk of developing frank diabetes and cardiovascular disease.\n- **Manual Test References**: `Glucose, Blood` (P.280), `Glycohemoglobin` (P.286).\n\n---"
       },
       {
         "code": "2.3",
-        "title": "妊娠期糖尿病 (Gestational Diabetes Mellitus, GDM / O'Sullivan Criteria)",
-        "titleEn": "Gestational Diabetes Mellitus, GDM / O'Sullivan Criteria",
-        "titleZh": "妊娠期糖尿病",
-        "guideline": "ACOG (American College of Obstetricians and Gynecologists) & ADA 推荐的两步法筛查标准。",
-        "relatedTests": "`Glucose Tolerance Test` (P.305)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACOG (American College of Obstetricians and Gynecologists) & ADA 推荐的两步法筛查标准。\n- **两步法筛查与诊断流程 (Two-Step Strategy)**:\n  1. **第一步: 50g 葡萄糖负荷试验 (50g Glucose Challenge Test, GCT)**:\n     - 孕 24–28 周进行，无需空腹。\n     - 喝糖后 1 小时血糖阈值：**≥ 130 或 140 mg/dL (7.2–7.8 mmol/L)** 为阳性，需进一步行 100g 确诊试验。\n  2. **第二步: 100g 3小时口服葡萄糖耐量试验 (100g 3-hr OGTT)**:\n     - 需禁食 8–14 小时。根据 Carpenter-Coustan 标准，有 **≥ 2 项** 达到或超过下述界值即确诊 GDM：\n       - 空腹: **≥ 95 mg/dL (5.3 mmol/L)**\n       - 1 小时: **≥ 180 mg/dL (10.0 mmol/L)**\n       - 2 小时: **≥ 155 mg/dL (8.6 mmol/L)**\n       - 3 小时: **≥ 140 mg/dL (7.8 mmol/L)**\n- **原书对应项目**: `Glucose Tolerance Test` (P.305)。\n\n---"
+        "title": "Gestational Diabetes Mellitus (GDM)",
+        "titleEn": "Gestational Diabetes Mellitus (GDM)",
+        "guideline": "ACOG & ADA Two-Step Strategy (O'Sullivan Criteria).",
+        "relatedTests": "`Glucose Tolerance Test` (P.283).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACOG & ADA Two-Step Strategy (O'Sullivan Criteria).\n- **Two-Step Screening & Diagnostic Strategy**:\n  1. **Step 1 (50g Glucose Challenge Test [GCT])**: Performed at 24–28 weeks of gestation without regard to time of day or meal. If 1-hour plasma glucose is ≥ 130–140 mg/dL (7.2–7.8 mmol/L), proceed to Step 2.\n  2. **Step 2 (100g 3-Hour Diagnostic OGTT)**: Diagnosis established if **≥ 2 values** meet or exceed the following:\n     - Fasting: ≥ 95 mg/dL (5.3 mmol/L);\n     - 1-hour: ≥ 180 mg/dL (10.0 mmol/L);\n     - 2-hour: ≥ 155 mg/dL (8.6 mmol/L);\n     - 3-hour: ≥ 140 mg/dL (7.8 mmol/L).\n- **Manual Test References**: `Glucose Tolerance Test` (P.283).\n\n---"
       },
       {
         "code": "2.4",
-        "title": "糖尿病肾病早期筛查 (Diabetic Nephropathy & Microalbuminuria Screening)",
+        "title": "Diabetic Nephropathy & Microalbuminuria Screening",
         "titleEn": "Diabetic Nephropathy & Microalbuminuria Screening",
-        "titleZh": "糖尿病肾病早期筛查",
-        "guideline": "ADA 临床实践指南。",
-        "relatedTests": "`Microalbumin` (P.412), `Urinalysis` (P.597)。",
-        "content": "- **权威诊断标准 / 指南来源**: ADA 临床实践指南。\n- **筛查策略与尿白蛋白/肌酐比值 (UACR) 标准**:\n  - **筛查时机**: 1型糖尿病确诊5年后开始每年筛查；2型糖尿病确诊时立即开始每年筛查。\n  - **尿微量白蛋白诊断阈值 (随机单次尿 UACR)**:\n    - **正常**: UACR < 30 mg/g 肌酐 (< 3.5 mg/mmol)；\n    - **微量白蛋白尿 (Microalbuminuria，早期糖尿病肾病标志)**: **30 – 299 mg/g 肌酐**；\n    - **显性白蛋白尿 / 临床蛋白尿 (Macroalbuminuria / Clinical Nephropathy)**: **≥ 300 mg/g 肌酐**。\n  - **判定规则**: 需在 3–6 个月内 3 次尿检中有 2 次达到上述阈值，并排除尿路感染、剧烈运动、发热等干扰因素。\n- **原书对应项目**: `Microalbumin` (P.412), `Urinalysis` (P.597)。\n\n---"
+        "guideline": "ADA & KDOQI Clinical Guidelines.",
+        "relatedTests": "`Microalbuminuria` (P.415), `Creatinine, Urine` (P.206).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ADA & KDOQI Clinical Guidelines.\n- **Urine Albumin-to-Creatinine Ratio (UACR) Diagnostic Criteria**:\n  - **Normal**: UACR < 30 mcg/mg creatinine (< 3 mg/mmol);\n  - **Microalbuminuria (Persistent Early Renal Damage)**: UACR **30–299 mcg/mg** creatinine on at least 2 of 3 spot urine collections over a 3- to 6-month period;\n  - **Macroalbuminuria (Overt Diabetic Nephropathy)**: UACR **≥ 300 mcg/mg** creatinine.\n  - **Screening Schedule**: Annual screening starting 5 years post-diagnosis in Type 1 DM, and immediately at diagnosis in Type 2 DM.\n- **Manual Test References**: `Microalbuminuria` (P.415), `Creatinine, Urine` (P.206).\n\n---"
       },
       {
         "code": "2.5",
-        "title": "库欣综合征 / 皮质醇增多症 (Cushing's Syndrome & Hypercortisolism)",
-        "titleEn": "Cushing's Syndrome & Hypercortisolism",
-        "titleZh": "库欣综合征 / 皮质醇增多症",
-        "guideline": "内分泌学会 (The Endocrine Society) 库欣综合征诊疗指南。",
-        "relatedTests": "`Cortisol, Blood` (P.198), `Cortisol, Urine` (P.200), `Adrenocorticotropic Hormone` (P.26), `Dexamethasone Suppression Test` (P.225)。",
-        "content": "- **权威诊断标准 / 指南来源**: 内分泌学会 (The Endocrine Society) 库欣综合征诊疗指南。\n- **阶梯式实验室确诊流程**:\n  1. **第一步: 证实高皮质醇血症存在 (要求至少两项初筛试验异常)**:\n     - **24小时尿游离皮质醇 (24-hr Urinary Free Cortisol, UFC)**: > 正常上限的 3 倍；\n     - **过夜小剂量地塞米松抑制试验 (Overnight 1-mg DST)**: 午夜11点口服地塞米松 1 mg，次晨8点血浆皮质醇 **> 1.8 mcg/dL (50 nmol/L)**（不能被抑制）；\n     - **午夜唾液皮质醇 (Late-Night Salivary Cortisol)**: 失去皮质醇正常昼夜节律，午夜浓度显著升高。\n  2. **第二步: ACTH 依赖性鉴别**:\n     - 测定晨起血浆 ACTH 水平：\n       - **ACTH < 5 pg/mL**: ACTH 非依赖性库欣（肾上腺腺瘤/腺癌，行肾上腺 CT/MRI）；\n       - **ACTH > 15–20 pg/mL**: ACTH 依赖性库欣（库欣病 vs. 异位 ACTH 综合征）。\n  3. **第三步: 库欣病与异位 ACTH 综合征鉴别**:\n     - **大剂量地塞米松抑制试验 (High-Dose 8-mg DST)**: 库欣病（垂体腺瘤）能被抑制 ≥ 50%，异位 ACTH 不被抑制；\n     - **CRH 兴奋试验**: 库欣病有 ACTH 和皮质醇跃升，异位 ACTH 无反应；\n     - **岩下窦静脉取血 (IPSS)**: 垂体/外周 ACTH 浓度比值金标准。\n- **原书对应项目**: `Cortisol, Blood` (P.198), `Cortisol, Urine` (P.200), `Adrenocorticotropic Hormone` (P.26), `Dexamethasone Suppression Test` (P.225)。\n\n---"
+        "title": "Cushing Syndrome & Hypercortisolism",
+        "titleEn": "Cushing Syndrome & Hypercortisolism",
+        "guideline": "Endocrine Society Clinical Practice Guidelines.",
+        "relatedTests": "`Cortisol` (P.198), `Adrenocorticotropic Hormone` (P.26), `Dexamethasone Suppression Test` (P.218).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Endocrine Society Clinical Practice Guidelines.\n- **Stepwise Diagnostic Algorithm**:\n  1. **Step 1: Confirm Hypercortisolism** (requires at least 2 abnormal first-line tests):\n     - 24-hour urinary free cortisol (UFC) > 3–4 times upper limit of normal;\n     - Late-night salivary cortisol > 145 ng/dL (4 nmol/L);\n     - Overnight 1-mg low-dose dexamethasone suppression test (DST): Morning 8:00 AM serum cortisol fails to suppress (< 1.8 mcg/dL or < 50 nmol/L).\n  2. **Step 2: Plasma ACTH Measurement**:\n     - ACTH < 5 pg/mL: ACTH-independent (Adrenal adenoma/carcinoma; obtain adrenal CT);\n     - ACTH > 15–20 pg/mL: ACTH-dependent (Cushing disease vs. Ectopic ACTH secretion).\n  3. **Step 3: High-Dose Dexamethasone Suppression (8-mg DST)**:\n     - Cortisol suppresses by > 50%: Pituitary Cushing Disease;\n     - Fails to suppress: Ectopic ACTH production (e.g., Small Cell Lung Cancer).\n- **Manual Test References**: `Cortisol` (P.198), `Adrenocorticotropic Hormone` (P.26), `Dexamethasone Suppression Test` (P.218).\n\n---"
       },
       {
         "code": "2.6",
-        "title": "肾上腺皮质功能减退症 / 艾迪生病 (Adrenal Insufficiency & Addison's Disease)",
-        "titleEn": "Adrenal Insufficiency & Addison's Disease",
-        "titleZh": "肾上腺皮质功能减退症 / 艾迪生病",
-        "guideline": "内分泌学会指南。",
-        "relatedTests": "`Adrenocorticotropic Hormone Stimulation Test` (P.28), `Adrenocorticotropic Hormone` (P.26), `Cortisol, Blood` (P.198)。",
-        "content": "- **权威诊断标准 / 指南来源**: 内分泌学会指南。\n- **诊断标准与激发试验判定**:\n  - **晨起基础血浆皮质醇 (8:00 AM Serum Cortisol)**:\n    - **< 3 mcg/dL**: 高度怀疑肾上腺皮质功能减退；\n    - **> 18–20 mcg/dL**: 可安全排除肾上腺皮质功能减退；\n    - **3–18 mcg/dL**: 处于可疑区间，必须进行促肾上腺皮质激素兴奋试验。\n  - **ACTH 兴奋试验 (Cosyntropin / Cortrosyn 刺激试验)**:\n    - 给药: 静脉或肌注人工合成促肾上腺皮质激素 (Cosyntropin 250 mcg)；\n    - 采样: 注射前基础值、注射后 30 分钟和 60 分钟采血测皮质醇。\n    - **诊断标准**: 正常人峰值皮质醇应上升并 **≥ 18–20 mcg/dL**，且较基础增高至少 7 mcg/dL；**若峰值 < 18 mcg/dL，确诊为肾上腺皮质功能减退症**。\n  - **原发性与继发性鉴别**:\n    - **原发性 (Addison病)**: 基础 ACTH 显著升高（常 > 100 pg/mL），伴醛固酮低下、高血钾、低血钠、色素沉着；\n    - **继发性 (垂体减退)**: 基础 ACTH 减低或不恰当正常，醛固酮合成保留（受RAAS调节，血钾通常正常）。\n- **原书对应项目**: `Adrenocorticotropic Hormone Stimulation Test` (P.28), `Adrenocorticotropic Hormone` (P.26), `Cortisol, Blood` (P.198)。\n\n---"
+        "title": "Adrenal Insufficiency & Addison Disease",
+        "titleEn": "Adrenal Insufficiency & Addison Disease",
+        "guideline": "Endocrine Society Clinical Guidelines.",
+        "relatedTests": "`Adrenocorticotropic Hormone Stimulation Test` (P.28), `Cortisol` (P.198).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Endocrine Society Clinical Guidelines.\n- **Diagnostic Criteria & Decision Rules**:\n  - **Morning Basal Cortisol (8:00 AM)**:\n    - < 3 mcg/dL (< 80 nmol/L): Strongly suggestive of adrenal insufficiency;\n    - > 18 mcg/dL (> 500 nmol/L): Adrenal insufficiency excluded.\n  - **High-Dose Cosyntropin (ACTH) Stimulation Test (Gold Standard)**:\n    - Administration of 250 mcg IV/IM synthetic ACTH (Cosyntropin); measure serum cortisol at 0, 30, and 60 minutes.\n    - **Normal**: Peak serum cortisol **≥ 18–20 mcg/dL** (≥ 500 nmol/L).\n    - **Primary Adrenal Insufficiency (Addison)**: Peak cortisol fails to reach 18 mcg/dL, accompanied by high plasma ACTH (> 100 pg/mL) and elevated plasma renin with hyperkalemia/hyponatremia.\n    - **Secondary Adrenal Insufficiency**: Pituitary failure with low basal ACTH; blunted response on prolonged stimulation.\n- **Manual Test References**: `Adrenocorticotropic Hormone Stimulation Test` (P.28), `Cortisol` (P.198).\n\n---"
       },
       {
         "code": "2.7",
-        "title": "原发性醛固酮增多症 / 康恩综合征 (Primary Hyperaldosteronism / Conn's Syndrome)",
-        "titleEn": "Primary Hyperaldosteronism / Conn's Syndrome",
-        "titleZh": "原发性醛固酮增多症 / 康恩综合征",
-        "guideline": "内分泌学会 (The Endocrine Society) 原发性醛固酮增多症指南。",
-        "relatedTests": "`Aldosterone` (P.32), `Renin Activity, Plasma` (P.515)。",
-        "content": "- **权威诊断标准 / 指南来源**: 内分泌学会 (The Endocrine Society) 原发性醛固酮增多症指南。\n- **诊断标准与流程**:\n  - **初筛试验: 醛固酮/肾素比值 (Aldosterone-to-Renin Ratio, ARR)**:\n    - 条件: 清晨起床后站立 2 小时取血，停用利尿剂、ACEI/ARB、螺内酯等干扰药物；\n    - **诊断界值**: **ARR > 20 – 30** (当血浆醛固酮浓度 PAC 以 ng/dL 计量，血浆肾素活性 PRA 以 ng/mL/h 计量)，且 **PAC > 15 ng/dL** 为筛查阳性。\n  - **确诊试验 (抑制试验)**:\n    - 生理盐水输注试验 (Saline Infusion Test) 或高钠负荷试验：正常人高容量抑制醛固酮分泌；输生理盐水后 PAC > 10 ng/dL 确诊原醛症（< 5 ng/dL 排除）。\n  - **亚型定位**: 肾上腺 CT 及双侧肾上腺静脉采血 (AVS, 区别单侧腺瘤与双侧增生的金标准)。\n- **原书对应项目**: `Aldosterone` (P.32), `Renin Activity, Plasma` (P.515)。\n\n---"
+        "title": "Primary Hyperaldosteronism (Conn Syndrome)",
+        "titleEn": "Primary Hyperaldosteronism (Conn Syndrome)",
+        "guideline": "Endocrine Society Practice Guidelines.",
+        "relatedTests": "`Aldosterone` (P.32), `Renin` (P.512).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Endocrine Society Practice Guidelines.\n- **Screening & Diagnostic Criteria**:\n  - **Screening Test**: Morning serum Aldosterone-to-Plasma Renin Activity Ratio (**ARR**).\n  - **Positive Screening Threshold**: ARR **≥ 20–30** with concurrent serum aldosterone **≥ 15 ng/dL** (416 pmol/L) and suppressed plasma renin activity (PRA < 1.0 ng/mL/h).\n  - **Confirmatory Testing**: Oral sodium loading test or IV saline infusion (2 L over 4 hours): post-infusion plasma aldosterone > 10 ng/dL confirms autonomous primary hyperaldosteronism.\n- **Manual Test References**: `Aldosterone` (P.32), `Renin` (P.512).\n\n---"
       },
       {
         "code": "2.8",
-        "title": "嗜铬细胞瘤 (Pheochromocytoma)",
+        "title": "Pheochromocytoma",
         "titleEn": "Pheochromocytoma",
-        "titleZh": "嗜铬细胞瘤",
-        "guideline": "内分泌学会指南。",
-        "relatedTests": "`Vanillylmandelic Acid and Catecholamines` (P.616), `Metanephrines` (P.410)。",
-        "content": "- **权威诊断标准 / 指南来源**: 内分泌学会指南。\n- **实验室诊断标准与阈值**:\n  - **高危疑似患者（有家族遗传综合征 MEN-2、VHL，或突发肾上腺肿物）首选**:\n    - **血浆游离变肾上腺素类 (Plasma Free Metanephrines)**: 敏感度 > 97%–99%；若升高超过正常参考上限 3–4 倍，诊断高度成立。\n  - **低危疑似或常规筛查患者首选**:\n    - **24小时尿分级变肾上腺素和香草扁桃酸 (24-hr Urine Metanephrines & VMA)**: 特异度高达 95%–98%。\n  - **影像学标准**: 实验室生化确诊后再行腹部增强 CT 或 MRI 定位；MIBG 核素扫描探查异位病灶或多发转移。\n- **原书对应项目**: `Vanillylmandelic Acid and Catecholamines` (P.616), `Metanephrines` (P.410)。\n\n---"
+        "guideline": "Endocrine Society Guidelines.",
+        "relatedTests": "`Catecholamines` (P.158), `Metanephrines, Urine` (P.410), `Vanillylmandelic Acid` (P.601).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Endocrine Society Guidelines.\n- **Biochemical Diagnostic Criteria**:\n  - **High-risk patients**: Plasma free metanephrines (sensitivity 96–100%); levels > 3–4 times upper limit of normal confirm catecholamine-secreting tumor.\n  - **Standard-risk patients**: 24-hour urine fractionated metanephrines and catecholamines (high specificity).\n  - **Rule-out Rule**: Normal plasma free metanephrines and urine metanephrines reliably excludes pheochromocytoma.\n- **Manual Test References**: `Catecholamines` (P.158), `Metanephrines, Urine` (P.410), `Vanillylmandelic Acid` (P.601).\n\n---"
       },
       {
         "code": "2.9",
-        "title": "肢端肥大症与巨人症 (Acromegaly & Gigantism)",
+        "title": "Acromegaly & Gigantism",
         "titleEn": "Acromegaly & Gigantism",
-        "titleZh": "肢端肥大症与巨人症",
-        "guideline": "内分泌学会肢端肥大症指南。",
-        "relatedTests": "`Somatomedin C / IGF-1` (P.538), `Growth Hormone` (P.312)。",
-        "content": "- **权威诊断标准 / 指南来源**: 内分泌学会肢端肥大症指南。\n- **两步法确诊标准**:\n  1. **初筛指标: 血清胰岛素样生长因子-1 (Serum IGF-1)**:\n     - IGF-1 生物半衰期长，浓度稳定。若血清 IGF-1 超过同年龄、同性别正常人群上限，提示肢端肥大症可能。\n  2. **确诊试验: 口服葡萄糖生长激素抑制试验 (OGTT-GH Suppression Test)**:\n     - 口服 75g 葡萄糖，测定 0、30、60、90、120 分钟 GH 水平。\n     - **诊断标准**: 正常人高血糖反馈抑制垂体，GH 应被抑制至 **< 1.0 ng/mL**（采用高敏检测法应 **< 0.4 ng/mL**）；**若 GH 不能被抑制到该阈值以下，确诊肢端肥大症**。\n  3. **垂体 MRI**: 检查垂体生长激素大腺瘤/微腺瘤。\n- **原书对应项目**: `Somatomedin C / IGF-1` (P.538), `Growth Hormone` (P.312)。\n\n---"
+        "guideline": "Endocrine Society Practice Guidelines.",
+        "relatedTests": "`Growth Hormone` (P.293), `Somatomedin C` (P.554).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Endocrine Society Practice Guidelines.\n- **Diagnostic Criteria & Laboratory Pathway**:\n  1. **Initial Screening**: Serum Insulin-Like Growth Factor 1 (IGF-1 / Somatomedin C). Elevated age- and sex-adjusted IGF-1 has >95% sensitivity.\n  2. **Confirmatory Gold Standard**: Oral Glucose Tolerance Test for GH Suppression (OGTT-GH Suppression Test). Normal response: 75g oral glucose suppresses serum GH to **< 1.0 ng/mL** (ultra-sensitive assay < 0.4 ng/mL). Failure of suppression confirms acromegaly.\n- **Manual Test References**: `Growth Hormone` (P.293), `Somatomedin C` (P.554).\n\n---"
       },
       {
         "code": "2.10",
-        "title": "甲状腺功能亢进症与格雷夫斯病 (Hyperthyroidism & Graves' Disease)",
-        "titleEn": "Hyperthyroidism & Graves' Disease",
-        "titleZh": "甲状腺功能亢进症与格雷夫斯病",
-        "guideline": "ATA (American Thyroid Association) / AACE 甲状腺疾病指南。",
-        "relatedTests": "`Thyroid-Stimulating Hormone` (P.564), `Thyroxine, Free` (P.567), `Thyroid Uptake and Scan` (P.500)。",
-        "content": "- **权威诊断标准 / 指南来源**: ATA (American Thyroid Association) / AACE 甲状腺疾病指南。\n- **诊断标准与实验室模式**:\n  - **原发性甲亢**:\n    - **促甲状腺激素 (TSH)**: 显著受抑，通常 **< 0.01 – 0.1 mIU/L**；\n    - **游离甲状腺素 (Free T4) 和/或 游离三碘甲状腺原氨酸 (Free T3)**: 显著升高。\n  - **亚临床甲亢**: TSH 低于正常，但 Free T4 和 Free T3 处于正常区间。\n  - **格雷夫斯病 (Graves' Disease) 病因确诊**:\n    - 促甲状腺激素受体抗体 (TRAb / TSI) 阳性；\n    - 放射性碘摄取率 (RAIU): 24小时摄碘率弥漫性对称性增高。\n- **原书对应项目**: `Thyroid-Stimulating Hormone` (P.564), `Thyroxine, Free` (P.567), `Thyroid Uptake and Scan` (P.500)。\n\n---"
+        "title": "Hyperthyroidism & Graves Disease",
+        "titleEn": "Hyperthyroidism & Graves Disease",
+        "guideline": "ATA / AACE Practice Guidelines for Hyperthyroidism.",
+        "relatedTests": "`Thyroid-Stimulating Hormone` (P.569), `Thyroxine, Free` (P.573), `Thyroid Scan` (P.571).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ATA / AACE Practice Guidelines for Hyperthyroidism.\n- **Biochemical Diagnostic Patterns**:\n  - **Overt Primary Hyperthyroidism**: Serum TSH **< 0.01 mU/L** (suppressed) with elevated Free T4 and/or Free T3.\n  - **Subclinical Hyperthyroidism**: Suppressed TSH with normal Free T4 and Free T3.\n  - **Graves Disease Differentiation**: Diffuse elevated radioactive iodine uptake (RAIU) and positive **TSH Receptor Antibodies (TRAb / TSI)**.\n- **Manual Test References**: `Thyroid-Stimulating Hormone` (P.569), `Thyroxine, Free` (P.573), `Thyroid Scan` (P.571).\n\n---"
       },
       {
         "code": "2.11",
-        "title": "原发性与亚临床甲状腺功能减退症 (Hypothyroidism & Subclinical Hypothyroidism)",
+        "title": "Hypothyroidism & Subclinical Hypothyroidism",
         "titleEn": "Hypothyroidism & Subclinical Hypothyroidism",
-        "titleZh": "原发性与亚临床甲状腺功能减退症",
-        "guideline": "ATA / AACE 指南。",
-        "relatedTests": "`Thyroid-Stimulating Hormone` (P.564), `Thyroxine, Free` (P.567), `Thyroid Antibodies` (P.561)。",
-        "content": "- **权威诊断标准 / 指南来源**: ATA / AACE 指南。\n- **诊断标准与分型**:\n  - **临床型原发性甲减**:\n    - **血清 TSH**: 显著升高（通常 **> 10 mIU/L**）；\n    - **游离 T4 (Free T4)**: 降低；\n  - **亚临床甲减 (Subclinical Hypothyroidism)**:\n    - **血清 TSH**: 轻至中度升高（通常 **> 4.5–5.0 mIU/L** 但 < 10 mIU/L）；\n    - **游离 T4 (Free T4)**: 严格处于正常参考范围内。\n  - **桥本甲状腺炎 (Hashimoto Thyroiditis) 自身免疫依据**:\n    - 抗甲状腺过氧化物酶抗体 (Anti-TPO) 与抗甲状腺球蛋白抗体 (Anti-Tg) 强阳性。\n- **原书对应项目**: `Thyroid-Stimulating Hormone` (P.564), `Thyroxine, Free` (P.567), `Thyroid Antibodies` (P.561)。\n\n---"
+        "guideline": "ATA / AACE Practice Guidelines for Hypothyroidism.",
+        "relatedTests": "`Thyroid-Stimulating Hormone` (P.569), `Thyroxine, Free` (P.573), `Antimicrosomal Antibody Test` (P.67).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ATA / AACE Practice Guidelines for Hypothyroidism.\n- **Diagnostic Classification**:\n  - **Primary Overt Hypothyroidism**: Elevated TSH (> 10 mU/L) with decreased Free T4.\n  - **Subclinical Hypothyroidism**: Elevated TSH (4.5–10 mU/L) with normal Free T4.\n  - **Hashimoto Thyroiditis Confirmation**: Positive anti-thyroid peroxidase (anti-TPO) and anti-thyroglobulin (anti-Tg) antibodies.\n  - **Central Hypothyroidism**: Low or inappropriately normal TSH with low Free T4 (pituitary/hypothalamic pathology).\n- **Manual Test References**: `Thyroid-Stimulating Hormone` (P.569), `Thyroxine, Free` (P.573), `Antimicrosomal Antibody Test` (P.67).\n\n---"
       },
       {
         "code": "2.12",
-        "title": "原发性甲状旁腺功能亢进症 (Primary Hyperparathyroidism)",
+        "title": "Primary Hyperparathyroidism",
         "titleEn": "Primary Hyperparathyroidism",
-        "titleZh": "原发性甲状旁腺功能亢进症",
-        "guideline": "内分泌代谢学会指南。",
-        "relatedTests": "`Parathyroid Hormone` (P.436), `Calcium, Blood` (P.142), `Phosphorus` (P.448)。",
-        "content": "- **权威诊断标准 / 指南来源**: 内分泌代谢学会指南。\n- **核心实验室生化特征**:\n  1. **高血钙 (Hypercalcemia)**: 血清游离钙或总钙校正值（总钙 + 0.8 × [4.0 - 白蛋白]）持续高于正常上限（> 10.2–10.5 mg/dL）；\n  2. **甲状旁腺激素 (Intact PTH) 不恰当升高或处于正常高限**: 在高钙血症背景下，正常垂体-甲状旁腺轴生理反馈应彻底抑制 PTH。若 PTH 仍高于正常或处于“不恰当的正常值（Inappropriately normal）”，确诊原发性甲旁亢；\n  3. **低血磷 (Hypophosphatemia)**: 尿磷排泄增加导致血磷通常低于 2.5 mg/dL；\n  4. **高尿钙 (Hypercalciuria)**: 24小时尿钙通常 > 250–300 mg（用于与家族性低尿钙性高钙血症 FHH 鉴别，FHH 钙/肌酐清除比 < 0.01）。\n- **原书对应项目**: `Parathyroid Hormone` (P.436), `Calcium, Blood` (P.142), `Phosphorus` (P.448)。\n\n---"
+        "guideline": "International Workshop on the Management of Asymptomatic Primary Hyperparathyroidism.",
+        "relatedTests": "`Calcium, Blood` (P.142), `Parathyroid Hormone` (P.458), `Phosphorus` (P.470).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: International Workshop on the Management of Asymptomatic Primary Hyperparathyroidism.\n- **Biochemical Diagnostic Triad**:\n  1. **Hypercalcemia**: Serum total calcium > 10.5 mg/dL (or elevated ionized calcium);\n  2. **Inappropriately Elevated or Normal Intact PTH**: Serum intact PTH elevated or within upper-normal range despite hypercalcemia;\n  3. **Hypophosphatemia**: Decreased serum phosphate (< 2.5 mg/dL) with elevated urinary calcium excretion.\n  - **Differentiation from Familial Hypocalciuric Hypercalcemia (FHH)**: 24-hour urine calcium clearance to creatinine clearance ratio (CCCR) < 0.01 indicates FHH; CCCR > 0.02 indicates primary hyperparathyroidism.\n- **Manual Test References**: `Calcium, Blood` (P.142), `Parathyroid Hormone` (P.458), `Phosphorus` (P.470).\n\n---"
       },
       {
         "code": "2.13",
-        "title": "男性迟发性性腺功能减退症 / 雄激素缺乏 (Male Hypogonadism / Androgen Deficiency)",
+        "title": "Male Hypogonadism / Androgen Deficiency",
         "titleEn": "Male Hypogonadism / Androgen Deficiency",
-        "titleZh": "男性迟发性性腺功能减退症 / 雄激素缺乏",
-        "guideline": "美国内分泌学会工作组 (The Endocrine Society Task Force) 指南。",
-        "relatedTests": "`Testosterone` (P.550), `Luteinizing Hormone` (P.390), `Follicle-Stimulating Hormone` (P.283)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国内分泌学会工作组 (The Endocrine Society Task Force) 指南。\n- **诊断标准**:\n  - 必须同时具备**雄激素缺乏的临床症状体征**（性欲减退、勃起功能障碍、体毛稀少、骨质疏松、疲乏）以及**实验室生化证据**：\n  - **清晨空腹总睾酮 (Morning Total Testosterone, 8:00–10:00 AM)**:\n    - 必须在至少 **两次不同清晨** 测定均显示低于正常成人男性参考下限（通常 **< 300 ng/dL 或 < 10.4 nmol/L**）。\n  - **后续分型**:\n    - 测定血清 LH 和 FSH：\n      - **原发性睾丸功能衰竭 (高促性腺激素性)**: LH、FSH 显著升高；\n      - **继发性下丘脑-垂体功能障碍 (低促性腺激素性)**: LH、FSH 降低或异常处于正常低限，需进一步行垂体 MRI 检查。\n- **原书对应项目**: `Testosterone` (P.550), `Luteinizing Hormone` (P.390), `Follicle-Stimulating Hormone` (P.283)。\n\n---"
+        "guideline": "Endocrine Society Guidelines.",
+        "relatedTests": "`Testosterone` (P.563), `Luteinizing Hormone` (P.387), `Follicle-Stimulating Hormone` (P.267).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Endocrine Society Guidelines.\n- **Diagnostic Criteria & Workup**:\n  - Requires symptoms of androgen deficiency (decreased libido, erectile dysfunction, loss of axillary/pubic hair, muscle wasting) confirmed by **two separate fasting morning total testosterone (8:00–10:00 AM) measurements < 300 ng/dL** (10.4 nmol/L).\n  - **Primary Hypogonadism (Testicular failure)**: Low testosterone with elevated LH and FSH (e.g., Klinefelter syndrome 47,XXY).\n  - **Secondary Hypogonadism (Hypothalamic-Pituitary failure)**: Low testosterone with low or inappropriately normal LH/FSH (e.g., Kallmann syndrome, hyperprolactinemia).\n- **Manual Test References**: `Testosterone` (P.563), `Luteinizing Hormone` (P.387), `Follicle-Stimulating Hormone` (P.267).\n\n---"
       }
     ]
   },
   {
     "systemId": 3,
-    "systemTitle": "三、消化与肝胆胰系统疾病 (Gastrointestinal, Hepatic & Pancreatic Disorders)",
+    "systemTitle": "Gastrointestinal, Hepatic & Pancreatic Disorders",
     "systemEn": "Gastrointestinal, Hepatic & Pancreatic Disorders",
-    "systemZh": "消化与肝胆胰系统疾病",
     "diseases": [
       {
         "code": "3.1",
-        "title": "急性胰腺炎 (Acute Pancreatitis / Revised Atlanta Criteria)",
-        "titleEn": "Acute Pancreatitis / Revised Atlanta Criteria",
-        "titleZh": "急性胰腺炎",
-        "guideline": "亚特兰大国际共识分类 (Revised Atlanta Criteria)。",
-        "relatedTests": "`Lipase, Serum` (P.373), `Amylase, Serum` (P.47), `CT Scan of Abdomen` (P.194)。",
-        "content": "- **权威诊断标准 / 指南来源**: 亚特兰大国际共识分类 (Revised Atlanta Criteria)。\n- **诊断标准**: 满足以下 3 项标准中至少 **2 项** 即可明确诊断：\n  1. **典型腹痛**: 突发、剧烈、持续性的上腹部刀割样疼痛，常向背部呈带状放射，弯腰抱膝位可轻度缓解；\n  2. **血清胰酶显著升高**: 血清脂肪酶 (Lipase) 或淀粉酶 (Amylase) **≥ 正常上限的 3 倍 (≥ 3× ULN)**；\n  3. **影像学证据**: 增强 CT、超声或 MRI 呈现急性胰腺炎典型特征（胰腺局限或弥漫性水肿肿胀、胰周渗出积液、坏死区低强化）。\n- **核心实验室生化对比**:\n  - **血清脂肪酶 (Lipase)**: 敏感度与特异度显著优于淀粉酶；发病 4–8 小时升高，峰值 24 小时，**持续升高 8–14 天**，尤其适用于就诊较晚的患者。\n  - **血清淀粉酶 (Amylase)**: 发病 6–12 小时升高，24–48 小时达峰，**3–5 天内迅速恢复正常**；特异性较差（腮腺炎、肠缺血穿孔、肾衰均可升高）。\n- **原书对应项目**: `Lipase, Serum` (P.373), `Amylase, Serum` (P.47), `CT Scan of Abdomen` (P.194)。\n\n---"
+        "title": "Acute Pancreatitis (Revised Atlanta Criteria)",
+        "titleEn": "Acute Pancreatitis (Revised Atlanta Criteria)",
+        "guideline": "Revised Atlanta Classification for Acute Pancreatitis.",
+        "relatedTests": "`Lipase` (P.381), `Amylase, Serum` (P.47), `Abdominal Sonogram` (P.19).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Revised Atlanta Classification for Acute Pancreatitis.\n- **Diagnostic Requirement**: Requires at least **2 of the following 3 features**:\n  1. **Characteristic Abdominal Pain**: Severe epigastric pain radiating to the back;\n  2. **Serum Amylase or Lipase**: Elevated **≥ 3 times the upper limit of normal** (Lipase is preferred due to higher sensitivity and prolonged elevation of 8–14 days);\n  3. **Characteristic Imaging Findings**: Contrast-enhanced CT, MRI, or transabdominal ultrasound demonstrating pancreatic edema, peripancreatic fluid collections, or necrosis.\n- **Manual Test References**: `Lipase` (P.381), `Amylase, Serum` (P.47), `Abdominal Sonogram` (P.19).\n\n---"
       },
       {
         "code": "3.2",
-        "title": "结直肠癌筛查与预防 (Colorectal Cancer Screening / ACS & USPSTF Guidelines)",
-        "titleEn": "Colorectal Cancer Screening / ACS & USPSTF Guidelines",
-        "titleZh": "结直肠癌筛查与预防",
-        "guideline": "USPSTF 结直肠癌筛查指南、ACS (American Cancer Society)。",
-        "relatedTests": "`Colonoscopy` (P.188), `Fecal Occult Blood Test` (P.477), `Barium Enema` (P.100)。",
-        "content": "- **权威诊断标准 / 指南来源**: USPSTF 结直肠癌筛查指南、ACS (American Cancer Society)。\n- **常规人群筛查策略 (45/50岁至75岁无症状平均风险成人)**:\n  - **结肠镜检查 (Colonoscopy)**: 筛查与预防的**金标准**。每 **10 年** 一次；发现息肉可直接行内镜下切除活检。\n  - **粪便隐血试验 (FOBT) / 粪便免疫化学试验 (FIT)**: 每 **1 年** 一次。\n  - **乙状结肠镜 (Flexible Sigmoidoscopy)**: 每 **5 年** 一次。\n  - **双重对比气钡灌肠 (Double Contrast Barium Enema, DCBE)**: 当结肠镜无法完成或患者拒绝时，每 **5 年** 一次。\n- **原书对应项目**: `Colonoscopy` (P.188), `Fecal Occult Blood Test` (P.477), `Barium Enema` (P.100)。\n\n---"
+        "title": "Colorectal Cancer Screening (ACS & USPSTF)",
+        "titleEn": "Colorectal Cancer Screening (ACS & USPSTF)",
+        "guideline": "USPSTF & American Cancer Society (ACS) Screening Guidelines.",
+        "relatedTests": "`Colonoscopy` (P.193), `Fecal Occult Blood Test` (P.254).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: USPSTF & American Cancer Society (ACS) Screening Guidelines.\n- **Screening Recommendations for Average-Risk Adults**:\n  - **Starting Age**: Age 45 to 75.\n  - **Recommended Screening Modalities & Intervals**:\n    - **Colonoscopy (Gold Standard)**: Every 10 years;\n    - **Annual Fecal Immunochemical Test (FIT)**: Highly sensitive for human globin;\n    - **Stool DNA-FIT (Cologuard)**: Every 3 years;\n    - **Flexible Sigmoidoscopy**: Every 5 years;\n    - **CT Colonography (Virtual Colonoscopy)**: Every 5 years.\n- **Manual Test References**: `Colonoscopy` (P.193), `Fecal Occult Blood Test` (P.254).\n\n---"
       },
       {
         "code": "3.3",
-        "title": "慢性乙型与丙型病毒性肝炎 (Chronic Hepatitis B & C / AGA Guidelines)",
-        "titleEn": "Chronic Hepatitis B & C / AGA Guidelines",
-        "titleZh": "慢性乙型与丙型病毒性肝炎",
-        "guideline": "美国胃肠病学会 (AGA) 与 AASLD 慢性肝炎临床实践指南。",
-        "relatedTests": "`Hepatitis B Panel` (P.327), `Hepatitis C Virus Antibodies` (P.330), `Hepatitis Viral RNA` (P.332)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国胃肠病学会 (AGA) 与 AASLD 慢性肝炎临床实践指南。\n- **实验室血清学与分子学诊断标准**:\n  - **乙型肝炎 (Hepatitis B)**:\n    - **慢性乙肝定义**: 乙型肝炎表面抗原 (HBsAg) 持续阳性 **> 6 个月**；\n    - **复制活性评估**: HBeAg 阳性且 HBV DNA 定量 > 20,000 IU/mL；\n    - **恢复/既往感染**: 抗-HBs 阳性、抗-HBc IgG 阳性；\n    - **单纯疫苗接种成功**: 仅 抗-HBs 阳性（滴度 > 10 mIU/mL），其他全阴。\n  - **丙型肝炎 (Hepatitis C / AGA 证据推荐)**:\n    - **筛查指标**: 抗-HCV 抗体（酶联免疫法）；\n    - **确诊金标准**: **高敏感度 HCV RNA 实时定量 PCR**（检测病毒血症确认现症感染）；\n    - **抗病毒前指导**: 必须行 **HCV 基因分型 (Genotype 1–6)**，以决定直接抗病毒药物 (DAA) 方案及疗程。\n- **原书对应项目**: `Hepatitis B Panel` (P.327), `Hepatitis C Virus Antibodies` (P.330), `Hepatitis Viral RNA` (P.332)。\n\n---"
+        "title": "Chronic Hepatitis B & C (AGA Guidelines)",
+        "titleEn": "Chronic Hepatitis B & C (AGA Guidelines)",
+        "guideline": "AASLD / AGA Practice Guidelines.",
+        "relatedTests": "`Hepatitis B Surface Antigen` (P.320), `Hepatitis C Virus Antibody` (P.325).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: AASLD / AGA Practice Guidelines.\n- **Hepatitis B Diagnostic Serologic Patterns**:\n  - **Acute Infection**: Positive HBsAg, positive IgM anti-HBc;\n  - **Chronic Infection**: Persistent **HBsAg positive > 6 months**, positive IgG anti-HBc;\n  - **Vaccine Immunity**: Isolated positive anti-HBs (HBsAb); negative anti-HBc;\n  - **Natural Infection Immunity**: Positive anti-HBs AND positive IgG anti-HBc.\n- **Hepatitis C Diagnostic Sequence**:\n  - Screening: HCV Antibody (anti-HCV);\n  - Confirmation: Quantitative real-time HCV RNA PCR. Detectable HCV RNA indicates active viral replication and candidacy for direct-acting antivirals (DAAs).\n- **Manual Test References**: `Hepatitis B Surface Antigen` (P.320), `Hepatitis C Virus Antibody` (P.325).\n\n---"
       },
       {
         "code": "3.4",
-        "title": "自身免疫性肝炎 (Autoimmune Hepatitis, AIH)",
-        "titleEn": "Autoimmune Hepatitis, AIH",
-        "titleZh": "自身免疫性肝炎",
-        "guideline": "国际自身免疫性肝炎学组 (IAIHG) 简化评分系统。",
-        "relatedTests": "`Smooth Muscle Antibodies` (P.536), `Antinuclear Antibody Test` (P.70), `Liver Biopsy` (P.378)。",
-        "content": "- **权威诊断标准 / 指南来源**: 国际自身免疫性肝炎学组 (IAIHG) 简化评分系统。\n- **诊断标准**: 满足综合评分（≥ 6分提示可能 AIH，≥ 7分明确诊断）：\n  1. **自身抗体**:\n     - ANA 或 ASMA (抗平滑肌抗体) ≥ 1:40 (1分)，≥ 1:80 (2分)；\n     - 抗-LKM-1 (肝肾微粒体-1型抗体) ≥ 1:40 (2分)；\n  2. **免疫球蛋白**: 血清 IgG 高于正常上限 (1分)，> 正常上限1.1倍 (2分)；\n  3. **肝活检病理**: 界面性肝炎 (Interface hepatitis)、淋巴-浆细胞浸润、肝细胞花结样改变 (典型2分，兼容1分)；\n  4. **病毒性肝炎标志物阴性**: 排除甲、乙、丙肝 (2分)。\n- **原书对应项目**: `Smooth Muscle Antibodies` (P.536), `Antinuclear Antibody Test` (P.70), `Liver Biopsy` (P.378)。\n\n---"
+        "title": "Autoimmune Hepatitis (AIH)",
+        "titleEn": "Autoimmune Hepatitis (AIH)",
+        "guideline": "International Autoimmune Hepatitis Group (IAIHG) Simplified Criteria.",
+        "relatedTests": "`Antinuclear Antibody Test` (P.70), `Anti-Smooth Muscle Antibody Test` (P.73), `Anti-Liver/Kidney Microsomal Antibody` (P.66).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: International Autoimmune Hepatitis Group (IAIHG) Simplified Criteria.\n- **Diagnostic Criteria Scoring System (Definite AIH requires ≥ 7 points)**:\n  1. **Autoantibodies**: ANA or ASMA ≥ 1:40 (1 pt), ≥ 1:80 (2 pts); or Anti-LKM1 ≥ 1:40 (2 pts);\n  2. **Serum IgG**: Normal upper limit (1 pt), > 1.10 times upper limit (2 pts);\n  3. **Liver Histology**: Compatible with AIH (1 pt), typical interface hepatitis with lymphocytic/plasmacytic infiltrate (2 pts);\n  4. **Absence of Viral Hepatitis**: Viral hepatitis serologies all negative (2 pts).\n- **Manual Test References**: `Antinuclear Antibody Test` (P.70), `Anti-Smooth Muscle Antibody Test` (P.73), `Anti-Liver/Kidney Microsomal Antibody` (P.66).\n\n---"
       },
       {
         "code": "3.5",
-        "title": "乳糜泻 / 麦胶性肠病 (Celiac Disease / Gluten-Sensitive Enteropathy)",
-        "titleEn": "Celiac Disease / Gluten-Sensitive Enteropathy",
-        "titleZh": "乳糜泻 / 麦胶性肠病",
-        "guideline": "ACG (American College of Gastroenterology) 乳糜泻临床指南。",
-        "relatedTests": "`Endomysial Antibodies` (P.238), `Gliadin Antibodies` (P.299), `Upper GI Endoscopy` (P.248)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACG (American College of Gastroenterology) 乳糜泻临床指南。\n- **确诊流程与金标准**:\n  1. **血清学首选筛查**:\n     - **抗组织型转谷氨酰胺酶抗体 (Anti-tTG IgA)**: 敏感度与特异度均 > 95%；\n     - **抗肌内膜抗体 (Anti-EMA IgA)**: 特异度接近 100%；\n     - **注意事项**: 必须在**正常进食含麸质饮食（非无麸质饮食）期间采血**；同时必须测定**血清总 IgA**（以排除选择性 IgA 缺乏导致的假阴性，若 IgA 缺乏则需测定 tTG IgG 或 DGP IgG）。\n  2. **组织病理确诊金标准**:\n     - **小肠内镜下十二指肠降段多点黏膜活检**: 显示绒毛萎缩 (Villous atrophy)、隐窝增生 (Crypt hyperplasia) 和上皮内淋巴细胞增多 (Marsh 分级 III级)。\n- **原书对应项目**: `Endomysial Antibodies` (P.238), `Gliadin Antibodies` (P.299), `Upper GI Endoscopy` (P.248)。\n\n---"
+        "title": "Celiac Disease (Gluten-Sensitive Enteropathy)",
+        "titleEn": "Celiac Disease (Gluten-Sensitive Enteropathy)",
+        "guideline": "ACG / AGA Clinical Guidelines for the Diagnosis of Celiac Disease.",
+        "relatedTests": "`Anti-Gliadin Antibodies` (P.64), `Endoscopy` (P.243).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACG / AGA Clinical Guidelines for the Diagnosis of Celiac Disease.\n- **Diagnostic Criteria & Decision Pathway**:\n  1. **First-Line Serology**: Serum **IgA Anti-Tissue Transglutaminase (anti-tTG)** antibody while on a gluten-containing diet (sensitivity & specificity > 95%);\n  2. **Total Serum IgA**: Concurrently measured to exclude selective IgA deficiency. If IgA deficient, measure IgG anti-deamidated gliadin peptides (DGP) or IgG anti-tTG;\n  3. **Small Bowel Biopsy (Gold Standard)**: Esophagogastroduodenoscopy (EGD) with multiple duodenal biopsies showing intraepithelial lymphocytosis, crypt hyperplasia, and **villous blunting / atrophy (Marsh classification)**.\n- **Manual Test References**: `Anti-Gliadin Antibodies` (P.64), `Endoscopy` (P.243).\n\n---"
       },
       {
         "code": "3.6",
-        "title": "巴雷特食管与胃食管反流病 (Barrett's Esophagus & GERD)",
-        "titleEn": "Barrett's Esophagus & GERD",
-        "titleZh": "巴雷特食管与胃食管反流病",
-        "guideline": "ACG 指南。",
-        "relatedTests": "`Esophageal Manometry` (P.255), `Esophagogastroduodenoscopy (EGD)` (P.256)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACG 指南。\n- **诊断标准与内镜病理标准**:\n  - **巴雷特食管 (Barrett's Esophagus)**: 长期慢性反流导致食管下段复层鳞状上皮被柱状上皮替代。内镜下观察到鳞柱交界（Z线）上移，且**活检组织病理证实存在特异性肠化生伴杯状细胞 (Specialized intestinal metaplasia with goblet cells)**。\n  - **难治性 GERD 金标准**: 24小时动态食管 pH 监测（DeMeester 评分 > 14.72，或 pH < 4 的总时间百分比 > 4.2%）。\n- **原书对应项目**: `Esophageal Manometry` (P.255), `Esophagogastroduodenoscopy (EGD)` (P.256)。\n\n---"
+        "title": "Barrett Esophagus & GERD",
+        "titleEn": "Barrett Esophagus & GERD",
+        "guideline": "ACG Clinical Practice Guidelines for Barrett's Esophagus.",
+        "relatedTests": "`Endoscopy` (P.243), `Esophageal Function Tests` (P.249).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACG Clinical Practice Guidelines for Barrett's Esophagus.\n- **Diagnostic Criteria**:\n  - Requires upper endoscopy showing salmon-colored columnar mucosal extension ≥ 1 cm above the gastroesophageal junction;\n  - **Histopathologic Gold Standard**: Biopsy confirming **specialized intestinal metaplasia with goblet cells** (Alcían blue staining positive).\n  - In refractory GERD, 24-hour ambulatory esophageal pH impedance monitoring showing total acid exposure time (pH < 4) > 6% confirms pathologic reflux.\n- **Manual Test References**: `Endoscopy` (P.243), `Esophageal Function Tests` (P.249).\n\n---"
       },
       {
         "code": "3.7",
-        "title": "他汀类药物相关性肝毒性 (Statin-Induced Hepatotoxicity Monitoring)",
+        "title": "Statin-Induced Hepatotoxicity Monitoring",
         "titleEn": "Statin-Induced Hepatotoxicity Monitoring",
-        "titleZh": "他汀类药物相关性肝毒性",
-        "guideline": "AHA / ACC 降脂治疗临床指南。",
-        "relatedTests": "`Alanine Aminotransferase` (P.29), `Aspartate Aminotransferase` (P.82)。",
-        "content": "- **权威诊断标准 / 指南来源**: AHA / ACC 降脂治疗临床指南。\n- **监测标准与停药指征**:\n  - 他汀类药物启动前常规检测基础转氨酶 (ALT / AST)。\n  - 启动或剂量调整后 **6 至 12 周** 复查肝功能。\n  - **肝毒性判定截断值**: 仅在血清转氨酶升高达**正常上限的 3 倍以上 (ALT/AST > 3× ULN)** 且在间隔数周内重复测定仍持续增高时，方考虑由他汀引起的显著肝损伤，此时应减量或停药。轻度转氨酶升高（< 3× ULN）通常无需停药。\n- **原书对应项目**: `Alanine Aminotransferase` (P.29), `Aspartate Aminotransferase` (P.82)。\n\n---"
+        "guideline": "National Lipid Association (NLA) Statin Safety Task Force Guidelines.",
+        "relatedTests": "`Alanine Aminotransferase` (P.29), `Aspartate Aminotransferase` (P.97).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: National Lipid Association (NLA) Statin Safety Task Force Guidelines.\n- **Monitoring & Discontinuation Criteria**:\n  - Baseline ALT/AST measurement before initiating statin therapy;\n  - **Threshold for Statin Interruption**: Persistent elevation of serum **ALT or AST > 3 times the upper limit of normal** on two consecutive occasions, or elevation associated with clinical jaundice, dark urine, and bilirubin elevation.\n- **Manual Test References**: `Alanine Aminotransferase` (P.29), `Aspartate Aminotransferase` (P.97).\n\n---"
       },
       {
         "code": "3.8",
-        "title": "持续性感染性腹泻 (Persistent Infectious Diarrhea Evaluation)",
+        "title": "Persistent Infectious Diarrhea Evaluation",
         "titleEn": "Persistent Infectious Diarrhea Evaluation",
-        "titleZh": "持续性感染性腹泻",
-        "guideline": "IDSA (Infectious Diseases Society of America) 腹泻评估指南。",
-        "relatedTests": "`Stool Culture` (P.542), `Clostridium difficile Toxin` (P.178), `Stool for Ova and Parasites` (P.526)。",
-        "content": "- **权威诊断标准 / 指南来源**: IDSA (Infectious Diseases Society of America) 腹泻评估指南。\n- **诊断性检验指征**:\n  - 对于**腹泻持续超过 7 天**的患者，尤其是免疫功能低下者、伴高热、脓血便或严重脱水者，推荐行全面病原学检验：\n    1. 粪便细菌培养（沙门氏菌、志贺氏菌、空肠弯曲菌）；\n    2. 难辨梭状芽孢杆菌 (C. difficile) 毒素 A/B 检测（近期抗生素暴露史者）；\n    3. 粪便虫卵与寄生虫检查 (O&P Examination，蓝氏贾第鞭毛虫、隐孢子虫、溶组织阿米巴)。\n- **原书对应项目**: `Stool Culture` (P.542), `Clostridium difficile Toxin` (P.178), `Stool for Ova and Parasites` (P.526)。\n\n---"
+        "guideline": "IDSA Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea.",
+        "relatedTests": "`Stool Culture` (P.557), `Ova and Parasites Test` (P.450).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: IDSA Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea.\n- **Diagnostic Workup Indications**:\n  - Diarrhea lasting > 7 days, accompanied by fever, severe abdominal pain, bloody stools (dysentery), tenesmus, or dehydration;\n  - **First-Line Evaluation**: Stool culture for bacterial enteric pathogens (Salmonella, Shigella, Campylobacter, E. coli O157:H7), stool Shiga toxin assay, and Clostridioides difficile toxin PCR in hospitalized or antibiotic-exposed patients.\n  - Stool Ova and Parasites (O&P) indicated in persistent diarrhea > 14 days or travel to endemic regions (Giardia, Cryptosporidium, Entamoeba histolytica).\n- **Manual Test References**: `Stool Culture` (P.557), `Ova and Parasites Test` (P.450).\n\n---"
       }
     ]
   },
   {
     "systemId": 4,
-    "systemTitle": "四、肾脏与泌尿生殖系统疾病 (Renal & Genitourinary Disorders)",
+    "systemTitle": "Renal & Genitourinary Disorders",
     "systemEn": "Renal & Genitourinary Disorders",
-    "systemZh": "肾脏与泌尿生殖系统疾病",
     "diseases": [
       {
         "code": "4.1",
-        "title": "慢性肾脏病 (Chronic Kidney Disease, CKD / KDOQI & KDIGO Criteria)",
-        "titleEn": "Chronic Kidney Disease, CKD / KDOQI & KDIGO Criteria",
-        "titleZh": "慢性肾脏病",
-        "guideline": "国际肾脏病学组织 (KDIGO) 及美国肾脏基金会 (KDOQI) 慢性肾脏病临床实践指南。",
-        "relatedTests": "`Creatinine, Blood` (P.205), `Blood Urea Nitrogen` (P.116), `Creatinine Clearance` (P.208), `Urinalysis` (P.597)。",
-        "content": "- **权威诊断标准 / 指南来源**: 国际肾脏病学组织 (KDIGO) 及美国肾脏基金会 (KDOQI) 慢性肾脏病临床实践指南。\n- **诊断标准**: 肾脏结构或功能异常持续 **≥ 3 个月**，并具备以下两项中至少一项：\n  1. **肾小球滤过率显著下降**: eGFR < 60 mL/min/1.73 m²（伴或不伴肾脏损伤标志物）；\n  2. **肾脏损伤标志物持续存在**:\n     - 蛋白尿 / 白蛋白尿（UACR ≥ 30 mg/g 或 24h 尿蛋白定量 ≥ 150 mg）；\n     - 尿沉渣镜检异常（红细胞管型、白细胞管型、颗粒管型）；\n     - 肾小管间质病变导致的电解质与酸碱紊乱；\n     - 影像学提示肾脏结构畸形（双肾缩小、多囊肾）；\n     - 肾活检病理组织学异常；\n     - 肾移植病史。\n- **原书对应项目**: `Creatinine, Blood` (P.205), `Blood Urea Nitrogen` (P.116), `Creatinine Clearance` (P.208), `Urinalysis` (P.597)。\n\n---"
+        "title": "Chronic Kidney Disease (CKD / KDIGO Criteria)",
+        "titleEn": "Chronic Kidney Disease (CKD / KDIGO Criteria)",
+        "guideline": "KDIGO (Kidney Disease: Improving Global Outcomes) 2012 Clinical Practice Guidelines.",
+        "relatedTests": "`Creatinine Clearance` (P.208), `Creatinine, Blood` (P.204), `Microalbuminuria` (P.415).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: KDIGO (Kidney Disease: Improving Global Outcomes) 2012 Clinical Practice Guidelines.\n- **Diagnostic Definition**: Abnormalities of kidney structure or function present for **> 3 months**, with implications for health, manifest by either:\n  1. **GFR < 60 mL/min/1.73 m²** (CKD Stages G3a–G5); OR\n  2. **Markers of Kidney Damage**: Albuminuria (AER ≥ 30 mg/24h; UACR ≥ 30 mg/g [≥ 3 mg/mmol]), urine sediment abnormalities (red cell casts, white cell casts), tubular disorders, histologic abnormalities, structural imaging abnormalities (polycystic kidneys), or history of kidney transplantation.\n- **GFR Staging**: G1 (≥90), G2 (60–89), G3a (45–59), G3b (30–44), G4 (15–29), G5 (<15 or dialysis / kidney failure).\n- **Manual Test References**: `Creatinine Clearance` (P.208), `Creatinine, Blood` (P.204), `Microalbuminuria` (P.415).\n\n---"
       },
       {
         "code": "4.2",
-        "title": "尿路感染与急性肾盂肾炎 (Urinary Tract Infection & Pyelonephritis)",
+        "title": "Urinary Tract Infection & Pyelonephritis",
         "titleEn": "Urinary Tract Infection & Pyelonephritis",
-        "titleZh": "尿路感染与急性肾盂肾炎",
-        "guideline": "IDSA 尿路感染诊疗指南。",
-        "relatedTests": "`Urine Culture and Sensitivity` (P.611), `Urinalysis` (P.597)。",
-        "content": "- **权威诊断标准 / 指南来源**: IDSA 尿路感染诊疗指南。\n- **实验室微生物培养与定性诊断标准**:\n  - **清洁中段尿培养 (Clean-Catch Midstream Urine C&S)**:\n    - 无症状菌尿: 两次间隔清洁中段尿培养单一菌落数 **≥ 10⁵ CFU/mL**；\n    - 女性急性单纯性膀胱炎（伴尿频、尿急、尿痛）: 菌落数 **≥ 10²–10³ CFU/mL** 即具有临床诊断意义；\n    - 男性有症状尿路感染或肾盂肾炎: 菌落数 **≥ 10³–10⁴ CFU/mL**；\n    - 耻骨上膀胱穿刺尿: 任何菌落生长（≥ 10² CFU/mL）即确诊。\n  - **尿液干化学快速初筛**:\n    - **白细胞酯酶 (Leukocyte Esterase)** 阳性: 提示脓尿（WBC > 5–10/高倍视野）；\n    - **亚硝酸盐 (Nitrite)** 阳性: 高特异性提示存在还原硝酸盐的革兰阴性杆菌（如大肠埃希菌）。\n- **原书对应项目**: `Urine Culture and Sensitivity` (P.611), `Urinalysis` (P.597)。\n\n---"
+        "guideline": "IDSA Guidelines for the Treatment of Uncomplicated Acute Cystitis and Pyelonephritis.",
+        "relatedTests": "`Urine Culture and Sensitivity` (P.594), `Urinalysis` (P.591).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: IDSA Guidelines for the Treatment of Uncomplicated Acute Cystitis and Pyelonephritis.\n- **Microbiologic Diagnostic Thresholds**:\n  - **Acute Uncomplicated Cystitis (Women with dysuria, urgency, frequency)**: Significant bacteriuria defined as **≥ 10³ CFU/mL** of a uropathogen (most commonly E. coli);\n  - **Acute Pyelonephritis (Fever, flank pain, costovertebral angle tenderness)**: **≥ 10⁴ CFU/mL**;\n  - **Catheter-Associated UTI**: **≥ 10⁵ CFU/mL** with signs/symptoms;\n  - **Suprapubic Aspiration**: Any bacterial growth (≥ 10² CFU/mL) is diagnostic.\n- **Manual Test References**: `Urine Culture and Sensitivity` (P.594), `Urinalysis` (P.591).\n\n---"
       },
       {
         "code": "4.3",
-        "title": "输尿管结石与肾绞痛 (Ureterolithiasis & Nephrolithiasis)",
+        "title": "Ureterolithiasis & Nephrolithiasis",
         "titleEn": "Ureterolithiasis & Nephrolithiasis",
-        "titleZh": "输尿管结石与肾绞痛",
-        "guideline": "AUA (American Urological Association) / ACR 放射学会指导标准。",
-        "relatedTests": "`Abdominal X-ray / KUB` (P.21), `CT of Abdomen and Pelvis` (P.194)。",
-        "content": "- **权威诊断标准 / 指南来源**: AUA (American Urological Association) / ACR 放射学会指导标准。\n- **循证影像学首选与诊断标准**:\n  - **首选金标准**: **腹部-盆腔无造影剂螺旋 CT (Noncontrast Spiral CT / CT Stone Protocol)**。敏感度 98%，特异度 97%，能清晰显示 1–2 mm 的微小结石，评估肾积水及结石在输尿管的具体狭窄部位。\n  - **腹部平片 (KUB)**: 仅适用于已知含钙阳性结石患者的随访观察；对于未确诊急性侧腹痛患者，平片敏感度低（阴性结石如尿酸结石完全透光，小结石常被肠气遮挡）。\n- **原书对应项目**: `Abdominal X-ray / KUB` (P.21), `CT of Abdomen and Pelvis` (P.194)。\n\n---"
+        "guideline": "AUA / EAU Guidelines on Urolithiasis.",
+        "relatedTests": "`Computed Tomography` (P.195), `Kidney, Ureter, and Bladder Radiography` (P.21), `Renal Sonogram` (P.508).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: AUA / EAU Guidelines on Urolithiasis.\n- **Diagnostic Imaging Standards**:\n  - **Gold Standard**: Noncontrast Spiral CT of the abdomen and pelvis (CT Stone Protocol). Highly sensitive (> 98%) and specific for all stone compositions (including radiolucent uric acid stones, except indinavir stones);\n  - **Renal Ultrasound**: Preferred initial modality in pregnant women and children (acoustic shadowing with twinkling artifact; evaluation for hydronephrosis).\n- **Manual Test References**: `Computed Tomography` (P.195), `Kidney, Ureter, and Bladder Radiography` (P.21), `Renal Sonogram` (P.508).\n\n---"
       },
       {
         "code": "4.4",
-        "title": "前列腺癌早期筛查与活检指征 (Prostate Cancer Screening / ACS Guidelines)",
-        "titleEn": "Prostate Cancer Screening / ACS Guidelines",
-        "titleZh": "前列腺癌早期筛查与活检指征",
-        "guideline": "ACS 早期前列腺癌筛查指南与 AUA 临床指南。",
-        "relatedTests": "`Prostate-Specific Antigen` (P.483), `Acid Phosphatase / PAP` (P.25)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACS 早期前列腺癌筛查指南与 AUA 临床指南。\n- **诊断标准与活检指征**:\n  - **血清总前列腺特异性抗原 (Total PSA)**:\n    - **< 4.0 ng/mL**: 常规正常参考区间；\n    - **4.0 – 10.0 ng/mL**: 诊断“灰区”（约 25% 证实为前列腺癌，其余多为良性前列腺增生 BPH 或前列腺炎）；\n    - **> 10.0 ng/mL**: 恶性肿瘤风险 > 50%，强烈活检指征。\n  - **游离/总 PSA 比值 (Free-to-Total PSA Ratio, %fPSA)**:\n    - 在 4.0–10.0 ng/mL 灰区内，**%fPSA < 10%–15%** 高度怀疑前列腺癌（需行活检）；**%fPSA > 25%** 多提示良性病变。\n  - **确诊金标准**: 经直肠超声引导下系统性前列腺穿刺活检 (TRUS-Guided Biopsy, 通常取 10–12 针)，进行 Gleason 组织学分级评分。\n- **原书对应项目**: `Prostate-Specific Antigen` (P.483), `Acid Phosphatase / PAP` (P.25)。\n\n---"
+        "title": "Prostate Cancer Screening & Biopsy Indications (ACS)",
+        "titleEn": "Prostate Cancer Screening & Biopsy Indications (ACS)",
+        "guideline": "American Cancer Society (ACS) & AUA Early Detection Guidelines.",
+        "relatedTests": "`Prostate-Specific Antigen` (P.485).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: American Cancer Society (ACS) & AUA Early Detection Guidelines.\n- **Biochemical Cutoffs & Biopsy Indications**:\n  - **Serum Total PSA**:\n    - < 4.0 ng/mL: Traditionally considered normal;\n    - 4.0 – 10.0 ng/mL: Diagnostic gray zone (25% cancer risk; consider free-to-total PSA ratio: ratio < 10% indicates high cancer risk);\n    - > 10.0 ng/mL: Strong cancer suspicion (> 50% positive biopsy rate; urgent prostate biopsy indicated).\n  - **Prostate Biopsy**: Transrectal ultrasound-guided (TRUS) core needle biopsy is mandatory for definitive histologic confirmation (Gleason score grading).\n- **Manual Test References**: `Prostate-Specific Antigen` (P.485).\n\n---"
       }
     ]
   },
   {
     "systemId": 5,
-    "systemTitle": "五、血液与肿瘤系统疾病 (Hematologic & Oncologic Disorders)",
+    "systemTitle": "Hematologic & Oncologic Disorders",
     "systemEn": "Hematologic & Oncologic Disorders",
-    "systemZh": "血液与肿瘤系统疾病",
     "diseases": [
       {
         "code": "5.1",
-        "title": "弥散性血管内凝血 (Disseminated Intravascular Coagulation, DIC / ISTH Criteria)",
-        "titleEn": "Disseminated Intravascular Coagulation, DIC / ISTH Criteria",
-        "titleZh": "弥散性血管内凝血",
-        "guideline": "国际血栓与止血学会 (ISTH) 显性 DIC 评分诊断标准。",
-        "relatedTests": "`Disseminated Intravascular Coagulation Screening` (P.227), `Prothrombin Time` (P.486), `Fibrinogen` (P.276), `D-Dimer` (P.228), `Platelet Count` (P.454)。",
-        "content": "- **权威诊断标准 / 指南来源**: 国际血栓与止血学会 (ISTH) 显性 DIC 评分诊断标准。\n- **评分诊断系统 (必须建立在具备引起 DIC 的基础原发病前提下)**:\n  1. **血小板计数 (Platelet Count)**:\n     - > 100 × 10⁹/L = 0分；\n     - 50–100 × 10⁹/L = 1分；\n     - < 50 × 10⁹/L = 2分；\n  2. **纤维蛋白相关标志物增高 (D-二聚体 / FDP)**:\n     - 无升高 = 0分；\n     - 中度升高 = 2分；\n     - 重度升高 = 3分；\n  3. **凝血酶原时间延长 (PT Prolongation)**:\n     - 延长 < 3秒 = 0分；\n     - 延长 3–6秒 = 1分；\n     - 延长 > 6秒 = 2分；\n  4. **纤维蛋白原浓度 (Fibrinogen Level)**:\n     - ≥ 100 mg/dL (1.0 g/L) = 0分；\n     - **< 100 mg/dL (< 1.0 g/L)** = 1分。\n  - **诊断界定**: **总积分 ≥ 5 分: 符合显性 DIC (Overt DIC)**，需每日动态重复评分。\n- **原书对应项目**: `Disseminated Intravascular Coagulation Screening` (P.227), `Prothrombin Time` (P.486), `Fibrinogen` (P.276), `D-Dimer` (P.228), `Platelet Count` (P.454)。\n\n---"
+        "title": "Disseminated Intravascular Coagulation (DIC / ISTH Criteria)",
+        "titleEn": "Disseminated Intravascular Coagulation (DIC / ISTH Criteria)",
+        "guideline": "International Society on Thrombosis and Haemostasis (ISTH) Overt DIC Scoring System.",
+        "relatedTests": "`Platelet Count` (P.472), `D-Dimer Test` (P.228), `Prothrombin Time` (P.488), `Fibrinogen` (P.262).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: International Society on Thrombosis and Haemostasis (ISTH) Overt DIC Scoring System.\n- **Diagnostic Requirement**: Score **≥ 5 points** confirms overt DIC (in a patient with an underlying condition known to trigger DIC):\n  1. **Platelet Count**: > 100,000/mcL (0 pts); 50,000–100,000/mcL (1 pt); < 50,000/mcL (2 pts);\n  2. **Elevated Fibrin-Related Marker (D-dimer / FDP)**: No increase (0 pts); Moderate increase (2 pts); Strong increase (3 pts);\n  3. **Prolonged Prothrombin Time (PT)**: < 3 sec prolongation (0 pts); 3–6 sec prolongation (1 pt); > 6 sec prolongation (2 pts);\n  4. **Fibrinogen Level**: ≥ 1.0 g/L (0 pts); < 1.0 g/L (1 pt).\n- **Manual Test References**: `Platelet Count` (P.472), `D-Dimer Test` (P.228), `Prothrombin Time` (P.488), `Fibrinogen` (P.262).\n\n---"
       },
       {
         "code": "5.2",
-        "title": "多发性骨髓瘤 (Multiple Myeloma / CRAB Criteria)",
-        "titleEn": "Multiple Myeloma / CRAB Criteria",
-        "titleZh": "多发性骨髓瘤",
-        "guideline": "国际骨髓瘤工作组 (IMWG) CRAB 诊断标准。",
-        "relatedTests": "`Protein Electrophoresis, Serum` (P.479), `Protein Electrophoresis, Urine` (P.481), `Bone Marrow Biopsy` (P.120), `Bence Jones Protein` (P.104)。",
-        "content": "- **权威诊断标准 / 指南来源**: 国际骨髓瘤工作组 (IMWG) CRAB 诊断标准。\n- **确诊标准**: 骨髓穿刺活检证实**克隆性浆细胞浸润 ≥ 10%** 或组织活检证实为**浆细胞瘤**，且同时伴随至少一项下述 **CRAB** 终末器官损害表现：\n  - **C (Hypercalcemia, 高钙血症)**: 血清钙 > 11.0 mg/dL (> 2.75 mmol/L) 或高于正常上限 > 1.0 mg/dL；\n  - **R (Renal Insufficiency, 肾功能不全)**: 血清肌酐 > 2.0 mg/dL (177 umol/L) 或肌酐清除率 < 40 mL/min；\n  - **A (Anemia, 贫血)**: 血红蛋白 < 10.0 g/dL 或低于正常下限 > 2.0 g/dL；\n  - **B (Bone Lesions, 骨质破坏)**: 全身骨骼 X 线平片、CT、PET-CT 或 MRI 证实有 ≥ 1 处溶骨性穿凿样骨质破坏病灶。\n- **核心实验室特征**:\n  - 血清和/或尿蛋白电泳出现单克隆 M 蛋白带 (Monoclonal M-Spike)；\n  - 尿本周蛋白 (Bence Jones Protein) 阳性；红细胞沉降率 (ESR) 极度加快（常 > 100 mm/h）。\n- **原书对应项目**: `Protein Electrophoresis, Serum` (P.479), `Protein Electrophoresis, Urine` (P.481), `Bone Marrow Biopsy` (P.120), `Bence Jones Protein` (P.104)。\n\n---"
+        "title": "Multiple Myeloma (CRAB Criteria)",
+        "titleEn": "Multiple Myeloma (CRAB Criteria)",
+        "guideline": "International Myeloma Working Group (IMWG) Diagnostic Criteria.",
+        "relatedTests": "`Protein Electrophoresis, Serum` (P.481), `Bence Jones Protein` (P.104), `Bone Marrow Biopsy` (P.120).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: International Myeloma Working Group (IMWG) Diagnostic Criteria.\n- **Diagnostic Requirement**: Clonal bone marrow plasma cells ≥ 10% or biopsy-proven bony/extramedullary plasmacytoma, PLUS at least one **CRAB feature**:\n  - **C (Hypercalcemia)**: Serum calcium > 11 mg/dL (> 0.25 mmol/L above normal);\n  - **R (Renal Insufficiency)**: Serum creatinine > 2.0 mg/dL (or creatinine clearance < 40 mL/min);\n  - **A (Anemia)**: Hemoglobin < 10 g/dL (or > 2 g/dL below lower limit of normal);\n  - **B (Bone Lesions)**: ≥ 1 osteolytic lesions on skeletal radiography, CT, or PET-CT.\n  - **Myeloma-Defining Biomarkers**: Clonal bone marrow plasma cells ≥ 60%; involved/uninvolved serum free light chain ratio ≥ 100; > 1 focal MRI lesion.\n- **Manual Test References**: `Protein Electrophoresis, Serum` (P.481), `Bence Jones Protein` (P.104), `Bone Marrow Biopsy` (P.120).\n\n---"
       },
       {
         "code": "5.3",
-        "title": "肝素诱发性血小板减少症 (Heparin-Induced Thrombocytopenia, HIT / 4T Score)",
-        "titleEn": "Heparin-Induced Thrombocytopenia, HIT / 4T Score",
-        "titleZh": "肝素诱发性血小板减少症",
-        "guideline": "ACCP 止血与抗栓临床指南。",
-        "relatedTests": "`Platelet Count` (P.454), `Partial Thromboplastin Time` (P.438)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACCP 止血与抗栓临床指南。\n- **4T 临床评分系统**:\n  1. **血小板减少程度 (Thrombocytopenia)**: 血小板较基线下降 > 50% 且最低值 ≥ 20 × 10⁹/L (2分)；下降 30%–50% (1分)；下降 < 30% (0分)；\n  2. **发生时机 (Timing)**: 肝素暴露后 5–10 天出现，或 30 天内曾用肝素者在再暴露 1 天内骤降 (2分)；\n  3. **血栓形成 (Thrombosis)**: 证实新发动静脉血栓、皮肤坏死或急性全身反应 (2分)；\n  4. **排除其他血小板减少原因 (oTher causes excluded)**: 无其他明确原因 (2分)。\n  - **4T 评分判定**: 6–8分 (高概率)；4–5分 (中概率)；0–3分 (低概率)。\n- **确诊实验室免疫学与功能学检验**:\n  - **抗-PF4/肝素复合物酶联免疫抗体 (HIT ELISA)**: 高敏感度；\n  - **5-羟色胺释放试验 (Serotonin Release Assay, SRA)**: 确诊金标准功能试验。\n- **原书对应项目**: `Platelet Count` (P.454), `Partial Thromboplastin Time` (P.438)。\n\n---"
+        "title": "Heparin-Induced Thrombocytopenia (HIT / 4T Score)",
+        "titleEn": "Heparin-Induced Thrombocytopenia (HIT / 4T Score)",
+        "guideline": "Warkentin 4T Scoring System for HIT.",
+        "relatedTests": "`Platelet Count` (P.472), `Heparin Anti-Platelet Factor 4 Antibody` (P.317).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Warkentin 4T Scoring System for HIT.\n- **4T Clinical Probability Scoring**:\n  - **Thrombocytopenia**: Fall in platelets > 50% and nadir ≥ 20,000/mcL (2 pts); Fall 30–50% (1 pt); Fall < 30% (0 pts);\n  - **Timing of platelet fall**: Days 5–10 post-heparin onset (2 pts); Day > 10 or rapid fall with recent heparin exposure (1–2 pts);\n  - **Thrombosis or other sequelae**: New confirmed thrombosis, skin necrosis, or systemic reaction (2 pts); Progressive/recurrent thrombosis (1 pt);\n  - **oTher causes for thrombocytopenia**: None apparent (2 pts); Possible (1 pt); Definite (0 pts).\n  - **Probability**: 0–3 points: Low probability (HIT ruled out); 4–5: Intermediate; 6–8: High probability (immediately stop all heparin, start non-heparin direct thrombin inhibitor [Argatroban / Bivalirudin]).\n- **Manual Test References**: `Platelet Count` (P.472), `Heparin Anti-Platelet Factor 4 Antibody` (P.317).\n\n---"
       },
       {
         "code": "5.4",
-        "title": "缺铁性贫血 (Iron Deficiency Anemia, IDA)",
-        "titleEn": "Iron Deficiency Anemia, IDA",
-        "titleZh": "缺铁性贫血",
-        "guideline": "WHO 与美国血液病学会 (ASH) 贫血诊断标准。",
-        "relatedTests": "`Iron and Total Iron-Binding Capacity` (P.355), `Ferritin` (P.262), `Complete Blood Count` (P.192)。",
-        "content": "- **权威诊断标准 / 指南来源**: WHO 与美国血液病学会 (ASH) 贫血诊断标准。\n- **核心实验室鉴别指标与阈值**:\n  - **血常规**: 小细胞低色素性贫血（MCV < 80 fL，MCH < 27 pg，红细胞分布宽度 RDW 显著升高）；\n  - **血清铁蛋白 (Serum Ferritin)**: **< 15–30 ng/mL (< 15–30 mcg/L)**（诊断体内铁耗竭最敏感、最特异的单项生化指标；但在感染或炎症应激时作为急性时相蛋白可出现假性升高）；\n  - **血清铁 (Serum Iron)**: 减低（< 50–60 mcg/dL）；\n  - **总铁结合力 (Total Iron-Binding Capacity, TIBC)**: 升高（> 360–400 mcg/dL）；\n  - **转铁蛋白饱和度 (Transferrin Saturation)**: **< 15% – 16%**；\n  - **骨髓铁染色 (Perls 普鲁士蓝染色)**: 骨髓可染铁彻底消失（诊断金标准，极少需要采用）。\n- **原书对应项目**: `Iron and Total Iron-Binding Capacity` (P.355), `Ferritin` (P.262), `Complete Blood Count` (P.192)。\n\n---"
+        "title": "Iron Deficiency Anemia (IDA)",
+        "titleEn": "Iron Deficiency Anemia (IDA)",
+        "guideline": "WHO & American Society of Hematology (ASH) Diagnostic Guidelines.",
+        "relatedTests": "`Iron and Total Iron-Binding Capacity` (P.372), `Ferritin` (P.259), `Complete Blood Count` (P.194).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: WHO & American Society of Hematology (ASH) Diagnostic Guidelines.\n- **Diagnostic Criteria & Iron Panel**:\n  - **Serum Ferritin**: **< 15–30 mcg/L** (most sensitive and specific single biochemical marker; values < 15 mcg/L are diagnostic of total iron depletion). Note: Ferritin is an acute-phase reactant and may be falsely normal/elevated in infection or chronic inflammation.\n  - **Transferrin Saturation (TSAT)**: Serum iron / TIBC × 100 < 16–20%;\n  - **Total Iron-Binding Capacity (TIBC)**: Elevated (> 400 mcg/dL);\n  - **Serum Iron**: Low (< 50 mcg/dL);\n  - **RBC Indices**: Microcytic hypochromic (MCV < 80 fL, MCHC < 32 g/dL), elevated RDW.\n- **Manual Test References**: `Iron and Total Iron-Binding Capacity` (P.372), `Ferritin` (P.259), `Complete Blood Count` (P.194).\n\n---"
       },
       {
         "code": "5.5",
-        "title": "巨幼细胞性贫血: 维生素B12与叶酸缺乏 (Megaloblastic Anemia: B12 vs. Folate Deficiency)",
-        "titleEn": "Megaloblastic Anemia: B12 vs. Folate Deficiency",
-        "titleZh": "巨幼细胞性贫血: 维生素B12与叶酸缺乏",
-        "guideline": "国际血液学临床共识。",
-        "relatedTests": "`Vitamin B12` (P.622), `Folic Acid` (P.280), `Homocysteine` (P.337), `Methylmalonic Acid` (P.410)。",
-        "content": "- **权威诊断标准 / 指南来源**: 国际血液学临床共识。\n- **核心实验室生化特征与鉴别诊断矩阵**:\n  - **共同形态学特征**: 大细胞性贫血（**MCV > 100 fL**，常 > 115 fL）；外周血涂片见红细胞大小不均、卵圆形大红细胞，以及特征性**中性粒细胞核分叶过多（Hypersegmented Neutrophils，≥ 5% 的细胞有 5 叶以上核，或单见 6 叶核）**。\n  - **生化鉴别指标**:\n    | 检测指标 | 维生素 B12 缺乏症 | 叶酸 (Folate) 缺乏症 |\n    | :--- | :--- | :--- |\n    | **血清维生素 B12 测定** | 显著减低 (< 200 pg/mL) | 正常 |\n    | **血清叶酸 / 红细胞叶酸** | 正常或偏高 | 显著减低 (红细胞叶酸 < 150 ng/mL) |\n    | **甲基丙二酸 (Methylmalonic Acid, MMA)** | **显著升高 (Specific)** | **严格正常** |\n    | **同型半胱氨酸 (Homocysteine)** | 显著升高 | 显著升高 |\n    | **神经系统症状 (脊髓亚急性联合变性)** | 频繁出现（周围神经病变、共济失调） | **不出现神经退行性病变** |\n- **原书对应项目**: `Vitamin B12` (P.622), `Folic Acid` (P.280), `Homocysteine` (P.337), `Methylmalonic Acid` (P.410)。\n\n---"
+        "title": "Megaloblastic Anemia: Vitamin B12 vs. Folate Deficiency",
+        "titleEn": "Megaloblastic Anemia: Vitamin B12 vs. Folate Deficiency",
+        "guideline": "British Society for Haematology (BSH) Guidelines on Cobalamin and Folate Disorders.",
+        "relatedTests": "`Vitamin B12` (P.603), `Folate` (P.265), `Methylmalonic Acid` (P.413).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: British Society for Haematology (BSH) Guidelines on Cobalamin and Folate Disorders.\n- **Biochemical Differentiation Matrix**:\n  - **Common Features**: Macrocytic anemia (MCV > 100 fL, often > 115 fL), hypersegmented neutrophils (≥ 5 lobes in > 5% of cells), elevated serum LDH and indirect bilirubin.\n  - **Vitamin B12 (Cobalamin) Deficiency**:\n    - Low serum B12 (< 200 pg/mL);\n    - **Methylmalonic Acid (MMA)**: **Elevated** (pathognomonic; distinguishes B12 from folate deficiency);\n    - **Homocysteine**: **Elevated**;\n    - Clinical hallmark: Subacute combined degeneration of the spinal cord (dorsal and lateral columns).\n  - **Folate Deficiency**:\n    - Low serum folate (< 2–4 ng/mL) and low RBC folate;\n    - **Methylmalonic Acid (MMA)**: **Normal**;\n    - **Homocysteine**: **Elevated**;\n    - No neurologic symptoms.\n- **Manual Test References**: `Vitamin B12` (P.603), `Folate` (P.265), `Methylmalonic Acid` (P.413).\n\n---"
       },
       {
         "code": "5.6",
-        "title": "抗凝血酶缺乏症与遗传性易栓症 (Antithrombin Deficiency & Thrombophilia)",
-        "titleEn": "Antithrombin Deficiency & Thrombophilia",
-        "titleZh": "抗凝血酶缺乏症与遗传性易栓症",
-        "guideline": "ACCP 易栓症评估指南。",
-        "relatedTests": "`Antithrombin III` (P.78)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACCP 易栓症评估指南。\n- **临床实践与激素管理标准**:\n  - 抗凝血酶 (Antithrombin III) 活性测定: 正常为 80%–120%。\n  - **循证实践指南 (The Evidence for Practice)**: 对于**通过家族筛查发现有抗凝血酶缺乏症、但既往无个人静脉血栓栓塞 (VTE) 病史的女性**，**强烈禁忌使用含雌激素的口服避孕药或激素替代治疗 (HRT)**，因其发生致死性血栓形成的相对危险度增加数倍至数十倍。妊娠期间需行预防性抗凝管理。\n- **原书对应项目**: `Antithrombin III` (P.78)。\n\n---"
+        "title": "Antithrombin Deficiency & Hereditary Thrombophilia",
+        "titleEn": "Antithrombin Deficiency & Hereditary Thrombophilia",
+        "guideline": "British Committee for Standards in Haematology (BCSH) Guidelines on Thrombophilia Testing.",
+        "relatedTests": "`Antithrombin III` (P.78).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: British Committee for Standards in Haematology (BCSH) Guidelines on Thrombophilia Testing.\n- **Diagnostic Criteria**:\n  - Functional Antithrombin activity assay < 80% (indicates hereditary or acquired deficiency);\n  - **Clinical Testing pearl**: Testing should not be performed during acute thrombotic events or while on heparin/warfarin therapy due to acquired consumption and drug-induced artifact.\n- **Manual Test References**: `Antithrombin III` (P.78).\n\n---"
       },
       {
         "code": "5.7",
-        "title": "乳腺癌筛查、BRCA基因检测与活检标准 (Breast Cancer Screening, BRCA Testing & Biopsy)",
-        "titleEn": "Breast Cancer Screening, BRCA Testing & Biopsy",
-        "titleZh": "乳腺癌筛查、BRCA基因检测与活检标准",
-        "guideline": "USPSTF、ACS 与 ASCO 临床实践指南。",
-        "relatedTests": "`Mammography` (P.402), `BRCA1 and BRCA2 Breast Cancer Gene` (P.128), `Breast Biopsy` (P.130)。",
-        "content": "- **权威诊断标准 / 指南来源**: USPSTF、ACS 与 ASCO 临床实践指南。\n- **循证筛查与诊断准则**:\n  1. **乳腺 X 线钼靶摄影筛查 (Mammography)**:\n     - 40–50岁开始，每 1–2 年常规进行筛查。\n  2. **BRCA 易感基因检测遗传咨询转诊标准 (USPSTF)**:\n     - 反对对普通人群进行常规盲目基因筛查。\n     - **仅推荐转诊标准**: 家族史中有极高风险家族谱系者，包括：一级亲属在50岁前确诊乳腺癌、双侧乳腺癌、同一家族中兼有乳腺癌与卵巢癌、男性亲属患乳腺癌、阿什肯纳兹犹太血统家族史。\n  3. **乳腺活检术选择 (Breast Biopsy)**:\n     - 循证指南明确推荐：对于临床不可触及的乳腺可疑钙化或占位，**大孔径影像引导下粗针穿刺活检 (Large-core needle biopsy)** 已取代传统细针穿刺 (FNA)，具有更高的组织学诊断准确率。\n- **原书对应项目**: `Mammography` (P.402), `BRCA1 and BRCA2 Breast Cancer Gene` (P.128), `Breast Biopsy` (P.130)。\n\n---"
+        "title": "Breast Cancer Screening, BRCA Testing & Biopsy Indications",
+        "titleEn": "Breast Cancer Screening, BRCA Testing & Biopsy Indications",
+        "guideline": "USPSTF & NCCN Genetic/Familial High-Risk Assessment Guidelines.",
+        "relatedTests": "`Mammography` (P.402), `BRCA 1/2` (P.129), `Breast Biopsy` (P.130).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: USPSTF & NCCN Genetic/Familial High-Risk Assessment Guidelines.\n- **Screening & Workup Rules**:\n  - **Mammography**: Biennial screening mammography for women aged 40/50 to 74 years;\n  - **BRCA 1/2 Genetic Testing**: Recommended in personal or family history of early-onset breast cancer (< 50 years), bilateral breast cancer, ovarian cancer, or male breast cancer.\n  - **BI-RADS Biopsy Indication**: BI-RADS Category 4 (suspicious) or Category 5 (highly suggestive of malignancy) mandates ultrasound-guided core needle biopsy.\n- **Manual Test References**: `Mammography` (P.402), `BRCA 1/2` (P.129), `Breast Biopsy` (P.130).\n\n---"
       },
       {
         "code": "5.8",
-        "title": "小细胞与非小细胞肺癌诊断分期 (Small Cell & Non-Small Cell Lung Cancer Staging)",
+        "title": "Small Cell & Non-Small Cell Lung Cancer Staging",
         "titleEn": "Small Cell & Non-Small Cell Lung Cancer Staging",
-        "titleZh": "小细胞与非小细胞肺癌诊断分期",
-        "guideline": "ACCP (American College of Chest Physicians) 肺癌诊疗指南。",
-        "relatedTests": "`Biopsy, Lung` (P.134), `PET Scan` (P.463), `Chest X-ray` (P.172)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACCP (American College of Chest Physicians) 肺癌诊疗指南。\n- **诊断标准**:\n  - **小细胞肺癌 (SCLC)**: 凡临床及影像高度怀疑 SCLC 者，应以创伤最小、最具成本效益的方式（支气管镜活检、经皮肺穿刺或浅表淋巴结活检）取得明确组织病理学确诊。\n  - **非小细胞肺癌 (NSCLC)**: 无远处转移证据的患者在考虑根治性手术切除前，必须行 **PET-CT 扫描或纵隔镜检查**，评估纵隔淋巴结受累情况以明确分期。\n- **原书对应项目**: `Biopsy, Lung` (P.134), `PET Scan` (P.463), `Chest X-ray` (P.172)。\n\n---"
+        "guideline": "IASLC / AJCC 8th Edition Staging, VALSG Lung Cancer Staging.",
+        "relatedTests": "`Chest Radiography` (P.181), `Computed Tomography` (P.195), `Bronchoscopy` (P.134).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: IASLC / AJCC 8th Edition Staging, VALSG Lung Cancer Staging.\n- **Diagnostic Classification**:\n  - **Small Cell Lung Cancer (SCLC)**:\n    - Limited Stage: Confined to one hemithorax and regional lymph nodes encompassed in a single tolerable radiotherapy port;\n    - Extensive Stage: Distant metastases or disease extending beyond limited-stage boundaries.\n  - **Non-Small Cell Lung Cancer (NSCLC)**: TNM staging based on primary tumor size, nodal stations, and distant metastases (PET-CT and brain MRI).\n- **Manual Test References**: `Chest Radiography` (P.181), `Computed Tomography` (P.195), `Bronchoscopy` (P.134).\n\n---"
       },
       {
         "code": "5.9",
-        "title": "胰腺癌与卵巢癌肿瘤标志物评估 (Pancreatic & Ovarian Cancer Screening Guidelines)",
-        "titleEn": "Pancreatic & Ovarian Cancer Screening Guidelines",
-        "titleZh": "胰腺癌与卵巢癌肿瘤标志物评估",
-        "guideline": "USPSTF & ASCO 指南。",
-        "relatedTests": "`CA 19-9 Tumor Marker` (P.137), `CA-125 Tumor Marker` (P.138)。",
-        "content": "- **权威诊断标准 / 指南来源**: USPSTF & ASCO 指南。\n- **循证筛查禁忌与判定**:\n  - **CA 19-9 (胰腺癌标志物)**: USPSTF **强烈建议不要对无症状普通人群使用腹部触诊、超声或 CA 19-9 进行常规胰腺癌筛查**（假阳性率高，无临床获益）。CA 19-9 仅用于已确诊胰腺癌患者的疗效监测与术后复发监测。\n  - **CA-125 (卵巢癌标志物)**: USPSTF 指南指出，目前**没有任何证据表明使用 CA-125、经阴道超声或盆腔双合诊能降低无症状女性的卵巢癌死亡率**；由于卵巢癌在普通人群患病率极低，常规筛查带来大量假阳性及不必要的剖腹探查手术伤害。\n- **原书对应项目**: `CA 19-9 Tumor Marker` (P.137), `CA-125 Tumor Marker` (P.138)。\n\n---"
+        "title": "Pancreatic & Ovarian Cancer Tumor Marker Guidelines",
+        "titleEn": "Pancreatic & Ovarian Cancer Tumor Marker Guidelines",
+        "guideline": "ASCO & USPSTF Guidelines on Tumor Biomarkers.",
+        "relatedTests": "`CA 19-9` (P.137), `CA-125` (P.138).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ASCO & USPSTF Guidelines on Tumor Biomarkers.\n- **Evidence-Based Marker Guidelines**:\n  - **CA 19-9 (Pancreatic Cancer)**: Not recommended for population screening (poor sensitivity in Lewis-negative individuals and falsely elevated in benign biliary obstruction). Indicated for assessing resectability and monitoring therapy.\n  - **CA-125 (Ovarian Cancer)**: USPSTF Grade D recommendation (recommends AGAINST routine screening in asymptomatic average-risk women; lacks mortality benefit and causes false-positive laparotomies). Indicated for monitoring response to therapy in diagnosed ovarian carcinoma.\n- **Manual Test References**: `CA 19-9` (P.137), `CA-125` (P.138).\n\n---"
       }
     ]
   },
   {
     "systemId": 6,
-    "systemTitle": "六、感染性疾病 (Infectious Diseases)",
+    "systemTitle": "Infectious Diseases",
     "systemEn": "Infectious Diseases",
-    "systemZh": "感染性疾病",
     "diseases": [
       {
         "code": "6.1",
-        "title": "结核感染与结核菌素皮肤试验 (Tuberculosis & Mantoux TST / PPD Criteria)",
+        "title": "Tuberculosis & Mantoux TST / PPD Criteria",
         "titleEn": "Tuberculosis & Mantoux TST / PPD Criteria",
-        "titleZh": "结核感染与结核菌素皮肤试验",
-        "guideline": "美国疾病预防控制中心 (CDC) / 美国胸科学会 (ATS) 结核病诊断指南。",
-        "relatedTests": "`Tuberculin Skin Test` (P.588), `Acid-Fast Bacilli (AFB)` (P.23)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国疾病预防控制中心 (CDC) / 美国胸科学会 (ATS) 结核病诊断指南。\n- **结核菌素纯蛋白衍生物 (PPD) 试验硬结直径判定标准 (注射后 48–72 小时测量)**:\n  - **≥ 5 mm 判定为阳性 (高危人群)**:\n    1. 人类免疫缺陷病毒 (HIV) 感染者；\n    2. 近期与活动性活动性传染性结核病患者有密切接触者；\n    3. 胸部 X 线平片有陈旧性纤维硬结性结核病变表现者；\n    4. 器官移植接受者，或长期大剂量使用糖皮质激素（相当于泼尼松 ≥ 15 mg/天持续 1 个月以上）或其他免疫抑制剂者。\n  - **≥ 10 mm 判定为阳性 (中度危险人群)**:\n    1. 近 5 年内来自高流行国家的移民；\n    2. 静脉注射药瘾者；\n    3. 高风险聚集场所的常住人员或工作人员（监狱、养老院、医疗卫生机构、收容所）；\n    4. 患有增加结核发病风险的临床基础疾病者（糖尿病、矽肺、慢性肾衰竭截瘫、胃切除术后）；\n    5. 年龄 < 4 岁的婴幼儿，或暴露于高危成人的儿童与青少年。\n  - **≥ 15 mm 判定为阳性 (低危人群)**:\n    1. 无任何已知结核暴露或发病危险因素的健康人群。\n- **活动性肺结核确诊金标准**:\n  - 连续 3 次清晨深咳痰标本涂片**抗酸杆菌 (AFB) 染色阳性**及**分枝杆菌结核培养阳性**；或结核分支杆菌核酸扩增试验 (NAAT / GeneXpert PCR) 阳性。\n- **原书对应项目**: `Tuberculin Skin Test` (P.588), `Acid-Fast Bacilli (AFB)` (P.23)。\n\n---"
+        "guideline": "CDC / ATS / IDSA Targeted Tuberculin Testing and Treatment of Latent TB Guidelines.",
+        "relatedTests": "`Tuberculin Skin Test` (P.589), `Acid-Fast Bacilli` (P.23).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: CDC / ATS / IDSA Targeted Tuberculin Testing and Treatment of Latent TB Guidelines.\n- **PPD Induration Diagnostic Thresholds (measured 48–72 hours post-injection)**:\n  - **≥ 5 mm**: Positive in HIV-infected patients, recent close contacts of active TB cases, patients with fibrotic changes on chest radiograph, and organ transplant recipients / immunosuppressed (taking ≥15 mg/day prednisone for ≥ 1 month);\n  - **≥ 10 mm**: Positive in recent immigrants (< 5 years) from high-prevalence countries, IV drug users, healthcare workers, prison inmates, children < 4 years, and patients with chronic high-risk conditions (silicosis, diabetes, CKD, hematologic malignancies);\n  - **≥ 15 mm**: Positive in any person with no known risk factors for TB.\n- **Definitive Diagnosis of Active TB**: Sputum Acid-Fast Bacilli (AFB) smear and mycobacterial culture (Gold Standard).\n- **Manual Test References**: `Tuberculin Skin Test` (P.589), `Acid-Fast Bacilli` (P.23).\n\n---"
       },
       {
         "code": "6.2",
-        "title": "人类免疫缺陷病毒感染与艾滋病 (HIV Infection & AIDS / CDC Criteria)",
-        "titleEn": "HIV Infection & AIDS / CDC Criteria",
-        "titleZh": "人类免疫缺陷病毒感染与艾滋病",
-        "guideline": "CDC 艾滋病诊断与监测标准。",
-        "relatedTests": "`Human Immunodeficiency Virus Antibody Test` (P.339), `CD4 / CD8 T-Lymphocyte Count` (P.146), `Viral Load, HIV` (P.341)。",
-        "content": "- **权威诊断标准 / 指南来源**: CDC 艾滋病诊断与监测标准。\n- **诊断标准与确诊流程**:\n  1. **HIV 感染两步法血清确诊标准**:\n     - **初筛试验**: 酶联免疫吸附试验 (ELISA) / 4代抗原抗体复合试验检测 HIV-1/2 抗体与 p24 抗原；\n     - **确诊试验**: 初筛阳性者必须经**免疫印迹试验 (Western Blot)** 或 HIV-1/2 分型核酸确证试验复测。Western Blot 阳性标准为出现针对至少两条主要结构蛋白带（p24、gp41、gp120/gp160）。\n  2. **艾滋病期 (AIDS) 确诊界定 (CDC 定义)**:\n     - 满足 HIV 确诊证据，且满足以下两项中任意一项：\n       1. **外周血 CD4+ T 淋巴细胞计数 < 200 cells/uL**（或 CD4+ 淋巴细胞百分比 < 14%）；\n       2. **伴随出现任何一项 AIDS 指征性机会性感染或肿瘤**:\n          - 肺孢子菌肺炎 (PCP, Pneumocystis jirovecii pneumonia)\n          - 食管念珠菌感染\n          - 隐球菌性脑膜炎\n          - 巨细胞病毒 (CMV) 视网膜炎或全身感染\n          - 卡波西肉瘤 (Kaposi Sarcoma)\n          - 原发性中枢神经系统淋巴瘤\n          - 播散性鸟-胞内分枝杆菌复合体 (MAC) 感染。\n- **原书对应项目**: `Human Immunodeficiency Virus Antibody Test` (P.339), `CD4 / CD8 T-Lymphocyte Count` (P.146), `Viral Load, HIV` (P.341)。\n\n---"
+        "title": "HIV Infection & AIDS (CDC Definition)",
+        "titleEn": "HIV Infection & AIDS (CDC Definition)",
+        "guideline": "CDC Revised Surveillance Case Definition for HIV Infection.",
+        "relatedTests": "`HIV Antibody Test` (P.332), `CD4/CD8 Count` (P.164), `Viral Load Test` (P.605).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: CDC Revised Surveillance Case Definition for HIV Infection.\n- **Diagnostic Criteria**:\n  - **Fourth-Generation Screening**: HIV-1/2 antigen/antibody combination immunoassay (detects HIV-1 p24 antigen and HIV-1/2 antibodies).\n  - **Confirmatory Testing**: HIV-1/2 differentiation immunoassay; if indeterminate, qualitative HIV-1 RNA nucleic acid testing (NAT).\n  - **AIDS Case Definition**: Confirmed HIV infection PLUS either:\n    1. **CD4+ T-lymphocyte count < 200 cells/mcL** (or CD4 percentage < 14%); OR\n    2. Presence of an **AIDS-defining opportunistic infection / condition** (e.g., Pneumocystis jirovecii pneumonia, Cryptococcal meningitis, Kaposi sarcoma, CMV retinitis, Toxoplasmosis, Primary CNS lymphoma).\n- **Manual Test References**: `HIV Antibody Test` (P.332), `CD4/CD8 Count` (P.164), `Viral Load Test` (P.605).\n\n---"
       },
       {
         "code": "6.3",
-        "title": "梅毒血清学筛查与确诊 (Syphilis Serology: Screening & Confirmatory Testing)",
+        "title": "Syphilis Serology: Screening & Confirmatory Testing",
         "titleEn": "Syphilis Serology: Screening & Confirmatory Testing",
-        "titleZh": "梅毒血清学筛查与确诊",
-        "guideline": "USPSTF 梅毒筛查推荐指南与 CDC 性传播疾病指南。",
-        "relatedTests": "`Syphilis Serology` (P.548), `Venereal Disease Research Laboratory (VDRL)` (P.548)。",
-        "content": "- **权威诊断标准 / 指南来源**: USPSTF 梅毒筛查推荐指南与 CDC 性传播疾病指南。\n- **两步法血清学诊断体系**:\n  1. **非梅毒螺旋体抗原血清试验 (Nontreponemal Tests，初筛与疗效监测)**:\n     - **RPR (快速血浆反应素试验) / VDRL (性病研究实验室试验)**:\n     - 测定抗心磷脂抗体。敏感度高，但特异度相对有限（SLE、抗磷脂综合征、发热感染、妊娠可致生物学假阳性）；\n     - **抗体滴度 (如 1:32, 1:64)**: 滴度与疾病活动度直接相关；治疗后滴度呈 4 倍下降（如从 1:32 降至 1:8）代表有效治愈。\n  2. **梅毒螺旋体抗原特异性试验 (Treponemal Tests，确证试验)**:\n     - **FTA-ABS (荧光密螺旋体抗体吸收试验) / TP-PA (梅毒螺旋体微粒凝集试验)**:\n     - 测定抗苍白密螺旋体特异性抗体。特异度接近 100%；**一旦感染通常终生保持阳性**，不能用于判断复发或治愈。\n  3. **神经梅毒诊断**: 脑脊液 VDRL 阳性（高度特异性指标）。\n- **原书对应项目**: `Syphilis Serology` (P.548), `Venereal Disease Research Laboratory (VDRL)` (P.548)。\n\n---"
+        "guideline": "CDC Sexually Transmitted Infections Treatment Guidelines.",
+        "relatedTests": "`VDRL Test` (P.602), `Fluorescent Treponemal Antibody-Absorption` (P.264).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: CDC Sexually Transmitted Infections Treatment Guidelines.\n- **Diagnostic Algorithms (Traditional vs. Reverse Sequence)**:\n  1. **Nontreponemal Tests (RPR / VDRL)**: Reflect disease activity and response to treatment (four-fold change in titer required for clinically significant rise or fall). High false-positive rate (SLE, pregnancy, leprosy, malaria).\n  2. **Treponemal Tests (FTA-ABS, TP-PA, EIA)**: Qualitative confirmatory tests. Once positive, remain positive for life regardless of cure.\n  3. **Neurosyphilis Confirmation**: CSF VDRL (highly specific; diagnostic of neurosyphilis when reactive in absence of blood contamination).\n- **Manual Test References**: `VDRL Test` (P.602), `Fluorescent Treponemal Antibody-Absorption` (P.264).\n\n---"
       },
       {
         "code": "6.4",
-        "title": "莱姆病两步法血清学诊断 (Lyme Disease / Two-Tiered Serologic Criteria)",
-        "titleEn": "Lyme Disease / Two-Tiered Serologic Criteria",
-        "titleZh": "莱姆病两步法血清学诊断",
-        "guideline": "CDC 与 ILADS (International Lyme and Associated Diseases Society) 诊断标准。",
-        "relatedTests": "`Lyme Disease Antibody` (P.392)。",
-        "content": "- **权威诊断标准 / 指南来源**: CDC 与 ILADS (International Lyme and Associated Diseases Society) 诊断标准。\n- **两步法诊断流程**:\n  - **临床确诊特例**: 在莱姆病流行区，若患者具备典型**慢性游走性红斑 (Erythema Migrans)**，直接临床确诊并启动多西环素治疗，**无需等待血清学检验**（早期抗体尚未形成，假阴性率高达 50%）。\n  - **疑似神经、关节或晚期播散性莱姆病血清学检测**:\n    - **第 1 步**: 酶联免疫试验 (EIA) 或免疫荧光 (IFA) 筛查；\n    - **第 2 步**: 若第 1 步阳性或处于灰区，进行 **Western Blot (免疫印迹法)** 确诊：\n      - 发病 ≤ 4周内: IgM Western Blot（需 3 条特异带中至少 **2 条阳性**：23 kDa, 39 kDa, 41 kDa）；\n      - 发病 > 4周后: IgG Western Blot（需 10 条特异带中至少 **5 条阳性**：18, 23, 28, 30, 39, 41, 45, 58, 66, 93 kDa）。\n- **原书对应项目**: `Lyme Disease Antibody` (P.392)。\n\n---"
+        "title": "Lyme Disease: Two-Tiered Serologic Criteria",
+        "titleEn": "Lyme Disease: Two-Tiered Serologic Criteria",
+        "guideline": "CDC / IDSA Recommendations for the Serologic Diagnosis of Lyme Disease.",
+        "relatedTests": "`Lyme Disease Test` (P.390).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: CDC / IDSA Recommendations for the Serologic Diagnosis of Lyme Disease.\n- **Two-Tiered Testing Algorithm**:\n  1. **First Tier**: Sensitive enzyme immunoassay (EIA) or immunofluorescence assay (IFA) for Borrelia burgdorferi. If negative, no further testing needed.\n  2. **Second Tier**: Western Blot (Immunoblot):\n     - **IgM Western Blot**: Positive if **≥ 2 of 3 bands** are present (24, 39, 41 kDa); valid only in the first 4 weeks of infection;\n     - **IgG Western Blot**: Positive if **≥ 5 of 10 bands** are present (18, 23, 28, 30, 39, 41, 45, 58, 66, 93 kDa); required for manifestations lasting > 4 weeks (Lyme arthritis, encephalopathy).\n  - **Clinical Pearl**: Erythema migrans rash in an endemic area is diagnostic on its own; serologic testing is not required and will often be negative early on.\n- **Manual Test References**: `Lyme Disease Test` (P.390).\n\n---"
       },
       {
         "code": "6.5",
-        "title": "A组β溶血性链球菌性咽炎 (Group A Streptococcal Pharyngitis / Centor Criteria)",
-        "titleEn": "Group A Streptococcal Pharyngitis / Centor Criteria",
-        "titleZh": "A组β溶血性链球菌性咽炎",
-        "guideline": "美国感染病学会 (IDSA) 指南与改良 Centor 临床评分标准。",
-        "relatedTests": "`Throat Culture` (P.561), `Rapid Streptococcus Antigen Test` (P.502)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国感染病学会 (IDSA) 指南与改良 Centor 临床评分标准。\n- **Centor 评分系统 (评估 GABS 咽炎概率与检验指征)**:\n  - **扁桃体渗出物或充血水肿** (+1分)；\n  - **颈前淋巴结肿大伴压痛** (+1分)；\n  - **无咳嗽症状** (+1分)；\n  - **有发热病史 (体温 > 38.0°C)** (+1分)；\n  - **年龄修正**: 3–14岁 (+1分)；15–44岁 (0分)；≥ 45岁 (-1分)。\n- **临床决策与检验标准**:\n  - **评分 0–1 分**: 极低风险（< 10%），无需检验，无需抗生素；\n  - **评分 2–3 分**: 中度风险，必须进行**快速抗原检测 (RADT)**；\n  - **评分 ≥ 4 分**: 高度风险，需行 RADT 并考虑经验性治疗。\n  - **阴性确认规则 (循证指南)**: 儿童及青少年 RADT 阴性时，**必须补做咽拭子细菌培养 (Throat Culture)**，以防漏诊导致风湿热或肾小球肾炎并发症；成人 RADT 阴性通常无需常规补做培养。\n- **原书对应项目**: `Throat Culture` (P.561), `Rapid Streptococcus Antigen Test` (P.502)。\n\n---"
+        "title": "Group A Streptococcal Pharyngitis (Centor Criteria)",
+        "titleEn": "Group A Streptococcal Pharyngitis (Centor Criteria)",
+        "guideline": "Centor Criteria & IDSA Pharyngitis Guidelines.",
+        "relatedTests": "`Throat Culture` (P.566), `Antistreptolysin-O Titer` (P.77).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Centor Criteria & IDSA Pharyngitis Guidelines.\n- **Centor Scoring System (1 point each)**:\n  - History of fever (> 38.0°C / 100.4°F);\n  - Absence of cough;\n  - Tender anterior cervical adenopathy;\n  - Tonsillar exudates or swelling;\n  - Age: 3–14 years (+1), 15–44 years (0), ≥ 45 years (-1).\n- **Clinical Management**:\n  - Score 0–1: No antibiotic or testing needed (viral etiology);\n  - Score 2–3: Rapid Antigen Detection Test (RADT) or throat culture;\n  - Score 4: Empirical antibiotic treatment or rapid testing.\n- **Manual Test References**: `Throat Culture` (P.566), `Antistreptolysin-O Titer` (P.77).\n\n---"
       },
       {
         "code": "6.6",
-        "title": "传染性单核细胞增多症 (Infectious Mononucleosis / Monospot Criteria)",
-        "titleEn": "Infectious Mononucleosis / Monospot Criteria",
-        "titleZh": "传染性单核细胞增多症",
-        "guideline": "CDC 诊断标准。",
-        "relatedTests": "`Heterophile Antibodies / Monospot` (P.335), `Epstein-Barr Virus Antibodies` (P.252), `White Blood Cell Count and Differential` (P.627)。",
-        "content": "- **权威诊断标准 / 指南来源**: CDC 诊断标准。\n- **经典三联征**: 发热、渗出性咽颊炎、颈后淋巴结弥漫性肿大。\n- **核心实验室确诊标准**:\n  1. **血常规形态学**:\n     - 淋巴细胞绝对计数增高（单核-淋巴细胞占白细胞总数 > 50%）；\n     - 外周血涂片出现**异型淋巴细胞 (Atypical Reactive Lymphocytes) ≥ 10%**（主要为针对 EB 病毒感染 B 细胞的反应性激活 CD8+ T 细胞）。\n  2. **嗜异性抗体试验 (Heterophile Antibody Test / Monospot 试验)**:\n     - 凝集羊或马红细胞阳性。儿童 < 4 岁患者假阴性率较高；\n  3. **EB 病毒特异性抗体 (用于 Monospot 阴性病例鉴别)**:\n     - **急性感染**: 抗衣壳抗原 IgM (Anti-VCA IgM) 强阳性，抗核抗原 (Anti-EBNA) 阴性；\n     - **既往感染**: Anti-EBNA IgG 阳性，Anti-VCA IgM 阴性。\n- **原书对应项目**: `Heterophile Antibodies / Monospot` (P.335), `Epstein-Barr Virus Antibodies` (P.252), `White Blood Cell Count and Differential` (P.627)。\n\n---"
+        "title": "Infectious Mononucleosis (Monospot Criteria)",
+        "titleEn": "Infectious Mononucleosis (Monospot Criteria)",
+        "guideline": "CDC Clinical Diagnosis of Epstein-Barr Virus (EBV) Mononucleosis.",
+        "relatedTests": "`Heterophile Antibodies` (P.330), `Epstein-Barr Virus Antibodies` (P.247).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: CDC Clinical Diagnosis of Epstein-Barr Virus (EBV) Mononucleosis.\n- **Diagnostic Triad & Confirmation**:\n  - Clinical triad: Fever, pharyngitis, and posterior cervical lymphadenopathy (often with splenomegaly);\n  - **Peripheral Blood Smear**: Lymphocytosis (> 50%) with **> 10% atypical lymphocytes** (reactive CD8+ cytotoxic T cells);\n  - **Heterophile Antibody Test (Monospot)**: Positive in > 90% of adults (may be false negative in first week or in children < 4 years; confirm with EBV viral capsid antigen [VCA-IgM] if negative).\n- **Manual Test References**: `Heterophile Antibodies` (P.330), `Epstein-Barr Virus Antibodies` (P.247).\n\n---"
       },
       {
         "code": "6.7",
-        "title": "细菌性阴道病 (Bacterial Vaginosis / Amsel Criteria)",
-        "titleEn": "Bacterial Vaginosis / Amsel Criteria",
-        "titleZh": "细菌性阴道病",
-        "guideline": "Amsel 临床诊断标准。",
-        "relatedTests": "`Wet Mount for Vaginal Secretions` (P.625)。",
-        "content": "- **权威诊断标准 / 指南来源**: Amsel 临床诊断标准。\n- **诊断标准**: 满足以下 4 项特征中至少 **3 项** 即可确诊：\n  1. **典型阴道分泌物**: 稀薄、均匀、灰白色、均质性分泌物，附着于阴道壁；\n  2. **阴道 pH 值升高**: 阴道分泌物 pH **> 4.5**（通常为 5.0–5.5）；\n  3. **胺试验阳性 (Positive Whiff / Amine Test)**: 分泌物涂片加入 10% KOH 溶液后，立即释放出难闻的“鱼腥样”三甲胺臭味；\n  4. **线索细胞阳性 (Clue Cells)**: 生理盐水湿片高倍镜检下，**≥ 20% 的阴道鳞状上皮细胞表面布满加德纳菌等小杆菌**，使上皮细胞边缘呈锯齿状模糊不清。\n- **原书对应项目**: `Wet Mount for Vaginal Secretions` (P.625)。\n\n---"
+        "title": "Bacterial Vaginosis (Amsel Criteria)",
+        "titleEn": "Bacterial Vaginosis (Amsel Criteria)",
+        "guideline": "Amsel Clinical Criteria for Bacterial Vaginosis.",
+        "relatedTests": "`Vaginal Smear` (P.598).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Amsel Clinical Criteria for Bacterial Vaginosis.\n- **Diagnostic Requirement**: Presence of **≥ 3 of the following 4 criteria**:\n  1. Homogeneous, thin, gray-white discharge that smoothly coats vaginal walls;\n  2. Vaginal pH > 4.5;\n  3. Positive Whiff test (fishy amine odor on addition of 10% potassium hydroxide [KOH]);\n  4. **Clue Cells** on saline wet mount (> 20% of vaginal epithelial cells studded with adherent coccobacilli, obscuring cell borders).\n- **Manual Test References**: `Vaginal Smear` (P.598).\n\n---"
       },
       {
         "code": "6.8",
-        "title": "衣原体与淋球菌感染筛查 (Chlamydia & Gonorrhea Screening / USPSTF)",
-        "titleEn": "Chlamydia & Gonorrhea Screening / USPSTF",
-        "titleZh": "衣原体与淋球菌感染筛查",
-        "guideline": "USPSTF 临床预防指南与 CDC 指南。",
-        "relatedTests": "`Chlamydia Culture and Smear` (P.174), `Genital Culture` (P.296)。",
-        "content": "- **权威诊断标准 / 指南来源**: USPSTF 临床预防指南与 CDC 指南。\n- **筛查推荐标准**:\n  - **USPSTF 强烈推荐 (A级推荐)**: 对所有 **≤ 24 岁有性生活的女性**，以及 > 24 岁但伴有性传播感染高危因素（新性伴侣、多个性伴侣、性伴侣有性病、既往性病史）的女性，进行**常规年度沙眼衣原体与淋病奈瑟菌筛查**。\n- **检测金标准**:\n  - **核酸扩增检测技术 (Nucleic Acid Amplification Test, NAAT)**: 采集宫颈拭子、阴道拭子或清晨首段尿（尿液首段 20–30 mL）。NAAT 敏感度与特异度达 98%–99%，显著优于传统细菌培养。\n- **原书对应项目**: `Chlamydia Culture and Smear` (P.174), `Genital Culture` (P.296)。\n\n---"
+        "title": "Chlamydia & Gonorrhea Screening (USPSTF)",
+        "titleEn": "Chlamydia & Gonorrhea Screening (USPSTF)",
+        "guideline": "USPSTF & CDC STI Screening Guidelines.",
+        "relatedTests": "`Chlamydia Test` (P.185), `Gonorrhea Culture` (P.290).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: USPSTF & CDC STI Screening Guidelines.\n- **Screening Recommendations**:\n  - Annual screening for Chlamydia trachomatis and Neisseria gonorrhoeae in all sexually active women aged ≤ 24 years, and in older women at increased risk.\n  - **Gold Standard Diagnostic Test**: Nucleic Acid Amplification Testing (**NAAT**) on first-catch urine or vaginal/endocervical swabs (highest sensitivity and specificity).\n- **Manual Test References**: `Chlamydia Test` (P.185), `Gonorrhea Culture` (P.290).\n\n---"
       },
       {
         "code": "6.9",
-        "title": "生殖器疱疹病毒感染与剖宫产指征 (Genital Herpes Simplex Virus & Delivery Guidelines)",
+        "title": "Genital Herpes Simplex Virus & Delivery Guidelines",
         "titleEn": "Genital Herpes Simplex Virus & Delivery Guidelines",
-        "titleZh": "生殖器疱疹病毒感染与剖宫产指征",
-        "guideline": "ACOG (American College of Obstetricians and Gynecologists) 指南。",
-        "relatedTests": "`Herpes Simplex Virus Antibodies and Culture` (P.331)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACOG (American College of Obstetricians and Gynecologists) 指南。\n- **产科临床指南标准 (The Evidence for Practice)**:\n  - 临产时生殖道活动性单纯疱疹病毒 (HSV) 感染是新生儿中枢神经系统及播散性疱疹感染的极度危险因素。\n  - **剖宫产指征**:\n    1. 临产或胎膜破裂时，会阴部或生殖道存在**活动性活动性疱疹皮损 (Active genital lesions)**；\n    2. 临产时伴随有外生殖器疱疹发作的前驱期症状（局部疼痛、烧灼感、麻木）。\n    - 凡具备上述特征的产妇**必须行剖宫产分娩**以保护新生儿。若无活动性皮损且无前驱症状，允许经阴道分娩。\n- **原书对应项目**: `Herpes Simplex Virus Antibodies and Culture` (P.331)。\n\n---"
+        "guideline": "ACOG Practice Bulletin on Management of Genital Herpes in Pregnancy.",
+        "relatedTests": "`Herpes Simplex Virus Antibodies` (P.328).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACOG Practice Bulletin on Management of Genital Herpes in Pregnancy.\n- **Clinical Delivery Indications**:\n  - **Cesarean Delivery Indication**: Mandated in women with **active genital HSV lesions or prodromal symptoms** (vulvar burning, tingling) at the onset of labor to prevent neonatal transmission;\n  - In women without active genital lesions or prodromal symptoms at labor, vaginal delivery is recommended.\n- **Manual Test References**: `Herpes Simplex Virus Antibodies` (P.328).\n\n---"
       }
     ]
   },
   {
     "systemId": 7,
-    "systemTitle": "七、风湿免疫与结缔组织疾病 (Rheumatologic & Autoimmune Disorders)",
+    "systemTitle": "Rheumatologic & Autoimmune Disorders",
     "systemEn": "Rheumatologic & Autoimmune Disorders",
-    "systemZh": "风湿免疫与结缔组织疾病",
     "diseases": [
       {
         "code": "7.1",
-        "title": "类风湿关节炎 (Rheumatoid Arthritis / ARA 1988 & ACR Criteria)",
-        "titleEn": "Rheumatoid Arthritis / ARA 1988 & ACR Criteria",
-        "titleZh": "类风湿关节炎",
-        "guideline": "美国风湿病学会 (ARA 1988 / ACR) 类风湿关节炎分类标准。",
-        "relatedTests": "`Rheumatoid Factor` (P.519), `Anti-Cyclic Citrullinated Peptide Antibody` (P.67), `Arthrography` (P.93)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国风湿病学会 (ARA 1988 / ACR) 类风湿关节炎分类标准。\n- **1988 ARA 经典分类标准 (满足 7 项中至少 4 项，且标准 1–4 持续至少 6 周)**:\n  1. **晨僵 (Morning Stiffness)**: 关节及其周围晨僵持续 **≥ 1 小时**，方达最大改善；\n  2. **3 个或 3 个以上关节区关节炎 (Arthritis of 3 or more joint areas)**: 经医生观察到的软组织肿胀或积液（左右近端指间关节、掌指关节、腕、肘、膝、踝、跖趾关节共14处可能受累区域）；\n  3. **手关节炎 (Arthritis of hand joints)**: 腕关节、掌指关节 (MCP) 或近端指间关节 (PIP) 中至少 1 处肿胀；\n  4. **对称性关节炎 (Symmetric Arthritis)**: 身体双侧相同关节区同时受累；\n  5. **类风湿结节 (Rheumatoid Nodules)**: 骨突起部位、伸肌表面或关节周围皮下结节；\n  6. **血清类风湿因子 (Rheumatoid Factor, RF) 阳性**: 滴度超出正常对照人群的第 95 百分位数；\n  7. **放射学改变 (Radiographic Changes)**: 手和腕部后前位 X 线平片见典型软骨下骨质侵蚀或受累关节骨质疏松脱钙。\n- **核心抗体补充**:\n  - **抗环瓜氨酸肽抗体 (Anti-CCP / ACPA)**: 敏感度与 RF 相当（约 70%–80%），但特异度高达 **95%–98%**，对早期类风湿关节炎及侵蚀性骨质破坏预后具有核心诊断价值。\n- **原书对应项目**: `Rheumatoid Factor` (P.519), `Anti-Cyclic Citrullinated Peptide Antibody` (P.67), `Arthrography` (P.93)。\n\n---"
+        "title": "Rheumatoid Arthritis (ACR Criteria)",
+        "titleEn": "Rheumatoid Arthritis (ACR Criteria)",
+        "guideline": "2010 ACR / EULAR Rheumatoid Arthritis Classification Criteria.",
+        "relatedTests": "`Rheumatoid Factor` (P.516), `Erythrocyte Sedimentation Rate` (P.245), `C-Reactive Protein` (P.200).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: 2010 ACR / EULAR Rheumatoid Arthritis Classification Criteria.\n- **Diagnostic Criteria Scoring (Definite RA requires ≥ 6 of 10 points)**:\n  1. **Joint Involvement**: 1 large joint (0 pts); 2–10 large joints (1 pt); 1–3 small joints (2 pts); 4–10 small joints (3 pts); > 10 joints including ≥ 1 small joint (5 pts);\n  2. **Serology**: Negative RF and negative ACPA (0 pts); Low-positive RF or ACPA (2 pts); High-positive RF or ACPA (3 pts);\n  3. **Acute-Phase Reactants**: Normal CRP and normal ESR (0 pts); Abnormal CRP or abnormal ESR (1 pt);\n  4. **Duration of Symptoms**: < 6 weeks (0 pts); ≥ 6 weeks (1 pt).\n  - **Anti-Cyclic Citrullinated Peptide (Anti-CCP / ACPA)**: Most specific marker (> 95% specificity); predictive of aggressive, erosive joint destruction.\n- **Manual Test References**: `Rheumatoid Factor` (P.516), `Erythrocyte Sedimentation Rate` (P.245), `C-Reactive Protein` (P.200).\n\n---"
       },
       {
         "code": "7.2",
-        "title": "系统性红斑狼疮 (Systemic Lupus Erythematosus, SLE / ACR Criteria)",
-        "titleEn": "Systemic Lupus Erythematosus, SLE / ACR Criteria",
-        "titleZh": "系统性红斑狼疮",
-        "guideline": "ACR 11 项分类标准（满足至少 **4 项** 确诊 SLE）。",
-        "relatedTests": "`Antinuclear Antibody Test` (P.70), `Anti-DNA Antibodies` (P.68), `Complement Assay (C3, C4)` (P.190), `Lupus Erythematosus Prep` (P.389)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACR 11 项分类标准（满足至少 **4 项** 确诊 SLE）。\n- **11 项分类诊断标准**:\n  1. **颊部红斑 (Malar Rash)**: 鼻梁跨越两侧双颊的蝶形红斑，通常鼻唇沟不受累；\n  2. **盘状红斑 (Discoid Rash)**: 边缘隆起的红斑伴脱屑、毛囊角栓及萎缩性瘢痕；\n  3. **光敏感 (Photosensitivity)**: 暴露于紫外线日光后引起异常皮肤红斑皮疹；\n  4. **口腔溃疡 (Oral Ulcers)**: 医生观察到的无痛性口腔或鼻咽部黏膜溃疡；\n  5. **非侵蚀性关节炎 (Nonerosive Arthritis)**: 累及 ≥ 2 个外周关节，表现为压痛、肿胀或积液，但无软骨侵蚀破坏；\n  6. **浆膜炎 (Serositis)**: 明确的胸膜炎（胸痛、胸膜摩擦音或胸水）或心包炎（心包摩擦音、心电图改变或心包积液）；\n  7. **肾脏病变 (Renal Disorder)**: 持续尿蛋白 **> 0.5 g/24小时**（或定性 > 3+），或尿镜检出现红细胞/血红蛋白/颗粒/混合管型；\n  8. **神经系统病变 (Neurologic Disorder)**: 排除药物及代谢紊乱引起的抽搐发作 (Seizures) 或精神病 (Psychosis)；\n  9. **血液学异常 (Hematologic Disorder)**:\n     - 自身免疫性溶血性贫血（伴网织红细胞增高）；或\n     - 白细胞减少（两次以上白细胞计数 < 4.0 × 10⁹/L）；或\n     - 淋巴细胞减少（两次以上淋巴细胞绝对值 < 1.5 × 10⁹/L）；或\n     - 血小板减少（无药物诱导下血小板 < 100 × 10⁹/L）；\n  10. **免疫学异常 (Immunologic Disorder)**:\n      - 抗双链 DNA 抗体 (Anti-dsDNA) 阳性；或\n      - 抗 Sm 抗体 (Anti-Smith) 阳性；或\n      - 抗磷脂抗体阳性（狼疮抗凝物、梅毒血清试验持续假阳性、抗心磷脂抗体）；\n  11. **抗核抗体 (Antinuclear Antibody, ANA) 阳性**: 荧光抗核抗体滴度阳性（排除药物性狼疮）。\n- **原书对应项目**: `Antinuclear Antibody Test` (P.70), `Anti-DNA Antibodies` (P.68), `Complement Assay (C3, C4)` (P.190), `Lupus Erythematosus Prep` (P.389)。\n\n---"
+        "title": "Systemic Lupus Erythematosus (SLE / ACR Criteria)",
+        "titleEn": "Systemic Lupus Erythematosus (SLE / ACR Criteria)",
+        "guideline": "ACR / SLICC Revised Criteria for Classification of SLE.",
+        "relatedTests": "`Antinuclear Antibody Test` (P.70), `Anti-DNA Antibody Test` (P.63), `Complement` (P.191).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACR / SLICC Revised Criteria for Classification of SLE.\n- **ACR 11 Classic Criteria (Requires ≥ 4 criteria)**:\n  1. Malar rash; 2. Discoid rash; 3. Photosensitivity; 4. Oral ulcers; 5. Nonerosive arthritis (≥2 joints); 6. Serositis (pleuritis or pericarditis); 7. Renal disorder (persistent proteinuria > 0.5 g/day or cellular casts); 8. Neurologic disorder (seizures or psychosis); 9. Hematologic disorder (hemolytic anemia, leukopenia < 4,000, lymphopenia < 1,500, or thrombocytopenia < 100,000); 10. Immunologic disorder (Anti-dsDNA, Anti-Smith, or Antiphospholipid antibody); 11. Antinuclear antibody (ANA positive).\n- **Manual Test References**: `Antinuclear Antibody Test` (P.70), `Anti-DNA Antibody Test` (P.63), `Complement` (P.191).\n\n---"
       },
       {
         "code": "7.3",
-        "title": "痛风与假性痛风滑膜液鉴别标准 (Gout vs. Pseudogout / Synovial Crystal Analysis)",
-        "titleEn": "Gout vs. Pseudogout / Synovial Crystal Analysis",
-        "titleZh": "痛风与假性痛风滑膜液鉴别标准",
-        "guideline": "ACR 痛风分类与关节穿刺滑膜液分析标准。",
-        "relatedTests": "`Synovial Fluid Analysis / Arthrocentesis` (P.545), `Uric Acid, Blood` (P.594)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACR 痛风分类与关节穿刺滑膜液分析标准。\n- **关节滑液偏振光显微镜分析鉴别诊断标准 (确诊金标准)**:\n  | 鉴别维度 | 痛风 (Gout) | 假性痛风 (Pseudogout / CPPD) |\n  | :--- | :--- | :--- |\n  | **结晶化学本质** | 尿酸单钠结晶 (Monosodium Urate, MSU) | 二水焦磷酸钙结晶 (CPPD) |\n  | **结晶形态学** | **针状或细棒状 (Needle-shaped)**，细胞内外均可出现 | **菱形、短棒状或多边形 (Rhomboid-shaped)** |\n  | **双折光性 (Birefringence)** | **强负双折光性 (Strongly Negative Birefringent)** | **弱正双折光性 (Weakly Positive Birefringent)** |\n  | **红补偿滤光片下颜色判定** | **平行于慢轴时呈黄色 (Yellow)，垂直时呈蓝色** | **平行于慢轴时呈蓝色 (Blue)，垂直时呈黄色** |\n  | **影像学特征** | 软骨下穿凿样骨侵蚀伴悬挂边缘 (Overhanging edge) | 关节软骨钙质沉着症 (Chondrocalcinosis，半月板线样强回声) |\n- **原书对应项目**: `Synovial Fluid Analysis / Arthrocentesis` (P.545), `Uric Acid, Blood` (P.594)。\n\n---"
+        "title": "Gout vs. Pseudogout: Synovial Crystal Differentiation",
+        "titleEn": "Gout vs. Pseudogout: Synovial Crystal Differentiation",
+        "guideline": "ACR Guidelines for the Management of Gout.",
+        "relatedTests": "`Arthrocentesis` (P.92), `Uric Acid, Blood` (P.590).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACR Guidelines for the Management of Gout.\n- **Arthrocentesis Synovial Fluid Differential Matrix**:\n  - **Gout (Monosodium Urate Crystals)**:\n    - Morphology: Needle-shaped, pointed ends;\n    - Polarized Light Microscopy: **Strongly negative birefringence**;\n    - Compensator Color: Yellow when parallel to the slow axis; blue when perpendicular.\n  - **Pseudogout / CPPD (Calcium Pyrophosphate Dihydrate Crystals)**:\n    - Morphology: Rhomboid-shaped, rectangular;\n    - Polarized Light Microscopy: **Weakly positive birefringence**;\n    - Compensator Color: Blue when parallel to the slow axis; yellow when perpendicular;\n    - Chondrocalcinosis on plain radiography.\n- **Manual Test References**: `Arthrocentesis` (P.92), `Uric Acid, Blood` (P.590).\n\n---"
       },
       {
         "code": "7.4",
-        "title": "重症肌无力 (Myasthenia Gravis, MG)",
-        "titleEn": "Myasthenia Gravis, MG",
-        "titleZh": "重症肌无力",
-        "guideline": "神经病学临床共识与 Myasthenia Gravis Foundation of America 指南。",
-        "relatedTests": "`Acetylcholine Receptor Antibodies` (P.22), `Tensilon Test` (P.549), `Chest CT` (P.194)。",
-        "content": "- **权威诊断标准 / 指南来源**: 神经病学临床共识与 Myasthenia Gravis Foundation of America 指南。\n- **诊断标准**: 满足易疲劳性肌无力表现（晨轻暮重、眼睑下垂、复视、咀嚼无力）并结合以下客观证据：\n  1. **血清自身抗体测定 (首选血清学试验)**:\n     - **抗乙酰胆碱受体抗体 (Anti-AChR Antibodies)**:\n       - 结合型 (Binding)、阻断型 (Blocking)、调节型 (Modulating)；全身型重症肌无力阳性率达 **85%–90%**，特异度接近 100%；\n     - **抗骨骼肌特异性受体酪氨酸激酶抗体 (Anti-MuSK)**: 见于约 40%–50% 的 AChR 抗体阴性全身型患者。\n  2. **腾喜龙试验 (Tensilon Test / 依酚氯铵试验)**:\n     - 静脉注射短效乙酰胆碱酯酶抑制剂（依酚氯铵 2–10 mg）；\n     - **阳性标准**: 30–60 秒内肌力（如下垂眼睑）迅速显著改善，维持数分钟；备好阿托品防心动过缓。\n  3. **电生理试验**: 重复神经低频电刺激 (RNS, 3–5 Hz) 出现动作电位波幅递减 > 10%–15%；单纤维肌电图 (SFEMG) 抖动 (Jitter) 增宽。\n  4. **胸腺 CT/MRI**: 筛查胸腺瘤 (Thymoma, 约15%合并) 或胸腺增生 (约65%合并)。\n- **原书对应项目**: `Acetylcholine Receptor Antibodies` (P.22), `Tensilon Test` (P.549), `Chest CT` (P.194)。\n\n---"
+        "title": "Myasthenia Gravis (MG)",
+        "titleEn": "Myasthenia Gravis (MG)",
+        "guideline": "Practice Parameter for Evaluation of Myasthenia Gravis.",
+        "relatedTests": "`Acetylcholine Receptor Antibodies` (P.22), `Tensilon Test` (P.562).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Practice Parameter for Evaluation of Myasthenia Gravis.\n- **Diagnostic Criteria & Modalities**:\n  1. **Serologic Testing**: Serum **Acetylcholine Receptor Antibodies (AChR-Ab)**: positive in 85–90% of generalized MG (highly specific). If negative, test Muscle-Specific Kinase Antibodies (Anti-MuSK);\n  2. **Electrophysiologic Testing**: Repetitive nerve stimulation (RNS) demonstrating significant decremental compound muscle action potential (> 10% decrease);\n  3. **Edrophonium (Tensilon) Test**: Rapid, transient improvement in muscle weakness following IV edrophonium (short-acting acetylcholinesterase inhibitor; atropine must be at bedside).\n- **Manual Test References**: `Acetylcholine Receptor Antibodies` (P.22), `Tensilon Test` (P.562).\n\n---"
       }
     ]
   },
   {
     "systemId": 8,
-    "systemTitle": "八、呼吸系统与睡眠疾病 (Respiratory & Sleep Disorders)",
+    "systemTitle": "Respiratory & Sleep Disorders",
     "systemEn": "Respiratory & Sleep Disorders",
-    "systemZh": "呼吸系统与睡眠疾病",
     "diseases": [
       {
         "code": "8.1",
-        "title": "慢性阻塞性肺疾病急性加重期血气分析指征 (COPD Exacerbation & ABG Indications)",
-        "titleEn": "COPD Exacerbation & ABG Indications",
-        "titleZh": "慢性阻塞性肺疾病急性加重期血气分析指征",
-        "guideline": "GOLD (Global Initiative for Chronic Obstructive Lung Disease) 慢阻肺指南。",
-        "relatedTests": "`Arterial Blood Gases` (P.86), `Oximetry` (P.426), `Carbon Dioxide` (P.148)。",
-        "content": "- **权威诊断标准 / 指南来源**: GOLD (Global Initiative for Chronic Obstructive Lung Disease) 慢阻肺指南。\n- **循证动脉血气分析 (ABG) 紧急采集指征 (The Evidence for Practice)**:\n  - Wilson 手册循证指南明确列出，已知慢阻肺患者出现加重时，必须急查动脉血气分析的临床指征：\n    1. **脉搏血氧饱和度 (SpO2) < 88%**；\n    2. **既往有高碳酸血症 (Hypercapnia) 病史**；\n    3. **脉搏血氧仪测定准确度存疑者**（周围循环灌注差、低体温、重度贫血）；\n    4. **出现嗜睡 (Somnolence)、谵妄或意识模糊**（提示二氧化碳麻醉）；\n    5. **出现濒临呼吸衰竭征象**: **呼吸频率 > 40 次/分**，或出现胸腹矛盾呼吸、辅助呼吸肌显著参与。\n- **动脉血气酸碱平衡失代偿判定标准**:\n  - **急性呼吸性酸中毒**: pH < 7.35 伴 PaCO2 > 45 mmHg，HCO3⁻ 正常或轻微上升；\n  - **慢性代偿性呼吸性酸中毒**: pH 接近正常低限 (7.35–7.38)，PaCO2 > 50 mmHg，HCO3⁻ 显著代偿性升高 (> 30–35 mEq/L)。\n- **原书对应项目**: `Arterial Blood Gases` (P.86), `Oximetry` (P.426), `Carbon Dioxide` (P.148)。\n\n---"
+        "title": "COPD Exacerbation & Arterial Blood Gas (ABG) Indications",
+        "titleEn": "COPD Exacerbation & Arterial Blood Gas (ABG) Indications",
+        "guideline": "Global Initiative for Chronic Obstructive Lung Disease (GOLD) Guidelines.",
+        "relatedTests": "`Arterial Blood Gases` (P.85).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Global Initiative for Chronic Obstructive Lung Disease (GOLD) Guidelines.\n- **Arterial Blood Gas Indications in COPD**:\n  - Indicated in all hospitalized patients with acute exacerbation, altered mental status, or pulse oximetry saturation < 92%.\n  - **Respiratory Failure Thresholds**:\n    - **Hypoxemic Failure**: PaO2 < 60 mmHg (8.0 kPa) on ambient air;\n    - **Hypercapnic Acidosis Failure**: PaCO2 > 45–50 mmHg with arterial pH < 7.35; triggers indication for Noninvasive Positive Pressure Ventilation (NIV / BiPAP).\n- **Manual Test References**: `Arterial Blood Gases` (P.85).\n\n---"
       },
       {
         "code": "8.2",
-        "title": "α1-抗胰蛋白酶缺乏症 (Alpha-1 Antitrypsin Deficiency, AATD)",
-        "titleEn": "Alpha-1 Antitrypsin Deficiency, AATD",
-        "titleZh": "α1-抗胰蛋白酶缺乏症",
-        "guideline": "ATS / ERS (European Respiratory Society) 指南。",
-        "relatedTests": "`Alpha1-Antitrypsin Test` (P.37)。",
-        "content": "- **权威诊断标准 / 指南来源**: ATS / ERS (European Respiratory Society) 指南。\n- **诊断标准与检测指征**:\n  - **高危检测人群**:\n    1. **早发性肺气肿 (< 45 岁)**；\n    2. **无吸烟史或极低吸烟史的严重肺气肿**；\n    3. 家族成员中有 AATD 病史；\n    4. 幼年不明原因肝硬化或新生儿胆汁淤积性肝炎。\n  - **实验室诊断标准**:\n    - **血清 AAT 浓度定量**: 正常参考范围 85–213 mg/dL (20–60 umol/L)；\n    - **严重缺乏临界值**: **血清 AAT < 50–80 mg/dL (< 11 umol/L)**；\n    - **基因表型分型 (Phenotyping by Isoelectric Focusing)**:\n      - 正常野生型: Pi*MM；\n      - 重度缺乏纯合子（肺气肿高危）: **Pi*ZZ**（血清浓度仅为正常值的 10%–15%）；\n      - 中度缺乏杂合子: Pi*MZ 或 Pi*SZ。\n- **原书对应项目**: `Alpha1-Antitrypsin Test` (P.37)。\n\n---"
+        "title": "Alpha-1 Antitrypsin Deficiency (AATD)",
+        "titleEn": "Alpha-1 Antitrypsin Deficiency (AATD)",
+        "guideline": "ATS / ERS Statement on Standards for the Diagnosis of AATD.",
+        "relatedTests": "`Alpha1-Antitrypsin Test` (P.37).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ATS / ERS Statement on Standards for the Diagnosis of AATD.\n- **Diagnostic Criteria & Laboratory Thresholds**:\n  - **Indications**: Early-onset panacinar emphysema (< 45 years, lower lobes predominant, minimal or non-smoker) or unexplained neonatal cholestasis / cirrhosis;\n  - **Serum AAT Quantification**: Serum AAT concentration **< 50–80 mg/dL** (< 11 umol/L; protective threshold);\n  - **Phenotyping & Genotyping**: Isoelectric focusing demonstrating homozygous Pi*ZZ genotype (severe deficiency) or Pi*MZ.\n- **Manual Test References**: `Alpha1-Antitrypsin Test` (P.37).\n\n---"
       },
       {
         "code": "8.3",
-        "title": "阻塞性睡眠呼吸暂停综合征 (Obstructive Sleep Apnea, OSA / ASDA Criteria)",
-        "titleEn": "Obstructive Sleep Apnea, OSA / ASDA Criteria",
-        "titleZh": "阻塞性睡眠呼吸暂停综合征",
-        "guideline": "美国睡眠障碍协会 (ASDA / AASM) 临床指南。",
-        "relatedTests": "`Polysomnography` (P.461), `Oximetry` (P.426)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国睡眠障碍协会 (ASDA / AASM) 临床指南。\n- **多导睡眠图监测 (Polysomnography, PSG) 诊断标准**:\n  - **呼吸暂停低通气指数 (Apnea-Hypopnea Index, AHI)**: 每小时睡眠中呼吸暂停（口鼻气流停止 ≥ 10 秒）加低通气（气流下降 ≥ 30% 伴血氧下降 ≥ 3% 或微觉醒）的总次数。\n  - **OSA 确诊标准 (满足以下任意一条)**:\n    1. **AHI ≥ 5 次/小时**，且伴随以下至少一项临床表现：\n       - 日间过度嗜睡 (Daytime sleepiness, Epworth 评分高)；\n       - 夜间窒息感、打鼾、憋醒；\n       - 伴发高血压、冠心病、卒中或心律失常；\n    2. **AHI ≥ 15 次/小时**（无论有无自觉临床症状均可独立确诊）。\n  - **严重程度分级**:\n    - 轻度: AHI 5–14.9 次/小时；\n    - 中度: AHI 15–29.9 次/小时；\n    - 重度: AHI ≥ 30 次/小时。\n- **原书对应项目**: `Polysomnography` (P.461), `Oximetry` (P.426)。\n\n---"
+        "title": "Obstructive Sleep Apnea (OSA / ASDA Criteria)",
+        "titleEn": "Obstructive Sleep Apnea (OSA / ASDA Criteria)",
+        "guideline": "AASM / ASDA Practice Parameters for Polysomnography.",
+        "relatedTests": "`Polysomnography` (P.477).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: AASM / ASDA Practice Parameters for Polysomnography.\n- **Diagnostic Polysomnography Criteria (Apnea-Hypopnea Index [AHI])**:\n  - Diagnosis established if **AHI ≥ 5 events/hour** with documented symptoms (excessive daytime sleepiness, loud snoring, witnessed apneas, nocturnal gasping, hypertension), OR **AHI ≥ 15 events/hour** regardless of symptoms;\n  - **Severity Stratification**:\n    - Mild: AHI 5–14.9;\n    - Moderate: AHI 15–29.9;\n    - Severe: AHI ≥ 30 events/hour.\n- **Manual Test References**: `Polysomnography` (P.477).\n\n---"
       }
     ]
   },
   {
     "systemId": 9,
-    "systemTitle": "九、神经、肌肉与骨骼系统疾病 (Neurological, Musculoskeletal & Trauma)",
+    "systemTitle": "Neurological, Musculoskeletal & Trauma",
     "systemEn": "Neurological, Musculoskeletal & Trauma",
-    "systemZh": "神经、肌肉与骨骼系统疾病",
     "diseases": [
       {
         "code": "9.1",
-        "title": "中枢神经系统感染与脑脊液鉴别诊断 (CNS Infections & CSF Differential Diagnosis)",
-        "titleEn": "CNS Infections & CSF Differential Diagnosis",
-        "titleZh": "中枢神经系统感染与脑脊液鉴别诊断",
-        "guideline": "IDSA 细菌性脑膜炎诊疗指南。",
-        "relatedTests": "`Lumbar Puncture and Cerebrospinal Fluid Analysis` (P.383)。",
-        "content": "- **权威诊断标准 / 指南来源**: IDSA 细菌性脑膜炎诊疗指南。\n- **脑脊液 (CSF) 腰穿检测综合鉴别诊断矩阵**:\n  | 诊断类型 | 初压 (Opening Pressure) | 白细胞计数与分类 (WBC & Diff) | 蛋白质 (Protein) | 葡萄糖 (Glucose) | 葡萄糖比值 (CSF/Blood Glucose) | 病原学证据 |\n  | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n  | **正常参考值** | 70–180 mmH₂O | 0–5 /uL (全为单核细胞) | 15–45 mg/dL | 50–75 mg/dL | **≥ 0.60** (正常高值) | 无病原体 |\n  | **急性化脓性细菌性脑膜炎** | **显著升高 (> 200–300 mmH₂O)** | **极度升高 (1,000–10,000+ /uL)，中性粒细胞 > 80%** | **显著升高 (> 100–500 mg/dL)** | **显著降低 (< 40 mg/dL)** | **极度降低 (< 0.40)** | 涂片革兰染色阳性，细菌培养阳性 |\n  | **病毒性 (无菌性) 脑膜炎** | 正常或轻度升高 (< 200) | 轻至中度升高 (50–500 /uL)，**单核/淋巴细胞为主** | 轻度升高 (50–100 mg/dL) | **正常** | **正常 (> 0.60)** | PCR 检出肠道病毒/HSV |\n  | **结核性脑膜炎** | **显著升高 (> 250)** | 中度升高 (100–500 /uL)，**早期混合后转淋巴细胞为主** | **极度升高 (> 100–500+ mg/dL)**，静置可形成薄膜 | **显著降低 (< 30 mg/dL)** | **显著降低 (< 0.30)** | 抗酸染色阳性，结核 PCR 阳性 |\n  | **隐球菌/真菌性脑膜炎** | **极度升高 (> 300)** | 中度升高 (50–500 /uL)，**淋巴细胞为主** | 显著升高 (> 100–400 mg/dL) | 降低 (< 40 mg/dL) | 降低 (< 0.40) | **墨汁染色涂片阳性**，隐球菌荚膜抗原阳性 |\n- **原书对应项目**: `Lumbar Puncture and Cerebrospinal Fluid Analysis` (P.383)。\n\n---"
+        "title": "CNS Infections & CSF Differential Diagnosis Matrix",
+        "titleEn": "CNS Infections & CSF Differential Diagnosis Matrix",
+        "guideline": "IDSA Practice Guidelines for Healthcare-Associated Ventriculitis and Meningitis.",
+        "relatedTests": "`Lumbar Puncture` (P.385).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: IDSA Practice Guidelines for Healthcare-Associated Ventriculitis and Meningitis.\n- **Cerebrospinal Fluid (CSF) Lumbar Puncture Differentiation**:\n  - **Bacterial Meningitis**: Elevated opening pressure (> 200–300 mm H2O); marked pleocytosis (> 1,000/mcL) with **neutrophil predominance (> 80%)**; markedly elevated protein (> 100–500 mg/dL); markedly decreased glucose (< 40 mg/dL, CSF-to-serum glucose ratio < 0.4);\n  - **Viral (Aseptic) Meningitis**: Normal/mildly elevated opening pressure; moderate pleocytosis (10–500/mcL) with **lymphocytic predominance**; normal or mildly elevated protein (< 100 mg/dL); normal glucose (CSF-to-serum glucose ratio > 0.6);\n  - **Fungal / Cryptococcal Meningitis**: Elevated opening pressure; lymphocytic pleocytosis; elevated protein; decreased glucose; positive India ink preparation / Cryptococcal antigen;\n  - **Tuberculous Meningitis**: Markedly elevated opening pressure; lymphocytic pleocytosis; very high protein (> 100–500 mg/dL); very low glucose (< 30 mg/dL); cobweb clot formation.\n- **Manual Test References**: `Lumbar Puncture` (P.385).\n\n---"
       },
       {
         "code": "9.2",
-        "title": "渥太华踝关节放射检查规则 (Ottawa Ankle Rules)",
-        "titleEn": "Ottawa Ankle Rules",
-        "titleZh": "渥太华踝关节放射检查规则",
-        "guideline": "渥太华踝部损伤放射学决策规则 (Ottawa Ankle Rules)。",
-        "relatedTests": "`Bone Radiography / X-ray` (P.122), `Bone Scan` (P.124)。",
-        "content": "- **权威诊断标准 / 指南来源**: 渥太华踝部损伤放射学决策规则 (Ottawa Ankle Rules)。\n- **X线摄片指征标准 (The Evidence for Practice)**:\n  - 仅在有钝器伤导致的踝痛且符合以下任何一项条件时，才需要行**踝关节 X 线平片 (Ankle X-ray Series)** 检查：\n    1. **外踝压痛**: 外踝后缘或外踝尖端远端 6 cm 范围内有明确骨性压痛；\n    2. **内踝压痛**: 内踝后缘或内踝尖端远端 6 cm 范围内有明确骨性压痛；\n    3. **无法负重**: 伤后即刻以及在急诊科就诊时，均**无法独立行走负重迈出至少 4 步**。\n  - **足部平片指征 (Foot X-ray Series)**: 仅在有中足疼痛且满足第5跖骨基底部压痛、舟骨压痛或无法独立行走负重4步时进行。\n  - **临床价值**: 敏感度接近 100%，大幅减少不必要的辐射与急诊医疗花费。\n- **原书对应项目**: `Bone Radiography / X-ray` (P.122), `Bone Scan` (P.124)。\n\n---"
+        "title": "Ottawa Ankle & Foot Rules",
+        "titleEn": "Ottawa Ankle & Foot Rules",
+        "guideline": "Stiell et al., Emergency Medicine Ottawa Ankle Rules.",
+        "relatedTests": "`X-Ray, Skeletal` (P.620).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: Stiell et al., Emergency Medicine Ottawa Ankle Rules.\n- **Radiography Indications (High sensitivity > 98% to exclude fractures)**:\n  - **Ankle X-ray Series Indicated** if there is pain in the malleolar zone AND any of the following:\n    1. Bone tenderness along distal 6 cm of posterior edge or tip of lateral malleolus;\n    2. Bone tenderness along distal 6 cm of posterior edge or tip of medial malleolus;\n    3. Inability to bear weight both immediately after injury and in the emergency department (4 steps).\n  - **Foot X-ray Series Indicated** if there is pain in the midfoot zone AND any of the following:\n    1. Bone tenderness at the base of the 5th metatarsal;\n    2. Bone tenderness at the navicular bone;\n    3. Inability to bear weight both immediately and in the ED (4 steps).\n- **Manual Test References**: `X-Ray, Skeletal` (P.620).\n\n---"
       },
       {
         "code": "9.3",
-        "title": "骨质疏松症与骨量减少 (Osteoporosis & Osteopenia / WHO DEXA Criteria)",
-        "titleEn": "Osteoporosis & Osteopenia / WHO DEXA Criteria",
-        "titleZh": "骨质疏松症与骨量减少",
-        "guideline": "世界卫生组织 (WHO) 与 USPSTF 双能 X 线骨密度仪 (DEXA) 诊断标准。",
-        "relatedTests": "`Bone Densitometry / DEXA Scan` (P.122)。",
-        "content": "- **权威诊断标准 / 指南来源**: 世界卫生组织 (WHO) 与 USPSTF 双能 X 线骨密度仪 (DEXA) 诊断标准。\n- **USPSTF 筛查推荐**:\n  - 建议对所有 **≥ 65 岁的女性** 进行常规 DEXA 骨密度筛查；对于 < 65 岁但骨折风险相当的高危绝经后女性亦应筛查。\n- **WHO DEXA T-Score (T 值，与健康年轻同性别成人峰值骨量对比的标准差) 分类诊断标准**:\n  - **正常骨密度 (Normal)**: **T-Score ≥ -1.0 SD**；\n  - **骨量减少 (Osteopenia)**: **-2.5 SD < T-Score < -1.0 SD**；\n  - **骨质疏松症 (Osteoporosis)**: **T-Score ≤ -2.5 SD**（在腰椎、股骨颈或全髋部任意一处测定）；\n  - **严重 / 确立型骨质疏松症 (Severe Osteoporosis)**: **T-Score ≤ -2.5 SD 伴随至少一处脆性骨折 (Fragility Fracture)**。\n- **原书对应项目**: `Bone Densitometry / DEXA Scan` (P.122)。\n\n---"
+        "title": "Osteoporosis & Osteopenia (WHO DEXA Criteria)",
+        "titleEn": "Osteoporosis & Osteopenia (WHO DEXA Criteria)",
+        "guideline": "World Health Organization (WHO) & NOF Guidelines.",
+        "relatedTests": "`Bone Mineral Density` (P.122).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: World Health Organization (WHO) & NOF Guidelines.\n- **Dual-Energy X-ray Absorptiometry (DEXA) T-Score Classification**:\n  - Measured at femoral neck, total hip, or lumbar spine:\n    - **Normal**: T-score **≥ -1.0 SD**;\n    - **Osteopenia (Low Bone Mass)**: T-score between **-1.0 and -2.5 SD**;\n    - **Osteoporosis**: T-score **≤ -2.5 SD**;\n    - **Severe (Established) Osteoporosis**: T-score ≤ -2.5 SD in the presence of one or more fragility fractures.\n  - **Screening Indication**: All women aged ≥ 65 years and men aged ≥ 70 years.\n- **Manual Test References**: `Bone Mineral Density` (P.122).\n\n---"
       }
     ]
   },
   {
     "systemId": 10,
-    "systemTitle": "十、妇产科与产前筛查疾病 (Obstetrics, Gynecology & Prenatal Screening)",
+    "systemTitle": "Obstetrics, Gynecology & Prenatal Screening",
     "systemEn": "Obstetrics, Gynecology & Prenatal Screening",
-    "systemZh": "妇产科与产前筛查疾病",
     "diseases": [
       {
         "code": "10.1",
-        "title": "Rh血型不合与新生儿溶血病筛查 (Rh Isoimmunization Screening / USPSTF Guidelines)",
-        "titleEn": "Rh Isoimmunization Screening / USPSTF Guidelines",
-        "titleZh": "Rh血型不合与新生儿溶血病筛查",
-        "guideline": "USPSTF (A级推荐) 与 ACOG 产科临床指南。",
-        "relatedTests": "`Blood Typing and Rh Factor` (P.118), `Coombs' Test, Direct and Indirect` (P.196)。",
-        "content": "- **权威诊断标准 / 指南来源**: USPSTF (A级推荐) 与 ACOG 产科临床指南。\n- **筛查与免疫预防标准流程**:\n  1. **初次产检 (首次妊娠门诊)**: 强烈推荐对**所有孕妇**在初次产检时常规行 **ABO 血型、Rh(D) 抗原及不完全红细胞抗体筛查 (间接抗人球蛋白试验 Indirect Coombs Test)**。\n  2. **Rh(D) 阴性无致敏孕妇管理**:\n     - 在 **孕 28 周** 时复查间接抗体筛查。\n     - 若抗体阴性，在 **孕 28 周常规肌注抗-D 免疫球蛋白 (RhoGAM 300 mcg)**。\n  3. **产后管理**:\n     - 新生儿出生后取脐带血行 ABO/Rh 分型及**直接抗人球蛋白试验 (Direct Coombs Test)**；\n     - 若新生儿证实为 Rh(D) 阳性，母亲必须在 **分娩后 72 小时内** 再次肌注一剂抗-D 免疫球蛋白 (300 mcg)；若发生大量胎母出血，需通过 Kleihauer-Betke 试验测算追加剂量。\n- **原书对应项目**: `Blood Typing and Rh Factor` (P.118), `Coombs' Test, Direct and Indirect` (P.196)。\n\n---"
+        "title": "Rh Isoimmunization Screening & Prophylaxis",
+        "titleEn": "Rh Isoimmunization Screening & Prophylaxis",
+        "guideline": "ACOG Practice Bulletin on Prevention of Rh D Alloimmunization.",
+        "relatedTests": "`Blood Typing` (P.117), `Coombs' Test, Indirect` (P.197), `Kleihauer-Betke Test` (P.378).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACOG Practice Bulletin on Prevention of Rh D Alloimmunization.\n- **Screening & Prevention Protocol**:\n  - All pregnant women should have ABO blood group and Rh(D) typing with indirect Coombs antibody screen at first prenatal visit.\n  - In unsensitized Rh(D)-negative women:\n    - Prophylactic administration of **300 mcg Rh0(D) immune globulin (RhoGAM) at 28 weeks of gestation**;\n    - Administration of a second dose within **72 hours postpartum** if the infant is confirmed Rh(D) positive.\n  - **Kleihauer-Betke Test**: Quantifies volume of fetomaternal hemorrhage to determine additional doses of RhoGAM needed after maternal trauma or delivery.\n- **Manual Test References**: `Blood Typing` (P.117), `Coombs' Test, Indirect` (P.197), `Kleihauer-Betke Test` (P.378).\n\n---"
       },
       {
         "code": "10.2",
-        "title": "神经管缺陷与非整倍体产前筛查 (Neural Tube Defects & Aneuploidy Screening / MSAFP & Triple Test)",
-        "titleEn": "Neural Tube Defects & Aneuploidy Screening / MSAFP & Triple Test",
-        "titleZh": "神经管缺陷与非整倍体产前筛查",
-        "guideline": "ACOG & USPSTF 产前筛查指南。",
-        "relatedTests": "`Alpha-Fetoprotein` (P.38), `Human Chorionic Gonadotropin` (P.343), `Estriol` (P.258)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACOG & USPSTF 产前筛查指南。\n- **母体血清标志物筛查最佳孕周**: 孕 **15 至 20 周**（以 16–18 周最为理想）。以中位数倍数 (Multiples of the Median, MoM) 计量。\n- **异常组合临床判定标准**:\n  - **母血清甲胎蛋白 (MSAFP) 单独异常升高 (> 2.0 – 2.5 MoM)**:\n    - **首选下一步**: 必须首先行**超声检查**排除：1. 孕周推算错误（最常见）；2. 多胎妊娠；3. 胎死宫内。\n    - 若排除上述原因，高度提示：**开放性神经管缺陷 (NTD, 无脑儿、脊柱裂)**、前腹壁缺损（脐膨出、腹裂）。\n    - 循证预防: 孕前每天补充 **叶酸 400 mcg**（有高危孕产史者补充 4 mg/天）可减少 70% 神经管畸形发生。\n  - **三联筛查 (Triple Screen) 标志物与染色体非整倍体综合征鉴别矩阵**:\n    | 疾病类型 | 母体血清 AFP | 人绒毛膜促性腺激素 (hCG) | 游离雌三醇 (uE3) | 抑制素 A (Inhibin A) |\n    | :--- | :--- | :--- | :--- | :--- |\n    | **开放性神经管缺陷 (NTD)** | **显著升高 (↑↑)** | 正常 | 正常 | 正常 |\n    | **21-三体综合征 (唐氏综合征, Down)** | **显著降低 (↓↓)** | **显著升高 (↑↑)** | **显著降低 (↓↓)** | **显著升高 (↑↑)** |\n    | **18-三体综合征 (爱德华综合征, Edwards)** | **全线降低 (↓↓)** | **全线降低 (↓↓)** | **全线降低 (↓↓)** | 通常无法测出/降低 |\n- **原书对应项目**: `Alpha-Fetoprotein` (P.38), `Human Chorionic Gonadotropin` (P.343), `Estriol` (P.258)。\n\n---"
+        "title": "Neural Tube Defects & Aneuploidy Prenatal Screening (MSAFP & Triple Screen)",
+        "titleEn": "Neural Tube Defects & Aneuploidy Prenatal Screening (MSAFP & Triple Screen)",
+        "guideline": "ACOG Practice Guidelines for Prenatal Screening.",
+        "relatedTests": "`Alpha-Fetoprotein` (P.38), `Triple Marker Test` (P.585).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACOG Practice Guidelines for Prenatal Screening.\n- **Maternal Serum Alpha-Fetoprotein (MSAFP) Interpretation (15–20 weeks gestation)**:\n  - **Elevated MSAFP (> 2.0–2.5 MoM [Multiples of the Median])**: Open neural tube defects (anencephaly, spina bifida), abdominal wall defects (omphalocele, gastroschisis), multifetal gestation, underestimation of gestational age, fetal demise.\n  - **Decreased MSAFP (< 0.5 MoM)**: Trisomy 21 (Down syndrome), Trisomy 18 (Edwards syndrome), overestimation of gestational age.\n  - **Triple Screen Pattern for Down Syndrome (Trisomy 21)**: Decreased MSAFP, decreased unconjugated estriol (uE3), and **markedly elevated hCG**.\n- **Manual Test References**: `Alpha-Fetoprotein` (P.38), `Triple Marker Test` (P.585).\n\n---"
       },
       {
         "code": "10.3",
-        "title": "羊膜穿刺术产前诊断指征 (Amniocentesis Indications / ACOG Guidelines)",
-        "titleEn": "Amniocentesis Indications / ACOG Guidelines",
-        "titleZh": "羊膜穿刺术产前诊断指征",
-        "guideline": "ACOG 遗传学与产前诊断委员会意见。",
-        "relatedTests": "`Amniocentesis` (P.45)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACOG 遗传学与产前诊断委员会意见。\n- **循证穿刺指征 (The Evidence for Practice)**:\n  - 通常在妊娠 **15 至 18 周** 进行。明确指征包括：\n    1. **孕妇分娩时年龄 ≥ 35 岁（高龄孕妇）**；\n    2. 母体血清生化筛查（三联/四联筛查）或无创胎儿 DNA (NIPT) 提示染色体非整倍体高危；\n    3. 既往分娩过染色体异常或神经管畸形患儿；\n    4. 夫妇一方证实为平衡易位或结构性染色体异常携带者；\n    5. 超声发现胎儿重大解剖畸形；\n    6. 胎儿宫内感染病原学评估（弓形虫、CMV）。\n  - **胎儿肺成熟度评估指标 (妊娠晚期羊水分析)**:\n    - **卵磷脂/鞘磷脂比值 (L/S Ratio)**: **≥ 2.0**（糖尿病孕妇需 ≥ 2.5）提示胎儿肺脏成熟，新生儿呼吸窘迫综合征 (RDS) 发生率极低；\n    - **磷脂酰甘油 (Phosphatidylglycerol, PG)**: 阳性出现强力保证肺成熟。\n- **原书对应项目**: `Amniocentesis` (P.45)。\n\n---"
+        "title": "Amniocentesis Indications (ACOG Guidelines)",
+        "titleEn": "Amniocentesis Indications (ACOG Guidelines)",
+        "guideline": "ACOG Practice Bulletin on Invasive Prenatal Diagnostic Testing.",
+        "relatedTests": "`Amniocentesis` (P.45).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: ACOG Practice Bulletin on Invasive Prenatal Diagnostic Testing.\n- **Diagnostic Indications & Fetal Lung Maturity Indices**:\n  - Indications: Advanced maternal age (≥ 35 years at delivery), abnormal noninvasive aneuploidy screening, family history of genetic disorders, assessment of fetal infection.\n  - **Fetal Lung Maturity (Late Pregnancy Amniotic Fluid)**:\n    - **Lecithin/Sphingomyelin (L/S) Ratio**: L/S ratio **≥ 2.0** (≥ 2.5 in diabetic mothers) confirms fetal lung maturity and minimal risk of Neonatal Respiratory Distress Syndrome (RDS);\n    - **Phosphatidylglycerol (PG)**: Presence of PG confirms mature pulmonary surfactant production.\n- **Manual Test References**: `Amniocentesis` (P.45).\n\n---"
       },
       {
         "code": "10.4",
-        "title": "宫颈癌筛查指南 (Cervical Cancer Screening / ACOG & ACS Guidelines)",
-        "titleEn": "Cervical Cancer Screening / ACOG & ACS Guidelines",
-        "titleZh": "宫颈癌筛查指南",
-        "guideline": "ACOG / ACS / USPSTF 宫颈癌筛查指南。",
-        "relatedTests": "`Papanicolaou Smear (Pap Smear)` (P.430), `Colposcopy` (P.189), `Human Papillomavirus DNA Testing` (P.430)。",
-        "content": "- **权威诊断标准 / 指南来源**: ACOG / ACS / USPSTF 宫颈癌筛查指南。\n- **常规人群分年龄筛查标准**:\n  - **年龄 < 21 岁**: **禁止筛查**（无论有无性生活史，青少年 HPV 感染率高且绝大多数可自愈，过度筛查带来宫颈物理创伤）；\n  - **年龄 21 – 29 岁**: 仅行**宫颈细胞学检查 (Pap Smear 液基薄层细胞学)**，每 **3 年** 一次；**不推荐**常规进行高危型 HPV 病毒检测；\n  - **年龄 30 – 65 岁**:\n    - **首选推荐联合筛查**: 宫颈细胞学 + 高危型 HPV DNA 联合检测 (Co-testing)，每 **5 年** 一次；\n    - 备选方案: 仅行宫颈细胞学检查，每 **3 年** 一次；\n  - **年龄 > 65 岁**: 若既往筛查充分阴性（过去10年内连续3次细胞学阴性或连续2次联合阴性，最近一次在5年内），**终止筛查**；\n  - **全子宫切除术后**: 因良性疾病切除子宫且无 CIN 2/3 史者，**彻底终止筛查**。\n- **原书对应项目**: `Papanicolaou Smear (Pap Smear)` (P.430), `Colposcopy` (P.189), `Human Papillomavirus DNA Testing` (P.430)。\n\n---"
+        "title": "Cervical Cancer Screening (ACOG & USPSTF Guidelines)",
+        "titleEn": "Cervical Cancer Screening (ACOG & USPSTF Guidelines)",
+        "guideline": "USPSTF & ACOG Cervical Cancer Screening Guidelines.",
+        "relatedTests": "`Papanicolaou Smear` (P.455), `Human Papillomavirus Test` (P.334).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: USPSTF & ACOG Cervical Cancer Screening Guidelines.\n- **Screening Schedule for Average-Risk Women**:\n  - **Age < 21**: Screening not recommended regardless of sexual activity;\n  - **Age 21–29**: Cervical cytology (Pap smear) alone every 3 years (HPV co-testing not recommended);\n  - **Age 30–65**: Cervical cytology alone every 3 years, OR high-risk HPV (hrHPV) alone every 5 years, OR **hrHPV co-testing with cytology every 5 years** (preferred);\n  - **Age > 65**: Discontinue screening if adequate prior negative screening (3 consecutive negative Pap tests or 2 negative co-tests within past 10 years).\n- **Manual Test References**: `Papanicolaou Smear` (P.455), `Human Papillomavirus Test` (P.334).\n\n---"
       }
     ]
   },
   {
     "systemId": 11,
-    "systemTitle": "十一、儿科与遗传代谢疾病 (Pediatrics & Inborn Errors of Metabolism)",
+    "systemTitle": "Pediatrics & Inborn Errors of Metabolism",
     "systemEn": "Pediatrics & Inborn Errors of Metabolism",
-    "systemZh": "儿科与遗传代谢疾病",
     "diseases": [
       {
         "code": "11.1",
-        "title": "苯丙酮尿症新生儿筛查 (Phenylketonuria, PKU Screening / AAFP Guidelines)",
-        "titleEn": "Phenylketonuria, PKU Screening / AAFP Guidelines",
-        "titleZh": "苯丙酮尿症新生儿筛查",
-        "guideline": "美国儿科学会 (AAP) 与美国家庭医师学会 (AAFP) 强力推荐。",
-        "relatedTests": "`Phenylketonuria Test / Guthrie Test` (P.446)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国儿科学会 (AAP) 与美国家庭医师学会 (AAFP) 强力推荐。\n- **筛查策略与生化诊断截断值**:\n  - **采血时机**: 必须在**新生儿足量摄入母乳或配方奶蛋白饮食至少 24–48 小时之后**进行足跟采血滤纸吸附法（Guthrie 细菌生长抑制试验或串联质谱 Tandem Mass Spectrometry）；出生后立即采血假阴性率极高。\n  - **血清生化确诊标准**:\n    - **血浆苯丙氨酸 (Plasma Phenylalanine) 持续浓度 > 20 mg/dL (1200 umol/L)**；\n    - 同时伴随血酪氨酸 (Tyrosine) 浓度减低；\n    - 必须进一步测定四氢生物蝶呤 (BH4) 辅酶代谢产物以排除 BH4 缺乏型高苯丙氨酸血症。\n- **原书对应项目**: `Phenylketonuria Test / Guthrie Test` (P.446)。\n\n---"
+        "title": "Phenylketonuria (PKU) Newborn Screening (AAFP Guidelines)",
+        "titleEn": "Phenylketonuria (PKU) Newborn Screening (AAFP Guidelines)",
+        "guideline": "AAFP & AAP Newborn Screening Guidelines.",
+        "relatedTests": "`Phenylalanine, Blood` (P.466).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: AAFP & AAP Newborn Screening Guidelines.\n- **Screening Protocol & Diagnostic Cutoffs**:\n  - **Guthrie Bacterial Inhibition Assay / Tandem Mass Spectrometry (MS/MS)** on heel-prick blood spot collected after 24–48 hours of age following protein/milk ingestion.\n  - **Diagnostic Confirmation**: Persistent plasma phenylalanine **> 20 mg/dL (1,200 umol/L)** with normal or low plasma tyrosine, resulting from phenylalanine hydroxylase (PAH) deficiency or tetrahydrobiopterin (BH4) cofactor deficiency.\n- **Manual Test References**: `Phenylalanine, Blood` (P.466).\n\n---"
       },
       {
         "code": "11.2",
-        "title": "儿童性虐待法医医学检验评估 (Evaluation of Suspected Sexual Abuse in Children / AAP Criteria)",
-        "titleEn": "Evaluation of Suspected Sexual Abuse in Children / AAP Criteria",
-        "titleZh": "儿童性虐待法医医学检验评估",
-        "guideline": "美国儿科学会 (AAP) 疑似儿童性虐待临床法医评估指南。",
-        "relatedTests": "`Acid Phosphatase` (P.25), `Chlamydia Culture` (P.174), `Genital Culture` (P.296)。",
-        "content": "- **权威诊断标准 / 指南来源**: 美国儿科学会 (AAP) 疑似儿童性虐待临床法医评估指南。\n- **客观法医实验室证据判定标准 (The Evidence for Practice)**:\n  - 阴道口、肛周黏膜损伤及感染微生物学证据是法医评估的核心。\n  - **酸性磷酸酶 (Acid Phosphatase, ACP / PAP) 活性**:\n    - 人类精液中含有极高浓度的酸性磷酸酶。\n    - **判定规则**: 在儿童阴道拭子、肛周拭子或衣物斑迹提取物中检出**异常高浓度的酸性磷酸酶**，AAP 指南明确将其作为向法定儿童保护机构（Child Protective Services）举报疑似性虐待的核心客观法医标准之一。\n  - **病原体确诊证据**: 婴幼儿生殖道分离出淋球菌 (N. gonorrhoeae) 或沙眼衣原体（排除围产期垂直传播）。\n- **原书对应项目**: `Acid Phosphatase` (P.25), `Chlamydia Culture` (P.174), `Genital Culture` (P.296)。\n\n---\n\n## 结语与 USMLE 复习方法建议\n\n1. **实验室指标与病理生理机制联动**: 在 USMLE 题目中，单纯死记正常参考值意义有限，重点在于理解**反常升降背后的代偿与失代偿机制**（如：高血钙背景下出现“正常高限”的 PTH 是原发性甲旁亢的标志；严重的酸中毒呼吸代偿公式 Winter's Formula 等）。\n2. **结合“循证实践指南 (The Evidence for Practice)”解题**: 本书中强调的循证指南（如他汀类转氨酶监测截断值 > 3× ULN；腹主动脉瘤男性吸烟者 65–75 岁单次超声筛查；D-二聚体在低临床概率下的排除价值；宫颈癌 < 21 岁禁止筛查等）直接对应 USMLE Step 2 CK 及 Step 3 的核心“下一步最佳临床决策 (Next Best Step in Management)”考点。\n3. **查阅全书 359 项检测详情**: 请参阅同文件夹下的另一记录文件 [01_Laboratory_Tests_Manual.md](file:///D:/Github/USMLE/Lab/01_Laboratory_Tests_Manual.md)。"
+        "title": "Child Sexual Abuse Forensic Evaluation (AAP Guidelines)",
+        "titleEn": "Child Sexual Abuse Forensic Evaluation (AAP Guidelines)",
+        "guideline": "AAP Committee on Child Abuse and Neglect Practice Guidelines.",
+        "relatedTests": "`Gonorrhea Culture` (P.290), `Chlamydia Test` (P.185), `Vaginal Smear` (P.598).",
+        "content": "- **Authoritative Diagnostic Criteria & Guideline Source**: AAP Committee on Child Abuse and Neglect Practice Guidelines.\n- **Diagnostic & Microbiologic Confirmation**:\n  - Isolation of **Neisseria gonorrhoeae** by culture, or **Chlamydia trachomatis** by verified NAAT, or positive serology for **Treponema pallidum (Syphilis)** or **HIV** in a prepubertal child (beyond neonatal transmission period) constitutes definitive medical evidence of sexual contact and mandated reporting.\n- **Manual Test References**: `Gonorrhea Culture` (P.290), `Chlamydia Test` (P.185), `Vaginal Smear` (P.598)."
       }
     ]
   }

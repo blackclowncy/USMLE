@@ -7980,7 +7980,7 @@ tion [MCHC]), page 491
 
 #### 🧪 正常参考范围 (Normal Values)
 
-- 无可见异常 / 阴性 (Negative for disease / pathology; Normal anatomical appearance)
+- Negative for disease / pathology; Normal anatomical appearance
 
 #### 📊 异常结果临床意义与解释 (Possible Meanings of Abnormal Values)
 
@@ -9547,7 +9547,7 @@ with DIC are:
 
 #### 🧪 正常参考范围 (Normal Values)
 
-- 无可见异常 / 阴性 (Negative for disease / pathology; Normal anatomical appearance)
+- Negative for disease / pathology; Normal anatomical appearance
 
 #### 📊 异常结果临床意义与解释 (Possible Meanings of Abnormal Values)
 

@@ -2595,7 +2595,7 @@
               <div class="lab-inc-box p-3 rounded-2xl neu-groove-sm bg-[#dfeae3]/60 border border-emerald-500/20 flex flex-col gap-1.5 flex-1">
                 <div class="flex items-center gap-1.5 text-accentSuccess font-bold text-[11.5px]">
                   <span class="material-symbols-outlined text-[16px]">arrow_upward</span>
-                  <span>Increased / Positive (升高意义)</span>
+                  <span>Increased / Positive</span>
                 </div>
                 <ul class="text-[11.5px] text-[#242930] space-y-0.5 list-disc list-inside leading-relaxed">
                   ${t.increased.map(x => `<li>${escapeHtml(x)}</li>`).join('')}
@@ -2610,7 +2610,7 @@
               <div class="lab-dec-box p-3 rounded-2xl neu-groove-sm bg-[#f4e2e2]/60 border border-rose-400/20 flex flex-col gap-1.5 flex-1">
                 <div class="flex items-center gap-1.5 text-accentDanger font-bold text-[11.5px]">
                   <span class="material-symbols-outlined text-[16px]">arrow_downward</span>
-                  <span>Decreased / Negative (降低意义)</span>
+                  <span>Decreased / Negative</span>
                 </div>
                 <ul class="text-[11.5px] text-[#242930] space-y-0.5 list-disc list-inside leading-relaxed">
                   ${t.decreased.map(x => `<li>${escapeHtml(x)}</li>`).join('')}
@@ -2693,7 +2693,7 @@
             <div class="lab-normal-box p-3 rounded-2xl neu-groove-sm bg-[#e8e3da] border border-white/60 flex flex-col gap-1">
               <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-primary flex items-center gap-1">
                 <span class="material-symbols-outlined text-[14px]">fact_check</span>
-                <span>Normal Reference Range (正常参考范围)</span>
+                <span>Normal Reference Range</span>
               </span>
               <div class="font-mono text-[12px] font-semibold text-[#181d24] leading-relaxed">
                 ${normalFormatted || '<span class="text-[#787266] italic">See clinical diagnostic evaluation</span>'}
@@ -2731,12 +2731,28 @@
             </div>
           `;
 
-          // Bind Accordion Click
+          // Bind Accordion Click In-Place (Instant expansion, zero scroll jump)
           const toggleBtn = card.querySelector('.btn-toggle-test-detail');
-          if (toggleBtn) {
-            toggleBtn.addEventListener('click', () => {
-              expandedTestCards[t.id] = !expandedTestCards[t.id];
-              renderTestList();
+          const detailEl = card.querySelector('.lab-card-detail');
+          if (toggleBtn && detailEl) {
+            toggleBtn.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const willExpand = detailEl.classList.contains('hidden');
+              expandedTestCards[t.id] = willExpand;
+              const iconSpan = toggleBtn.querySelector('span.material-symbols-outlined');
+              const textSpan = toggleBtn.querySelector('span:last-child');
+              if (willExpand) {
+                detailEl.classList.remove('hidden');
+                detailEl.classList.add('flex');
+                if (iconSpan) iconSpan.textContent = 'expand_less';
+                if (textSpan) textSpan.innerHTML = 'Hide Clinical Details &amp; Alerts';
+              } else {
+                detailEl.classList.add('hidden');
+                detailEl.classList.remove('flex');
+                if (iconSpan) iconSpan.textContent = 'expand_more';
+                if (textSpan) textSpan.innerHTML = 'View Test Description &amp; Clinical Pearls';
+              }
             });
           }
 
@@ -2801,8 +2817,7 @@
             sysBanner.innerHTML = `
               <div class="flex items-center gap-2 font-display font-bold text-[13px] text-[#181d24]">
                 <span class="w-6 h-6 rounded-lg neu-extruded-xs flex items-center justify-center font-mono text-[11px] text-primary font-bold">${sys.systemId}</span>
-                <span>${escapeHtml(sys.systemEn)}</span>
-                <span class="text-[11.5px] text-[#6b665c] font-normal">(${escapeHtml(sys.systemZh)})</span>
+                <span>${escapeHtml(sys.systemEn || sys.systemTitle)}</span>
               </div>
               <span class="font-mono text-[10px] px-2 py-0.5 rounded-full neu-extruded-xs text-primary font-bold">${sys.diseases.length} Criteria</span>
             `;

@@ -166,7 +166,7 @@ def parse_disease_criteria(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    system_blocks = re.split(r'\n##\s+([一二三四五六七八九十]+[、\.]\s*.+)\n', content)
+    system_blocks = re.split(r'\n##\s+(\d+\.\s*.+)\n', content)
     num_systems = (len(system_blocks) - 1) // 2
 
     systems_data = []
@@ -175,12 +175,10 @@ def parse_disease_criteria(filepath):
         raw_sys_title = system_blocks[2*i - 1].strip()
         sys_body = system_blocks[2*i]
 
-        # Clean system title e.g. "一、心血管系统疾病 (Cardiovascular Disorders)"
-        m_en = re.search(r'\((.+)\)', raw_sys_title)
-        sys_en = m_en.group(1).strip() if m_en else raw_sys_title
-        sys_zh = raw_sys_title.split('(')[0].strip().lstrip('一二三四五六七八九十、. ')
+        # Clean system title e.g. "1. Cardiovascular Disorders"
+        sys_en = re.sub(r'^\d+\.\s*', '', raw_sys_title).strip()
 
-        # Split diseases in this system: e.g. '### 1.1 急性冠脉综合征与急性心肌梗死 (Acute Coronary Syndrome & Acute Myocardial Infarction)'
+        # Split diseases in this system: e.g. '### 1.1 Acute Coronary Syndrome & Acute Myocardial Infarction'
         d_chunks = re.split(r'\n###\s+(\d+\.\d+)\s+', '\n' + sys_body)
         num_diseases = (len(d_chunks) - 1) // 2
         diseases = []
@@ -191,31 +189,24 @@ def parse_disease_criteria(filepath):
             lines = d_body.split('\n')
             d_full_title = lines[0].strip()
 
-            # Split English and Chinese name
-            m_d_en = re.search(r'\((.+)\)', d_full_title)
-            d_en = m_d_en.group(1).strip() if m_d_en else d_full_title
-            d_zh = d_full_title.split('(')[0].strip()
-
             # Extract fields
             guideline = ""
-            m_guide = re.search(r'-\s+\*\*权威诊断标准\s*/\s*指南来源\*\*:\s*(.+)', d_body)
+            m_guide = re.search(r'-\s+\*\*Authoritative Diagnostic Criteria & Guideline Source\*\*:\s*(.+)', d_body)
             if m_guide:
                 guideline = m_guide.group(1).strip()
 
             related_tests = ""
-            m_rel = re.search(r'-\s+\*\*原书对应项目\*\*:\s*(.+)', d_body)
+            m_rel = re.search(r'-\s+\*\*Manual Test References\*\*:\s*(.+)', d_body)
             if m_rel:
                 related_tests = m_rel.group(1).strip()
 
-            # The rest of d_body contains criteria, cutoffs, etc.
             # Clean up the body lines
             body_content = "\n".join(lines[1:]).strip()
 
             diseases.append({
                 "code": d_code,
                 "title": d_full_title,
-                "titleEn": d_en,
-                "titleZh": d_zh,
+                "titleEn": d_full_title,
                 "guideline": guideline,
                 "relatedTests": related_tests,
                 "content": body_content
@@ -223,9 +214,8 @@ def parse_disease_criteria(filepath):
 
         systems_data.append({
             "systemId": i,
-            "systemTitle": raw_sys_title,
+            "systemTitle": sys_en,
             "systemEn": sys_en,
-            "systemZh": sys_zh,
             "diseases": diseases
         })
 
