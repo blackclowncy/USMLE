@@ -174,6 +174,211 @@
     html.dark .exp-section-title, html.dark .exp-mech-title { color: #f1f5f9; border-color: rgba(255, 255, 255, 0.1); }
     html.dark .exp-edu-card { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.25); box-shadow: none; }
     html.dark .exp-edu-text { color: #a7f3d0; }
+
+    /* Custom Tactile Dropdowns */
+    .tactile-dropdown-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .tactile-dropdown-trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.75rem;
+      background-color: #eae6de;
+      box-shadow: 2px 2px 4px #cfc8ba, -2px -2px 4px #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #181d24;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.15s ease-in-out;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .tactile-dropdown-trigger:hover {
+      color: #1d638c;
+      border-color: rgba(29, 99, 140, 0.3);
+      box-shadow: 3px 3px 6px #cfc8ba, -3px -3px 6px #ffffff;
+    }
+    .tactile-dropdown-trigger:active,
+    .tactile-dropdown-trigger.is-open {
+      box-shadow: inset 1.5px 1.5px 3px #cfc8ba, inset -1.5px -1.5px 3px #ffffff;
+      border-color: rgba(29, 99, 140, 0.4);
+    }
+    .tactile-dropdown-panel {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      z-index: 60;
+      min-width: 240px;
+      border-radius: 1rem;
+      background-color: #eae6de;
+      box-shadow: 6px 6px 16px #cfc8ba, -6px -6px 16px #ffffff, 0 12px 28px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      animation: dropdownFadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes dropdownFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .tactile-dropdown-search-box {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.625rem;
+      border-radius: 0.75rem;
+      box-shadow: inset 1.5px 1.5px 3px #cfc8ba, inset -1.5px -1.5px 3px #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(228, 223, 214, 0.5);
+    }
+    .tactile-dropdown-list {
+      max-height: 260px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding-right: 0.25rem;
+      scrollbar-width: thin;
+      scrollbar-color: #cfc8ba transparent;
+    }
+    .tactile-dropdown-list::-webkit-scrollbar {
+      width: 5px;
+    }
+    .tactile-dropdown-list::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .tactile-dropdown-list::-webkit-scrollbar-thumb {
+      background: #cfc8ba;
+      border-radius: 9999px;
+    }
+    .tactile-dropdown-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.45rem 0.625rem;
+      border-radius: 0.625rem;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #2c3138;
+      cursor: pointer;
+      transition: all 0.12s ease;
+      border: 1px solid transparent;
+      text-align: left;
+      background: transparent;
+      width: 100%;
+    }
+    .tactile-dropdown-item:hover:not(.is-disabled) {
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #1d638c;
+      transform: translateX(2px);
+    }
+    .tactile-dropdown-item.is-active {
+      background-color: #dfd8cb;
+      color: #1d638c;
+      font-weight: 700;
+      box-shadow: inset 1px 1px 2px #cfc8ba, inset -1px -1px 2px #ffffff;
+      border-color: rgba(29, 99, 140, 0.25);
+    }
+    .tactile-dropdown-item.is-disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      pointer-events: none;
+      color: #8a8477;
+    }
+    .tactile-dropdown-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.375rem;
+      box-shadow: inset 1px 1px 2px #cfc8ba, inset -1px -1px 2px #ffffff;
+      color: #1d638c;
+      background: rgba(230, 225, 216, 0.5);
+      flex-shrink: 0;
+    }
+
+    /* Dark Mode Overrides for Custom Dropdowns & Timer Menu */
+    html.dark .tactile-dropdown-trigger {
+      background-color: #1a1e24;
+      color: #f1f5f9;
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 2px 2px 4px #0c0e12, -2px -2px 4px #262c36;
+    }
+    html.dark .tactile-dropdown-trigger:hover {
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 3px 3px 6px #0c0e12, -3px -3px 6px #262c36;
+    }
+    html.dark .tactile-dropdown-trigger:active,
+    html.dark .tactile-dropdown-trigger.is-open {
+      box-shadow: inset 1.5px 1.5px 3px #0c0e12, inset -1.5px -1.5px 3px #262c36;
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    html.dark .tactile-dropdown-panel {
+      background-color: #1a1e24;
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 6px 6px 16px #0c0e12, -6px -6px 16px #262c36, 0 16px 36px rgba(0, 0, 0, 0.6);
+    }
+    html.dark .tactile-dropdown-search-box {
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: inset 1.5px 1.5px 3px #0c0e12, inset -1.5px -1.5px 3px #262c36;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+    html.dark .tactile-dropdown-list::-webkit-scrollbar-thumb {
+      background: #333c4a;
+    }
+    html.dark .tactile-dropdown-item {
+      color: #cbd5e1;
+    }
+    html.dark .tactile-dropdown-item:hover:not(.is-disabled) {
+      background-color: rgba(255, 255, 255, 0.06);
+      color: #38bdf8;
+    }
+    html.dark .tactile-dropdown-item.is-active {
+      background-color: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+      box-shadow: inset 1px 1px 2px #0c0e12, inset -1px -1px 2px #262c36;
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+    html.dark .tactile-dropdown-badge {
+      background: rgba(255, 255, 255, 0.06);
+      color: #38bdf8;
+      box-shadow: inset 1px 1px 2px #0c0e12, inset -1px -1px 2px #262c36;
+    }
+    html.dark #timer-dropdown {
+      background-color: #1a1e24 !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 6px 6px 16px #0c0e12, -6px -6px 16px #262c36, 0 16px 36px rgba(0, 0, 0, 0.6) !important;
+    }
+    html.dark #timer-dropdown .border-\[\#ded7ca\] {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    html.dark #timer-dropdown .text-\[\#181d24\] {
+      color: #f1f5f9 !important;
+    }
+    html.dark #timer-dropdown .text-\[\#6d675b\] {
+      color: #94a3b8 !important;
+    }
+    html.dark #timer-dropdown .text-\[\#3a352d\] {
+      color: #cbd5e1 !important;
+    }
   
     /* Dark Mode Overrides for Normal Labs Modal */
     html.dark #labs-modal .bg-\[\#eae6de\], 
@@ -413,7 +618,7 @@
 </div>
 </div>
 <!-- Live Ribbon with Discipline Filter Pills & Quick Toggles -->
-<div class="bg-[#e4dfd6]/90 border-t border-white/60 px-6 py-2.5"><div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-4 text-[12px]"><div class="flex flex-wrap items-center gap-3.5"><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40"><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary neu-pill-active" data-step="1">USMLE Step 1</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="2">USMLE Step 2 CK</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="3">USMLE Step 3</button></div><div class="flex items-center gap-1.5 pl-1"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Discipline:</span><div class="relative flex items-center"><select id="discipline-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="Pathology" selected="">Pathology (2,100 Qs)</option><option value="Pharmacology">Pharmacology (1,350 Qs)</option><option value="Physiology" disabled="">Physiology [Coming Soon]</option><option value="Anatomy &amp; Embryology" disabled="">Anatomy &amp; Embryology [Coming Soon]</option><option value="Microbiology &amp; Immunology" disabled="">Microbiology &amp; Immunology [Coming Soon]</option><option value="Biochemistry">Biochemistry &amp; Genetics (3,450 Qs)</option><option value="Behavioral Science &amp; Psychiatry" disabled="">Behavioral Science &amp; Psychiatry [Coming Soon]</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="flex items-center gap-1.5"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Chapter / System:</span><div class="relative flex items-center"><select id="chapter-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="all" selected="">All Chapters</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-xl neu-groove-sm text-[11px] font-medium text-[#656054] border border-white/40"><span class="text-[#8a8477] font-semibold uppercase text-[10px] font-mono">Active:</span><span class="font-bold text-primary">Step 1</span><span class="text-[#9c9689]">&gt;</span><span class="font-bold text-[#181d24]" id="active-discipline-breadcrumb">Pathology</span><span class="text-[#9c9689]">&gt;</span><span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">All Active Chapters</span></div></div><div class="flex items-center gap-3 shrink-0"><button class="flex items-center gap-2 px-4 py-1.5 rounded-full neu-btn text-[11.5px] font-bold text-amber-700 hover:text-amber-800 transition-all border border-white/60" id="toggle-flagged-only-btn"><span class="material-symbols-outlined text-[16px] fill-current">bookmark</span><span class="">Only Marked (<span id="top-flag-count" class="">4</span>)</span></button><div class="font-mono text-[11.5px] text-[#6b665c] font-medium px-3 py-1 rounded-xl neu-groove-sm">Answered: <strong class="text-primary font-bold" id="top-answered-count">0/0</strong></div></div></div></div>
+<div class="bg-[#e4dfd6]/90 border-t border-white/60 px-6 py-2.5"><div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-4 text-[12px]"><div class="flex flex-wrap items-center gap-3.5"><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40"><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary neu-pill-active" data-step="1">USMLE Step 1</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="2">USMLE Step 2 CK</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="3">USMLE Step 3</button></div><div class="flex items-center gap-1.5 pl-1"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Discipline:</span><div class="custom-tactile-dropdown relative flex items-center" id="custom-discipline-container"><select id="discipline-select-dropdown" class="hidden"><option value="Pathology" selected="">Pathology (2,100 Qs)</option><option value="Pharmacology">Pharmacology (1,350 Qs)</option><option value="Physiology" disabled="">Physiology [Coming Soon]</option><option value="Anatomy &amp; Embryology" disabled="">Anatomy &amp; Embryology [Coming Soon]</option><option value="Microbiology &amp; Immunology" disabled="">Microbiology &amp; Immunology [Coming Soon]</option><option value="Biochemistry">Biochemistry &amp; Genetics (3,450 Qs)</option><option value="Behavioral Science &amp; Psychiatry" disabled="">Behavioral Science &amp; Psychiatry [Coming Soon]</option></select><button type="button" id="discipline-dropdown-btn" class="tactile-dropdown-trigger" title="Select USMLE Discipline"><span class="material-symbols-outlined text-[16px] text-primary shrink-0" id="discipline-dropdown-icon">biomedical</span><span id="discipline-dropdown-label" class="truncate max-w-[125px] sm:max-w-[160px]">Pathology</span><span id="discipline-dropdown-badge" class="tactile-dropdown-badge">2,100 Qs</span><span class="material-symbols-outlined text-[16px] text-[#6d675b] dark:text-[#94a3b8] transition-transform duration-200 dropdown-chevron shrink-0" id="discipline-dropdown-chevron">expand_more</span></button><div id="discipline-dropdown-panel" class="tactile-dropdown-panel hidden min-w-[260px]"><div id="discipline-dropdown-items" class="tactile-dropdown-list"></div></div></div></div><div class="flex items-center gap-1.5"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Chapter / System:</span><div class="custom-tactile-dropdown relative flex items-center" id="custom-chapter-container"><select id="chapter-select-dropdown" class="hidden"><option value="all" selected="">All Chapters</option></select><button type="button" id="chapter-dropdown-btn" class="tactile-dropdown-trigger" title="Select Chapter / System"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">auto_stories</span><span id="chapter-dropdown-label" class="truncate max-w-[130px] sm:max-w-[180px] md:max-w-[220px]">All Active Chapters</span><span id="chapter-dropdown-badge" class="tactile-dropdown-badge">2,100 Qs</span><span class="material-symbols-outlined text-[16px] text-[#6d675b] dark:text-[#94a3b8] transition-transform duration-200 dropdown-chevron shrink-0" id="chapter-dropdown-chevron">expand_more</span></button><div id="chapter-dropdown-panel" class="tactile-dropdown-panel hidden min-w-[290px] sm:min-w-[340px] max-w-[420px]"><div class="tactile-dropdown-search-box"><span class="material-symbols-outlined text-[#7f7a70] text-[15px]">search</span><input type="text" id="chapter-dropdown-search" class="bg-transparent border-0 p-0 text-[11.5px] text-[#181d24] dark:text-white placeholder-[#8e887c] focus:ring-0 w-full font-medium outline-none" placeholder="Filter chapters (e.g. Ch02, DNA, lipid)..." autocomplete="off"></div><div id="chapter-dropdown-items" class="tactile-dropdown-list max-h-72"></div></div></div></div><div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-xl neu-groove-sm text-[11px] font-medium text-[#656054] border border-white/40"><span class="text-[#8a8477] font-semibold uppercase text-[10px] font-mono">Active:</span><span class="font-bold text-primary">Step 1</span><span class="text-[#9c9689]">&gt;</span><span class="font-bold text-[#181d24]" id="active-discipline-breadcrumb">Pathology</span><span class="text-[#9c9689]">&gt;</span><span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">All Active Chapters</span></div></div><div class="flex items-center gap-3 shrink-0"><button class="flex items-center gap-2 px-4 py-1.5 rounded-full neu-btn text-[11.5px] font-bold text-amber-700 hover:text-amber-800 transition-all border border-white/60" id="toggle-flagged-only-btn"><span class="material-symbols-outlined text-[16px] fill-current">bookmark</span><span class="">Only Marked (<span id="top-flag-count" class="">4</span>)</span></button><div class="font-mono text-[11.5px] text-[#6b665c] font-medium px-3 py-1 rounded-xl neu-groove-sm">Answered: <strong class="text-primary font-bold" id="top-answered-count">0/0</strong></div></div></div></div>
 </header>
 <!-- Main Workspace -->
 <main class="max-w-[1600px] mx-auto px-6 py-4 w-full flex-1 min-h-0 lg:overflow-hidden flex flex-col">
@@ -436,11 +641,20 @@
 <div class="flex items-center justify-between gap-2 p-1.5 rounded-2xl neu-groove-sm border border-white/40">
   <div class="flex items-center gap-1.5 pl-2 flex-1 min-w-0">
     <span class="text-[#756f64] font-bold text-[10.5px] uppercase font-mono tracking-wider shrink-0">Range:</span>
-    <div class="relative flex items-center flex-1 min-w-0">
-      <select id="module-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-2.5 py-1.5 pr-6 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm w-full truncate">
+    <div class="custom-tactile-dropdown relative flex items-center flex-1 min-w-0" id="custom-module-container">
+      <select id="module-select-dropdown" class="hidden">
         <!-- Dynamically injected: e.g. Q01 - Q20, Q21 - Q40... -->
       </select>
-      <span class="material-symbols-outlined text-[15px] text-[#6d675b] absolute right-1.5 pointer-events-none">expand_more</span>
+      <button type="button" id="module-dropdown-btn" class="tactile-dropdown-trigger w-full" title="Select Question Set Range">
+        <div class="flex items-center gap-1.5 min-w-0 truncate">
+          <span class="material-symbols-outlined text-[15px] text-primary shrink-0">format_list_numbered</span>
+          <span id="module-dropdown-label" class="truncate font-mono">Set 1: Q1 - Q20</span>
+        </div>
+        <span class="material-symbols-outlined text-[15px] text-[#6d675b] dark:text-[#94a3b8] transition-transform duration-200 dropdown-chevron shrink-0" id="module-dropdown-chevron">expand_more</span>
+      </button>
+      <div id="module-dropdown-panel" class="tactile-dropdown-panel hidden w-full min-w-[210px]">
+        <div id="module-dropdown-items" class="tactile-dropdown-list max-h-60"></div>
+      </div>
     </div>
   </div>
   <div class="flex items-center gap-1 shrink-0">
@@ -902,6 +1116,8 @@
           }
           chapterSelectDropdown.appendChild(opt);
         });
+
+        if (window.syncChapterDropdown) window.syncChapterDropdown();
       }
 
       if (chapterSelectDropdown) {
@@ -918,6 +1134,292 @@
       }
       if (activeDisciplineBreadcrumb) {
         activeDisciplineBreadcrumb.textContent = getDisciplineDisplayName(currentDiscipline);
+      }
+
+      // ==========================================
+      // Tactile Neumorphic Custom Dropdown System
+      // ==========================================
+      function setupTactileDropdowns() {
+        function closeAllDropdowns() {
+          document.querySelectorAll('.tactile-dropdown-panel').forEach(p => p.classList.add('hidden'));
+          document.querySelectorAll('.dropdown-chevron').forEach(c => c.classList.remove('rotate-180'));
+          document.querySelectorAll('.tactile-dropdown-trigger').forEach(b => b.classList.remove('is-open'));
+        }
+
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.custom-tactile-dropdown')) {
+            closeAllDropdowns();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            closeAllDropdowns();
+          }
+        });
+
+        // 1. Discipline Dropdown
+        const discSelect = document.getElementById('discipline-select-dropdown');
+        const discBtn = document.getElementById('discipline-dropdown-btn');
+        const discPanel = document.getElementById('discipline-dropdown-panel');
+        const discItemsContainer = document.getElementById('discipline-dropdown-items');
+        const discLabel = document.getElementById('discipline-dropdown-label');
+        const discBadge = document.getElementById('discipline-dropdown-badge');
+        const discIcon = document.getElementById('discipline-dropdown-icon');
+        const discChevron = document.getElementById('discipline-dropdown-chevron');
+
+        function getDiscMeta(discVal) {
+          if (discVal === 'Pathology') return { icon: 'biomedical', count: '2,100 Qs', title: 'Pathology' };
+          if (discVal === 'Pharmacology') return { icon: 'medication', count: '1,350 Qs', title: 'Pharmacology' };
+          if (discVal === 'Biochemistry') return { icon: 'genetics', count: '3,450 Qs', title: 'Biochemistry & Genetics' };
+          if (discVal.includes('Physiology')) return { icon: 'cardiology', count: 'Soon', title: 'Physiology' };
+          if (discVal.includes('Anatomy')) return { icon: 'accessibility_new', count: 'Soon', title: 'Anatomy & Embryology' };
+          if (discVal.includes('Microbiology')) return { icon: 'coronavirus', count: 'Soon', title: 'Microbiology & Immunology' };
+          if (discVal.includes('Behavioral')) return { icon: 'psychology', count: 'Soon', title: 'Behavioral Science' };
+          return { icon: 'school', count: '', title: discVal };
+        }
+
+        function syncDisciplineDropdown() {
+          if (!discSelect || !discItemsContainer) return;
+          discItemsContainer.innerHTML = '';
+          const currentVal = discSelect.value || currentDiscipline;
+          const currentMeta = getDiscMeta(currentVal);
+
+          if (discLabel) discLabel.textContent = currentMeta.title;
+          if (discBadge) discBadge.textContent = currentMeta.count;
+          if (discIcon) discIcon.textContent = currentMeta.icon;
+
+          Array.from(discSelect.options).forEach(opt => {
+            const val = opt.value;
+            const meta = getDiscMeta(val);
+            const isSelected = val === currentVal;
+            const isDisabled = opt.disabled;
+
+            const itemBtn = document.createElement('button');
+            itemBtn.type = 'button';
+            itemBtn.className = `tactile-dropdown-item ${isSelected ? 'is-active' : ''} ${isDisabled ? 'is-disabled' : ''}`;
+            itemBtn.innerHTML = `
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="material-symbols-outlined text-[17px] text-primary shrink-0">${meta.icon}</span>
+                <span class="truncate font-semibold text-[11.5px]">${meta.title}</span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                ${isDisabled ? '<span class="text-[9.5px] font-mono font-bold text-amber-700 dark:text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">Soon</span>' : `<span class="tactile-dropdown-badge">${meta.count}</span>`}
+                ${isSelected ? '<span class="material-symbols-outlined text-[15px] text-primary font-bold">check</span>' : ''}
+              </div>
+            `;
+
+            if (!isDisabled) {
+              itemBtn.addEventListener('click', (ev) => {
+                ev.stopPropagation();
+                discSelect.value = val;
+                selectDiscipline(val);
+                closeAllDropdowns();
+                syncDisciplineDropdown();
+              });
+            }
+            discItemsContainer.appendChild(itemBtn);
+          });
+        }
+
+        if (discBtn && discPanel) {
+          discBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = !discPanel.classList.contains('hidden');
+            closeAllDropdowns();
+            if (!isOpen) {
+              discPanel.classList.remove('hidden');
+              if (discChevron) discChevron.classList.add('rotate-180');
+              discBtn.classList.add('is-open');
+              syncDisciplineDropdown();
+            }
+          });
+        }
+
+        // 2. Chapter / System Dropdown
+        const chSelect = document.getElementById('chapter-select-dropdown');
+        const chBtn = document.getElementById('chapter-dropdown-btn');
+        const chPanel = document.getElementById('chapter-dropdown-panel');
+        const chItemsContainer = document.getElementById('chapter-dropdown-items');
+        const chLabel = document.getElementById('chapter-dropdown-label');
+        const chBadge = document.getElementById('chapter-dropdown-badge');
+        const chChevron = document.getElementById('chapter-dropdown-chevron');
+        const chSearchInput = document.getElementById('chapter-dropdown-search');
+
+        function syncChapterDropdown() {
+          if (!chSelect || !chItemsContainer) return;
+          chItemsContainer.innerHTML = '';
+          const currentVal = chSelect.value || activeChapter;
+
+          let selectedText = 'All Active Chapters';
+          let selectedBadge = '';
+          const selectedOpt = chSelect.querySelector(`option[value="${currentVal}"]`) || chSelect.options[0];
+          if (selectedOpt) {
+            const rawText = selectedOpt.textContent || '';
+            const matchCount = rawText.match(/\(([^)]+)\)/);
+            selectedBadge = matchCount ? matchCount[1] : '';
+            selectedText = rawText.replace(/\s*\([^)]+\)/, '').replace(/\[Coming Soon\]/, '').trim();
+          }
+
+          if (chLabel) chLabel.textContent = selectedText;
+          if (chBadge) {
+            chBadge.textContent = selectedBadge;
+            chBadge.style.display = selectedBadge ? 'inline-block' : 'none';
+          }
+
+          Array.from(chSelect.options).forEach(opt => {
+            const val = opt.value;
+            const isSelected = val === currentVal;
+            const isDisabled = opt.disabled;
+            const rawText = opt.textContent || '';
+            const matchCount = rawText.match(/\(([^)]+)\)/);
+            const countStr = matchCount ? matchCount[1] : (opt.disabled ? 'Soon' : '');
+            const titleStr = rawText.replace(/\s*\([^)]+\)/, '').replace(/\[Coming Soon\]/, '').trim();
+
+            const chNumMatch = titleStr.match(/^(Ch\d+)/i);
+            const chBadgeTag = chNumMatch ? chNumMatch[1] : (val === 'all' ? 'ALL' : 'CH');
+            const cleanTitle = titleStr.replace(/^(Ch\d+)\s*/i, '');
+
+            const itemBtn = document.createElement('button');
+            itemBtn.type = 'button';
+            itemBtn.className = `tactile-dropdown-item ${isSelected ? 'is-active' : ''} ${isDisabled ? 'is-disabled' : ''}`;
+            itemBtn.setAttribute('data-search-text', rawText.toLowerCase());
+            itemBtn.innerHTML = `
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded neu-groove-sm text-primary shrink-0">${chBadgeTag}</span>
+                <span class="truncate font-semibold text-[11.5px]">${cleanTitle}</span>
+              </div>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <span class="tactile-dropdown-badge">${countStr}</span>
+                ${isSelected ? '<span class="material-symbols-outlined text-[15px] text-primary font-bold">check</span>' : ''}
+              </div>
+            `;
+
+            if (!isDisabled) {
+              itemBtn.addEventListener('click', (ev) => {
+                ev.stopPropagation();
+                chSelect.value = val;
+                selectChapter(val);
+                closeAllDropdowns();
+                syncChapterDropdown();
+              });
+            }
+            chItemsContainer.appendChild(itemBtn);
+          });
+        }
+
+        function filterChapterItems(q) {
+          if (!chItemsContainer) return;
+          const items = chItemsContainer.querySelectorAll('.tactile-dropdown-item');
+          let visibleCount = 0;
+          items.forEach(item => {
+            const text = item.getAttribute('data-search-text') || '';
+            const match = !q || text.includes(q.toLowerCase());
+            item.style.display = match ? 'flex' : 'none';
+            if (match) visibleCount++;
+          });
+        }
+
+        if (chBtn && chPanel) {
+          chBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = !chPanel.classList.contains('hidden');
+            closeAllDropdowns();
+            if (!isOpen) {
+              chPanel.classList.remove('hidden');
+              if (chChevron) chChevron.classList.add('rotate-180');
+              chBtn.classList.add('is-open');
+              syncChapterDropdown();
+              if (chSearchInput) {
+                chSearchInput.value = '';
+                filterChapterItems('');
+                setTimeout(() => chSearchInput.focus(), 60);
+              }
+            }
+          });
+        }
+
+        if (chSearchInput) {
+          chSearchInput.addEventListener('input', (e) => {
+            filterChapterItems(e.target.value.trim());
+          });
+          chSearchInput.addEventListener('click', (e) => e.stopPropagation());
+        }
+
+        // 3. Module / Range Dropdown
+        const modSelect = document.getElementById('module-select-dropdown');
+        const modBtn = document.getElementById('module-dropdown-btn');
+        const modPanel = document.getElementById('module-dropdown-panel');
+        const modItemsContainer = document.getElementById('module-dropdown-items');
+        const modLabel = document.getElementById('module-dropdown-label');
+        const modChevron = document.getElementById('module-dropdown-chevron');
+
+        function syncModuleDropdown() {
+          if (!modSelect || !modItemsContainer) return;
+          modItemsContainer.innerHTML = '';
+          const currentVal = String(currentModuleIndex);
+
+          const selectedOpt = modSelect.querySelector(`option[value="${currentVal}"]`) || modSelect.options[0];
+          if (selectedOpt && modLabel) {
+            modLabel.textContent = selectedOpt.textContent;
+          }
+
+          Array.from(modSelect.options).forEach(opt => {
+            const val = opt.value;
+            const isSelected = String(val) === String(currentModuleIndex);
+            const text = opt.textContent || '';
+            const matchCount = text.match(/\(([^)]+)\)/);
+            const badgeCount = matchCount ? matchCount[1] : '';
+            const labelText = text.replace(/\s*\([^)]+\)/, '').trim();
+
+            const itemBtn = document.createElement('button');
+            itemBtn.type = 'button';
+            itemBtn.className = `tactile-dropdown-item ${isSelected ? 'is-active' : ''}`;
+            itemBtn.innerHTML = `
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="material-symbols-outlined text-[14px] text-primary shrink-0">tag</span>
+                <span class="truncate font-semibold text-[11.5px]">${labelText}</span>
+              </div>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <span class="tactile-dropdown-badge">${badgeCount}</span>
+                ${isSelected ? '<span class="material-symbols-outlined text-[15px] text-primary font-bold">check</span>' : ''}
+              </div>
+            `;
+
+            itemBtn.addEventListener('click', (ev) => {
+              ev.stopPropagation();
+              modSelect.value = val;
+              currentModuleIndex = parseInt(val, 10);
+              updateUI();
+              scrollQuestionsToTop();
+              closeAllDropdowns();
+              syncModuleDropdown();
+            });
+            modItemsContainer.appendChild(itemBtn);
+          });
+        }
+
+        if (modBtn && modPanel) {
+          modBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = !modPanel.classList.contains('hidden');
+            closeAllDropdowns();
+            if (!isOpen) {
+              modPanel.classList.remove('hidden');
+              if (modChevron) modChevron.classList.add('rotate-180');
+              modBtn.classList.add('is-open');
+              syncModuleDropdown();
+            }
+          });
+        }
+
+        window.syncDisciplineDropdown = syncDisciplineDropdown;
+        window.syncChapterDropdown = syncChapterDropdown;
+        window.syncModuleDropdown = syncModuleDropdown;
+
+        syncDisciplineDropdown();
+        syncChapterDropdown();
+        syncModuleDropdown();
       }
 
       // 5. Filter Questions Logic
@@ -957,6 +1459,7 @@
         currentModuleIndex = 0;
         initChapterDropdown();
         selectChapter(activeChapter);
+        if (window.syncDisciplineDropdown) window.syncDisciplineDropdown();
       };
 
       // 7. Chapter Selection
@@ -980,6 +1483,7 @@
 
         updateUI();
         scrollQuestionsToTop();
+        if (window.syncChapterDropdown) window.syncChapterDropdown();
       };
 
       // 7. Scroll helper
@@ -1055,6 +1559,7 @@
         if (navPrevSetBtn) navPrevSetBtn.disabled = (currentModuleIndex === 0);
         if (navNextSetBtn) navNextSetBtn.disabled = (currentModuleIndex >= totalModules - 1);
         if (navTotalLabel) navTotalLabel.textContent = `${totalQuestions} Questions`;
+        if (window.syncModuleDropdown) window.syncModuleDropdown();
       }
 
       // 10. Render 20-Button Navigator Grid
@@ -1519,8 +2024,10 @@
         navPrevSetBtn.addEventListener('click', () => {
           if (currentModuleIndex > 0) {
             currentModuleIndex--;
+            if (moduleSelectDropdown) moduleSelectDropdown.value = currentModuleIndex;
             updateUI();
             scrollQuestionsToTop();
+            if (window.syncModuleDropdown) window.syncModuleDropdown();
           }
         });
       }
@@ -1531,8 +2038,10 @@
           const totalModules = Math.ceil(filtered.length / PAGE_SIZE) || 1;
           if (currentModuleIndex < totalModules - 1) {
             currentModuleIndex++;
+            if (moduleSelectDropdown) moduleSelectDropdown.value = currentModuleIndex;
             updateUI();
             scrollQuestionsToTop();
+            if (window.syncModuleDropdown) window.syncModuleDropdown();
           }
         });
       }
@@ -3474,6 +3983,7 @@
 
       initChapterDropdown();
       selectChapter(activeChapter);
+      setupTactileDropdowns();
     })();
 
   </script>
