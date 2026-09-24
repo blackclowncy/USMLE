@@ -373,7 +373,7 @@ A 58-year-old male with a history of alcoholic cirrhosis presents to the emergen
 
 (A) Vancomycin
 (B) Metronidazole
-((C) Neomycin
+(C) Neomycin
 (D) Ciprofloxacin
 (E) Azithromycin
 

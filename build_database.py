@@ -22,30 +22,28 @@ def convert_markdown_to_html(md_text, edu_fallback=None):
     if edu_content:
         clean_edu = re.sub(r'\*\*(.*?)\*\*', r'<strong class="text-[#181d24] font-bold">\1</strong>', edu_content)
         clean_edu = re.sub(r'\*(.*?)\*', r'<em class="italic text-[#4a453c]">\1</em>', clean_edu)
-        edu_html = f'''
-        <div class="p-4.5 rounded-2xl neu-groove bg-[#e4efe8]/70 border border-emerald-500/30 flex flex-col gap-2 mt-4">
-            <div class="flex items-center gap-2 text-accentSuccess font-display font-bold text-[14px]">
-                <span class="material-symbols-outlined text-[20px]">school</span>
-                <span>Educational Objective / USMLE High-Yield Takeaway</span>
-            </div>
-            <p class="text-[13.5px] leading-relaxed text-[#1c382b] font-medium pl-1">
-                {clean_edu}
-            </p>
-        </div>
-        '''
+        edu_html = (
+            f'<div class="exp-edu-card">'
+            f'<div class="exp-edu-title">'
+            f'<span class="material-symbols-outlined text-[20px]">school</span>'
+            f'<span>Educational Objective / USMLE High-Yield Takeaway</span>'
+            f'</div>'
+            f'<p class="exp-edu-text">{clean_edu}</p>'
+            f'</div>'
+        )
 
     # Format Distractor Analysis header (English only)
     body_text = re.sub(
         r'#{4,5}\s*(?:\d+\.\s*)?(?:Comprehensive\s+)?Distractor Analysis[^:]*:?', 
-        r'<div class="font-display font-bold text-[14.5px] text-primaryDark mt-4 mb-2 pb-1 border-b border-[#ded7ca] flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">rule</span><span>Distractor Analysis</span></div>', 
+        r'<div class="exp-section-title"><span class="material-symbols-outlined text-[18px]">rule</span><span>Distractor Analysis</span></div>', 
         body_text, 
         flags=re.IGNORECASE
     )
     
     # Format Explanation header (English only)
     body_text = re.sub(
-        r'#{4,5}\s*(?:High-Yield Mechanism(?: & Pharmacological Explanation)?|High-Yield Pathophysiological Explanation|Detailed Explanations?|Explanation):?',
-        r'<div class="font-display font-bold text-[14.5px] text-primaryDark mt-2 mb-2 pb-1 border-b border-[#ded7ca] flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span>Explanation &amp; Mechanism Breakdown</span></div>',
+        r'#{4,5}\s*(?:High-Yield Mechanism[^:\n\r]*|High-Yield Pathophysiological Explanation|Detailed Explanations?|Explanation):?',
+        r'<div class="exp-mech-title"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span>Explanation &amp; Mechanism Breakdown</span></div>',
         body_text,
         flags=re.IGNORECASE
     )
@@ -53,7 +51,7 @@ def convert_markdown_to_html(md_text, edu_fallback=None):
     # Format Section headers
     body_text = re.sub(
         r'#####\s*(\d+\.\s*[^\n\r]+)',
-        r'<div class="font-semibold text-[13.5px] text-[#2c3138] mt-3 mb-1.5 flex items-center gap-2 pl-1"><span class="w-2 h-2 rounded-full bg-primary shrink-0"></span><span>\1</span></div>',
+        r'<div class="exp-heading"><span class="exp-heading-dot"></span><span>\1</span></div>',
         body_text
     )
 
@@ -76,25 +74,20 @@ def convert_markdown_to_html(md_text, edu_fallback=None):
             if opt_tag_m and len(opt_tag_m.group(1)) == 1:
                 letter = opt_tag_m.group(1)
                 rest = opt_tag_m.group(2)
-                formatted_lines.append(f'''
-                <div class="flex items-start gap-2.5 my-2 pl-2 bg-[#e6e1d7]/40 p-2.5 rounded-xl border border-white/50">
-                    <span class="w-6 h-6 rounded-lg neu-extruded-xs bg-[#ded7ca] text-[#2c3138] flex items-center justify-center font-mono text-[11px] font-bold shrink-0 mt-0.5">{letter}</span>
-                    <div class="text-[13px] leading-relaxed text-[#2c3138] flex-1">{rest}</div>
-                </div>
-                ''')
+                formatted_lines.append(
+                    f'<div class="exp-opt-box"><span class="exp-badge">{letter}</span><div class="exp-text">{rest}</div></div>'
+                )
             else:
-                formatted_lines.append(f'''
-                <div class="flex items-start gap-2.5 my-1.5 pl-2">
-                    <span class="text-primary font-bold text-[14px] shrink-0 mt-0.5">•</span>
-                    <div class="text-[13px] leading-relaxed text-[#2c3138] flex-1">{item_text}</div>
-                </div>
-                ''')
+                formatted_lines.append(
+                    f'<div class="exp-bullet-row"><span class="exp-bullet-dot">•</span><div class="exp-text">{item_text}</div></div>'
+                )
         elif s.startswith('<div') or s.startswith('</div') or s.startswith('<h') or s.startswith('</h'):
             formatted_lines.append(s)
         else:
-            formatted_lines.append(f'<p class="text-[13px] leading-relaxed text-[#2c3138] my-1.5 pl-1">{s}</p>')
+            formatted_lines.append(f'<p class="exp-p">{s}</p>')
 
-    return '\n'.join(formatted_lines) + '\n' + edu_html
+    res = "".join(formatted_lines) + edu_html
+    return res
 
 PATHOLOGY_CHAPTERS = [
     {
@@ -286,6 +279,193 @@ PHARMACOLOGY_CHAPTERS = [
     }
 ]
 
+BIOCHEMISTRY_CHAPTERS = [
+    {
+        "id": "Ch01_Nucleic_Acid_Structure_and_Organization",
+        "name": "Ch01 Nucleic Acid Structure and Organization",
+        "dirName": "Ch01_Nucleic_Acid_Structure_and_Organization",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Nucleic acid structure, nucleotide bases, B-DNA double helix, nucleosome octamers, histone modifications, and euchromatin vs. heterochromatin."
+    },
+    {
+        "id": "Ch02_DNA_Replication_and_Repair",
+        "name": "Ch02 DNA Replication and Repair",
+        "dirName": "Ch02_DNA_Replication_and_Repair",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "DNA replication machinery, telomerase, mismatch repair, base excision repair, nucleotide excision repair (xeroderma pigmentosum), and double-strand break repair."
+    },
+    {
+        "id": "Ch03_Transcription_and_RNA_Processing",
+        "name": "Ch03 Transcription and RNA Processing",
+        "dirName": "Ch03_Transcription_and_RNA_Processing",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "RNA polymerases (I, II, III), promoter elements, mRNA 5' capping, polyadenylation, spliceosome dynamics, alternative splicing, and transcriptional toxins."
+    },
+    {
+        "id": "Ch04_Genetic_Code_Mutations_and_Translation",
+        "name": "Ch04 Genetic Code, Mutations, and Translation",
+        "dirName": "Ch04_Genetic_Code_Mutations_and_Translation",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Genetic code properties, point mutations (missense, nonsense, frameshift), tRNA aminoacylation, translation initiation/elongation, and ribosomal toxin/antibiotic targets."
+    },
+    {
+        "id": "Ch05_Regulation_of_Eukaryotic_Gene_Expression",
+        "name": "Ch05 Regulation of Eukaryotic Gene Expression",
+        "dirName": "Ch05_Regulation_of_Eukaryotic_Gene_Expression",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Cis-acting elements (enhancers/silencers), trans-acting transcription factor domains, CpG island methylation, genomic imprinting (Prader-Willi and Angelman syndromes), and microRNAs."
+    },
+    {
+        "id": "Ch06_Genetic_Strategies_in_Therapeutics",
+        "name": "Ch06 Genetic Strategies in Therapeutics",
+        "dirName": "Ch06_Genetic_Strategies_in_Therapeutics",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Recombinant DNA molecular tools, restriction endonucleases, plasmids, cDNA libraries, CRISPR-Cas9 genome editing, and gene replacement therapies."
+    },
+    {
+        "id": "Ch07_Techniques_of_Genetic_Analysis",
+        "name": "Ch07 Techniques of Genetic Analysis",
+        "dirName": "Ch07_Techniques_of_Genetic_Analysis",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Blotting techniques (Southern, Northern, Western), PCR, Sanger vs Next-Generation Sequencing, microarrays, ELISA, flow cytometry, and FISH."
+    },
+    {
+        "id": "Ch08_Amino_Acids_Proteins_and_Enzymes",
+        "name": "Ch08 Amino Acids, Proteins, and Enzymes",
+        "dirName": "Ch08_Amino_Acids_Proteins_and_Enzymes",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Amino acid classification and charge titration (pKa/pI), primary to quaternary protein structure, enzyme kinetics (Michaelis-Menten, Lineweaver-Burk), and enzyme inhibition."
+    },
+    {
+        "id": "Ch09_Hormones_and_Signal_Transduction",
+        "name": "Ch09 Hormones and Signal Transduction",
+        "dirName": "Ch09_Hormones_and_Signal_Transduction",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Transmembrane receptors and second messenger pathways: Gs/Gi-cAMP-PKA, Gq-IP3/DAG/calcium, receptor tyrosine kinases (MAPK, PI3K/Akt), and intracellular nuclear receptors."
+    },
+    {
+        "id": "Ch10_Vitamins_Water_and_Fat_Soluble",
+        "name": "Ch10 Vitamins: Water- and Fat-Soluble",
+        "dirName": "Ch10_Vitamins_Water_and_Fat_Soluble",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Water-soluble vitamins (B-complex and vitamin C) and fat-soluble vitamins (A, D, E, K), biochemical coenzyme functions, and deficiency/toxicity manifestations."
+    },
+    {
+        "id": "Ch11_Energy_Metabolism_and_Fuel_Homeostasis",
+        "name": "Ch11 Energy Metabolism and Fuel Homeostasis",
+        "dirName": "Ch11_Energy_Metabolism_and_Fuel_Homeostasis",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Thermodynamics and high-energy phosphates, metabolic adaptations across the fed, fasting, and starved states, and hormonal counter-regulation."
+    },
+    {
+        "id": "Ch12_Glycolysis_and_Pyruvate_Dehydrogenase",
+        "name": "Ch12 Glycolysis and Pyruvate Dehydrogenase",
+        "dirName": "Ch12_Glycolysis_and_Pyruvate_Dehydrogenase",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Glycolytic enzymatic steps, regulatory checkpoints (hexokinase, PFK-1, pyruvate kinase), 2,3-BPG shunt, pyruvate dehydrogenase complex, and lactic acidosis."
+    },
+    {
+        "id": "Ch13_Citric_Acid_Cycle_and_Oxidative_Phosphorylation",
+        "name": "Ch13 Citric Acid Cycle and Oxidative Phosphorylation",
+        "dirName": "Ch13_Citric_Acid_Cycle_and_Oxidative_Phosphorylation",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Mitochondrial TCA cycle reactions, electron transport chain complexes (I-IV), ATP synthase, uncouplers, and ETC inhibitors."
+    },
+    {
+        "id": "Ch14_Glycogen_Gluconeogenesis_and_HMP_Shunt",
+        "name": "Ch14 Glycogen, Gluconeogenesis, and Hexose Monophosphate Shunt",
+        "dirName": "Ch14_Glycogen_Gluconeogenesis_and_HMP_Shunt",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Glycogen synthesis and degradation, glycogen storage diseases (types I-V), gluconeogenic substrate flows, and the pentose phosphate pathway (G6PD deficiency)."
+    },
+    {
+        "id": "Ch15_Lipid_Synthesis_and_Storage",
+        "name": "Ch15 Lipid Synthesis and Storage",
+        "dirName": "Ch15_Lipid_Synthesis_and_Storage",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "De novo fatty acid synthesis, triglyceride storage, cholesterol biosynthesis (HMG-CoA reductase), and lipoprotein metabolism (chylomicrons, VLDL, LDL, HDL, hyperlipidemias)."
+    },
+    {
+        "id": "Ch16_Lipid_Mobilization_and_Catabolism",
+        "name": "Ch16 Lipid Mobilization and Catabolism",
+        "dirName": "Ch16_Lipid_Mobilization_and_Catabolism",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Hormone-sensitive lipase, carnitine shuttle, beta-oxidation, systemic carnitine deficiency, MCAD deficiency, ketone body metabolism, and lysosomal sphingolipidoses."
+    },
+    {
+        "id": "Ch17_Amino_Acid_Metabolism",
+        "name": "Ch17 Amino Acid Metabolism",
+        "dirName": "Ch17_Amino_Acid_Metabolism",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Transamination and oxidative deamination, urea cycle disorders, branched-chain amino acid catabolism (MSUD), phenylketonuria (PKU), alkaptonuria, and homocystinuria."
+    },
+    {
+        "id": "Ch18_Purine_and_Pyrimidine_Metabolism",
+        "name": "Ch18 Purine and Pyrimidine Metabolism",
+        "dirName": "Ch18_Purine_and_Pyrimidine_Metabolism",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "De novo purine and pyrimidine biosynthesis, purine salvage pathways (HGPRT/Lesch-Nyhan syndrome, ADA/SCID), gout, orotic aciduria, and antimetabolite chemotherapeutic targets."
+    },
+    {
+        "id": "Ch19_Medical_Genetics_Single_Gene_Disorders",
+        "name": "Ch19 Single-Gene Disorders and Non-Mendelian Inheritance",
+        "dirName": "Ch19_Medical_Genetics_Single_Gene_Disorders",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Mendelian inheritance patterns (autosomal dominant, autosomal recessive, X-linked), incomplete penetrance, variable expressivity, pleiotropy, anticipation, and mosaicism."
+    },
+    {
+        "id": "Ch20_Medical_Genetics_Population_Genetics",
+        "name": "Ch20 Population Genetics and Hardy-Weinberg Equilibrium",
+        "dirName": "Ch20_Medical_Genetics_Population_Genetics",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Hardy-Weinberg equilibrium, carrier frequency calculations, genetic drift, founder effect, natural selection, and balanced polymorphism."
+    },
+    {
+        "id": "Ch21_Medical_Genetics_Cytogenetics",
+        "name": "Ch21 Cytogenetics and Chromosomal Disorders",
+        "dirName": "Ch21_Medical_Genetics_Cytogenetics",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Chromosomal aneuploidies (trisomies 21, 18, 13), sex chromosome aneuploidies (Turner and Klinefelter syndromes), microdeletion syndromes (Cri-du-chat, DiGeorge, Williams), and translocations."
+    },
+    {
+        "id": "Ch22_Medical_Genetics_Recombination_Frequency",
+        "name": "Ch22 Recombination Frequency and Genetic Linkage",
+        "dirName": "Ch22_Medical_Genetics_Recombination_Frequency",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Meiotic crossing-over, genetic recombination frequency, genetic linkage maps (centimorgans), haplotype analysis, and LOD score computation."
+    },
+    {
+        "id": "Ch23_Medical_Genetics_Genetic_Diagnosis",
+        "name": "Ch23 Genetic Diagnosis and Molecular Testing Strategies",
+        "dirName": "Ch23_Medical_Genetics_Genetic_Diagnosis",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Direct genetic testing (ASO, multiplex PCR, direct sequencing) vs indirect linkage diagnosis (RFLP, STR markers), carrier screening, and prenatal diagnostic testing."
+    }
+]
+
 def parse_discipline(discipline_name, base_dir, chapters_metadata, start_id):
     questions = []
     current_global_id = start_id
@@ -311,24 +491,27 @@ def parse_discipline(discipline_name, base_dir, chapters_metadata, start_id):
                 diff_m = re.search(r'-\s*\*\*Difficulty\*\*:\s*(.*)', qb)
                 core_m = re.search(r'-\s*\*\*Core Concept[^:]*\*\*:\s*(.*)', qb)
 
+                # Answer (handles (A), A, **([A])**, ** (A), etc.)
+                ans_m = re.search(r'####\s*Correct Answer:?\s*[\s\*\[\(]*([A-E])(?:\s|[\*\]\)\.:]|$)', qb, re.IGNORECASE)
+
+                # Restrict options search to text preceding the answer line
+                opts_section = qb[:ans_m.start()] if ans_m else qb
+
                 # Vignette (handles #### Clinical Vignette: and - **Clinical Vignette**:)
-                vig_m = re.search(r'(?:####\s*Clinical Vignette:?|- \*\*Clinical Vignette\*\*:?)\s*(.*?)(?=\n\s*[-*]?\s*\([A-E]\)|\Z)', qb, re.DOTALL)
+                vig_m = re.search(r'(?:####\s*Clinical Vignette:?|- \*\*Clinical Vignette\*\*:?)\s*(.*?)(?=\n\s*[-*]?\s*\([A-E]\)|\Z)', opts_section, re.DOTALL)
                 vig_text = vig_m.group(1).strip() if vig_m else ''
 
                 # Options (handles (A) and - (A) and * (A))
                 opt_pat = re.compile(r'^\s*[-*]?\s*\(([A-E])\)\s+(.*?)(?=\n\s*[-*]?\s*\([A-E]\)|\n\s*####|\Z)', re.DOTALL | re.MULTILINE)
-                opts = opt_pat.findall(qb)
+                opts = opt_pat.findall(opts_section)
                 options = [o[1].strip().replace('\n', ' ') for o in opts]
 
                 if len(options) < 4:
-                    opts_alt = re.findall(r'^\s*[-*]?\s*\(([A-E])\)\s+([^\n\r]+)', qb, re.MULTILINE)
+                    opts_alt = re.findall(r'^\s*[-*]?\s*\(([A-E])\)\s+([^\n\r]+)', opts_section, re.MULTILINE)
                     options = [o[1].strip() for o in opts_alt]
 
-                # Answer (handles (A), A, **([A])**, ** (A), etc.)
-                ans_m = re.search(r'####\s*Correct Answer:?\s*[\s\*\[\(]*([A-E])(?:\s|[\*\]\)\.:]|$)', qb, re.IGNORECASE)
-
                 # Explanation text
-                exp_m = re.search(r'####\s*(?:High-Yield Mechanism(?: & Pharmacological Explanation)?|High-Yield Pathophysiological Explanation|Detailed Explanations?|Explanation):?\s*(.*)', qb, re.DOTALL)
+                exp_m = re.search(r'####\s*(?:High-Yield Mechanism[^:\n\r]*|High-Yield Pathophysiological Explanation|Detailed Explanations?|Explanation):?\s*(.*)', qb, re.DOTALL)
                 exp_text = exp_m.group(1).strip() if exp_m else ''
 
                 # Educational objective
@@ -382,6 +565,7 @@ def build_database():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     pathology_dir = os.path.join(current_dir, 'step 1-Pathology')
     pharmacology_dir = os.path.join(current_dir, 'step 1-Pharmacology')
+    biochemistry_dir = os.path.join(current_dir, 'step 1-Biochemistry and Medical Genetics QA')
     output_js_path = os.path.join(current_dir, 'questions_data.js')
 
     print("=== Building USMLE Step 1 Comprehensive Question Database ===")
@@ -390,10 +574,14 @@ def build_database():
     print(f" -> Pathology Complete: {len(pathology_questions)} questions loaded.\n")
 
     print("Parsing Step 1 Pharmacology...")
-    pharmacology_questions, final_id = parse_discipline("Pharmacology", pharmacology_dir, PHARMACOLOGY_CHAPTERS, next_id)
+    pharmacology_questions, next_id2 = parse_discipline("Pharmacology", pharmacology_dir, PHARMACOLOGY_CHAPTERS, next_id)
     print(f" -> Pharmacology Complete: {len(pharmacology_questions)} questions loaded.\n")
 
-    all_questions = pathology_questions + pharmacology_questions
+    print("Parsing Step 1 Biochemistry & Genetics...")
+    biochemistry_questions, final_id = parse_discipline("Biochemistry", biochemistry_dir, BIOCHEMISTRY_CHAPTERS, next_id2)
+    print(f" -> Biochemistry Complete: {len(biochemistry_questions)} questions loaded.\n")
+
+    all_questions = pathology_questions + pharmacology_questions + biochemistry_questions
     print(f"Total Questions Compiled: {len(all_questions)}")
 
     disciplines_metadata = [
@@ -412,13 +600,21 @@ def build_database():
             "count": len(pharmacology_questions),
             "status": "active",
             "description": "Comprehensive preclinical pharmacology (9 chapters)"
+        },
+        {
+            "id": "Biochemistry",
+            "name": "Biochemistry & Genetics",
+            "step": 1,
+            "count": len(biochemistry_questions),
+            "status": "active",
+            "description": "Comprehensive biochemistry, metabolism, molecular biology, and medical genetics (23 chapters)"
         }
     ]
 
     # Write questions_data.js
     with open(output_js_path, 'w', encoding='utf-8') as out_f:
         out_f.write("// Autogenerated USMLE Step 1 Comprehensive Question Bank Database\n")
-        out_f.write("// Contains Step 1 Pathology (2,100 Qs) and Step 1 Pharmacology (1,350 Qs)\n\n")
+        out_f.write("// Contains Step 1 Pathology (2,100 Qs), Pharmacology (1,350 Qs), and Biochemistry & Genetics (3,450 Qs)\n\n")
         out_f.write("window.USMLE_DISCIPLINES = ")
         json.dump(disciplines_metadata, out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
@@ -428,8 +624,11 @@ def build_database():
         out_f.write("window.USMLE_PHARMACOLOGY_CHAPTERS = ")
         json.dump(PHARMACOLOGY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
+        out_f.write("window.USMLE_BIOCHEMISTRY_CHAPTERS = ")
+        json.dump(BIOCHEMISTRY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        out_f.write(";\n\n")
         out_f.write("window.USMLE_QUESTIONS = ")
-        json.dump(all_questions, out_f, ensure_ascii=False)
+        json.dump(all_questions, out_f, ensure_ascii=False, separators=(',', ':'))
         out_f.write(";\n")
 
     file_size_mb = os.path.getsize(output_js_path) / 1024 / 1024

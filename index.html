@@ -153,6 +153,27 @@
     #left-sidebar::-webkit-scrollbar-thumb:hover, #right-scroll-container::-webkit-scrollbar-thumb:hover {
       background: #b5ad9e;
     }
+
+    /* Explanation & Objective Semantic Styles */
+    .exp-opt-box { display: flex; align-items: flex-start; gap: 0.625rem; margin: 0.5rem 0; padding: 0.625rem 0.625rem 0.625rem 0.5rem; background: rgba(230, 225, 215, 0.4); border-radius: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.5); }
+    .exp-badge { width: 1.5rem; height: 1.5rem; border-radius: 0.5rem; box-shadow: 2px 2px 4px #b8b2a7, -2px -2px 4px #ffffff; background: #ded7ca; color: #2c3138; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 0.125rem; }
+    .exp-text { font-size: 13px; line-height: 1.625; color: #2c3138; flex: 1; }
+    .exp-bullet-row { display: flex; align-items: flex-start; gap: 0.625rem; margin: 0.375rem 0; padding-left: 0.5rem; }
+    .exp-bullet-dot { color: #d97706; font-weight: 700; font-size: 14px; flex-shrink: 0; margin-top: 0.125rem; }
+    .exp-p { font-size: 13px; line-height: 1.625; color: #2c3138; margin: 0.375rem 0; padding-left: 0.25rem; }
+    .exp-heading { font-weight: 600; font-size: 13.5px; color: #2c3138; margin-top: 0.75rem; margin-bottom: 0.375rem; display: flex; align-items: center; gap: 0.5rem; padding-left: 0.25rem; }
+    .exp-heading-dot { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: #d97706; flex-shrink: 0; }
+    .exp-section-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14.5px; color: #181d24; margin-top: 1rem; margin-bottom: 0.5rem; padding-bottom: 0.25rem; border-bottom: 1px solid #ded7ca; display: flex; align-items: center; gap: 0.5rem; }
+    .exp-mech-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14.5px; color: #181d24; margin-top: 0.5rem; margin-bottom: 0.5rem; padding-bottom: 0.25rem; border-bottom: 1px solid #ded7ca; display: flex; align-items: center; gap: 0.5rem; }
+    .exp-edu-card { padding: 1.125rem; border-radius: 1rem; box-shadow: inset 2px 2px 4px #b8b2a7, inset -2px -2px 4px #ffffff; background: rgba(228, 239, 232, 0.7); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+    .exp-edu-title { display: flex; align-items: center; gap: 0.5rem; color: #059669; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 14px; }
+    .exp-edu-text { font-size: 13.5px; line-height: 1.625; color: #1c382b; font-weight: 500; padding-left: 0.25rem; }
+    html.dark .exp-opt-box { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.08); }
+    html.dark .exp-badge { background: #262c36; color: #e2e8f0; box-shadow: none; border: 1px solid rgba(255, 255, 255, 0.1); }
+    html.dark .exp-text, html.dark .exp-p, html.dark .exp-heading { color: #cbd5e1; }
+    html.dark .exp-section-title, html.dark .exp-mech-title { color: #f1f5f9; border-color: rgba(255, 255, 255, 0.1); }
+    html.dark .exp-edu-card { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.25); box-shadow: none; }
+    html.dark .exp-edu-text { color: #a7f3d0; }
   
     /* Dark Mode Overrides for Normal Labs Modal */
     html.dark #labs-modal .bg-\[\#eae6de\], 
@@ -392,7 +413,7 @@
 </div>
 </div>
 <!-- Live Ribbon with Discipline Filter Pills & Quick Toggles -->
-<div class="bg-[#e4dfd6]/90 border-t border-white/60 px-6 py-2.5"><div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-4 text-[12px]"><div class="flex flex-wrap items-center gap-3.5"><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40"><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary neu-pill-active" data-step="1">USMLE Step 1</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="2">USMLE Step 2 CK</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="3">USMLE Step 3</button></div><div class="flex items-center gap-1.5 pl-1"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Discipline:</span><div class="relative flex items-center"><select id="discipline-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="Pathology" selected="">Pathology (2,100 Qs)</option><option value="Pharmacology">Pharmacology (1,350 Qs)</option><option value="Physiology" disabled="">Physiology [Coming Soon]</option><option value="Anatomy &amp; Embryology" disabled="">Anatomy &amp; Embryology [Coming Soon]</option><option value="Microbiology &amp; Immunology" disabled="">Microbiology &amp; Immunology [Coming Soon]</option><option value="Biochemistry &amp; Genetics" disabled="">Biochemistry &amp; Genetics [Coming Soon]</option><option value="Behavioral Science &amp; Psychiatry" disabled="">Behavioral Science &amp; Psychiatry [Coming Soon]</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="flex items-center gap-1.5"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Chapter / System:</span><div class="relative flex items-center"><select id="chapter-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="all" selected="">All Chapters</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-xl neu-groove-sm text-[11px] font-medium text-[#656054] border border-white/40"><span class="text-[#8a8477] font-semibold uppercase text-[10px] font-mono">Active:</span><span class="font-bold text-primary">Step 1</span><span class="text-[#9c9689]">&gt;</span><span class="font-bold text-[#181d24]" id="active-discipline-breadcrumb">Pathology</span><span class="text-[#9c9689]">&gt;</span><span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">All Active Chapters</span></div></div><div class="flex items-center gap-3 shrink-0"><button class="flex items-center gap-2 px-4 py-1.5 rounded-full neu-btn text-[11.5px] font-bold text-amber-700 hover:text-amber-800 transition-all border border-white/60" id="toggle-flagged-only-btn"><span class="material-symbols-outlined text-[16px] fill-current">bookmark</span><span class="">Only Marked (<span id="top-flag-count" class="">4</span>)</span></button><div class="font-mono text-[11.5px] text-[#6b665c] font-medium px-3 py-1 rounded-xl neu-groove-sm">Answered: <strong class="text-primary font-bold" id="top-answered-count">0/0</strong></div></div></div></div>
+<div class="bg-[#e4dfd6]/90 border-t border-white/60 px-6 py-2.5"><div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-4 text-[12px]"><div class="flex flex-wrap items-center gap-3.5"><div class="p-1 rounded-2xl neu-groove-sm flex items-center gap-1 border border-white/40"><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl neu-extruded-xs text-[11px] font-bold text-primary neu-pill-active" data-step="1">USMLE Step 1</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="2">USMLE Step 2 CK</button><button type="button" class="step-ribbon-btn px-3 py-1.5 rounded-xl text-[11px] font-semibold text-[#656054] hover:text-[#181d24] transition-colors" data-step="3">USMLE Step 3</button></div><div class="flex items-center gap-1.5 pl-1"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Discipline:</span><div class="relative flex items-center"><select id="discipline-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="Pathology" selected="">Pathology (2,100 Qs)</option><option value="Pharmacology">Pharmacology (1,350 Qs)</option><option value="Physiology" disabled="">Physiology [Coming Soon]</option><option value="Anatomy &amp; Embryology" disabled="">Anatomy &amp; Embryology [Coming Soon]</option><option value="Microbiology &amp; Immunology" disabled="">Microbiology &amp; Immunology [Coming Soon]</option><option value="Biochemistry">Biochemistry &amp; Genetics (3,450 Qs)</option><option value="Behavioral Science &amp; Psychiatry" disabled="">Behavioral Science &amp; Psychiatry [Coming Soon]</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="flex items-center gap-1.5"><span class="text-[#756f64] font-semibold text-[10.5px] uppercase font-mono tracking-wider">Chapter / System:</span><div class="relative flex items-center"><select id="chapter-select-dropdown" class="appearance-none bg-[#eae6de] neu-extruded-xs border border-white/80 rounded-xl px-3 py-1.5 pr-7 text-[11.5px] font-bold text-[#181d24] cursor-pointer outline-none transition-all shadow-sm"><option value="all" selected="">All Chapters</option></select><span class="material-symbols-outlined text-[16px] text-[#6d675b] absolute right-2 pointer-events-none">expand_more</span></div></div><div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-xl neu-groove-sm text-[11px] font-medium text-[#656054] border border-white/40"><span class="text-[#8a8477] font-semibold uppercase text-[10px] font-mono">Active:</span><span class="font-bold text-primary">Step 1</span><span class="text-[#9c9689]">&gt;</span><span class="font-bold text-[#181d24]" id="active-discipline-breadcrumb">Pathology</span><span class="text-[#9c9689]">&gt;</span><span id="active-chapter-breadcrumb" class="text-[#544f45] font-semibold">All Active Chapters</span></div></div><div class="flex items-center gap-3 shrink-0"><button class="flex items-center gap-2 px-4 py-1.5 rounded-full neu-btn text-[11.5px] font-bold text-amber-700 hover:text-amber-800 transition-all border border-white/60" id="toggle-flagged-only-btn"><span class="material-symbols-outlined text-[16px] fill-current">bookmark</span><span class="">Only Marked (<span id="top-flag-count" class="">4</span>)</span></button><div class="font-mono text-[11.5px] text-[#6b665c] font-medium px-3 py-1 rounded-xl neu-groove-sm">Answered: <strong class="text-primary font-bold" id="top-answered-count">0/0</strong></div></div></div></div>
 </header>
 <!-- Main Workspace -->
 <main class="max-w-[1600px] mx-auto px-6 py-4 w-full flex-1 min-h-0 lg:overflow-hidden flex flex-col">
@@ -769,15 +790,22 @@
       let currentDiscipline = "Pathology";
       try {
         const storedDisc = localStorage.getItem(STORAGE_KEY_DISCIPLINE);
-        if (storedDisc === "Pathology" || storedDisc === "Pharmacology") {
+        if (storedDisc === "Pathology" || storedDisc === "Pharmacology" || storedDisc === "Biochemistry") {
           currentDiscipline = storedDisc;
         }
       } catch(e) {}
+
+      function getDisciplineDisplayName(disc) {
+        if (disc === "Biochemistry") return "Biochemistry & Genetics";
+        return disc;
+      }
 
       function getChaptersForDiscipline(disc) {
         let list = [];
         if (disc === "Pharmacology") {
           list = window.USMLE_PHARMACOLOGY_CHAPTERS || [];
+        } else if (disc === "Biochemistry") {
+          list = window.USMLE_BIOCHEMISTRY_CHAPTERS || [];
         } else {
           list = window.USMLE_PATHOLOGY_CHAPTERS || [];
         }
@@ -889,7 +917,7 @@
         });
       }
       if (activeDisciplineBreadcrumb) {
-        activeDisciplineBreadcrumb.textContent = currentDiscipline;
+        activeDisciplineBreadcrumb.textContent = getDisciplineDisplayName(currentDiscipline);
       }
 
       // 5. Filter Questions Logic
@@ -911,7 +939,7 @@
 
       // 6. Discipline Selection
       window.selectDiscipline = function(disciplineName) {
-        if (disciplineName !== "Pathology" && disciplineName !== "Pharmacology") return;
+        if (disciplineName !== "Pathology" && disciplineName !== "Pharmacology" && disciplineName !== "Biochemistry") return;
         currentDiscipline = disciplineName;
         try {
           localStorage.setItem(STORAGE_KEY_DISCIPLINE, disciplineName);
@@ -921,7 +949,7 @@
           disciplineSelectDropdown.value = disciplineName;
         }
         if (activeDisciplineBreadcrumb) {
-          activeDisciplineBreadcrumb.textContent = disciplineName;
+          activeDisciplineBreadcrumb.textContent = getDisciplineDisplayName(disciplineName);
         }
 
         chaptersData = getChaptersForDiscipline(currentDiscipline);
@@ -1386,12 +1414,12 @@
 
         if (bTitle) {
           const rawTitle = curChapObj ? (curChapObj.name || curChapObj.id) : activeChapter;
-          bTitle.textContent = activeChapter === 'all' ? `All Active ${currentDiscipline} Chapters` : formatChapterTitle(rawTitle);
+          bTitle.textContent = activeChapter === 'all' ? `All Active ${getDisciplineDisplayName(currentDiscipline)} Chapters` : formatChapterTitle(rawTitle);
         }
         if (bBadge) {
           if (activeChapter === 'all') {
             bBadge.className = "px-3 py-0.5 rounded-full neu-groove-sm text-[11px] font-mono font-bold text-accentSuccess bg-[#dfeae3]";
-            bBadge.textContent = `Active (${discQuestions.length} Qs)`;
+            bBadge.textContent = `Active (${discQuestions.length.toLocaleString()} Qs)`;
           } else if (curChapObj && curChapObj.status === 'active') {
             bBadge.className = "px-3 py-0.5 rounded-full neu-groove-sm text-[11px] font-mono font-bold text-accentSuccess bg-[#dfeae3]";
             bBadge.textContent = `Active (${curChapObj.totalQuestions || 150} Qs)`;
@@ -1401,7 +1429,7 @@
           }
         }
         if (bDesc) {
-          bDesc.textContent = curChapObj ? curChapObj.description : `USMLE Step 1 ${currentDiscipline} Review & Question Bank (MedGemma 27B)`;
+          bDesc.textContent = curChapObj ? curChapObj.description : `USMLE Step 1 ${getDisciplineDisplayName(currentDiscipline)} Review & Question Bank (MedGemma 27B)`;
         }
 
         // Render Left Sidebar Chapter Pills
@@ -1419,7 +1447,7 @@
           allBtn.innerHTML = `
             <span class="flex items-center gap-1.5 truncate">
               <span class="w-2 h-2 rounded-full bg-primary shrink-0"></span>
-              <span class="truncate">All ${currentDiscipline} (${discQuestions.length} Qs)</span>
+              <span class="truncate">All ${getDisciplineDisplayName(currentDiscipline)} (${discQuestions.length.toLocaleString()} Qs)</span>
             </span>
             <span class="font-mono text-[10.5px] px-2 py-0.5 rounded-full neu-groove-sm text-primary shrink-0 font-bold">${totalFlagged} ★</span>
           `;
@@ -1928,10 +1956,10 @@
       const DISCIPLINES_STEP1 = [
         { id: "Pathology", name: "Pathology", count: 2100, active: true },
         { id: "Pharmacology", name: "Pharmacology", count: 1350, active: true },
+        { id: "Biochemistry", name: "Biochemistry & Genetics", count: 3450, active: true },
         { id: "Physiology", name: "Physiology", count: 0, active: false },
         { id: "Anatomy", name: "Anatomy & Embryology", count: 0, active: false },
         { id: "Microbiology", name: "Microbiology & Immunology", count: 0, active: false },
-        { id: "Biochemistry", name: "Biochemistry & Genetics", count: 0, active: false },
         { id: "Behavioral", name: "Behavioral Science & Psychiatry", count: 0, active: false }
       ];
 
@@ -1993,12 +2021,19 @@
         }
 
         // C. Render Level 3 Content
-        if (currentMasteryStep === 1 && (currentMasteryDiscipline === "Pathology" || currentMasteryDiscipline === "Pharmacology")) {
-          const isPharm = currentMasteryDiscipline === "Pharmacology";
-          const targetChapters = isPharm 
-            ? (window.USMLE_PHARMACOLOGY_CHAPTERS || []) 
-            : (window.USMLE_PATHOLOGY_CHAPTERS || []);
-          const totalExpectedQs = isPharm ? 1350 : 2100;
+        if (currentMasteryStep === 1 && (currentMasteryDiscipline === "Pathology" || currentMasteryDiscipline === "Pharmacology" || currentMasteryDiscipline === "Biochemistry")) {
+          let targetChapters = [];
+          let totalExpectedQs = 2100;
+          if (currentMasteryDiscipline === "Pharmacology") {
+            targetChapters = window.USMLE_PHARMACOLOGY_CHAPTERS || [];
+            totalExpectedQs = 1350;
+          } else if (currentMasteryDiscipline === "Biochemistry") {
+            targetChapters = window.USMLE_BIOCHEMISTRY_CHAPTERS || [];
+            totalExpectedQs = 3450;
+          } else {
+            targetChapters = window.USMLE_PATHOLOGY_CHAPTERS || [];
+            totalExpectedQs = 2100;
+          }
 
           let totalAns = 0;
           let totalCor = 0;
@@ -2079,7 +2114,7 @@
               <div class="space-y-1 max-w-sm">
                 <div class="flex items-center gap-2">
                   <span class="px-2.5 py-0.5 rounded-full neu-extruded-xs font-mono font-bold text-[10px] text-primary">USMLE Step 1</span>
-                  <h3 class="font-display font-extrabold text-[16px] text-[#181d24]">${currentMasteryDiscipline} Full Mastery Overview</h3>
+                  <h3 class="font-display font-extrabold text-[16px] text-[#181d24]">${getDisciplineDisplayName(currentMasteryDiscipline)} Full Mastery Overview</h3>
                 </div>
                 <p class="text-[12px] text-[#6b665c]">Current Mastery Status: <strong class="text-primary font-bold">${masteryTier}</strong></p>
               </div>
@@ -2128,7 +2163,7 @@
               </div>
               <div class="max-w-md space-y-1.5">
                 <span class="px-3 py-0.5 rounded-full neu-groove-sm text-[11px] font-mono font-bold text-amber-800 bg-[#f3ecd8]">
-                  Curriculum Pipeline: ${stepName} • ${currentMasteryDiscipline}
+                  Curriculum Pipeline: ${stepName} • ${getDisciplineDisplayName(currentMasteryDiscipline)}
                 </span>
                 <h3 class="font-display font-extrabold text-[16px] text-[#181d24]">Questions In Editorial Preparation</h3>
                 <p class="text-[12.5px] text-[#6b665c] leading-relaxed">
@@ -2143,6 +2178,10 @@
                 <button type="button" id="btn-mastery-goto-pharmacology" class="px-4 py-2 rounded-2xl bg-gradient-to-b from-[#2d7a5b] to-[#1c543e] text-white font-display text-[12px] font-bold neu-btn shadow-md hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-1.5">
                   <span class="material-symbols-outlined text-[16px]">medication</span>
                   <span>Practice Pharmacology (1,350 Qs)</span>
+                </button>
+                <button type="button" id="btn-mastery-goto-biochemistry" class="px-4 py-2 rounded-2xl bg-gradient-to-b from-[#8c5024] to-[#633310] text-white font-display text-[12px] font-bold neu-btn shadow-md hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[16px]">dna</span>
+                  <span>Practice Biochemistry (3,450 Qs)</span>
                 </button>
               </div>
             </div>
@@ -2161,6 +2200,14 @@
             btnGoPharm.addEventListener('click', () => {
               currentMasteryStep = 1;
               currentMasteryDiscipline = "Pharmacology";
+              renderMasteryDashboard();
+            });
+          }
+          const btnGoBio = document.getElementById('btn-mastery-goto-biochemistry');
+          if (btnGoBio) {
+            btnGoBio.addEventListener('click', () => {
+              currentMasteryStep = 1;
+              currentMasteryDiscipline = "Biochemistry";
               renderMasteryDashboard();
             });
           }
