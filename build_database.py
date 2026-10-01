@@ -466,6 +466,281 @@ BIOCHEMISTRY_CHAPTERS = [
     }
 ]
 
+PHYSIOLOGY_CHAPTERS = [
+    {
+        "id": "Ch01_Fluid_Distribution_and_Edema",
+        "name": "Ch01 Fluid Distribution and Edema",
+        "dirName": "Ch01_Fluid_Distribution_and_Edema",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Fluid compartments, dilution methods, 60-40-20 rule, Darrow-Yannet diagrams, Starling forces, and edema pathophysiology."
+    },
+    {
+        "id": "Ch02_Ionic_Equilibrium_and_RMP",
+        "name": "Ch02 Ionic Equilibrium and Resting Membrane Potential",
+        "dirName": "Ch02_Ionic_Equilibrium_and_RMP",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Nernst equation, Goldman-Hodgkin-Katz equation, electrochemical equilibrium, resting membrane potential, and ion channelopathies."
+    },
+    {
+        "id": "Ch03_Neuron_AP_and_Synaptic_Transmission",
+        "name": "Ch03 Neuron Action Potential and Synaptic Transmission",
+        "dirName": "Ch03_Neuron_AP_and_Synaptic_Transmission",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Voltage-gated sodium/potassium dynamics, electrotonic conduction, myelination, demyelinating pathologies, and neurotransmitter release."
+    },
+    {
+        "id": "Ch04_Electrical_Activity_of_the_Heart",
+        "name": "Ch04 Electrical Activity of the Heart",
+        "dirName": "Ch04_Electrical_Activity_of_the_Heart",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Cardiac action potential phases (fast vs slow response), pacemaker automaticity, refractory periods, ECG leads, and arrhythmogenesis."
+    },
+    {
+        "id": "Ch05_Excitation_Contraction_Coupling",
+        "name": "Ch05 Excitation-Contraction Coupling",
+        "dirName": "Ch05_Excitation_Contraction_Coupling",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "DHPR/RyR1 dynamics, calcium-induced calcium release, cross-bridge cycling, smooth muscle calmodulin/MLCK cascade, and malignant hyperthermia."
+    },
+    {
+        "id": "Ch06_Skeletal_Muscle_Mechanics",
+        "name": "Ch06 Skeletal Muscle Mechanics",
+        "dirName": "Ch06_Skeletal_Muscle_Mechanics",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Isometric vs isotonic contraction, length-tension relationship, force-velocity curves, Type I (slow-twitch) vs Type II (fast-twitch) motor units."
+    },
+    {
+        "id": "Ch07_Hemodynamics_and_Vascular_Principles",
+        "name": "Ch07 Hemodynamics and Vascular Principles",
+        "dirName": "Ch07_Hemodynamics_and_Vascular_Principles",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Poiseuille law, vascular resistance (series vs parallel), laminar vs turbulent flow, Reynolds number, and arterial compliance."
+    },
+    {
+        "id": "Ch08_Cardiac_Muscle_Mechanics",
+        "name": "Ch08 Cardiac Muscle Mechanics",
+        "dirName": "Ch08_Cardiac_Muscle_Mechanics",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Frank-Starling law, preload, afterload, inotropy, pressure-volume loops, ejection fraction, and myocardial oxygen consumption (MVO2)."
+    },
+    {
+        "id": "Ch09_CV_Regulation_and_Cardiac_Output",
+        "name": "Ch09 Cardiovascular Regulation and Cardiac Output",
+        "dirName": "Ch09_CV_Regulation_and_Cardiac_Output",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Guyton vascular function curves, cardiac function curves, baroreceptor reflex, Valsalva maneuver, orthostatic reflexes, and RAAS activation."
+    },
+    {
+        "id": "Ch10_Regulation_of_Blood_Flow",
+        "name": "Ch10 Regulation of Blood Flow",
+        "dirName": "Ch10_Regulation_of_Blood_Flow",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Local autoregulation (myogenic & metabolic), coronary, cerebral, renal, pulmonary, and cutaneous microcirculation, and exercise hemodynamics."
+    },
+    {
+        "id": "Ch11_Cardiac_Cycle_and_Valvular_Heart_Disease",
+        "name": "Ch11 Cardiac Cycle and Valvular Heart Disease",
+        "dirName": "Ch11_Cardiac_Cycle_and_Valvular_Heart_Disease",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Wiggers diagram, jugular venous pulse (JVP) waves, heart sounds (S1-S4, clicks, snaps), and valvular murmurs with dynamic maneuvers."
+    },
+    {
+        "id": "Ch12_Lung_Mechanics",
+        "name": "Ch12 Lung Mechanics",
+        "dirName": "Ch12_Lung_Mechanics",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Lung & chest wall compliance, intrapleural pressure, surfactant & Laplace law, airway resistance, dynamic airway compression, and work of breathing."
+    },
+    {
+        "id": "Ch13_Alveolar_Blood_Gas_Exchange",
+        "name": "Ch13 Alveolar-Blood Gas Exchange",
+        "dirName": "Ch13_Alveolar_Blood_Gas_Exchange",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Fick law of diffusion, alveolar-capillary barrier, diffusing capacity (DLCO), diffusion-limited vs perfusion-limited gas exchange."
+    },
+    {
+        "id": "Ch14_O2_CO2_Transport_and_Ventilation_Regulation",
+        "name": "Ch14 O2 and CO2 Transport and Ventilation Regulation",
+        "dirName": "Ch14_O2_CO2_Transport_and_Ventilation_Regulation",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Oxygen-hemoglobin dissociation curve, Bohr & Haldane effects, 2,3-BPG, CO poisoning, methemoglobinemia, central/peripheral chemoreceptors, and respiratory pacemakers."
+    },
+    {
+        "id": "Ch15_V_Q_Matching_and_Hypoxemia",
+        "name": "Ch15 Ventilation-Perfusion Matching and Hypoxemia",
+        "dirName": "Ch15_V_Q_Matching_and_Hypoxemia",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "V/Q ratio regional distribution, physiological shunt vs dead space, alveolar gas equation, A-a gradient calculation, and differential diagnosis of hypoxemia."
+    },
+    {
+        "id": "Ch16_Renal_Structure_and_GFR",
+        "name": "Ch16 Renal Structure and Glomerular Filtration",
+        "dirName": "Ch16_Renal_Structure_and_GFR",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Glomerular filtration barrier charge/size selectivity, net filtration pressure, Starling forces, afferent/efferent arteriolar resistance, and GFR autoregulation."
+    },
+    {
+        "id": "Ch17_Solute_Transport_Reabsorption_Secretion",
+        "name": "Ch17 Solute Transport: Reabsorption and Secretion",
+        "dirName": "Ch17_Solute_Transport_Reabsorption_Secretion",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Proximal tubular transport, primary vs secondary active transport, glucose titration curve, transport maximum (Tm), splay, and organic ion secretion."
+    },
+    {
+        "id": "Ch18_Clinical_Estimation_of_GFR_and_Clearance",
+        "name": "Ch18 Clinical Estimation of GFR and Clearance",
+        "dirName": "Ch18_Clinical_Estimation_of_GFR_and_Clearance",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Renal clearance formulas, inulin & creatinine clearance, PAH clearance for effective RPF, filtration fraction, and free water clearance."
+    },
+    {
+        "id": "Ch19_Regional_Transport_along_Nephron",
+        "name": "Ch19 Regional Transport along the Nephron",
+        "dirName": "Ch19_Regional_Transport_along_Nephron",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "NKCC2 in thick ascending limb, NCCT in DCT, ENaC & ROMK in principal cells, intercalated cells, countercurrent multiplication, and diuretic pharmacology."
+    },
+    {
+        "id": "Ch20_Acid_Base_Regulation_and_Disorders",
+        "name": "Ch20 Acid-Base Regulation and Disorders",
+        "dirName": "Ch20_Acid_Base_Regulation_and_Disorders",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Bicarbonate/ammonium renal handling, Davenport diagrams, anion gap metabolic acidosis (GOLDMARK), Winter formula compensation, and mixed acid-base disorders."
+    },
+    {
+        "id": "Ch21_General_Endocrine_Principles",
+        "name": "Ch21 General Endocrine Principles",
+        "dirName": "Ch21_General_Endocrine_Principles",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Peptide vs steroid vs amine hormones, second messenger pathways (cAMP/PKA, IP3/DAG/Ca2+, cGMP, JAK-STAT), and negative/positive feedback regulation."
+    },
+    {
+        "id": "Ch22_Hypothalamic_Anterior_Pituitary_System",
+        "name": "Ch22 Hypothalamic-Anterior Pituitary System",
+        "dirName": "Ch22_Hypothalamic_Anterior_Pituitary_System",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Hypophyseal portal system, trophic hormone axes (TRH-TSH, CRH-ACTH, GnRH-LH/FSH), prolactin regulation, dopamine inhibition, and pituitary adenomas."
+    },
+    {
+        "id": "Ch23_Posterior_Pituitary",
+        "name": "Ch23 Posterior Pituitary",
+        "dirName": "Ch23_Posterior_Pituitary",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Supraoptic and paraventricular nuclei, ADH (V1/V2 receptors), oxytocin, plasma osmolality vs volume regulation, diabetes insipidus, and SIADH."
+    },
+    {
+        "id": "Ch24_Adrenal_Cortex",
+        "name": "Ch24 Adrenal Cortex",
+        "dirName": "Ch24_Adrenal_Cortex",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Adrenal zonation (GFR - salt, sugar, sex), steroidogenic enzyme pathways, congenital adrenal hyperplasias (21, 11-beta, 17-alpha deficiencies), Cushing syndrome, and Addison disease."
+    },
+    {
+        "id": "Ch25_Adrenal_Medulla_and_Catecholamines",
+        "name": "Ch25 Adrenal Medulla and Catecholamines",
+        "dirName": "Ch25_Adrenal_Medulla_and_Catecholamines",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Chromaffin cells, PNMT cortisol induction, catecholamine synthesis/degradation (MAO/COMT to VMA/metanephrines), pheochromocytoma, and adrenergic receptor physiology."
+    },
+    {
+        "id": "Ch26_Endocrine_Pancreas_and_Glucose_Homeostasis",
+        "name": "Ch26 Endocrine Pancreas and Glucose Homeostasis",
+        "dirName": "Ch26_Endocrine_Pancreas_and_Glucose_Homeostasis",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Beta cell SUR1/K-ATP channel insulin exocytosis, GLUT-4 translocation, glucagon counter-regulation, somatostatin, somatostatinoma, and insulinoma."
+    },
+    {
+        "id": "Ch27_Calcium_and_Phosphate_Hormonal_Control",
+        "name": "Ch27 Calcium and Phosphate Hormonal Control",
+        "dirName": "Ch27_Calcium_and_Phosphate_Hormonal_Control",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Parathyroid hormone (PTH), 1,25-(OH)2D3 activation, calcitonin, FGF23/Klotho axis, CaSR signaling, hypercalcemia vs hypocalcemia, and metabolic bone disorders."
+    },
+    {
+        "id": "Ch28_Thyroid_Hormone_Physiology",
+        "name": "Ch28 Thyroid Hormone Physiology",
+        "dirName": "Ch28_Thyroid_Hormone_Physiology",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Iodide trapping, thyroid peroxidase (organification & coupling), TBG binding, peripheral 5'-deiodinase (T4 to T3 conversion), and metabolic rate actions."
+    },
+    {
+        "id": "Ch29_Growth_GH_and_Puberty",
+        "name": "Ch29 Growth Hormone, IGF-1, and Puberty",
+        "dirName": "Ch29_Growth_GH_and_Puberty",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "GHRH and somatostatin regulation, pulsatile GH secretion, hepatic IGF-1 generation, epiphyseal plate growth, Tanner staging, and pubertal endocrine transitions."
+    },
+    {
+        "id": "Ch30_Male_Reproductive_Physiology",
+        "name": "Ch30 Male Reproductive Physiology",
+        "dirName": "Ch30_Male_Reproductive_Physiology",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Hypothalamic-pituitary-gonadal axis, LH stimulation of Leydig cells (testosterone), FSH stimulation of Sertoli cells (spermatogenesis & inhibin B), and DHT 5-alpha reductase."
+    },
+    {
+        "id": "Ch31_Female_Reproductive_Physiology",
+        "name": "Ch31 Female Reproductive Physiology",
+        "dirName": "Ch31_Female_Reproductive_Physiology",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Two-cell two-gonadotropin model (theca LH & granulosa FSH), follicular/luteal phases, LH surge positive feedback, endometrial cycle, and pregnancy hCG."
+    },
+    {
+        "id": "Ch32_Gastrointestinal_Overview_and_Motility",
+        "name": "Ch32 Gastrointestinal Overview and Motility",
+        "dirName": "Ch32_Gastrointestinal_Overview_and_Motility",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Interstitial cells of Cajal, slow waves, enteric nervous system (Auerbach & Meissner plexuses), esophageal peristalsis, lower esophageal sphincter, and migrating motor complex (MMC)."
+    },
+    {
+        "id": "Ch33_Gastrointestinal_Secretions",
+        "name": "Ch33 Gastrointestinal Secretions",
+        "dirName": "Ch33_Gastrointestinal_Secretions",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Gastric parietal cell H+/K+-ATPase (gastrin, histamine, ACh stimulation), somatostatin inhibition, pancreatic acinar vs ductal HCO3- secretion, and bile acid enterohepatic circulation."
+    },
+    {
+        "id": "Ch34_Gastrointestinal_Digestion_and_Absorption",
+        "name": "Ch34 Gastrointestinal Digestion and Absorption",
+        "dirName": "Ch34_Gastrointestinal_Digestion_and_Absorption",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Luminal & brush border carbohydrate digestion (SGLT1, GLUT5, GLUT2), protein digestion & peptide transport, lipid micelle absorption & chylomicron formation, and vitamin/mineral uptake."
+    }
+]
+
 def parse_discipline(discipline_name, base_dir, chapters_metadata, start_id):
     questions = []
     current_global_id = start_id
@@ -566,6 +841,7 @@ def build_database():
     pathology_dir = os.path.join(current_dir, 'step 1-Pathology')
     pharmacology_dir = os.path.join(current_dir, 'step 1-Pharmacology')
     biochemistry_dir = os.path.join(current_dir, 'step 1-Biochemistry and Medical Genetics QA')
+    physiology_dir = os.path.join(current_dir, 'step 1-Physiology')
     output_js_path = os.path.join(current_dir, 'questions_data.js')
 
     print("=== Building USMLE Step 1 Comprehensive Question Database ===")
@@ -578,10 +854,14 @@ def build_database():
     print(f" -> Pharmacology Complete: {len(pharmacology_questions)} questions loaded.\n")
 
     print("Parsing Step 1 Biochemistry & Genetics...")
-    biochemistry_questions, final_id = parse_discipline("Biochemistry", biochemistry_dir, BIOCHEMISTRY_CHAPTERS, next_id2)
+    biochemistry_questions, next_id3 = parse_discipline("Biochemistry", biochemistry_dir, BIOCHEMISTRY_CHAPTERS, next_id2)
     print(f" -> Biochemistry Complete: {len(biochemistry_questions)} questions loaded.\n")
 
-    all_questions = pathology_questions + pharmacology_questions + biochemistry_questions
+    print("Parsing Step 1 Physiology...")
+    physiology_questions, final_id = parse_discipline("Physiology", physiology_dir, PHYSIOLOGY_CHAPTERS, next_id3)
+    print(f" -> Physiology Complete: {len(physiology_questions)} questions loaded.\n")
+
+    all_questions = pathology_questions + pharmacology_questions + biochemistry_questions + physiology_questions
     print(f"Total Questions Compiled: {len(all_questions)}")
 
     disciplines_metadata = [
@@ -608,31 +888,75 @@ def build_database():
             "count": len(biochemistry_questions),
             "status": "active",
             "description": "Comprehensive biochemistry, metabolism, molecular biology, and medical genetics (23 chapters)"
+        },
+        {
+            "id": "Physiology",
+            "name": "Physiology",
+            "step": 1,
+            "count": len(physiology_questions),
+            "status": "active",
+            "description": "Comprehensive cellular, neuromuscular, organ system, and integrative physiology (34 chapters)"
         }
     ]
 
-    # Write questions_data.js
+    # Write questions_data.js (Manifest)
     with open(output_js_path, 'w', encoding='utf-8') as out_f:
-        out_f.write("// Autogenerated USMLE Step 1 Comprehensive Question Bank Database\n")
-        out_f.write("// Contains Step 1 Pathology (2,100 Qs), Pharmacology (1,350 Qs), and Biochemistry & Genetics (3,450 Qs)\n\n")
+        out_f.write("// Autogenerated USMLE Step 1 Comprehensive Question Bank Manifest\n")
+        out_f.write("// Contains metadata for Pathology (2,100 Qs), Pharmacology (1,350 Qs), Biochemistry & Genetics (3,450 Qs), and Physiology (5,100 Qs)\n\n")
+        out_f.write("window.USMLE_QUESTIONS = window.USMLE_QUESTIONS || [];\n\n")
         out_f.write("window.USMLE_DISCIPLINES = ")
         json.dump(disciplines_metadata, out_f, ensure_ascii=False, indent=2)
-        out_f.write(";\n\n")
+        out_f.write(";\n")
+
+    # Write questions_data_pathology.js
+    path_js_path = os.path.join(current_dir, 'questions_data_pathology.js')
+    with open(path_js_path, 'w', encoding='utf-8') as out_f:
+        out_f.write("// Autogenerated USMLE Step 1 - Pathology Question Bank (2,100 Questions)\n\n")
         out_f.write("window.USMLE_PATHOLOGY_CHAPTERS = ")
         json.dump(PATHOLOGY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
+        out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
+        json.dump(pathology_questions, out_f, ensure_ascii=False, separators=(',', ':'))
+        out_f.write(");\n")
+
+    # Write questions_data_pharmacology.js
+    pharm_js_path = os.path.join(current_dir, 'questions_data_pharmacology.js')
+    with open(pharm_js_path, 'w', encoding='utf-8') as out_f:
+        out_f.write("// Autogenerated USMLE Step 1 - Pharmacology Question Bank (1,350 Questions)\n\n")
         out_f.write("window.USMLE_PHARMACOLOGY_CHAPTERS = ")
         json.dump(PHARMACOLOGY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
+        out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
+        json.dump(pharmacology_questions, out_f, ensure_ascii=False, separators=(',', ':'))
+        out_f.write(");\n")
+
+    # Write questions_data_biochemistry.js
+    bio_js_path = os.path.join(current_dir, 'questions_data_biochemistry.js')
+    with open(bio_js_path, 'w', encoding='utf-8') as out_f:
+        out_f.write("// Autogenerated USMLE Step 1 - Biochemistry & Genetics Question Bank (3,450 Questions)\n\n")
         out_f.write("window.USMLE_BIOCHEMISTRY_CHAPTERS = ")
         json.dump(BIOCHEMISTRY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
-        out_f.write("window.USMLE_QUESTIONS = ")
-        json.dump(all_questions, out_f, ensure_ascii=False, separators=(',', ':'))
-        out_f.write(";\n")
+        out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
+        json.dump(biochemistry_questions, out_f, ensure_ascii=False, separators=(',', ':'))
+        out_f.write(");\n")
 
-    file_size_mb = os.path.getsize(output_js_path) / 1024 / 1024
-    print(f"Successfully generated {output_js_path} ({file_size_mb:.2f} MB)")
+    # Write questions_data_physiology.js
+    phys_js_path = os.path.join(current_dir, 'questions_data_physiology.js')
+    with open(phys_js_path, 'w', encoding='utf-8') as out_f:
+        out_f.write("// Autogenerated USMLE Step 1 - Physiology Question Bank (5,100 Questions)\n\n")
+        out_f.write("window.USMLE_PHYSIOLOGY_CHAPTERS = ")
+        json.dump(PHYSIOLOGY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        out_f.write(";\n\n")
+        out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
+        json.dump(physiology_questions, out_f, ensure_ascii=False, separators=(',', ':'))
+        out_f.write(");\n")
+
+    all_files = [output_js_path, path_js_path, pharm_js_path, bio_js_path, phys_js_path]
+    print("Successfully generated question bank database files:")
+    for fp in all_files:
+        mb = os.path.getsize(fp) / 1024 / 1024
+        print(f" - {os.path.basename(fp):<32}: {mb:6.2f} MB")
 
 if __name__ == '__main__':
     build_database()

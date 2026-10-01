@@ -29,7 +29,11 @@ def verify_and_sync():
         ("Normal Labs Modal", "id=\"labs-modal\""),
         ("Normal Labs Button", "id=\"btn-open-labs\""),
         ("Labs Database Link", "labs_data.js?v=1.0"),
-        ("Questions Database Link", "questions_data.js?v=2100_v2")
+        ("Questions Database Link", "questions_data.js"),
+        ("Pathology Database Link", "questions_data_pathology.js"),
+        ("Pharmacology Database Link", "questions_data_pharmacology.js"),
+        ("Biochemistry Database Link", "questions_data_biochemistry.js"),
+        ("Physiology Database Link", "questions_data_physiology.js")
     ]
 
     print("Verifying MedPulse Suite features in index.html:")
