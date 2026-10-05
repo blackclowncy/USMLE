@@ -33,7 +33,8 @@ def verify_and_sync():
         ("Pathology Database Link", "questions_data_pathology.js"),
         ("Pharmacology Database Link", "questions_data_pharmacology.js"),
         ("Biochemistry Database Link", "questions_data_biochemistry.js"),
-        ("Physiology Database Link", "questions_data_physiology.js")
+        ("Physiology Database Link", "questions_data_physiology.js"),
+        ("Anatomy Database Link", "questions_data_anatomy.js")
     ]
 
     print("Verifying MedPulse Suite features in index.html:")

@@ -2,9 +2,9 @@
 
 An authentic, offline-first USMLE Step 1 examination and learning platform engineered with a **Warm Neumorphism** tactile design system.
 
-## 📖 Question Bank Architecture (12,000 Questions across 80 Chapters)
+## 📖 Question Bank Architecture (15,000 Questions across 100 Chapters)
 
-The question bank is organized under **USMLE Step 1** across 4 major disciplines:
+The question bank is organized under **USMLE Step 1** across 5 major disciplines:
 
 ### 1. Pathology (`step 1-Pathology/` - 14 Chapters, 2,100 Questions)
 - `Ch01_Cellular_Adaptations_and_Reversible_Injury/` (150 Qs)
@@ -46,11 +46,16 @@ The question bank is organized under **USMLE Step 1** across 4 major disciplines
 - **Reproductive Physiology** (Ch30 - Ch31, 300 Qs): Male Reproductive Physiology, Female Reproductive Physiology.
 - **Gastrointestinal Physiology** (Ch32 - Ch34, 450 Qs): GI Overview & Motility, GI Secretions, GI Digestion & Absorption.
 
+### 5. Anatomy & Embryology (`step 1-Anatomy/` - 20 Chapters, 3,000 Questions)
+- **Early Embryology & Histology** (Ch01 - Ch03, 450 Qs): Gonad Development & Sex Differentiation, First 8 Weeks of Development & Teratogenesis, Epithelia & Cellular Junctions.
+- **Gross Anatomy** (Ch04 - Ch09, 900 Qs): Vertebral Column, Back & ANS, Thorax & Heart, Abdomen, Pelvis & Perineum, Upper Limb & Brachial Plexus, Lower Limb & Lumbosacral Plexus, Head & Neck (Cranial Nerves).
+- **Neuroscience & Neuroanatomy** (Ch10 - Ch20, 1,650 Qs): Nervous System Organization & Development, Histology & Blood-Brain Barrier, Ventricular System & CSF Dynamics, The Spinal Cord, The Brain Stem, The Cerebellum, Basal Ganglia, Visual Pathways, Diencephalon, Cerebral Cortex, Limbic System.
+
 ---
 
 ## 🎨 UI/UX Features ([DESIGN.md](DESIGN.md))
 - **Warm Neumorphism Style**: Sculpted bone-clay tactile surfaces (`#ebe7df`) with unified 315° directional light vector.
-- **Multi-Discipline Switching**: Instantly switch between Pathology, Pharmacology, Biochemistry & Genetics, and Physiology.
+- **Multi-Discipline Switching**: Instantly switch between Pathology, Pharmacology, Biochemistry & Genetics, Physiology, and Anatomy & Embryology.
 - **USMLE Test Blocks**: Filter questions by 50-question examination blocks (`Block 1`, `Block 2`, `Block 3`) or full chapter mode (`All 150`).
 - **Real-Time Question Navigator**: Dynamic 50/150 question grid tracking Correct (Emerald), Incorrect (Coral), Flagged (Gold Star), and Unanswered states.
 - **4-Tier In-Depth Explanations**:

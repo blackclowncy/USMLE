@@ -741,6 +741,169 @@ PHYSIOLOGY_CHAPTERS = [
     }
 ]
 
+ANATOMY_CHAPTERS = [
+    {
+        "id": "Ch01_Gonad_Development",
+        "name": "Ch01 Early Embryology: Gonad Development",
+        "dirName": "Ch01_Gonad_Development",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Sex determination, SRY/TDF, mesonephric vs paramesonephric duct differentiation, external genitalia development, and disorders of sex development."
+    },
+    {
+        "id": "Ch02_First_8_Weeks_of_Development",
+        "name": "Ch02 Early Embryology: First 8 Weeks of Development",
+        "dirName": "Ch02_First_8_Weeks_of_Development",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Fertilization, blastocyst implantation, gastrulation, notochord induction, trilaminar germ disc derivatives, fetal membranes, and teratogen critical windows."
+    },
+    {
+        "id": "Ch03_Histology_Epithelia",
+        "name": "Ch03 Histology: Epithelia and Cellular Junctions",
+        "dirName": "Ch03_Histology_Epithelia",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Simple, stratified, transitional, and pseudostratified epithelia, metaplasia (Barrett esophagus), tight junctions, desmosomes, hemidesmosomes, basement membrane collagen IV, and ciliary axonemes."
+    },
+    {
+        "id": "Ch04_Back_and_Autonomic_Nervous_System",
+        "name": "Ch04 Gross Anatomy: Vertebral Column, Back and ANS",
+        "dirName": "Ch04_Back_and_Autonomic_Nervous_System",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Vertebral column osteology, herniated intervertebral discs (L4-L5 vs L5-S1), lumbar puncture layers (L3-L5), deep back musculature, suboccipital triangle, sympathetic trunk (Horner syndrome), parasympathetics, and visceral referred pain mechanisms."
+    },
+    {
+        "id": "Ch05_Thorax",
+        "name": "Ch05 Gross Anatomy: Thorax",
+        "dirName": "Ch05_Thorax",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Thoracic wall intercostal neurovascular bundles (VAN), thoracentesis safety margins, carina (T4/T5), foreign body aspiration anatomy, mediastinal masses (4 Ts), pericardial sinuses, coronary artery dominance, and conduction system."
+    },
+    {
+        "id": "Ch06_Abdomen_Pelvis_and_Perineum",
+        "name": "Ch06 Gross Anatomy: Abdomen, Pelvis, and Perineum",
+        "dirName": "Ch06_Abdomen_Pelvis_and_Perineum",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Rectus sheath arcuate line, direct vs indirect inguinal hernia (Hesselbach triangle, inferior epigastric vessels), retroperitoneal organs (SAD PUCKER), celiac trunk, SMA/IMA territories, mesenteric ischemia, portal hypertension portocaval anastomoses, ureter course, and pectinate line landmarks."
+    },
+    {
+        "id": "Ch07_Upper_Limb",
+        "name": "Ch07 Gross Anatomy: Upper Limb",
+        "dirName": "Ch07_Upper_Limb",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Brachial plexus (roots, trunks, cords, branches), Erb-Duchenne palsy (waiter's tip), Klumpke palsy, rotator cuff muscles (SITS), radial nerve injury (wrist drop), median nerve entrapment (carpal tunnel, pope's blessing), ulnar nerve injury (claw hand), and scaphoid fracture avascular necrosis."
+    },
+    {
+        "id": "Ch08_Lower_Limb",
+        "name": "Ch08 Gross Anatomy: Lower Limb",
+        "dirName": "Ch08_Lower_Limb",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Femoral nerve, obturator nerve, superior gluteal nerve (Trendelenburg sign), inferior gluteal nerve, sciatic nerve, femoral triangle (NAVEL), knee ligament and meniscal tears (unhappy triad), and common fibular/peroneal nerve injury (foot drop)."
+    },
+    {
+        "id": "Ch09_Head_and_Neck",
+        "name": "Ch09 Gross Anatomy: Head and Neck",
+        "dirName": "Ch09_Head_and_Neck",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Skull base foramina and cranial nerve exits (CN I-XII), cavernous sinus thrombosis, cervical triangles, fascial planes and mediastinitis spread, thyroid neurovascular relations (superior/recurrent laryngeal nerves), pharyngeal arch/pouch/cleft derivatives, extraocular muscles, and salivary gland autonomic innervation."
+    },
+    {
+        "id": "Ch10_Nervous_System_Organization_and_Development",
+        "name": "Ch10 Neuroscience: Nervous System Organization & Development",
+        "dirName": "Ch10_Nervous_System_Organization_and_Development",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Neural tube induction and neurulation, neural tube defects (anencephaly, spina bifida, maternal folate), primary and secondary brain vesicles, Chiari malformations, Dandy-Walker malformation, neural crest cell migration, and neurocristopathies (Hirschsprung disease, neurofibromatosis)."
+    },
+    {
+        "id": "Ch11_Histology_of_the_Nervous_System",
+        "name": "Ch11 Neuroscience: Histology of the Nervous System",
+        "dirName": "Ch11_Histology_of_the_Nervous_System",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Neuronal cytoskeleton, anterograde and retrograde axonal transport (rabies, tetanus toxin), astrocytes and glial scarring, oligodendrocytes (multiple sclerosis), microglial response, blood-brain barrier (BBB) ultrastructure, and peripheral nerve Wallerian degeneration."
+    },
+    {
+        "id": "Ch12_Ventricular_System",
+        "name": "Ch12 Neuroscience: Ventricular System and CSF Dynamics",
+        "dirName": "Ch12_Ventricular_System",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Ventricular system communications (foramina of Monro, Luschka, Magendie), choroid plexus CSF production, arachnoid granulations, lumbar puncture CSF interpretation, communicating vs non-communicating hydrocephalus, normal pressure hydrocephalus (NPH), pseudotumor cerebri, and brain herniation syndromes."
+    },
+    {
+        "id": "Ch13_The_Spinal_Cord",
+        "name": "Ch13 Neuroscience: The Spinal Cord",
+        "dirName": "Ch13_The_Spinal_Cord",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Spinal cord gross anatomy, conus medullaris, cauda equina, Rexed laminae, anterior spinal artery territory (artery of Adamkiewicz), dorsal column-medial lemniscal system, spinothalamic tract, corticospinal tract, Brown-Séquard syndrome, syringomyelia, tabes dorsalis, and amyotrophic lateral sclerosis (ALS)."
+    },
+    {
+        "id": "Ch14_The_Brain_Stem",
+        "name": "Ch14 Neuroscience: The Brain Stem",
+        "dirName": "Ch14_The_Brain_Stem",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Medulla, pons, and midbrain internal architecture, cranial nerve nuclei, lateral medullary (Wallenberg / PICA) syndrome, medial medullary syndrome, medial pontine syndrome, locked-in syndrome, Weber syndrome, Parinaud syndrome, and internuclear ophthalmoplegia (INO / MLF lesion)."
+    },
+    {
+        "id": "Ch15_The_Cerebellum",
+        "name": "Ch15 Neuroscience: The Cerebellum",
+        "dirName": "Ch15_The_Cerebellum",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Vestibulocerebellum, spinocerebellum, and cerebrocerebellum functional topography, deep cerebellar nuclei (dentate, emboliform, globose, fastigial), Purkinje cell GABAergic output, climbing vs mossy fibers, cerebellar ataxia (hemispheric vs vermian), and pediatric posterior fossa tumors."
+    },
+    {
+        "id": "Ch16_Basal_Ganglia",
+        "name": "Ch16 Neuroscience: Basal Ganglia",
+        "dirName": "Ch16_Basal_Ganglia",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Corpus striatum (caudate & putamen), globus pallidus, subthalamic nucleus, substantia nigra, direct pathway (motor facilitation) vs indirect pathway (motor inhibition), Parkinson disease (loss of dopaminergic neurons in SNc, Lewy bodies), Huntington disease (caudate atrophy, CAG repeats), hemiballismus, and Wilson disease."
+    },
+    {
+        "id": "Ch17_Visual_Pathways",
+        "name": "Ch17 Neuroscience: Visual Pathways",
+        "dirName": "Ch17_Visual_Pathways",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Optical refraction, retinal phototransduction cascade, optic chiasm lesions (bitemporal hemianopia), lateral geniculate nucleus (LGN), Meyer loop (temporal lobe / upper quadrantanopia) vs Baum loop (parietal lobe / lower quadrantanopia), primary visual cortex (macular sparing), pupillary light reflex, and afferent pupillary defect (Marcus Gunn pupil)."
+    },
+    {
+        "id": "Ch18_Diencephalon",
+        "name": "Ch18 Neuroscience: Diencephalon",
+        "dirName": "Ch18_Diencephalon",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Thalamic sensory relay nuclei (VPL, VPM, LGN, MGN) and motor relay nuclei (VL, VA), hypothalamic nuclei (SCN circadian rhythm, SON/PVN neuroendocrine, anterior cooling, posterior heating, hunger and satiety centers), pineal gland, and craniopharyngioma."
+    },
+    {
+        "id": "Ch19_Cerebral_Cortex",
+        "name": "Ch19 Neuroscience: Cerebral Cortex",
+        "dirName": "Ch19_Cerebral_Cortex",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Cerebral lobes, Brodmann cytoarchitectonic areas (motor area 4, premotor 6, FEF 8, Broca 44/45, somatosensory 3,1,2, primary visual 17, Wernicke 22, angular gyrus 39), internal capsule stroke syndromes, aphasia differentiation (Broca vs Wernicke vs conduction vs transcortical), circle of Willis aneurysms, and ACA/MCA/PCA ischemic stroke patterns."
+    },
+    {
+        "id": "Ch20_Limbic_System",
+        "name": "Ch20 Neuroscience: Limbic System",
+        "dirName": "Ch20_Limbic_System",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Limbic lobe components, hippocampal long-term potentiation (LTP), Papez circuit, declarative vs non-declarative memory systems, amygdala fear conditioning and emotion regulation, Klüver-Bucy syndrome, Wernicke-Korsakoff syndrome (mammillary body atrophy), and mesial temporal sclerosis epilepsy."
+    }
+]
+
 def parse_discipline(discipline_name, base_dir, chapters_metadata, start_id):
     questions = []
     current_global_id = start_id
@@ -842,6 +1005,7 @@ def build_database():
     pharmacology_dir = os.path.join(current_dir, 'step 1-Pharmacology')
     biochemistry_dir = os.path.join(current_dir, 'step 1-Biochemistry and Medical Genetics QA')
     physiology_dir = os.path.join(current_dir, 'step 1-Physiology')
+    anatomy_dir = os.path.join(current_dir, 'step 1-Anatomy')
     output_js_path = os.path.join(current_dir, 'questions_data.js')
 
     print("=== Building USMLE Step 1 Comprehensive Question Database ===")
@@ -858,10 +1022,14 @@ def build_database():
     print(f" -> Biochemistry Complete: {len(biochemistry_questions)} questions loaded.\n")
 
     print("Parsing Step 1 Physiology...")
-    physiology_questions, final_id = parse_discipline("Physiology", physiology_dir, PHYSIOLOGY_CHAPTERS, next_id3)
+    physiology_questions, next_id4 = parse_discipline("Physiology", physiology_dir, PHYSIOLOGY_CHAPTERS, next_id3)
     print(f" -> Physiology Complete: {len(physiology_questions)} questions loaded.\n")
 
-    all_questions = pathology_questions + pharmacology_questions + biochemistry_questions + physiology_questions
+    print("Parsing Step 1 Anatomy & Embryology...")
+    anatomy_questions, final_id = parse_discipline("Anatomy", anatomy_dir, ANATOMY_CHAPTERS, next_id4)
+    print(f" -> Anatomy Complete: {len(anatomy_questions)} questions loaded.\n")
+
+    all_questions = pathology_questions + pharmacology_questions + biochemistry_questions + physiology_questions + anatomy_questions
     print(f"Total Questions Compiled: {len(all_questions)}")
 
     disciplines_metadata = [
@@ -896,13 +1064,21 @@ def build_database():
             "count": len(physiology_questions),
             "status": "active",
             "description": "Comprehensive cellular, neuromuscular, organ system, and integrative physiology (34 chapters)"
+        },
+        {
+            "id": "Anatomy",
+            "name": "Anatomy & Embryology",
+            "step": 1,
+            "count": len(anatomy_questions),
+            "status": "active",
+            "description": "Comprehensive gross anatomy, embryology, histology, and neuroscience (20 chapters)"
         }
     ]
 
     # Write questions_data.js (Manifest)
     with open(output_js_path, 'w', encoding='utf-8') as out_f:
         out_f.write("// Autogenerated USMLE Step 1 Comprehensive Question Bank Manifest\n")
-        out_f.write("// Contains metadata for Pathology (2,100 Qs), Pharmacology (1,350 Qs), Biochemistry & Genetics (3,450 Qs), and Physiology (5,100 Qs)\n\n")
+        out_f.write("// Contains metadata for Pathology (2,100 Qs), Pharmacology (1,350 Qs), Biochemistry & Genetics (3,450 Qs), Physiology (5,100 Qs), and Anatomy & Embryology (3,000 Qs)\n\n")
         out_f.write("window.USMLE_QUESTIONS = window.USMLE_QUESTIONS || [];\n\n")
         out_f.write("window.USMLE_DISCIPLINES = ")
         json.dump(disciplines_metadata, out_f, ensure_ascii=False, indent=2)
@@ -952,7 +1128,18 @@ def build_database():
         json.dump(physiology_questions, out_f, ensure_ascii=False, separators=(',', ':'))
         out_f.write(");\n")
 
-    all_files = [output_js_path, path_js_path, pharm_js_path, bio_js_path, phys_js_path]
+    # Write questions_data_anatomy.js
+    anat_js_path = os.path.join(current_dir, 'questions_data_anatomy.js')
+    with open(anat_js_path, 'w', encoding='utf-8') as out_f:
+        out_f.write("// Autogenerated USMLE Step 1 - Anatomy & Embryology Question Bank (3,000 Questions)\n\n")
+        out_f.write("window.USMLE_ANATOMY_CHAPTERS = ")
+        json.dump(ANATOMY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        out_f.write(";\n\n")
+        out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
+        json.dump(anatomy_questions, out_f, ensure_ascii=False, separators=(',', ':'))
+        out_f.write(");\n")
+
+    all_files = [output_js_path, path_js_path, pharm_js_path, bio_js_path, phys_js_path, anat_js_path]
     print("Successfully generated question bank database files:")
     for fp in all_files:
         mb = os.path.getsize(fp) / 1024 / 1024
