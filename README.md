@@ -2,9 +2,9 @@
 
 An authentic, offline-first USMLE Step 1 examination and learning platform engineered with a **Warm Neumorphism** tactile design system.
 
-## 📖 Question Bank Architecture (15,000 Questions across 100 Chapters)
+## 📖 Question Bank Architecture (20,250 Questions across 135 Chapters)
 
-The question bank is organized under **USMLE Step 1** across 5 major disciplines:
+The platform provides **100% full coverage of all 7 foundational USMLE Step 1 disciplines**:
 
 ### 1. Pathology (`step 1-Pathology/` - 14 Chapters, 2,100 Questions)
 - `Ch01_Cellular_Adaptations_and_Reversible_Injury/` (150 Qs)
@@ -51,11 +51,31 @@ The question bank is organized under **USMLE Step 1** across 5 major disciplines
 - **Gross Anatomy** (Ch04 - Ch09, 900 Qs): Vertebral Column, Back & ANS, Thorax & Heart, Abdomen, Pelvis & Perineum, Upper Limb & Brachial Plexus, Lower Limb & Lumbosacral Plexus, Head & Neck (Cranial Nerves).
 - **Neuroscience & Neuroanatomy** (Ch10 - Ch20, 1,650 Qs): Nervous System Organization & Development, Histology & Blood-Brain Barrier, Ventricular System & CSF Dynamics, The Spinal Cord, The Brain Stem, The Cerebellum, Basal Ganglia, Visual Pathways, Diencephalon, Cerebral Cortex, Limbic System.
 
+### 6. Behavioral Science & Social Sciences (`step 1-Behavioral Science and Social Sciences QA/` - 14 Chapters, 2,100 Questions)
+- `Ch01_Epidemiology/` (150 Qs)
+- `Ch02_Biostatistics/` (150 Qs)
+- `Ch03_Developmental_Life_Cycle/` (150 Qs)
+- `Ch04_Theories_of_Learning_and_Behavioral_Modification/` (150 Qs)
+- `Ch05_Defense_Mechanisms/` (150 Qs)
+- `Ch06_Psychological_Health_and_Testing/` (150 Qs)
+- `Ch07_Substance_Use_Disorders/` (150 Qs)
+- `Ch08_Sleep_and_Sleep_Disorders/` (150 Qs)
+- `Ch09_Psychiatric_DSM_5_Disorders/` (150 Qs)
+- `Ch10_Psychopharmacology/` (150 Qs)
+- `Ch11_Brain_Function_and_Neurocognitive_Disorders/` (150 Qs)
+- `Ch12_Ethics_Law_and_Physician_Behavior/` (150 Qs)
+- `Ch13_Health_Care_Delivery_Systems/` (150 Qs)
+- `Ch14_Basic_Science_of_Patient_Safety/` (150 Qs)
+
+### 7. Microbiology & Immunology (`step 1-Immunology and Microbiology QA/` - 21 Chapters, 3,150 Questions)
+- **Immunology** (Ch01 - Ch13, 1,950 Qs): Immune System Architecture, Ontogeny of Immune Cells, Lymphocyte Development & Selection, Innate Immune Response, Innate Meets Adaptive, B & T Cell Activation, Humoral Immunity, Cell-Mediated Immunity, Immunodiagnostics, Immunizations, Primary Immunodeficiencies, Hypersensitivity & Autoimmunity, Transplantation.
+- **Microbiology** (Ch14 - Ch21, 1,200 Qs): General Microbiology, Medically Relevant Bacteria, Bacterial Genetics, Medically Relevant Viruses, Medically Relevant Fungi, Medical Parasitology, Clinical Infectious Disease, Comparative Microbiology.
+
 ---
 
 ## 🎨 UI/UX Features ([DESIGN.md](DESIGN.md))
 - **Warm Neumorphism Style**: Sculpted bone-clay tactile surfaces (`#ebe7df`) with unified 315° directional light vector.
-- **Multi-Discipline Switching**: Instantly switch between Pathology, Pharmacology, Biochemistry & Genetics, Physiology, and Anatomy & Embryology.
+- **Multi-Discipline Switching**: Instantly switch between all 7 USMLE Step 1 disciplines: Pathology, Pharmacology, Biochemistry & Genetics, Physiology, Anatomy & Embryology, Behavioral Science & Psychiatry, and Microbiology & Immunology.
 - **USMLE Test Blocks**: Filter questions by 50-question examination blocks (`Block 1`, `Block 2`, `Block 3`) or full chapter mode (`All 150`).
 - **Real-Time Question Navigator**: Dynamic 50/150 question grid tracking Correct (Emerald), Incorrect (Coral), Flagged (Gold Star), and Unanswered states.
 - **4-Tier In-Depth Explanations**:

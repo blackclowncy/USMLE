@@ -904,6 +904,292 @@ ANATOMY_CHAPTERS = [
     }
 ]
 
+BEHAVIORAL_CHAPTERS = [
+    {
+        "id": "Ch01_Epidemiology",
+        "name": "Ch01 Behavioral: Epidemiology",
+        "dirName": "Ch01_Epidemiology",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Epidemiological study designs (cohort, case-control, cross-sectional, RCT), incidence vs prevalence, odds ratio, relative risk, attributable risk, selection and measurement bias, and confounding."
+    },
+    {
+        "id": "Ch02_Biostatistics",
+        "name": "Ch02 Behavioral: Biostatistics",
+        "dirName": "Ch02_Biostatistics",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Measures of central tendency and dispersion, normal distribution (68-95-99.7 rule), hypothesis testing (Type I/II error, statistical power, p-values), confidence intervals, t-test, ANOVA, chi-square, sensitivity, specificity, PPV, NPV, likelihood ratios, and ROC curves."
+    },
+    {
+        "id": "Ch03_Developmental_Life_Cycle",
+        "name": "Ch03 Behavioral: Developmental Life Cycle",
+        "dirName": "Ch03_Developmental_Life_Cycle",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Erikson psychosocial stages, Piaget cognitive development, Freud psychosexual stages, motor, social, and language milestones across infancy, toddlerhood, preschool, school age, adolescence, and senescence."
+    },
+    {
+        "id": "Ch04_Theories_of_Learning_and_Behavioral_Modification",
+        "name": "Ch04 Behavioral: Theories of Learning & Behavioral Modification",
+        "dirName": "Ch04_Theories_of_Learning_and_Behavioral_Modification",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Classical conditioning, operant conditioning (positive/negative reinforcement, punishment, reinforcement schedules), systematic desensitization, cognitive behavioral therapy (CBT), extinction, and token economy."
+    },
+    {
+        "id": "Ch05_Defense_Mechanisms",
+        "name": "Ch05 Behavioral: Defense Mechanisms",
+        "dirName": "Ch05_Defense_Mechanisms",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Mature defense mechanisms (sublimation, altruism, suppression, humor) vs immature/neurotic defenses (projection, displacement, reaction formation, splitting, repression, rationalization, denial, acting out)."
+    },
+    {
+        "id": "Ch06_Psychological_Health_and_Testing",
+        "name": "Ch06 Behavioral: Psychological Health & Testing",
+        "dirName": "Ch06_Psychological_Health_and_Testing",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Intelligence testing (WAIS, WISC), projective tests (Rorschach, TAT), objective personality inventories (MMPI), neuropsychological assessment, stress response (allostatic load), and illness behavior."
+    },
+    {
+        "id": "Ch07_Substance_Use_Disorders",
+        "name": "Ch07 Behavioral: Substance Use Disorders",
+        "dirName": "Ch07_Substance_Use_Disorders",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "DSM-5 criteria for substance use disorders, alcohol intoxication, withdrawal and delirium tremens, opioid overdose and withdrawal, sedative-hypnotics, stimulants (cocaine, amphetamines), cannabis, hallucinogens, and medication-assisted therapy."
+    },
+    {
+        "id": "Ch08_Sleep_and_Sleep_Disorders",
+        "name": "Ch08 Behavioral: Sleep & Sleep Disorders",
+        "dirName": "Ch08_Sleep_and_Sleep_Disorders",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Sleep architecture (NREM stages N1-N3, REM sleep, EEG waveforms), circadian rhythm regulation (SCN, melatonin), insomnia, narcolepsy (hypocretin/orexin deficiency), obstructive sleep apnea, parasomnias (night terrors, sleepwalking), and REM sleep behavior disorder."
+    },
+    {
+        "id": "Ch09_Psychiatric_DSM_5_Disorders",
+        "name": "Ch09 Behavioral: Psychiatric DSM-5 Disorders",
+        "dirName": "Ch09_Psychiatric_DSM_5_Disorders",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Depressive disorders, bipolar and related disorders, anxiety disorders (GAD, panic disorder, phobias), OCD, trauma/stressor disorders (PTSD, acute stress disorder), psychotic disorders (schizophrenia, schizoaffective), somatic symptom disorders, eating disorders, and personality disorders (Clusters A, B, C)."
+    },
+    {
+        "id": "Ch10_Psychopharmacology",
+        "name": "Ch10 Behavioral: Psychopharmacology",
+        "dirName": "Ch10_Psychopharmacology",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Antidepressants (SSRIs, SNRIs, TCAs, MAOIs, bupropion, mirtazapine), mood stabilizers (lithium, valproate, lamotrigine), antipsychotics (first and second generation, EPS, NMS, metabolic syndrome), anxiolytics, and psychostimulants."
+    },
+    {
+        "id": "Ch11_Brain_Function_and_Neurocognitive_Disorders",
+        "name": "Ch11 Behavioral: Brain Function & Neurocognitive Disorders",
+        "dirName": "Ch11_Brain_Function_and_Neurocognitive_Disorders",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Delirium vs major/mild neurocognitive disorders (Alzheimer disease, frontotemporal dementia, Lewy body dementia, vascular dementia, prion disease), pseudodementia, and focal cerebral lesions."
+    },
+    {
+        "id": "Ch12_Ethics_Law_and_Physician_Behavior",
+        "name": "Ch12 Behavioral: Ethics, Law & Physician Behavior",
+        "dirName": "Ch12_Ethics_Law_and_Physician_Behavior",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Core biomedical ethics (autonomy, beneficence, non-maleficence, justice), informed consent, decision-making capacity, surrogate decision-makers, advance directives, confidentiality, HIPAA, exceptions (duty to warn/Tarasoff, mandatory reporting), and physician boundaries."
+    },
+    {
+        "id": "Ch13_Health_Care_Delivery_Systems",
+        "name": "Ch13 Behavioral: Health Care Delivery Systems",
+        "dirName": "Ch13_Health_Care_Delivery_Systems",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Healthcare financing and reimbursement models (Medicare, Medicaid, HMO, PPO, ACO), insurance concepts (deductible, copay, coinsurance), healthcare disparities, quality indicators, and global health systems."
+    },
+    {
+        "id": "Ch14_Basic_Science_of_Patient_Safety",
+        "name": "Ch14 Behavioral: Basic Science of Patient Safety",
+        "dirName": "Ch14_Basic_Science_of_Patient_Safety",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Root cause analysis (RCA), failure mode and effects analysis (FMEA), Swiss cheese model of accident causation, active vs latent errors, handoff communication protocols (SBAR), checklist implementation, and culture of safety."
+    }
+]
+
+MICROBIOLOGY_CHAPTERS = [
+    {
+        "id": "Ch01_The_Immune_System",
+        "name": "Ch01 Immunology: The Immune System Architecture",
+        "dirName": "Ch01_The_Immune_System",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Primary lymphoid organs (bone marrow, thymus) and secondary lymphoid tissues (lymph nodes, spleen, MALT), leukocyte adhesion cascade (selectins, integrins), and lymphocyte homing (HEVs, CCR7, S1P/S1PR1)."
+    },
+    {
+        "id": "Ch02_Ontogeny_of_the_Immune_Cells",
+        "name": "Ch02 Immunology: Ontogeny of the Immune Cells",
+        "dirName": "Ch02_Ontogeny_of_the_Immune_Cells",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Hematopoiesis, myeloid and lymphoid lineage commitment, hematopoietic stem cell (HSC) markers (CD34), common lymphoid progenitor (CLP), and development of dendritic cells and tissue macrophages."
+    },
+    {
+        "id": "Ch03_Lymphocyte_Development_and_Selection",
+        "name": "Ch03 Immunology: Lymphocyte Development & Selection",
+        "dirName": "Ch03_Lymphocyte_Development_and_Selection",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "T-cell thymic ontogeny (double negative, double positive, positive selection in cortex, negative selection in medulla, AIRE and APS-1), B-cell maturation (pro-B, pre-B, heavy/light chain V(D)J recombination, RAG1/RAG2, TdT), central and peripheral tolerance."
+    },
+    {
+        "id": "Ch04_Innate_Immune_Response",
+        "name": "Ch04 Immunology: Innate Immune Response",
+        "dirName": "Ch04_Innate_Immune_Response",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Pattern recognition receptors (PRRs, TLRs, NLRs, inflammasome/caspase-1, IL-1beta/IL-18), pathogen-associated molecular patterns (PAMPs), phagocytosis, oxidative burst (NADPH oxidase, MPO), natural killer (NK) cells (KIR/KAR, perforin/granzyme), and type I interferons (IFN-alpha/beta)."
+    },
+    {
+        "id": "Ch05_Innate_Immune_Response_Meets_Adaptive",
+        "name": "Ch05 Immunology: Innate Meets Adaptive Immunity",
+        "dirName": "Ch05_Innate_Immune_Response_Meets_Adaptive",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Antigen processing and presentation (MHC Class I via proteasome/TAP, MHC Class II via endosome/invariant chain), cross-presentation, and dendritic cell activation/migration to regional lymph nodes."
+    },
+    {
+        "id": "Ch06_B_and_T_Lymphocyte_Activation",
+        "name": "Ch06 Immunology: B & T Lymphocyte Activation",
+        "dirName": "Ch06_B_and_T_Lymphocyte_Activation",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Signal 1 (TCR-MHC/peptide, BCR-antigen), Signal 2 costimulation (CD28-CD80/86, CD40-CD40L), checkpoint receptors (CTLA-4, PD-1), Signal 3 cytokine polarizing signals, clonal expansion, and immunological memory."
+    },
+    {
+        "id": "Ch07_Humoral_Immunity",
+        "name": "Ch07 Immunology: Humoral Immunity",
+        "dirName": "Ch07_Humoral_Immunity",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Antibody structure and isotypes (IgM, IgD, IgG, IgA, IgE), somatic hypermutation and affinity maturation in germinal centers, class switch recombination (AID, CD40-CD40L interaction, Hyper-IgM syndrome), and complement pathways (classical, alternative, lectin, MAC)."
+    },
+    {
+        "id": "Ch08_Cell_Mediated_Immunity",
+        "name": "Ch08 Immunology: Cell-Mediated Immunity",
+        "dirName": "Ch08_Cell_Mediated_Immunity",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "CD4+ T-cell helper subsets (Th1: IFN-gamma/IL-12, Th2: IL-4/IL-5/IL-13, Th17: IL-17/IL-23, Treg: FOXP3/IL-10/TGF-beta), CD8+ cytotoxic T lymphocyte killing (perforin/granzyme, Fas/FasL), and delayed-type hypersensitivity."
+    },
+    {
+        "id": "Ch09_Immunodiagnostics",
+        "name": "Ch09 Immunology: Immunodiagnostics",
+        "dirName": "Ch09_Immunodiagnostics",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Enzyme-linked immunosorbent assay (ELISA), Western blot, flow cytometry and immunophenotyping (CD markers), direct/indirect immunofluorescence, agglutination tests, and serum protein electrophoresis (SPEP/UPEP)."
+    },
+    {
+        "id": "Ch10_Immunizations",
+        "name": "Ch10 Immunology: Immunizations",
+        "dirName": "Ch10_Immunizations",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Active vs passive immunity, vaccine types (live attenuated, inactivated/killed, toxoid, subunit, conjugate vaccines, mRNA vaccines), adjuvants, herd immunity, and contraindications (pregnancy, severe immunocompromise)."
+    },
+    {
+        "id": "Ch11_Primary_Immunodeficiencies",
+        "name": "Ch11 Immunology: Primary Immunodeficiencies",
+        "dirName": "Ch11_Primary_Immunodeficiencies",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Severe combined immunodeficiency (SCID: IL2RG, ADA), X-linked agammaglobulinemia (Bruton tyrosine kinase), Hyper-IgM syndrome, Common variable immunodeficiency (CVID), DiGeorge syndrome, Wiskott-Aldrich syndrome, Ataxia-telangiectasia, Chronic granulomatous disease, Chédiak-Higashi syndrome, and Leukocyte adhesion deficiency (LAD)."
+    },
+    {
+        "id": "Ch12_Hypersensitivity_and_Autoimmune_Disease",
+        "name": "Ch12 Immunology: Hypersensitivity & Autoimmunity",
+        "dirName": "Ch12_Hypersensitivity_and_Autoimmune_Disease",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Gell and Coombs hypersensitivity reactions (Type I IgE-mediated, Type II cytotoxic antibody-mediated, Type III immune complex-mediated, Type IV delayed-type cell-mediated), autoimmunity mechanisms, HLA associations, and autoantibodies (ANA, anti-dsDNA, anti-Ro/La, anti-CCP, ANCA)."
+    },
+    {
+        "id": "Ch13_Transplantation",
+        "name": "Ch13 Immunology: Transplantation Immunology",
+        "dirName": "Ch13_Transplantation",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Allorecognition (direct vs indirect pathways), hyperacute graft rejection (preformed antibodies, fibrinoid necrosis), acute graft rejection (cell-mediated vs humoral/C4d), chronic graft rejection (accelerated arteriosclerosis, fibrosis), and graft-versus-host disease (GVHD)."
+    },
+    {
+        "id": "Ch14_General_Microbiology",
+        "name": "Ch14 Microbiology: General Microbiology",
+        "dirName": "Ch14_General_Microbiology",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Bacterial cell structure (peptidoglycan, lipopolysaccharide/endotoxin, capsule, flagella, pili/fimbriae), Gram stain physiology, bacterial spores (Bacillus, Clostridium), bacterial growth kinetics, exotoxins (A-B toxins, superantigens), and sterilization/disinfection."
+    },
+    {
+        "id": "Ch15_Medically_Relevant_Bacteria",
+        "name": "Ch15 Microbiology: Medically Relevant Bacteria",
+        "dirName": "Ch15_Medically_Relevant_Bacteria",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Gram-positive cocci (Staphylococcus, Streptococcus, Enterococcus), Gram-positive rods (Bacillus, Clostridium, Listeria, Corynebacterium), Gram-negative cocci (Neisseria), Gram-negative rods (Enterobacteriaceae, Pseudomonas, Haemophilus, Legionella), acid-fast bacilli (Mycobacterium), spirochetes (Treponema, Borrelia), and zoonoses."
+    },
+    {
+        "id": "Ch16_Bacterial_Genetics",
+        "name": "Ch16 Microbiology: Bacterial Genetics",
+        "dirName": "Ch16_Bacterial_Genetics",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Horizontal gene transfer (transformation, conjugation, F plasmid, Hfr, generalized and specialized transduction), transposons, plasmid-mediated antibiotic resistance, beta-lactamase (ESBL, carbapenemase), and vancomycin resistance (vanA)."
+    },
+    {
+        "id": "Ch17_Medically_Relevant_Viruses",
+        "name": "Ch17 Microbiology: Medically Relevant Viruses",
+        "dirName": "Ch17_Medically_Relevant_Viruses",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "DNA viruses (Pox, Herpes, Adeno, Papilloma, Polyoma, Parvo, Hepadna), RNA viruses (Picorna, Calici, Flavi, Toga, Corona, Retro, Orthomyxo, Paramyxo, Rhabdo, Filo, Bunya, Arena, Reo), viral replication cycle, oncogenic viruses (EBV, HPV, HBV, HCV, HTLV-1), and viral hepatitis."
+    },
+    {
+        "id": "Ch18_Medically_Relevant_Fungi",
+        "name": "Ch18 Microbiology: Medically Relevant Fungi",
+        "dirName": "Ch18_Medically_Relevant_Fungi",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Systemic dimorphic mycoses (Histoplasma, Blastomyces, Coccidioides, Paracoccidioides), opportunistic fungi (Candida, Aspergillus, Cryptococcus, Mucor/Rhizopus, Pneumocystis jirovecii), and superficial/cutaneous mycoses (dermatophytes, Malassezia furfur)."
+    },
+    {
+        "id": "Ch19_Medical_Parasitology",
+        "name": "Ch19 Microbiology: Medical Parasitology",
+        "dirName": "Ch19_Medical_Parasitology",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Protozoa (Entamoeba, Giardia, Cryptosporidium, Toxoplasma, Trichomonas, Trypanosoma, Leishmania, Plasmodium, Babesia), Nematodes (roundworms, pinworm, hookworm, Ascaris, Strongyloides, Trichinella), Cestodes (tapeworms, Taenia, Echinococcus), and Trematodes (flukes, Schistosoma, Clonorchis)."
+    },
+    {
+        "id": "Ch20_Clinical_Infectious_Disease",
+        "name": "Ch20 Microbiology: Clinical Infectious Disease",
+        "dirName": "Ch20_Clinical_Infectious_Disease",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Syndromic infectious diseases: meningitis and encephalitis, pneumonia (typical vs atypical), infective endocarditis (Duke criteria), urinary tract infections, osteomyelitis and septic arthritis, sexually transmitted infections, and healthcare-associated infections."
+    },
+    {
+        "id": "Ch21_Comparative_Microbiology",
+        "name": "Ch21 Microbiology: Comparative Microbiology",
+        "dirName": "Ch21_Comparative_Microbiology",
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Diagnostic algorithms, catalase test, coagulase test, hemolysis patterns (alpha, beta, gamma), optochin and bacitracin susceptibility, lactose fermentation on MacConkey agar, oxidase test, urease test, and differential laboratory identification schemes."
+    }
+]
+
 def parse_discipline(discipline_name, base_dir, chapters_metadata, start_id):
     questions = []
     current_global_id = start_id
@@ -1006,6 +1292,8 @@ def build_database():
     biochemistry_dir = os.path.join(current_dir, 'step 1-Biochemistry and Medical Genetics QA')
     physiology_dir = os.path.join(current_dir, 'step 1-Physiology')
     anatomy_dir = os.path.join(current_dir, 'step 1-Anatomy')
+    behavioral_dir = os.path.join(current_dir, 'step 1-Behavioral Science and Social Sciences QA')
+    microbiology_dir = os.path.join(current_dir, 'step 1-Immunology and Microbiology QA')
     output_js_path = os.path.join(current_dir, 'questions_data.js')
 
     print("=== Building USMLE Step 1 Comprehensive Question Database ===")
@@ -1026,10 +1314,18 @@ def build_database():
     print(f" -> Physiology Complete: {len(physiology_questions)} questions loaded.\n")
 
     print("Parsing Step 1 Anatomy & Embryology...")
-    anatomy_questions, final_id = parse_discipline("Anatomy", anatomy_dir, ANATOMY_CHAPTERS, next_id4)
+    anatomy_questions, next_id5 = parse_discipline("Anatomy", anatomy_dir, ANATOMY_CHAPTERS, next_id4)
     print(f" -> Anatomy Complete: {len(anatomy_questions)} questions loaded.\n")
 
-    all_questions = pathology_questions + pharmacology_questions + biochemistry_questions + physiology_questions + anatomy_questions
+    print("Parsing Step 1 Behavioral Science & Social Sciences...")
+    behavioral_questions, next_id6 = parse_discipline("Behavioral", behavioral_dir, BEHAVIORAL_CHAPTERS, next_id5)
+    print(f" -> Behavioral Complete: {len(behavioral_questions)} questions loaded.\n")
+
+    print("Parsing Step 1 Microbiology & Immunology...")
+    microbiology_questions, final_id = parse_discipline("Microbiology", microbiology_dir, MICROBIOLOGY_CHAPTERS, next_id6)
+    print(f" -> Microbiology Complete: {len(microbiology_questions)} questions loaded.\n")
+
+    all_questions = pathology_questions + pharmacology_questions + biochemistry_questions + physiology_questions + anatomy_questions + behavioral_questions + microbiology_questions
     print(f"Total Questions Compiled: {len(all_questions)}")
 
     disciplines_metadata = [
@@ -1072,13 +1368,29 @@ def build_database():
             "count": len(anatomy_questions),
             "status": "active",
             "description": "Comprehensive gross anatomy, embryology, histology, and neuroscience (20 chapters)"
+        },
+        {
+            "id": "Behavioral",
+            "name": "Behavioral Science & Social Sciences",
+            "step": 1,
+            "count": len(behavioral_questions),
+            "status": "active",
+            "description": "Comprehensive behavioral science, epidemiology, biostatistics, psychiatry, ethics, and patient safety (14 chapters)"
+        },
+        {
+            "id": "Microbiology",
+            "name": "Microbiology & Immunology",
+            "step": 1,
+            "count": len(microbiology_questions),
+            "status": "active",
+            "description": "Comprehensive basic immunology, immunopathology, bacteriology, virology, mycology, and parasitology (21 chapters)"
         }
     ]
 
     # Write questions_data.js (Manifest)
     with open(output_js_path, 'w', encoding='utf-8') as out_f:
         out_f.write("// Autogenerated USMLE Step 1 Comprehensive Question Bank Manifest\n")
-        out_f.write("// Contains metadata for Pathology (2,100 Qs), Pharmacology (1,350 Qs), Biochemistry & Genetics (3,450 Qs), Physiology (5,100 Qs), and Anatomy & Embryology (3,000 Qs)\n\n")
+        out_f.write("// Contains metadata for Pathology (2,100 Qs), Pharmacology (1,350 Qs), Biochemistry & Genetics (3,450 Qs), Physiology (5,100 Qs), Anatomy & Embryology (3,000 Qs), Behavioral Science & Psychiatry (2,100 Qs), and Microbiology & Immunology (3,150 Qs)\n\n")
         out_f.write("window.USMLE_QUESTIONS = window.USMLE_QUESTIONS || [];\n\n")
         out_f.write("window.USMLE_DISCIPLINES = ")
         json.dump(disciplines_metadata, out_f, ensure_ascii=False, indent=2)
@@ -1139,7 +1451,29 @@ def build_database():
         json.dump(anatomy_questions, out_f, ensure_ascii=False, separators=(',', ':'))
         out_f.write(");\n")
 
-    all_files = [output_js_path, path_js_path, pharm_js_path, bio_js_path, phys_js_path, anat_js_path]
+    # Write questions_data_behavioral.js
+    beh_js_path = os.path.join(current_dir, 'questions_data_behavioral.js')
+    with open(beh_js_path, 'w', encoding='utf-8') as out_f:
+        out_f.write("// Autogenerated USMLE Step 1 - Behavioral Science & Social Sciences Question Bank (2,100 Questions)\n\n")
+        out_f.write("window.USMLE_BEHAVIORAL_CHAPTERS = ")
+        json.dump(BEHAVIORAL_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        out_f.write(";\n\n")
+        out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
+        json.dump(behavioral_questions, out_f, ensure_ascii=False, separators=(',', ':'))
+        out_f.write(");\n")
+
+    # Write questions_data_microbiology.js
+    micro_js_path = os.path.join(current_dir, 'questions_data_microbiology.js')
+    with open(micro_js_path, 'w', encoding='utf-8') as out_f:
+        out_f.write("// Autogenerated USMLE Step 1 - Microbiology & Immunology Question Bank (3,150 Questions)\n\n")
+        out_f.write("window.USMLE_MICROBIOLOGY_CHAPTERS = ")
+        json.dump(MICROBIOLOGY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        out_f.write(";\n\n")
+        out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
+        json.dump(microbiology_questions, out_f, ensure_ascii=False, separators=(',', ':'))
+        out_f.write(");\n")
+
+    all_files = [output_js_path, path_js_path, pharm_js_path, bio_js_path, phys_js_path, anat_js_path, beh_js_path, micro_js_path]
     print("Successfully generated question bank database files:")
     for fp in all_files:
         mb = os.path.getsize(fp) / 1024 / 1024
