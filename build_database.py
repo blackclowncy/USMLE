@@ -89,6 +89,16 @@ def convert_markdown_to_html(md_text, edu_fallback=None):
     res = "".join(formatted_lines) + edu_html
     return res
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SYSTEMIC_PATHOLOGY_DIR = os.path.join(BASE_DIR, 'Systemic Pathology QA')
+ADV_PHARM_DIR = os.path.join(BASE_DIR, 'Advanced Clinical Pharmacology and Toxicology QA')
+METABOLIC_GENETICS_DIR = os.path.join(BASE_DIR, 'Metabolic Genetics and Clinical Nutrition QA')
+EXERCISE_PHYSIOLOGY_DIR = os.path.join(BASE_DIR, 'Exercise and Environmental Physiology QA')
+PHARYNGEAL_EMBRYOLOGY_DIR = os.path.join(BASE_DIR, 'Pharyngeal Embryology and Clinical Teratology QA')
+
+def sanitize_chapters(chapters):
+    return [{k: v for k, v in ch.items() if k not in ('baseDir', 'sourceDir')} for ch in chapters]
+
 PATHOLOGY_CHAPTERS = [
     {
         "id": "Ch01_Cellular_Adaptations_and_Reversible_Injury",
@@ -201,6 +211,177 @@ PATHOLOGY_CHAPTERS = [
         "totalQuestions": 150,
         "status": "active",
         "description": "Telomere biology, cellular senescence, DNA damage accumulation, progeroid syndromes, and systemic physiological decline."
+    },
+    {
+        "id": "Ch15_Skin_Pathology",
+        "name": "Ch15 Systemic: Skin Pathology",
+        "dirName": "Ch01_Skin_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Inflammatory dermatoses (eczema, psoriasis, lichen planus, erythema multiforme, Stevens-Johnson/TEN), blistering diseases (pemphigus vulgaris, bullous pemphigoid, dermatitis herpetiformis), and skin neoplasms (basal cell carcinoma, squamous cell carcinoma, melanoma, dysplastic nevus, seborrheic keratosis, actinic keratosis)."
+    },
+    {
+        "id": "Ch16_RBC_Pathology_and_Anemias",
+        "name": "Ch16 Systemic: RBC Pathology & Anemias",
+        "dirName": "Ch02_RBC_Pathology_and_Anemias",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Microcytic anemias (iron deficiency, anemia of chronic disease, alpha/beta thalassemia, sideroblastic anemia), normocytic anemias (hereditary spherocytosis, PNH, sickle cell, G6PD deficiency, autoimmune hemolytic anemia, microangiopathic hemolytic anemia/TTP/HUS), macrocytic anemias (B12 and folate deficiency), and aplastic anemia."
+    },
+    {
+        "id": "Ch17_Vascular_Pathology_and_Vasculitides",
+        "name": "Ch17 Systemic: Vascular Pathology & Vasculitides",
+        "dirName": "Ch03_Vascular_Pathology_and_Vasculitides",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Large-vessel vasculitis (giant cell/temporal arteritis, Takayasu arteritis), medium-vessel vasculitis (polyarteritis nodosa, Kawasaki disease, Buerger disease), small-vessel vasculitis (granulomatosis with polyangiitis/Wegener, microscopic polyangiitis, eosinophilic granulomatosis with polyangiitis/Churg-Strauss, Henoch-Schonlein purpura/IgA vasculitis), atherosclerosis, and aneurysms/dissections."
+    },
+    {
+        "id": "Ch18_Cardiac_Pathology",
+        "name": "Ch18 Systemic: Cardiac Pathology",
+        "dirName": "Ch04_Cardiac_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Ischemic heart disease (angina, myocardial infarction timeline, histological progression, complications), heart failure (systolic vs diastolic, left vs right), valvular diseases (rheumatic fever, infective endocarditis, nonbacterial thrombotic endocarditis, carcinoid heart disease), cardiomyopathies (dilated, hypertrophic, restrictive), myocarditis, and cardiac tumors (myxoma, rhabdomyoma)."
+    },
+    {
+        "id": "Ch19_Pulmonary_Pathology",
+        "name": "Ch19 Systemic: Pulmonary Pathology",
+        "dirName": "Ch05_Pulmonary_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Obstructive lung diseases (COPD/emphysema, chronic bronchitis, asthma, bronchiectasis), restrictive lung diseases (idiopathic pulmonary fibrosis, sarcoidosis, pneumoconioses/asbestosis/silicosis/coal workers, hypersensitivity pneumonitis), ARDS/diffuse alveolar damage, pulmonary hypertension, and lung cancer (adenocarcinoma, squamous cell, small cell, large cell, mesothelioma)."
+    },
+    {
+        "id": "Ch20_Renal_Pathology",
+        "name": "Ch20 Systemic: Renal Pathology",
+        "dirName": "Ch06_Renal_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Glomerulonephritis and nephrotic syndromes (minimal change disease, FSGS, membranous nephropathy, amyloidosis, diabetic nephropathy), nephritic syndromes (post-streptococcal GN, rapidly progressive GN, IgA nephropathy/Berger, Alport syndrome, membranoproliferative GN), acute tubular necrosis (ATN), acute interstitial nephritis (AIN), renal papillary necrosis, polycystic kidney disease, and renal cell carcinoma."
+    },
+    {
+        "id": "Ch21_GI_Tract_Pathology",
+        "name": "Ch21 Systemic: GI Tract Pathology",
+        "dirName": "Ch07_GI_Tract_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Esophageal pathology (GERD, Barrett esophagus, esophageal adenocarcinoma and squamous cell carcinoma, Mallory-Weiss, Boerhaave, achalasia), gastric pathology (acute/chronic gastritis, H. pylori, autoimmune gastritis, peptic ulcer disease, gastric adenocarcinoma, MALT lymphoma), intestinal pathology (celiac disease, Crohn disease vs ulcerative colitis, appendicitis, diverticular disease, Hirschsprung, bowel ischemia), and colonic polyps/colorectal carcinoma (APC/KRAS/p53 and microsatellite instability pathways)."
+    },
+    {
+        "id": "Ch22_Pancreatic_Pathology",
+        "name": "Ch22 Systemic: Pancreatic Pathology",
+        "dirName": "Ch08_Pancreatic_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Acute pancreatitis (gallstones, alcohol, hypertriglyceridemia, enzymatic fat necrosis, pseudocyst), chronic pancreatitis (pancreatic calcifications, exocrine insufficiency), pancreatic cystic neoplasms, and pancreatic ductal adenocarcinoma (head of pancreas, painless jaundice, Courvoisier sign, Trousseau syndrome)."
+    },
+    {
+        "id": "Ch23_Gallbladder_and_Biliary_Tract_Pathology",
+        "name": "Ch23 Systemic: Gallbladder & Biliary Tract Pathology",
+        "dirName": "Ch09_Gallbladder_and_Biliary_Tract_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Cholelithiasis (cholesterol vs pigment stones), acute and chronic cholecystitis (acalculous cholecystitis, porcelain gallbladder), choledocholithiasis, ascending cholangitis (Charcot triad, Reynolds pentad), primary biliary cholangitis (anti-mitochondrial antibodies), primary sclerosing cholangitis (onion-skinning, p-ANCA, ulcerative colitis association), and cholangiocarcinoma."
+    },
+    {
+        "id": "Ch24_Liver_Pathology",
+        "name": "Ch24 Systemic: Liver Pathology",
+        "dirName": "Ch10_Liver_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Viral hepatitis (HAV, HBV, HCV, HDV, HEV morphology and serology), autoimmune hepatitis, alcoholic liver disease (steatosis, alcoholic hepatitis, Mallory-Denk bodies, cirrhosis), nonalcoholic fatty liver disease (NAFLD/NASH), hemochromatosis (HFE mutation, Prussian blue), Wilson disease (ATP7B, copper overload, Kayser-Fleischer rings), alpha-1 antitrypsin deficiency (PAS-positive diastase-resistant globules), hepatic adenoma, and hepatocellular carcinoma."
+    },
+    {
+        "id": "Ch25_Central_Nervous_System_Pathology",
+        "name": "Ch25 Systemic: Central Nervous System Pathology",
+        "dirName": "Ch11_Central_Nervous_System_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Cerebrovascular diseases (ischemic stroke timeline, intracerebral hemorrhage, subarachnoid hemorrhage, saccular aneurysms), CNS infections (bacterial, viral, fungal, tuberculous meningitis, encephalitis), neurodegenerative disorders (Alzheimer disease, frontotemporal lobar degeneration, Parkinson disease, Huntington disease, ALS, prion disease), demyelinating diseases (multiple sclerosis), and CNS tumors (glioblastoma, meningioma, oligodendroglioma, schwannoma, pilocytic astrocytoma, medulloblastoma, ependymoma, craniopharyngioma)."
+    },
+    {
+        "id": "Ch26_Hematopoietic_Pathology_Leukemias_and_Lymphomas",
+        "name": "Ch26 Systemic: Hematopoietic Pathology (Leukemias & Lymphomas)",
+        "dirName": "Ch12_Hematopoietic_Pathology_Leukemias_and_Lymphomas",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Acute leukemias (ALL vs AML, Auer rods, t(15;17) APL), myeloproliferative neoplasms (CML, polycythemia vera, essential thrombocythemia, primary myelofibrosis, JAK2/BCR-ABL1), myelodysplastic syndromes, Hodgkin lymphoma (Reed-Sternberg cells, classical subtypes), Non-Hodgkin lymphomas (diffuse large B-cell, follicular, Burkitt, mantle cell, marginal zone, adult T-cell, mycosis fungoides), and plasma cell dyscrasias (multiple myeloma, MGUS, Waldenstrom macroglobulinemia)."
+    },
+    {
+        "id": "Ch27_Female_Genital_Pathology",
+        "name": "Ch27 Systemic: Female Genital Pathology",
+        "dirName": "Ch13_Female_Genital_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Vulvar and vaginal pathology (lichen sclerosus, lichen simplex chronicus, VIN/squamous carcinoma, extramammary Paget disease, clear cell adenocarcinoma), cervical pathology (HPV 16/18, CIN, cervical cancer, screening), uterine pathology (endometritis, adenomyosis, endometriosis, endometrial hyperplasia, endometrial carcinoma, leiomyoma, leiomyosarcoma), ovarian pathology (surface epithelial tumors, germ cell tumors/teratoma, sex cord-stromal tumors/granulosa cell tumor, Krukenberg tumor), and gestational pathology (hydatidiform mole, choriocarcinoma, preeclampsia)."
+    },
+    {
+        "id": "Ch28_Breast_Pathology",
+        "name": "Ch28 Systemic: Breast Pathology",
+        "dirName": "Ch14_Breast_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Benign breast conditions (fibrocystic changes, fibroadenoma, phyllodes tumor, intraductal papilloma, acute mastitis, fat necrosis), noninvasive carcinoma (ductal carcinoma in situ/DCIS, lobular carcinoma in situ/LCIS, Paget disease of breast), invasive breast carcinoma (invasive ductal carcinoma, invasive lobular carcinoma, medullary, inflammatory breast cancer), and molecular subtypes (ER/PR+, HER2+, triple-negative, BRCA1/BRCA2)."
+    },
+    {
+        "id": "Ch29_Male_Genital_Pathology",
+        "name": "Ch29 Systemic: Male Genital Pathology",
+        "dirName": "Ch15_Male_Genital_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Penile pathology (hypospadias, epispadias, phimosis, condyloma acuminatum, Bowen disease, erythroplasia of Queyrat, squamous cell carcinoma), testicular pathology (cryptorchidism, orchitis, testicular torsion, hydrocele/varicocele/spermatocele), testicular germ cell tumors (seminoma, embryonal carcinoma, yolk sac tumor/Schiller-Duval, choriocarcinoma, teratoma), testicular non-germ cell tumors (Leydig cell, Sertoli cell), and prostate pathology (acute/chronic prostatitis, benign prostatic hyperplasia, prostate adenocarcinoma, Gleason scoring, PSA)."
+    },
+    {
+        "id": "Ch30_Endocrine_Pathology",
+        "name": "Ch30 Systemic: Endocrine Pathology",
+        "dirName": "Ch16_Endocrine_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Pituitary disorders (pituitary adenomas, prolactinoma, acromegaly, Cushing disease, hypopituitarism, Sheehan syndrome), thyroid disorders (hyperthyroidism/Graves, hypothyroidism/Hashimoto, subacute thyroiditis, Riedel thyroiditis, thyroid nodules, papillary/follicular/medullary/anaplastic carcinoma), parathyroid disorders (primary/secondary/tertiary hyperparathyroidism, hypoparathyroidism, pseudohypoparathyroidism), and adrenal disorders (Cushing syndrome, primary aldosteronism/Conn, adrenal insufficiency/Addison, congenital adrenal hyperplasia, pheochromocytoma, neuroblastoma)."
+    },
+    {
+        "id": "Ch31_Bone_Pathology",
+        "name": "Ch31 Systemic: Bone Pathology",
+        "dirName": "Ch17_Bone_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Metabolic bone disorders (osteoporosis, osteomalacia/rickets, Paget disease of bone/osteitis deformans, renal osteodystrophy), osteomyelitis (Staph aureus, Salmonella in sickle cell, Pott disease), avascular necrosis, bone tumors (osteochondroma, osteoma, osteoid osteoma/osteoblastoma, giant cell tumor, osteosarcoma, chondrosarcoma, Ewing sarcoma), and skeletal dysplasias (achondroplasia, osteogenesis imperfecta)."
+    },
+    {
+        "id": "Ch32_Joint_and_Soft_Tissue_Pathology",
+        "name": "Ch32 Systemic: Joint & Soft Tissue Pathology",
+        "dirName": "Ch18_Joint_and_Soft_Tissue_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Arthritides: osteoarthritis (Heberden/Bouchard nodes), rheumatoid arthritis (pannus, HLA-DR4, anti-CCP, subcutaneous nodules), seronegative spondyloarthropathies (ankylosing spondylitis, reactive arthritis, psoriatic arthritis, IBD-associated, HLA-B27), crystal arthropathies (gout/monosodium urate, pseudogout/calcium pyrophosphate), infectious/septic arthritis, and soft tissue tumors (lipoma/liposarcoma, rhabdomyoma/rhabdomyosarcoma, synovial sarcoma)."
+    },
+    {
+        "id": "Ch33_Peripheral_Nerve_and_Muscle_Pathology",
+        "name": "Ch33 Systemic: Peripheral Nerve & Muscle Pathology",
+        "dirName": "Ch19_Peripheral_Nerve_and_Muscle_Pathology",
+        "baseDir": SYSTEMIC_PATHOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Peripheral neuropathies (diabetic neuropathy, Guillain-Barre syndrome, Charcot-Marie-Tooth disease, toxic neuropathies), neuromuscular junction disorders (myasthenia gravis vs Lambert-Eaton syndrome, botulism), inflammatory myopathies (polymyositis, dermatomyositis, inclusion body myositis), muscular dystrophies (Duchenne vs Becker, dystrophin mutations), and rhabdomyolysis."
     }
 ]
 
@@ -276,6 +457,33 @@ PHARMACOLOGY_CHAPTERS = [
         "totalQuestions": 150,
         "status": "active",
         "description": "Cytotoxic antineoplastics, targeted small molecule inhibitors, immunosuppressive pharmacotherapy, heavy metal chelators, and acute clinical antidotes."
+    },
+    {
+        "id": "Ch10_Clinical_Toxicology_and_Antidotes",
+        "name": "Ch10 Clinical Toxicology and Specific Antidotes",
+        "dirName": "Ch01_Clinical_Toxicology_and_Antidotes",
+        "baseDir": ADV_PHARM_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Clinical toxic syndromes (cholinergic, anticholinergic, sympathomimetic, opioid, sedative-hypnotic), acute poisoning management, specific antidotes (naloxone, flumazenil, N-acetylcysteine, atropine/pralidoxime, digibind, deferoxamine, dimercaprol, calcium disodium EDTA, methylene blue, sodium thiosulfate/nitrites, fomepizole, glucagon, physostigmine), and toxic alcohols (methanol, ethylene glycol)."
+    },
+    {
+        "id": "Ch11_CYP450_Interactions_and_Pharmacogenomics",
+        "name": "Ch11 CYP450 Drug Interactions & Pharmacogenomics",
+        "dirName": "Ch02_CYP450_Interactions_and_Pharmacogenomics",
+        "baseDir": ADV_PHARM_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Cytochrome P450 enzyme inducers and inhibitors (CYP3A4, CYP2D6, CYP2C9, CYP2C19, CYP1A2), clinically significant drug-drug interactions, pharmacogenomic variants (slow vs fast acetylators/NAT2, CYP2D6 poor/ultrarapid metabolizers, TPMT deficiency and thiopurines, VKORC1/CYP2C9 polymorphisms and warfarin dosing, HLA-B*5701 and abacavir, HLA-B*1502 and carbamazepine)."
+    },
+    {
+        "id": "Ch12_Chemotherapy_Immunosuppressant_Toxicities_and_Rescue",
+        "name": "Ch12 Chemotherapy & Immunosuppressant Toxicities and Rescue",
+        "dirName": "Ch03_Chemotherapy_Immunosuppressant_Toxicities_and_Rescue",
+        "baseDir": ADV_PHARM_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Chemotherapy drug-specific organ toxicities and rescue strategies (doxorubicin cardiotoxicity and dexrazoxane, cyclophosphamide/ifosfamide hemorrhagic cystitis and mesna, methotrexate myelosuppression and leucovorin rescue, cisplatin nephro/ototoxicity and amifostine, bleomycin pulmonary fibrosis, vincristine peripheral neuropathy), and immunosuppressant toxicities (calcineurin inhibitors/cyclosporine/tacrolimus nephrotoxicity, mTOR inhibitors, antimetabolites)."
     }
 ]
 
@@ -463,6 +671,24 @@ BIOCHEMISTRY_CHAPTERS = [
         "totalQuestions": 150,
         "status": "active",
         "description": "Direct genetic testing (ASO, multiplex PCR, direct sequencing) vs indirect linkage diagnosis (RFLP, STR markers), carrier screening, and prenatal diagnostic testing."
+    },
+    {
+        "id": "Ch24_Lysosomal_Storage_and_Peroxisomal_Diseases",
+        "name": "Ch24 Lysosomal Storage and Peroxisomal Diseases",
+        "dirName": "Ch01_Lysosomal_Storage_and_Peroxisomal_Diseases",
+        "baseDir": METABOLIC_GENETICS_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Lysosomal storage diseases: sphingolipidoses (Gaucher disease/glucocerebrosidase, Niemann-Pick/sphingomyelinase, Tay-Sachs/hexosaminidase A, Fabry disease/alpha-galactosidase A, Krabbe disease/galactocerebrosidase, metachromatic leukodystrophy/arylsulfatase A), mucopolysaccharidoses (Hurler vs Hunter syndrome), I-cell disease (phosphotransferase deficiency), and peroxisomal disorders (Zellweger syndrome, X-linked adrenoleukodystrophy, Refsum disease)."
+    },
+    {
+        "id": "Ch25_Micronutrients_Trace_Minerals_and_Nutritional_Syndromes",
+        "name": "Ch25 Micronutrients, Trace Minerals & Nutritional Syndromes",
+        "dirName": "Ch02_Micronutrients_Trace_Minerals_and_Nutritional_Syndromes",
+        "baseDir": METABOLIC_GENETICS_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Fat-soluble vitamins (A, D, E, K deficiencies and toxicities), water-soluble vitamins (thiamine/B1/beriberi/Wernicke-Korsakoff, riboflavin/B2/cheilosis, niacin/B3/pellagra, pantothenic acid/B5, pyridoxine/B6/isoniazid neuropathy, biotin/B7, folate/B9 vs cobalamin/B12, vitamin C/scurvy), trace elements (zinc/acrodermatitis enteropathica, copper/Menkes vs Wilson, iron, selenium, iodine), and severe protein-energy malnutrition (marasmus vs kwashiorkor)."
     }
 ]
 
@@ -738,6 +964,15 @@ PHYSIOLOGY_CHAPTERS = [
         "totalQuestions": 150,
         "status": "active",
         "description": "Luminal & brush border carbohydrate digestion (SGLT1, GLUT5, GLUT2), protein digestion & peptide transport, lipid micelle absorption & chylomicron formation, and vitamin/mineral uptake."
+    },
+    {
+        "id": "Ch35_Exercise_Physiology_and_Extreme_Environment_Acclimatization",
+        "name": "Ch35 Exercise Physiology & Environmental Acclimatization",
+        "dirName": "Ch01_Exercise_Physiology_and_Extreme_Environment_Acclimatization",
+        "baseDir": EXERCISE_PHYSIOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Acute and chronic physiological adaptations to exercise (VO2 max, cardiac output, arteriovenous oxygen difference, sympathetic activation, glycogen depletion, lactic acidosis, ventilation changes), high-altitude acclimatization (hypoxic pulmonary vasoconstriction, acute mountain sickness, erythropoietin production, 2,3-BPG elevation, respiratory alkalosis), hyperbaric physiology (decompression sickness, nitrogen narcosis), and thermoregulation (heat exhaustion vs heat stroke, hypothermia, frostbite)."
     }
 ]
 
@@ -901,6 +1136,15 @@ ANATOMY_CHAPTERS = [
         "totalQuestions": 150,
         "status": "active",
         "description": "Limbic lobe components, hippocampal long-term potentiation (LTP), Papez circuit, declarative vs non-declarative memory systems, amygdala fear conditioning and emotion regulation, Klüver-Bucy syndrome, Wernicke-Korsakoff syndrome (mammillary body atrophy), and mesial temporal sclerosis epilepsy."
+    },
+    {
+        "id": "Ch21_Pharyngeal_Apparatus_Craniofacial_Defects_and_Teratology",
+        "name": "Ch21 Pharyngeal Apparatus, Craniofacial Defects & Teratology",
+        "dirName": "Ch01_Pharyngeal_Apparatus_Craniofacial_Defects_and_Teratology",
+        "baseDir": PHARYNGEAL_EMBRYOLOGY_DIR,
+        "totalQuestions": 150,
+        "status": "active",
+        "description": "Embryological pharyngeal apparatus derivatives: pharyngeal arches 1-6 (skeletal structures, muscles, cranial nerves CN V, VII, IX, X), pharyngeal pouches 1-4 (middle ear, palatine tonsils, inferior/superior parathyroids, thymus), pharyngeal clefts/grooves (external auditory meatus, branchial cleft cyst), thyroid and tongue development, craniofacial malformations (cleft lip and palate, Treacher Collins syndrome, Pierre Robin sequence), and clinical teratogens (isotretinoin, thalidomide, ACE inhibitors, lithium, alcohol/fetal alcohol syndrome, maternal diabetes)."
     }
 ]
 
@@ -1195,7 +1439,7 @@ def parse_discipline(discipline_name, base_dir, chapters_metadata, start_id):
     current_global_id = start_id
 
     for chap in chapters_metadata:
-        ch_dir = os.path.join(base_dir, chap["dirName"])
+        ch_dir = os.path.join(chap.get("baseDir", base_dir), chap["dirName"])
         blocks = [f for f in os.listdir(ch_dir) if f.startswith('Block') and f.endswith('.md')]
         blocks.sort()
 
@@ -1335,7 +1579,7 @@ def build_database():
             "step": 1,
             "count": len(pathology_questions),
             "status": "active",
-            "description": "General and systemic pathology (14 chapters)"
+            "description": "Comprehensive general and systemic pathology (33 chapters)"
         },
         {
             "id": "Pharmacology",
@@ -1343,7 +1587,7 @@ def build_database():
             "step": 1,
             "count": len(pharmacology_questions),
             "status": "active",
-            "description": "Comprehensive preclinical pharmacology (9 chapters)"
+            "description": "Comprehensive preclinical pharmacology, clinical toxicology, and pharmacogenomics (12 chapters)"
         },
         {
             "id": "Biochemistry",
@@ -1351,7 +1595,7 @@ def build_database():
             "step": 1,
             "count": len(biochemistry_questions),
             "status": "active",
-            "description": "Comprehensive biochemistry, metabolism, molecular biology, and medical genetics (23 chapters)"
+            "description": "Comprehensive biochemistry, metabolism, molecular biology, medical genetics, and clinical nutrition (25 chapters)"
         },
         {
             "id": "Physiology",
@@ -1359,7 +1603,7 @@ def build_database():
             "step": 1,
             "count": len(physiology_questions),
             "status": "active",
-            "description": "Comprehensive cellular, neuromuscular, organ system, and integrative physiology (34 chapters)"
+            "description": "Comprehensive cellular, neuromuscular, organ system, and environmental physiology (35 chapters)"
         },
         {
             "id": "Anatomy",
@@ -1367,7 +1611,7 @@ def build_database():
             "step": 1,
             "count": len(anatomy_questions),
             "status": "active",
-            "description": "Comprehensive gross anatomy, embryology, histology, and neuroscience (20 chapters)"
+            "description": "Comprehensive gross anatomy, embryology, teratology, histology, and neuroscience (21 chapters)"
         },
         {
             "id": "Behavioral",
@@ -1390,7 +1634,7 @@ def build_database():
     # Write questions_data.js (Manifest)
     with open(output_js_path, 'w', encoding='utf-8') as out_f:
         out_f.write("// Autogenerated USMLE Step 1 Comprehensive Question Bank Manifest\n")
-        out_f.write("// Contains metadata for Pathology (2,100 Qs), Pharmacology (1,350 Qs), Biochemistry & Genetics (3,450 Qs), Physiology (5,100 Qs), Anatomy & Embryology (3,000 Qs), Behavioral Science & Psychiatry (2,100 Qs), and Microbiology & Immunology (3,150 Qs)\n\n")
+        out_f.write("// Contains metadata for Pathology (4,950 Qs), Pharmacology (1,800 Qs), Biochemistry & Genetics (3,750 Qs), Physiology (5,250 Qs), Anatomy & Embryology (3,150 Qs), Behavioral Science & Psychiatry (2,100 Qs), and Microbiology & Immunology (3,150 Qs) - Total 24,150 Qs across 161 Chapters\n\n")
         out_f.write("window.USMLE_QUESTIONS = window.USMLE_QUESTIONS || [];\n\n")
         out_f.write("window.USMLE_DISCIPLINES = ")
         json.dump(disciplines_metadata, out_f, ensure_ascii=False, indent=2)
@@ -1399,9 +1643,9 @@ def build_database():
     # Write questions_data_pathology.js
     path_js_path = os.path.join(current_dir, 'questions_data_pathology.js')
     with open(path_js_path, 'w', encoding='utf-8') as out_f:
-        out_f.write("// Autogenerated USMLE Step 1 - Pathology Question Bank (2,100 Questions)\n\n")
+        out_f.write("// Autogenerated USMLE Step 1 - Pathology Question Bank (4,950 Questions)\n\n")
         out_f.write("window.USMLE_PATHOLOGY_CHAPTERS = ")
-        json.dump(PATHOLOGY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        json.dump(sanitize_chapters(PATHOLOGY_CHAPTERS), out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
         out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
         json.dump(pathology_questions, out_f, ensure_ascii=False, separators=(',', ':'))
@@ -1410,9 +1654,9 @@ def build_database():
     # Write questions_data_pharmacology.js
     pharm_js_path = os.path.join(current_dir, 'questions_data_pharmacology.js')
     with open(pharm_js_path, 'w', encoding='utf-8') as out_f:
-        out_f.write("// Autogenerated USMLE Step 1 - Pharmacology Question Bank (1,350 Questions)\n\n")
+        out_f.write("// Autogenerated USMLE Step 1 - Pharmacology Question Bank (1,800 Questions)\n\n")
         out_f.write("window.USMLE_PHARMACOLOGY_CHAPTERS = ")
-        json.dump(PHARMACOLOGY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        json.dump(sanitize_chapters(PHARMACOLOGY_CHAPTERS), out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
         out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
         json.dump(pharmacology_questions, out_f, ensure_ascii=False, separators=(',', ':'))
@@ -1421,9 +1665,9 @@ def build_database():
     # Write questions_data_biochemistry.js
     bio_js_path = os.path.join(current_dir, 'questions_data_biochemistry.js')
     with open(bio_js_path, 'w', encoding='utf-8') as out_f:
-        out_f.write("// Autogenerated USMLE Step 1 - Biochemistry & Genetics Question Bank (3,450 Questions)\n\n")
+        out_f.write("// Autogenerated USMLE Step 1 - Biochemistry & Genetics Question Bank (3,750 Questions)\n\n")
         out_f.write("window.USMLE_BIOCHEMISTRY_CHAPTERS = ")
-        json.dump(BIOCHEMISTRY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        json.dump(sanitize_chapters(BIOCHEMISTRY_CHAPTERS), out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
         out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
         json.dump(biochemistry_questions, out_f, ensure_ascii=False, separators=(',', ':'))
@@ -1432,9 +1676,9 @@ def build_database():
     # Write questions_data_physiology.js
     phys_js_path = os.path.join(current_dir, 'questions_data_physiology.js')
     with open(phys_js_path, 'w', encoding='utf-8') as out_f:
-        out_f.write("// Autogenerated USMLE Step 1 - Physiology Question Bank (5,100 Questions)\n\n")
+        out_f.write("// Autogenerated USMLE Step 1 - Physiology Question Bank (5,250 Questions)\n\n")
         out_f.write("window.USMLE_PHYSIOLOGY_CHAPTERS = ")
-        json.dump(PHYSIOLOGY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        json.dump(sanitize_chapters(PHYSIOLOGY_CHAPTERS), out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
         out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
         json.dump(physiology_questions, out_f, ensure_ascii=False, separators=(',', ':'))
@@ -1443,9 +1687,9 @@ def build_database():
     # Write questions_data_anatomy.js
     anat_js_path = os.path.join(current_dir, 'questions_data_anatomy.js')
     with open(anat_js_path, 'w', encoding='utf-8') as out_f:
-        out_f.write("// Autogenerated USMLE Step 1 - Anatomy & Embryology Question Bank (3,000 Questions)\n\n")
+        out_f.write("// Autogenerated USMLE Step 1 - Anatomy & Embryology Question Bank (3,150 Questions)\n\n")
         out_f.write("window.USMLE_ANATOMY_CHAPTERS = ")
-        json.dump(ANATOMY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        json.dump(sanitize_chapters(ANATOMY_CHAPTERS), out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
         out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
         json.dump(anatomy_questions, out_f, ensure_ascii=False, separators=(',', ':'))
@@ -1456,7 +1700,7 @@ def build_database():
     with open(beh_js_path, 'w', encoding='utf-8') as out_f:
         out_f.write("// Autogenerated USMLE Step 1 - Behavioral Science & Social Sciences Question Bank (2,100 Questions)\n\n")
         out_f.write("window.USMLE_BEHAVIORAL_CHAPTERS = ")
-        json.dump(BEHAVIORAL_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        json.dump(sanitize_chapters(BEHAVIORAL_CHAPTERS), out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
         out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
         json.dump(behavioral_questions, out_f, ensure_ascii=False, separators=(',', ':'))
@@ -1467,7 +1711,7 @@ def build_database():
     with open(micro_js_path, 'w', encoding='utf-8') as out_f:
         out_f.write("// Autogenerated USMLE Step 1 - Microbiology & Immunology Question Bank (3,150 Questions)\n\n")
         out_f.write("window.USMLE_MICROBIOLOGY_CHAPTERS = ")
-        json.dump(MICROBIOLOGY_CHAPTERS, out_f, ensure_ascii=False, indent=2)
+        json.dump(sanitize_chapters(MICROBIOLOGY_CHAPTERS), out_f, ensure_ascii=False, indent=2)
         out_f.write(";\n\n")
         out_f.write("window.USMLE_QUESTIONS = (window.USMLE_QUESTIONS || []).concat(")
         json.dump(microbiology_questions, out_f, ensure_ascii=False, separators=(',', ':'))

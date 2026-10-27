@@ -2,14 +2,14 @@
 """
 Verification script for questions_data.js.
 Ensures 100% data integrity and zero omissions across USMLE Step 1 question banks:
-1. Pathology: 14 chapters, 2,100 questions.
-2. Pharmacology: 9 chapters, 1,350 questions.
-3. Biochemistry & Genetics: 23 chapters, 3,450 questions.
-4. Physiology: 34 chapters, 5,100 questions.
-5. Anatomy & Embryology: 20 chapters, 3,000 questions.
+1. Pathology: 33 chapters, 4,950 questions.
+2. Pharmacology: 12 chapters, 1,800 questions.
+3. Biochemistry & Genetics: 25 chapters, 3,750 questions.
+4. Physiology: 35 chapters, 5,250 questions.
+5. Anatomy & Embryology: 21 chapters, 3,150 questions.
 6. Behavioral Science & Social Sciences: 14 chapters, 2,100 questions.
 7. Microbiology & Immunology: 21 chapters, 3,150 questions.
-Total: 20,250 questions across 135 chapters, all fully formed with valid options, answers, and explanations.
+Total: 24,150 questions across 161 chapters, all fully formed with valid options, answers, and explanations.
 """
 
 import os
@@ -94,21 +94,21 @@ def verify_database():
     for d in disciplines:
         print(f"  - {d['name']}: {d['count']} questions ({d['status']})")
 
-    assert len(pathology_chapters) == 14, f"Expected 14 Pathology chapters, got {len(pathology_chapters)}"
-    assert len(pharmacology_chapters) == 9, f"Expected 9 Pharmacology chapters, got {len(pharmacology_chapters)}"
-    assert len(biochemistry_chapters) == 23, f"Expected 23 Biochemistry chapters, got {len(biochemistry_chapters)}"
-    assert len(physiology_chapters) == 34, f"Expected 34 Physiology chapters, got {len(physiology_chapters)}"
-    assert len(anatomy_chapters) == 20, f"Expected 20 Anatomy chapters, got {len(anatomy_chapters)}"
+    assert len(pathology_chapters) == 33, f"Expected 14 Pathology chapters, got {len(pathology_chapters)}"
+    assert len(pharmacology_chapters) == 12, f"Expected 9 Pharmacology chapters, got {len(pharmacology_chapters)}"
+    assert len(biochemistry_chapters) == 25, f"Expected 23 Biochemistry chapters, got {len(biochemistry_chapters)}"
+    assert len(physiology_chapters) == 35, f"Expected 34 Physiology chapters, got {len(physiology_chapters)}"
+    assert len(anatomy_chapters) == 21, f"Expected 20 Anatomy chapters, got {len(anatomy_chapters)}"
     assert len(behavioral_chapters) == 14, f"Expected 14 Behavioral chapters, got {len(behavioral_chapters)}"
     assert len(microbiology_chapters) == 21, f"Expected 21 Microbiology chapters, got {len(microbiology_chapters)}"
 
     total_chapters = len(pathology_chapters) + len(pharmacology_chapters) + len(biochemistry_chapters) + len(physiology_chapters) + len(anatomy_chapters) + len(behavioral_chapters) + len(microbiology_chapters)
     print(f"\n[2/5] Chapter Definitions Verified across {total_chapters} Chapters:")
-    print(f"  - Pathology: {len(pathology_chapters)} chapters (150 Qs each = 2,100 Qs)")
-    print(f"  - Pharmacology: {len(pharmacology_chapters)} chapters (150 Qs each = 1,350 Qs)")
-    print(f"  - Biochemistry: {len(biochemistry_chapters)} chapters (150 Qs each = 3,450 Qs)")
-    print(f"  - Physiology: {len(physiology_chapters)} chapters (150 Qs each = 5,100 Qs)")
-    print(f"  - Anatomy: {len(anatomy_chapters)} chapters (150 Qs each = 3,000 Qs)")
+    print(f"  - Pathology: {len(pathology_chapters)} chapters (150 Qs each = 4,950 Qs)")
+    print(f"  - Pharmacology: {len(pharmacology_chapters)} chapters (150 Qs each = 1,800 Qs)")
+    print(f"  - Biochemistry: {len(biochemistry_chapters)} chapters (150 Qs each = 3,750 Qs)")
+    print(f"  - Physiology: {len(physiology_chapters)} chapters (150 Qs each = 5,250 Qs)")
+    print(f"  - Anatomy: {len(anatomy_chapters)} chapters (150 Qs each = 3,150 Qs)")
     print(f"  - Behavioral Science: {len(behavioral_chapters)} chapters (150 Qs each = 2,100 Qs)")
     print(f"  - Microbiology & Immunology: {len(microbiology_chapters)} chapters (150 Qs each = 3,150 Qs)")
 
@@ -127,8 +127,8 @@ def verify_database():
     for ch in microbiology_chapters:
         assert ch['totalQuestions'] == 150, f"Microbiology chapter {ch['id']} has {ch['totalQuestions']} Qs (expected 150)"
 
-    print(f"\n[3/5] Total Questions Count: {len(questions)} (Expected: 20,250)")
-    assert len(questions) == 20250, f"Expected 20,250 questions, found {len(questions)}"
+    print(f"\n[3/5] Total Questions Count: {len(questions)} (Expected: 24,150)")
+    assert len(questions) == 24150, f"Expected 20,250 questions, found {len(questions)}"
 
     print("\n[4/5] Question Level Data Integrity Audit...")
     errors = 0
@@ -180,22 +180,22 @@ def verify_database():
             errors += 1
 
     print(f"\n[5/5] Distribution by Discipline:")
-    print(f"  - Pathology: {counts_by_discipline['Pathology']} questions (Expected: 2,100)")
-    print(f"  - Pharmacology: {counts_by_discipline['Pharmacology']} questions (Expected: 1,350)")
-    print(f"  - Biochemistry: {counts_by_discipline['Biochemistry']} questions (Expected: 3,450)")
-    print(f"  - Physiology: {counts_by_discipline['Physiology']} questions (Expected: 5,100)")
-    print(f"  - Anatomy: {counts_by_discipline['Anatomy']} questions (Expected: 3,000)")
+    print(f"  - Pathology: {counts_by_discipline['Pathology']} questions (Expected: 4,950)")
+    print(f"  - Pharmacology: {counts_by_discipline['Pharmacology']} questions (Expected: 1,800)")
+    print(f"  - Biochemistry: {counts_by_discipline['Biochemistry']} questions (Expected: 3,750)")
+    print(f"  - Physiology: {counts_by_discipline['Physiology']} questions (Expected: 5,250)")
+    print(f"  - Anatomy: {counts_by_discipline['Anatomy']} questions (Expected: 3,150)")
     print(f"  - Behavioral Science: {counts_by_discipline['Behavioral']} questions (Expected: 2,100)")
     print(f"  - Microbiology & Immunology: {counts_by_discipline['Microbiology']} questions (Expected: 3,150)")
-    assert counts_by_discipline['Pathology'] == 2100
-    assert counts_by_discipline['Pharmacology'] == 1350
-    assert counts_by_discipline['Biochemistry'] == 3450
-    assert counts_by_discipline['Physiology'] == 5100
-    assert counts_by_discipline['Anatomy'] == 3000
+    assert counts_by_discipline['Pathology'] == 4950
+    assert counts_by_discipline['Pharmacology'] == 1800
+    assert counts_by_discipline['Biochemistry'] == 3750
+    assert counts_by_discipline['Physiology'] == 5250
+    assert counts_by_discipline['Anatomy'] == 3150
     assert counts_by_discipline['Behavioral'] == 2100
     assert counts_by_discipline['Microbiology'] == 3150
 
-    print(f"\nDistribution across all {total_chapters} Chapters (14 Path + 9 Pharm + 23 Bio + 34 Physio + 20 Anat + 14 Beh + 21 Micro):")
+    print(f"\nDistribution across all {total_chapters} Chapters (33 Path + 12 Pharm + 25 Bio + 35 Physio + 21 Anat + 14 Beh + 21 Micro):")
     for chap, count in counts_by_chapter.items():
         assert count == 150, f"Chapter {chap} has {count} questions (expected 150)"
 
